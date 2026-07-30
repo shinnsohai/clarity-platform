@@ -1,0 +1,121 @@
+# Decap CMS config for the Clarity E&C Group platform.
+#
+# Local editing works right now with zero setup: run `npm run cms` in one terminal
+# and `npm run dev` in another, then open http://localhost:5183/admin — edits save
+# straight to src/data/settings.json and src/data/branches.json via git commits on
+# this machine. `local_backend: true` is what makes that work.
+#
+# To let a real team edit this from anywhere (not just this machine), you'll need to:
+#   1. Push this repo to GitHub (or GitLab/Bitbucket).
+#   2. Deploy the site (Netlify is the zero-config path for `git-gateway` below —
+#      enable Netlify Identity + Git Gateway in the Netlify site settings).
+#   3. Update the `repo` line below to your actual GitHub "owner/repo".
+# Until then, the `backend` block below is inert — local_backend takes over instead.
+
+backend:
+  name: git-gateway
+  branch: master
+  # repo: your-github-username/your-repo-name
+
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "src/data/settings.json"
+        label: "Group Settings"
+        name: "settings"
+        fields:
+          - label: "Parent Company"
+            name: "parent"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Command Center Image", name: "image", widget: "image" }
+          - label: "Group Performance Metrics"
+            name: "groupMetrics"
+            widget: "list"
+            summary: "{{label}}: {{value}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+          - label: "Deployment Sequence Cuts"
+            name: "deploymentCuts"
+            widget: "list"
+            summary: "{{id}} — {{label}}"
+            fields:
+              - { label: "Cut ID", name: "id", widget: "string" }
+              - { label: "Start Time (seconds into the video)", name: "start", widget: "number" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Sub-label", name: "sub", widget: "string" }
+              - { label: "Description Line", name: "line", widget: "text" }
+          - label: "Cutout Graphics"
+            name: "cutouts"
+            widget: "object"
+            fields:
+              - { label: "Hierarchy Wireframe", name: "wireframe", widget: "image" }
+              - { label: "Explosion Site Cutaway", name: "explosion", widget: "image" }
+
+  - name: "branches"
+    label: "Branches"
+    files:
+      - file: "src/data/branches.json"
+        label: "All 6 Branches"
+        name: "branches"
+        fields:
+          - label: "Branches"
+            name: "branches"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
+              - { label: "URL Slug", name: "slug", widget: "string", hint: "Used in the page URL, e.g. /durabuild — avoid changing after launch" }
+              - { label: "Display Name", name: "name", widget: "string" }
+              - { label: "Full Legal Name", name: "fullName", widget: "string" }
+              - label: "Color Theme"
+                name: "theme"
+                widget: "select"
+                options: ["clarity", "durabuild", "lenix", "ef", "cfm"]
+                hint: "clarity = shared Navy/Orange parent look (used by Techsphere & Manufacturing). Each other branch keeps its own palette."
+              - { label: "Hero Image", name: "image", widget: "image" }
+              - { label: "Role / Tagline", name: "role", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - label: "Sub-Divisions"
+                name: "subDivisions"
+                widget: "list"
+                summary: "{{name}}"
+                allow_add: true
+                fields:
+                  - { label: "Internal ID", name: "id", widget: "string" }
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Icon"
+                    name: "icon"
+                    widget: "select"
+                    options:
+                      [
+                        "dataFlow",
+                        "hardwareNode",
+                        "hardHat",
+                        "compass",
+                        "crosshair",
+                        "incubation",
+                        "sync",
+                        "telemetry",
+                        "aviation",
+                        "sterile",
+                        "operatorHMI",
+                        "caliper",
+                      ]
+              - label: "Operational Telemetry"
+                name: "telemetry"
+                widget: "list"
+                summary: "{{label}}: {{value}}"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }

@@ -1,4 +1,4 @@
-import { branches } from '../data/hierarchy'
+import { branches, parent } from '../data/hierarchy'
 
 export default function Footer() {
   return (
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-white/10 text-concrete text-xs tracking-wide">
-          <span>© {new Date().getFullYear()} Clarity E&amp;C Pte Ltd — Singapore</span>
+          <span>© {new Date().getFullYear()} {parent.name} — Singapore</span>
           <span className="uppercase tracking-[0.2em]">
             Workforce · Construction · Digital · Facilities · Manufacturing
           </span>

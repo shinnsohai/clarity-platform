@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="relative z-10 h-full max-w-[1440px] mx-auto px-8 xl:px-16 flex flex-col justify-end pb-24">
         <div className="hairline pt-6 mb-10 flex items-center gap-4 text-concrete text-xs tracking-[0.3em] uppercase">
           <span className="w-2 h-2 bg-accent inline-block" />
-          Singapore · Integrated Operational Engine
+          {parent.tagline}
         </div>
 
         <motion.h1

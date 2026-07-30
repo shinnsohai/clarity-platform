@@ -1,0 +1,67 @@
+{
+  "parent": {
+    "name": "Clarity E&C Pte Ltd",
+    "tagline": "Singapore's Integrated Operational Engine",
+    "image": "/images/master-command-center.png"
+  },
+  "groupMetrics": [
+    {
+      "label": "Operating Divisions",
+      "value": "6"
+    },
+    {
+      "label": "Personnel Deployed",
+      "value": "3,000+"
+    },
+    {
+      "label": "Active Project Sites",
+      "value": "18"
+    },
+    {
+      "label": "Facilities Under Management",
+      "value": "27"
+    },
+    {
+      "label": "Systems Integrated",
+      "value": "40+"
+    },
+    {
+      "label": "Manufacturing Uptime",
+      "value": "98.4%"
+    }
+  ],
+  "deploymentCuts": [
+    {
+      "id": "01",
+      "start": 0,
+      "label": "STRATEGY & TALENT",
+      "sub": "E&F RECRUITMENT",
+      "line": "Diversified global management sourcing the best talent for competitive operations."
+    },
+    {
+      "id": "02",
+      "start": 5,
+      "label": "DIGITAL ECOSYSTEM",
+      "sub": "TECHSPHERE & LENIX",
+      "line": "Venture Lab incubation, synchronized Builtsync site data, and IT solutions."
+    },
+    {
+      "id": "03",
+      "start": 10,
+      "label": "CIVIL ENGINEERING",
+      "sub": "DURABUILD",
+      "line": "Construction workforce, Professional Services, and certified RE/RTO engineers."
+    },
+    {
+      "id": "04",
+      "start": 15,
+      "label": "DEPLOYMENT OPS",
+      "sub": "FACILITIES & MFG",
+      "line": "Airport terminal services, sterile cleaning, and precision automated manufacturing."
+    }
+  ],
+  "cutouts": {
+    "wireframe": "/images/cutout-hierarchy-wireframe.png",
+    "explosion": "/images/cutout-explosion-site.png"
+  }
+}
