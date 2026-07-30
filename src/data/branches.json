@@ -7,6 +7,7 @@
       "fullName": "Techsphere",
       "theme": "clarity",
       "image": "/images/branch-techsphere.png",
+      "logo": "/images/logo-clarity-icon.png",
       "role": "Digital Transformation & IT Solutions",
       "summary": "Techsphere converts operational data into decision-grade intelligence. It builds the digital backbone the rest of the Group runs on.",
       "subDivisions": [
@@ -37,6 +38,7 @@
       "fullName": "Durabuild Pte Ltd",
       "theme": "durabuild",
       "image": "/images/branch-durabuild.png",
+      "logo": "/images/logo-durabuild-icon.png",
       "role": "Heavy Structural Engineering & Civil Execution",
       "summary": "Durabuild executes at civil scale. Structural steel, certified oversight, and professional services built for high-elevation, high-tolerance sites.",
       "subDivisions": [
@@ -73,6 +75,7 @@
       "fullName": "Lenix Pte Ltd",
       "theme": "lenix",
       "image": "/images/branch-lenix.png",
+      "logo": "/images/logo-lenix-icon.png",
       "role": "Venture Software & Field Data Systems",
       "summary": "Lenix builds the software layer between site and strategy — incubating new tools and syncing field data in real time.",
       "subDivisions": [
@@ -109,6 +112,7 @@
       "fullName": "E&F Recruitment Pte Ltd",
       "theme": "ef",
       "image": "/images/branch-ef-recruitment.png",
+      "logo": "/images/logo-ef-icon.png",
       "role": "Strategic Manpower & Talent Deployment",
       "summary": "A diversified group of management managing resources from different countries and placing the best talents to the client’s company. We pride ourselves on providing quality candidates, good customer service, and competitive pricing.",
       "subDivisions": [],
@@ -126,6 +130,7 @@
       "fullName": "Clarity Facilities Management Pte Ltd",
       "theme": "cfm",
       "image": "/images/branch-cfm.png",
+      "logo": "/images/logo-cfm-icon.png",
       "role": "Infrastructure & Facility Operations",
       "summary": "CFM runs the built environment after handover — proactive infrastructure health, safety protocol, and terminal-grade service standards.",
       "subDivisions": [
@@ -156,6 +161,7 @@
       "fullName": "Clarity Manufacturing Pte Ltd",
       "theme": "clarity",
       "image": "/images/branch-manufacturing.png",
+      "logo": "/images/logo-clarity-icon.png",
       "role": "Precision Automated Manufacturing",
       "summary": "Clarity Manufacturing runs the automated floor — precision fabrication executed by trained operators and certified engineers.",
       "subDivisions": [

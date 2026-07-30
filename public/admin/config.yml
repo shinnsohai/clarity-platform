@@ -83,6 +83,7 @@ collections:
                 options: ["clarity", "durabuild", "lenix", "ef", "cfm"]
                 hint: "clarity = shared Navy/Orange parent look (used by Techsphere & Manufacturing). Each other branch keeps its own palette."
               - { label: "Hero Image", name: "image", widget: "image" }
+              - { label: "Division Logo", name: "logo", widget: "image", required: false, hint: "Small icon-only mark shown on the Hierarchy Map card — crop to just the emblem, no wordmark/company name" }
               - { label: "Role / Tagline", name: "role", widget: "string" }
               - { label: "Summary", name: "summary", widget: "text" }
               - label: "Sub-Divisions"

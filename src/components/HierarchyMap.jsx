@@ -166,9 +166,18 @@ export default function HierarchyMap() {
                       className="w-full text-left p-5 flex flex-col"
                     >
                       <AccentBar theme={b.theme} />
-                      <span className="text-concrete text-[10px] tracking-[0.2em] uppercase mb-2">
-                        Division {String(i + 1).padStart(2, '0')}
-                      </span>
+                      <div className="flex items-center gap-3 mb-2">
+                        {b.logo && (
+                          <img
+                            src={b.logo}
+                            alt={`${b.name} logo`}
+                            className="h-8 w-auto max-w-[64px] object-contain shrink-0"
+                          />
+                        )}
+                        <span className="text-concrete text-[10px] tracking-[0.2em] uppercase">
+                          Division {String(i + 1).padStart(2, '0')}
+                        </span>
+                      </div>
                       <span className="font-display text-lg leading-tight text-ink mb-1">
                         {b.name}
                       </span>
