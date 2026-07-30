@@ -124,12 +124,21 @@ export default function HierarchyMap() {
           <div className="relative flex justify-center mb-16" style={{ zIndex: 1 }}>
             <div
               ref={parentRef}
-              className="inline-flex flex-col items-center px-10 py-6 border border-ink/30 bg-ink"
+              className="inline-flex items-center gap-5 px-8 py-5 border border-ink/30 bg-ink"
             >
-              <span className="text-white/60 text-[11px] tracking-[0.25em] uppercase mb-1">
-                Parent Entity
-              </span>
-              <span className="font-display text-xl md:text-2xl text-white">{parent.name}</span>
+              <div className="w-14 h-14 rounded-full bg-white shrink-0 flex items-center justify-center p-1.5">
+                <img
+                  src="/images/logo-clarity-icon.png"
+                  alt="Clarity E&C Group"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-white/60 text-[11px] tracking-[0.25em] uppercase mb-1">
+                  Parent Entity
+                </span>
+                <span className="font-display text-xl md:text-2xl text-white">{parent.name}</span>
+              </div>
             </div>
           </div>
 
