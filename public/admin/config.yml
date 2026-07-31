@@ -1,16 +1,15 @@
-# Decap CMS config for the Clarity E&C Group platform.
+# Decap CMS config for the CEC corporate platform.
 #
 # Local editing works right now with zero setup: run `npm run cms` in one terminal
 # and `npm run dev` in another, then open http://localhost:5183/admin — edits save
-# straight to src/data/settings.json and src/data/branches.json via git commits on
-# this machine. `local_backend: true` is what makes that work.
+# straight to the JSON files under src/data/ via git commits on this machine.
+# `local_backend: true` is what makes that work.
 #
-# To let a real team edit this from anywhere (not just this machine), you'll need to:
+# To let a real team edit this from anywhere (not just this machine):
 #   1. Push this repo to GitHub (or GitLab/Bitbucket).
 #   2. Deploy the site (Netlify is the zero-config path for `git-gateway` below —
 #      enable Netlify Identity + Git Gateway in the Netlify site settings).
 #   3. Update the `repo` line below to your actual GitHub "owner/repo".
-# Until then, the `backend` block below is inert — local_backend takes over instead.
 
 backend:
   name: git-gateway
@@ -30,67 +29,51 @@ collections:
         label: "Group Settings"
         name: "settings"
         fields:
-          - label: "Parent Company"
+          - label: "Parent Company (CEC)"
             name: "parent"
             widget: "object"
             fields:
-              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Short Name", name: "name", widget: "string" }
+              - { label: "Full Legal Name", name: "fullName", widget: "string" }
               - { label: "Tagline", name: "tagline", widget: "string" }
-              - { label: "Command Center Image", name: "image", widget: "image" }
+              - { label: "Hero Image", name: "image", widget: "image" }
           - label: "Group Performance Metrics"
             name: "groupMetrics"
             widget: "list"
-            summary: "{{label}}: {{value}}"
+            summary: "{{label}}: {{value}}{{suffix}}"
             fields:
               - { label: "Label", name: "label", widget: "string" }
-              - { label: "Value", name: "value", widget: "string" }
-          - label: "Deployment Sequence Cuts"
-            name: "deploymentCuts"
-            widget: "list"
-            summary: "{{id}} — {{label}}"
-            fields:
-              - { label: "Cut ID", name: "id", widget: "string" }
-              - { label: "Start Time (seconds into the video)", name: "start", widget: "number" }
-              - { label: "Label", name: "label", widget: "string" }
-              - { label: "Sub-label", name: "sub", widget: "string" }
-              - { label: "Description Line", name: "line", widget: "text" }
-          - label: "Cutout Graphics"
-            name: "cutouts"
-            widget: "object"
-            fields:
-              - { label: "Hierarchy Wireframe", name: "wireframe", widget: "image" }
-              - { label: "Explosion Site Cutaway", name: "explosion", widget: "image" }
+              - { label: "Value", name: "value", widget: "number" }
+              - { label: "Suffix", name: "suffix", widget: "string", required: false }
 
-  - name: "branches"
-    label: "Branches"
+  - name: "entities"
+    label: "Entities (Subsidiaries & Strategic Partner)"
     files:
-      - file: "src/data/branches.json"
-        label: "All 6 Branches"
-        name: "branches"
+      - file: "src/data/entities.json"
+        label: "All 6 Entities"
+        name: "entities"
         fields:
-          - label: "Branches"
-            name: "branches"
+          - label: "Entities"
+            name: "entities"
             widget: "list"
-            summary: "{{fields.name}} — {{fields.role}}"
+            summary: "{{fields.name}} ({{fields.kind}})"
             fields:
-              - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
-              - { label: "URL Slug", name: "slug", widget: "string", hint: "Used in the page URL, e.g. /durabuild — avoid changing after launch" }
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "URL Slug", name: "slug", widget: "string", hint: "Used at /our-business/[slug] — avoid changing after launch" }
+              - label: "Kind"
+                name: "kind"
+                widget: "select"
+                options: ["subsidiary", "strategic-partner"]
               - { label: "Display Name", name: "name", widget: "string" }
               - { label: "Full Legal Name", name: "fullName", widget: "string" }
-              - label: "Color Theme"
-                name: "theme"
-                widget: "select"
-                options: ["clarity", "durabuild", "lenix", "ef", "cfm"]
-                hint: "clarity = shared Navy/Orange parent look (used by Techsphere & Manufacturing). Each other branch keeps its own palette."
               - { label: "Hero Image", name: "image", widget: "image" }
-              - { label: "Division Logo", name: "logo", widget: "image", required: false, hint: "Small icon-only mark shown on the Hierarchy Map card — crop to just the emblem, no wordmark/company name" }
+              - { label: "Logo Mark", name: "logo", widget: "image" }
               - { label: "Role / Tagline", name: "role", widget: "string" }
               - { label: "Summary", name: "summary", widget: "text" }
               - label: "Sub-Divisions"
                 name: "subDivisions"
                 widget: "list"
                 summary: "{{name}}"
-                allow_add: true
                 fields:
                   - { label: "Internal ID", name: "id", widget: "string" }
                   - { label: "Name", name: "name", widget: "string" }
@@ -98,25 +81,160 @@ collections:
                   - label: "Icon"
                     name: "icon"
                     widget: "select"
-                    options:
-                      [
-                        "dataFlow",
-                        "hardwareNode",
-                        "hardHat",
-                        "compass",
-                        "crosshair",
-                        "incubation",
-                        "sync",
-                        "telemetry",
-                        "aviation",
-                        "sterile",
-                        "operatorHMI",
-                        "caliper",
-                      ]
-              - label: "Operational Telemetry"
+                    options: ["dataFlow","hardwareNode","hardHat","compass","crosshair","incubation","sync","telemetry","aviation","sterile","operatorHMI","caliper"]
+              - label: "Key Performance Telemetry"
                 name: "telemetry"
                 widget: "list"
                 summary: "{{label}}: {{value}}"
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Value", name: "value", widget: "string" }
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "src/data/about.json"
+        label: "About Content"
+        name: "about"
+        fields:
+          - { label: "Corporate Profile", name: "profile", widget: "text" }
+          - { label: "Mission", name: "mission", widget: "text" }
+          - { label: "Vision", name: "vision", widget: "text" }
+          - label: "Leadership & Governance"
+            name: "leadership"
+            widget: "list"
+            summary: "{{title}} ({{category}})"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Founder", "Director", "Advisor"]
+              - { label: "Avatar Variant (0-5)", name: "seed", widget: "number", min: 0, max: 5 }
+
+  - name: "hse"
+    label: "HSE & Compliance"
+    files:
+      - file: "src/data/hse.json"
+        label: "HSE Content"
+        name: "hse"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Emergency Drill Schedule"
+            name: "drillSchedule"
+            widget: "list"
+            summary: "{{month}} — {{drill}}"
+            fields:
+              - { label: "Month", name: "month", widget: "string" }
+              - { label: "Drill", name: "drill", widget: "string" }
+              - { label: "Area", name: "area", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+          - label: "Scenario Matrix"
+            name: "scenarioMatrix"
+            widget: "list"
+            summary: "{{scenario}} ({{category}})"
+            fields:
+              - { label: "Scenario", name: "scenario", widget: "string" }
+              - label: "Severity Category"
+                name: "category"
+                widget: "select"
+                options: ["Standard", "Advanced", "Critical"]
+              - { label: "Protocol", name: "protocol", widget: "text" }
+              - { label: "Agencies", name: "agencies", widget: "string" }
+
+  - name: "track_record"
+    label: "Track Record"
+    files:
+      - file: "src/data/trackRecord.json"
+        label: "Projects"
+        name: "trackRecord"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Related Entity ID", name: "entity", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Blurb", name: "blurb", widget: "text" }
+              - { label: "Tall Card", name: "tall", widget: "boolean", default: false }
+
+  - name: "investor_relations"
+    label: "Investor Relations"
+    files:
+      - file: "src/data/investorRelations.json"
+        label: "IR Content"
+        name: "investorRelations"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Equity Model"
+            name: "equityModel"
+            widget: "list"
+            summary: "{{label}}: {{value}}%"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value (%)", name: "value", widget: "number" }
+          - label: "ESOP Vesting Schedule"
+            name: "esopVesting"
+            widget: "list"
+            summary: "{{year}}: {{cumulative}}%"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Cumulative Vested (%)", name: "cumulative", widget: "number" }
+              - { label: "Note", name: "note", widget: "string", required: false }
+          - label: "Instrument Comparison"
+            name: "instruments"
+            widget: "list"
+            summary: "{{instrument}}"
+            fields:
+              - { label: "Instrument", name: "instrument", widget: "string" }
+              - { label: "Ownership", name: "ownership", widget: "string" }
+              - { label: "Voting Rights", name: "voting", widget: "string" }
+              - { label: "Liquidity Trigger", name: "liquidity", widget: "string" }
+
+  - name: "careers"
+    label: "Careers"
+    files:
+      - file: "src/data/careers.json"
+        label: "Job Board"
+        name: "careers"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Job Listings"
+            name: "jobs"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Job Title", name: "title", widget: "string" }
+              - { label: "Entity ID", name: "entity", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: ["Full-Time", "Part-Time", "Shift-Based", "Contract"]
+
+  - name: "contact"
+    label: "Contact Page"
+    files:
+      - file: "src/data/contact.json"
+        label: "Contact Content"
+        name: "contact"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - label: "Offices"
+            name: "offices"
+            widget: "list"
+            summary: "{{name}} — {{city}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Office Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Coordinates (display text)", name: "coords", widget: "string" }
+              - { label: "Map X (%)", name: "x", widget: "number" }
+              - { label: "Map Y (%)", name: "y", widget: "number" }

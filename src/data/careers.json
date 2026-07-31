@@ -1,0 +1,15 @@
+{
+  "intro": "CEC deploys operational talent at scale. Every role below sits inside a live subsidiary or strategic partner — not a holding-company back office.",
+  "jobs": [
+    { "id": "j1", "title": "Resident Engineer (RE)", "entity": "durabuild", "location": "Singapore — Site", "type": "Full-Time" },
+    { "id": "j2", "title": "Structural Steel Foreman", "entity": "durabuild", "location": "Singapore — Site", "type": "Full-Time" },
+    { "id": "j3", "title": "Terminal Operations Executive", "entity": "cfm", "location": "Singapore — Airport", "type": "Full-Time" },
+    { "id": "j4", "title": "Facility Compliance Officer", "entity": "cfm", "location": "Singapore — HQ", "type": "Full-Time" },
+    { "id": "j5", "title": "Full-Stack Engineer, Builtsync", "entity": "lenix", "location": "Singapore — Hybrid", "type": "Full-Time" },
+    { "id": "j6", "title": "IT Infrastructure Specialist", "entity": "techsphere", "location": "Singapore — HQ", "type": "Full-Time" },
+    { "id": "j7", "title": "Manufacturing Operator", "entity": "clarity-manufacturing", "location": "Singapore — Plant", "type": "Shift-Based" },
+    { "id": "j8", "title": "Calibration Technician", "entity": "clarity-manufacturing", "location": "Singapore — Plant", "type": "Full-Time" },
+    { "id": "j9", "title": "International Recruitment Consultant", "entity": "enf", "location": "Singapore — HQ", "type": "Full-Time" },
+    { "id": "j10", "title": "Workforce Deployment Coordinator", "entity": "enf", "location": "Singapore — HQ", "type": "Full-Time" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "profile": "CEC is a premier corporate holding entity. We do not dabble — we hold, direct, and scale a portfolio of five subsidiaries and one strategic partner across construction, facilities, technology, manufacturing, and global talent. Every entity under CEC operates to the same standard: disciplined, measured, accountable.",
+  "mission": "Operate every entity in the portfolio to a single, non-negotiable standard of execution.",
+  "vision": "To be the corporate structure other holding entities are benchmarked against.",
+  "leadership": [
+    { "id": "l1", "title": "Group Managing Director", "category": "Founder", "seed": 0 },
+    { "id": "l2", "title": "Chief Operating Officer", "category": "Director", "seed": 1 },
+    { "id": "l3", "title": "Chief Financial Officer", "category": "Director", "seed": 2 },
+    { "id": "l4", "title": "Group General Counsel", "category": "Director", "seed": 3 },
+    { "id": "l5", "title": "Independent Director", "category": "Advisor", "seed": 4 },
+    { "id": "l6", "title": "Head of Strategic Partnerships", "category": "Advisor", "seed": 5 }
+  ]
+}

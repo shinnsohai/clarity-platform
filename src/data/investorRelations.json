@@ -1,0 +1,36 @@
+{
+  "intro": "CEC governs equity, incentive, and liquidity structures at the holding level — applied consistently across every subsidiary.",
+  "equityModel": [
+    { "label": "Founder & Executive Equity", "value": 45 },
+    { "label": "Institutional Partners", "value": 25 },
+    { "label": "ESOP Pool", "value": 15 },
+    { "label": "Strategic Reserve", "value": 15 }
+  ],
+  "esopVesting": [
+    { "year": "Year 1", "cumulative": 0, "note": "Cliff" },
+    { "year": "Year 2", "cumulative": 25 },
+    { "year": "Year 3", "cumulative": 50 },
+    { "year": "Year 4", "cumulative": 75 },
+    { "year": "Year 5", "cumulative": 100 }
+  ],
+  "instruments": [
+    {
+      "instrument": "Ordinary Equity",
+      "ownership": "Direct",
+      "voting": "Full",
+      "liquidity": "Sale / IPO / Buyback"
+    },
+    {
+      "instrument": "ESOP (Options)",
+      "ownership": "Upon Exercise",
+      "voting": "Upon Exercise",
+      "liquidity": "Exercise Window + Sale Event"
+    },
+    {
+      "instrument": "Phantom Stock",
+      "ownership": "None — Value-Tracking Only",
+      "voting": "None",
+      "liquidity": "Cash-Settled on Trigger Event"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "email": "operations@cec.com.sg",
+  "phone": "+65 6000 0000",
+  "offices": [
+    { "id": "hq", "name": "CEC Corporate HQ", "city": "Singapore", "coords": "1.2839° N, 103.8517° E", "x": 76, "y": 58 },
+    { "id": "durabuild-site", "name": "Durabuild Site Command", "city": "Jurong, Singapore", "coords": "1.3400° N, 103.7064° E", "x": 68, "y": 52 },
+    { "id": "cfm-terminal", "name": "CFM Terminal Desk", "city": "Changi, Singapore", "coords": "1.3644° N, 103.9915° E", "x": 84, "y": 46 },
+    { "id": "enf-sourcing", "name": "E&F Sourcing Node", "city": "Manila, Philippines", "coords": "14.5995° N, 120.9842° E", "x": 88, "y": 34 }
+  ]
+}

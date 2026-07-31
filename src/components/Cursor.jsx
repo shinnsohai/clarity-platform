@@ -17,8 +17,8 @@ export default function Cursor() {
       }
     }
 
-    const onDown = () => ringRef.current?.classList.add('scale-75', 'bg-[var(--accent,#f5a623)]/20')
-    const onUp = () => ringRef.current?.classList.remove('scale-75', 'bg-[var(--accent,#f5a623)]/20')
+    const onDown = () => ringRef.current?.classList.add('scale-75', 'bg-[var(--accent,#ffd400)]/20')
+    const onUp = () => ringRef.current?.classList.remove('scale-75', 'bg-[var(--accent,#ffd400)]/20')
 
     let raf
     const tick = () => {

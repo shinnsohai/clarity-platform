@@ -11,13 +11,14 @@ export default {
     },
     extend: {
       colors: {
-        ink: '#0B1F3F',
-        graphite: '#14171C',
-        concrete: '#64748B',
-        'concrete-light': '#D8DADD',
+        ink: '#0A0A0A',
+        navy: '#0B1F3F',
+        'navy-2': '#12294F',
         paper: '#FFFFFF',
-        accent: '#F5A623',
-        'accent-dim': '#C97F12',
+        concrete: '#64748B',
+        'concrete-light': '#B7BEC9',
+        accent: '#FFD400',
+        'accent-dim': '#C9A200',
       },
       fontFamily: {
         display: ['"Archivo Black"', '"Arial Black"', 'sans-serif'],
