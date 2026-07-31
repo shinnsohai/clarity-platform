@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -10,7 +10,11 @@ export default function HighlightReel() {
   const pinRef = useRef(null)
   const trackRef = useRef(null)
 
-  useEffect(() => {
+  // useLayoutEffect (not useEffect) so ctx.revert() runs synchronously, during React's
+  // commit phase, before React tries to remove the DOM nodes GSAP's pin-spacer restructured.
+  // Doing this in a passive effect races React Router's unmount and throws a
+  // NotFoundError/removeChild crash that takes down the whole app on route change.
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const track = trackRef.current
       const distance = track.scrollWidth - window.innerWidth
