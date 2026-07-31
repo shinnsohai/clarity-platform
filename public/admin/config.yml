@@ -1,4 +1,4 @@
-# Decap CMS config for the CEC corporate platform.
+# Decap CMS config for the Clarity E&C corporate platform.
 #
 # Local editing works right now with zero setup: run `npm run cms` in one terminal
 # and `npm run dev` in another, then open http://localhost:5183/admin — edits save
@@ -29,14 +29,20 @@ collections:
         label: "Group Settings"
         name: "settings"
         fields:
-          - label: "Parent Company (CEC)"
+          - label: "Parent Company (Clarity E&C)"
             name: "parent"
             widget: "object"
             fields:
               - { label: "Short Name", name: "name", widget: "string" }
               - { label: "Full Legal Name", name: "fullName", widget: "string" }
               - { label: "Tagline", name: "tagline", widget: "string" }
-              - { label: "Hero Image", name: "image", widget: "image" }
+          - label: "Homepage Hero Slider"
+            name: "heroImages"
+            widget: "list"
+            summary: "{{caption}}"
+            fields:
+              - { label: "Image", name: "src", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string" }
           - label: "Group Performance Metrics"
             name: "groupMetrics"
             widget: "list"
@@ -45,31 +51,42 @@ collections:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Value", name: "value", widget: "number" }
               - { label: "Suffix", name: "suffix", widget: "string", required: false }
+          - label: "Global Office Network"
+            name: "offices"
+            widget: "list"
+            summary: "{{name}} — {{city}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Office Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Map X (%)", name: "x", widget: "number" }
+              - { label: "Map Y (%)", name: "y", widget: "number" }
 
   - name: "entities"
-    label: "Entities (Subsidiaries & Strategic Partner)"
+    label: "Subsidiaries"
     files:
       - file: "src/data/entities.json"
-        label: "All 6 Entities"
+        label: "All 5 Subsidiaries"
         name: "entities"
         fields:
-          - label: "Entities"
+          - label: "Subsidiaries"
             name: "entities"
             widget: "list"
-            summary: "{{fields.name}} ({{fields.kind}})"
+            summary: "{{fields.name}}"
             fields:
               - { label: "Internal ID", name: "id", widget: "string" }
               - { label: "URL Slug", name: "slug", widget: "string", hint: "Used at /our-business/[slug] — avoid changing after launch" }
-              - label: "Kind"
-                name: "kind"
-                widget: "select"
-                options: ["subsidiary", "strategic-partner"]
               - { label: "Display Name", name: "name", widget: "string" }
               - { label: "Full Legal Name", name: "fullName", widget: "string" }
               - { label: "Hero Image", name: "image", widget: "image" }
               - { label: "Logo Mark", name: "logo", widget: "image" }
               - { label: "Role / Tagline", name: "role", widget: "string" }
               - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Enable Manpower Request Form (Durabuild)", name: "manpowerFormEnabled", widget: "boolean", required: false, default: false }
+              - { label: "App Store URL (Lenix only)", name: "appStoreUrl", widget: "string", required: false }
+              - { label: "Play Store URL (Lenix only)", name: "playStoreUrl", widget: "string", required: false }
+              - { label: "APK Direct Download URL (Lenix only)", name: "apkUrl", widget: "string", required: false }
+              - { label: "YouTube Demo Video ID (Lenix only)", name: "youtubeId", widget: "string", required: false, hint: "Just the ID from youtube.com/watch?v=THIS_PART" }
               - label: "Sub-Divisions"
                 name: "subDivisions"
                 widget: "list"
@@ -91,110 +108,105 @@ collections:
                   - { label: "Value", name: "value", widget: "string" }
 
   - name: "about"
-    label: "About Page"
+    label: "About Section"
     files:
-      - file: "src/data/about.json"
-        label: "About Content"
-        name: "about"
-        fields:
-          - { label: "Corporate Profile", name: "profile", widget: "text" }
-          - { label: "Mission", name: "mission", widget: "text" }
-          - { label: "Vision", name: "vision", widget: "text" }
-          - label: "Leadership & Governance"
-            name: "leadership"
-            widget: "list"
-            summary: "{{title}} ({{category}})"
-            fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - label: "Category"
-                name: "category"
-                widget: "select"
-                options: ["Founder", "Director", "Advisor"]
-              - { label: "Avatar Variant (0-5)", name: "seed", widget: "number", min: 0, max: 5 }
-
-  - name: "hse"
-    label: "HSE & Compliance"
-    files:
-      - file: "src/data/hse.json"
-        label: "HSE Content"
-        name: "hse"
+      - file: "src/data/corporateInformation.json"
+        label: "Corporate Information"
+        name: "corporateInformation"
         fields:
           - { label: "Intro", name: "intro", widget: "text" }
-          - label: "Emergency Drill Schedule"
-            name: "drillSchedule"
+          - { label: "History", name: "history", widget: "text" }
+          - label: "Site Photos"
+            name: "siteImages"
             widget: "list"
-            summary: "{{month}} — {{drill}}"
+            summary: "{{caption}}"
             fields:
-              - { label: "Month", name: "month", widget: "string" }
-              - { label: "Drill", name: "drill", widget: "string" }
-              - { label: "Area", name: "area", widget: "string" }
-              - { label: "Duration", name: "duration", widget: "string" }
-          - label: "Scenario Matrix"
-            name: "scenarioMatrix"
-            widget: "list"
-            summary: "{{scenario}} ({{category}})"
-            fields:
-              - { label: "Scenario", name: "scenario", widget: "string" }
-              - label: "Severity Category"
-                name: "category"
-                widget: "select"
-                options: ["Standard", "Advanced", "Critical"]
-              - { label: "Protocol", name: "protocol", widget: "text" }
-              - { label: "Agencies", name: "agencies", widget: "string" }
+              - { label: "Image", name: "src", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string" }
 
-  - name: "track_record"
-    label: "Track Record"
-    files:
-      - file: "src/data/trackRecord.json"
-        label: "Projects"
-        name: "trackRecord"
+      - file: "src/data/corporateProfile.json"
+        label: "Corporate Profile"
+        name: "corporateProfile"
         fields:
-          - label: "Projects"
-            name: "projects"
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Accreditations"
+            name: "accreditations"
+            widget: "list"
+            summary: "{{code}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Code", name: "code", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Recruitment License Statement", name: "recruitmentLicense", widget: "text" }
+          - label: "Galleries"
+            name: "galleries"
+            widget: "object"
+            fields:
+              - label: "Overseas Recruitment"
+                name: "overseas"
+                widget: "list"
+                summary: "{{caption}}"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Caption", name: "caption", widget: "string" }
+              - label: "In-House Recruitment"
+                name: "inhouse"
+                widget: "list"
+                summary: "{{caption}}"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Caption", name: "caption", widget: "string" }
+
+      - file: "src/data/leadershipTeam.json"
+        label: "Leadership Team"
+        name: "leadershipTeam"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Managers"
+            name: "members"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Avatar Variant (0-5)", name: "seed", widget: "number", min: 0, max: 5 }
+
+      - file: "src/data/founders.json"
+        label: "Founders & Advisors"
+        name: "founders"
+        fields:
+          - label: "People"
+            name: "people"
+            widget: "list"
+            summary: "{{name}} ({{role}})"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "URL Slug", name: "slug", widget: "string", hint: "Used at /about/founder-advisor/[slug]" }
+              - { label: "Name", name: "name", widget: "string" }
+              - label: "Role"
+                name: "role"
+                widget: "select"
+                options: ["Founder", "Co-Founder", "Advisor"]
+              - { label: "Avatar Variant (0-5)", name: "seed", widget: "number", min: 0, max: 5 }
+              - { label: "Qualifications", name: "qualifications", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+              - { label: "Licenses", name: "licenses", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+              - { label: "Experience", name: "experience", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+
+      - file: "src/data/missionVision.json"
+        label: "Mission & Vision"
+        name: "missionVision"
+        fields:
+          - { label: "Mission", name: "mission", widget: "text" }
+          - { label: "Vision", name: "vision", widget: "text" }
+          - label: "Values"
+            name: "values"
             widget: "list"
             summary: "{{title}}"
             fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Related Entity ID", name: "entity", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Blurb", name: "blurb", widget: "text" }
-              - { label: "Tall Card", name: "tall", widget: "boolean", default: false }
-
-  - name: "investor_relations"
-    label: "Investor Relations"
-    files:
-      - file: "src/data/investorRelations.json"
-        label: "IR Content"
-        name: "investorRelations"
-        fields:
-          - { label: "Intro", name: "intro", widget: "text" }
-          - label: "Equity Model"
-            name: "equityModel"
-            widget: "list"
-            summary: "{{label}}: {{value}}%"
-            fields:
-              - { label: "Label", name: "label", widget: "string" }
-              - { label: "Value (%)", name: "value", widget: "number" }
-          - label: "ESOP Vesting Schedule"
-            name: "esopVesting"
-            widget: "list"
-            summary: "{{year}}: {{cumulative}}%"
-            fields:
-              - { label: "Year", name: "year", widget: "string" }
-              - { label: "Cumulative Vested (%)", name: "cumulative", widget: "number" }
-              - { label: "Note", name: "note", widget: "string", required: false }
-          - label: "Instrument Comparison"
-            name: "instruments"
-            widget: "list"
-            summary: "{{instrument}}"
-            fields:
-              - { label: "Instrument", name: "instrument", widget: "string" }
-              - { label: "Ownership", name: "ownership", widget: "string" }
-              - { label: "Voting Rights", name: "voting", widget: "string" }
-              - { label: "Liquidity Trigger", name: "liquidity", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
 
   - name: "careers"
     label: "Careers"
@@ -227,14 +239,4 @@ collections:
         fields:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }
-          - label: "Offices"
-            name: "offices"
-            widget: "list"
-            summary: "{{name}} — {{city}}"
-            fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
-              - { label: "Office Name", name: "name", widget: "string" }
-              - { label: "City", name: "city", widget: "string" }
-              - { label: "Coordinates (display text)", name: "coords", widget: "string" }
-              - { label: "Map X (%)", name: "x", widget: "number" }
-              - { label: "Map Y (%)", name: "y", widget: "number" }
+          - { label: "Address", name: "address", widget: "string" }

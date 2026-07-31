@@ -1,0 +1,9 @@
+{
+  "intro": "The managers running day-to-day operations across the Clarity E&C portfolio.",
+  "members": [
+    { "id": "m1", "name": "Low Tsuu Shinn", "title": "Manager", "seed": 0 },
+    { "id": "m2", "name": "Jackie Pung", "title": "Manager", "seed": 1 },
+    { "id": "m3", "name": "Tam Xuan Hong", "title": "Manager", "seed": 2 },
+    { "id": "m4", "name": "Stephen Aung", "title": "Manager", "seed": 3 }
+  ]
+}

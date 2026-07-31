@@ -11,14 +11,13 @@ export default {
     },
     extend: {
       colors: {
-        ink: '#0A0A0A',
-        navy: '#0B1F3F',
-        'navy-2': '#12294F',
+        ink: '#111827',
         paper: '#FFFFFF',
+        pearl: '#F1F3F6',
         concrete: '#64748B',
-        'concrete-light': '#B7BEC9',
-        accent: '#FFD400',
-        'accent-dim': '#C9A200',
+        azure: '#0A6CFF',
+        'azure-dim': '#0850C4',
+        'azure-light': '#E8F1FF',
       },
       fontFamily: {
         display: ['"Archivo Black"', '"Arial Black"', 'sans-serif'],
@@ -27,6 +26,10 @@ export default {
       },
       letterSpacing: {
         tightest: '-0.06em',
+      },
+      boxShadow: {
+        soft: '0 4px 24px rgba(17, 24, 39, 0.06)',
+        'soft-lg': '0 16px 48px rgba(17, 24, 39, 0.1)',
       },
     },
   },

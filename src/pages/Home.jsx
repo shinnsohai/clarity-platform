@@ -1,15 +1,17 @@
-import Hero from '../components/Hero'
+import HeroSlider from '../components/HeroSlider'
+import ServicesGrid from '../components/ServicesGrid'
+import WorldMap from '../components/WorldMap'
 import MetricsCounters from '../components/MetricsCounters'
-import EcosystemMap from '../components/EcosystemMap'
-import HighlightReel from '../components/HighlightReel'
+import ClientCarousel from '../components/ClientCarousel'
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSlider />
       <MetricsCounters />
-      <EcosystemMap />
-      <HighlightReel />
+      <ServicesGrid />
+      <WorldMap />
+      <ClientCarousel />
     </>
   )
 }

@@ -17,8 +17,8 @@ export default function Cursor() {
       }
     }
 
-    const onDown = () => ringRef.current?.classList.add('scale-75', 'bg-[var(--accent,#ffd400)]/20')
-    const onUp = () => ringRef.current?.classList.remove('scale-75', 'bg-[var(--accent,#ffd400)]/20')
+    const onDown = () => ringRef.current?.classList.add('scale-75', 'bg-[var(--azure,#0a6cff)]/20')
+    const onUp = () => ringRef.current?.classList.remove('scale-75', 'bg-[var(--azure,#0a6cff)]/20')
 
     let raf
     const tick = () => {
@@ -47,15 +47,15 @@ export default function Cursor() {
     <div className="hidden lg:block">
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-accent pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-azure pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
       />
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 w-8 h-8 border border-accent/70 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-150"
+        className="fixed top-0 left-0 w-8 h-8 border border-azure/70 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-150"
         style={{ borderRadius: '2px' }}
       >
-        <span className="absolute top-1/2 left-0 w-full h-px bg-accent/50 -translate-y-1/2" />
-        <span className="absolute left-1/2 top-0 h-full w-px bg-accent/50 -translate-x-1/2" />
+        <span className="absolute top-1/2 left-0 w-full h-px bg-azure/50 -translate-y-1/2" />
+        <span className="absolute left-1/2 top-0 h-full w-px bg-azure/50 -translate-x-1/2" />
       </div>
     </div>
   )

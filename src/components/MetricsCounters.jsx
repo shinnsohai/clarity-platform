@@ -4,13 +4,13 @@ import { groupMetrics } from '../data/hierarchy'
 
 export default function MetricsCounters() {
   return (
-    <section className="relative bg-white border-y border-navy/10">
+    <section className="relative bg-white border-y border-ink/10">
       <div className="max-w-[1440px] mx-auto px-8 xl:px-16 py-16">
         <div className="flex items-center gap-4 mb-10 text-concrete text-xs tracking-[0.3em] uppercase">
-          <span className="w-2 h-2 bg-accent inline-block" />
+          <span className="w-2 h-2 bg-azure rounded-full inline-block" />
           Group Performance
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-navy/10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-ink/10 rounded-2xl overflow-hidden">
           {groupMetrics.map((m, i) => (
             <motion.div
               key={m.label}
@@ -20,10 +20,10 @@ export default function MetricsCounters() {
               transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
               className="bg-white p-6 flex flex-col gap-3"
             >
-              <span className="font-display text-3xl xl:text-4xl text-accent-dim">
+              <span className="font-display text-3xl xl:text-4xl text-azure">
                 <Counter value={m.value} suffix={m.suffix} decimals={Number.isInteger(m.value) ? 0 : 1} />
               </span>
-              <span className="text-navy text-xs tracking-[0.15em] uppercase leading-snug font-semibold">
+              <span className="text-ink text-xs tracking-[0.15em] uppercase leading-snug font-semibold">
                 {m.label}
               </span>
             </motion.div>

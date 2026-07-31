@@ -11,17 +11,17 @@ export default function Careers() {
   const jobs = filter === 'All' ? careers.jobs : careers.jobs.filter((j) => j.entity === filter)
 
   return (
-    <div className="bg-white">
-      <section className="relative bg-ink py-28">
+    <div className="bg-paper">
+      <section className="relative bg-pearl py-28">
         <div className="max-w-[1440px] mx-auto px-8 xl:px-16">
-          <div className="flex items-center gap-4 mb-6 text-white/50 text-xs tracking-[0.3em] uppercase">
-            <span className="w-2 h-2 bg-accent inline-block" />
+          <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
+            <span className="w-2 h-2 bg-azure rounded-full inline-block" />
             Career Opportunities
           </div>
-          <h1 className="font-display text-5xl md:text-7xl text-white leading-[0.9] max-w-4xl">
-            DEPLOYMENT READY<span className="text-accent">.</span>
+          <h1 className="font-display text-5xl md:text-7xl text-ink leading-[0.9] max-w-4xl">
+            JOIN THE PORTFOLIO<span className="text-azure">.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-white/70 text-lg leading-relaxed">{careers.intro}</p>
+          <p className="mt-8 max-w-2xl text-concrete text-lg leading-relaxed">{careers.intro}</p>
         </div>
       </section>
 
@@ -31,8 +31,8 @@ export default function Careers() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`text-[11px] tracking-[0.15em] uppercase px-4 py-2 border transition-colors ${
-                filter === f ? 'bg-navy text-white border-navy' : 'border-navy/20 text-navy hover:border-navy'
+              className={`text-[11px] tracking-[0.15em] uppercase px-4 py-2 rounded-full border transition-colors ${
+                filter === f ? 'bg-azure text-white border-azure' : 'border-ink/15 text-ink hover:border-azure'
               }`}
             >
               {f === 'All' ? 'All' : entityById[f]?.name}
@@ -40,7 +40,7 @@ export default function Careers() {
           ))}
         </div>
 
-        <div className="flex flex-col border-t border-navy/15">
+        <div className="flex flex-col gap-3">
           {jobs.map((job, i) => (
             <motion.div
               key={job.id}
@@ -48,7 +48,7 @@ export default function Careers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: i * 0.03 }}
-              className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-6 border-b border-navy/15 hover:bg-[#F9FAFB] transition-colors px-2"
+              className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-5 px-6 bg-white rounded-xl shadow-soft hover:shadow-soft-lg transition-shadow"
             >
               <div className="flex items-center gap-4 min-w-0">
                 <img
@@ -57,19 +57,19 @@ export default function Careers() {
                   className="h-9 w-9 object-contain shrink-0"
                 />
                 <div className="min-w-0">
-                  <div className="font-display text-lg text-navy leading-tight">{job.title}</div>
+                  <div className="font-display text-lg text-ink leading-tight">{job.title}</div>
                   <div className="text-concrete text-xs mt-1">
                     {entityById[job.entity]?.name} · {job.location}
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-6 shrink-0">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-accent-dim font-bold">
+                <span className="text-[10px] tracking-[0.2em] uppercase text-azure font-bold">
                   {job.type}
                 </span>
                 <a
-                  href={`mailto:careers@cec.com.sg?subject=${encodeURIComponent(job.title)}`}
-                  className="text-[11px] tracking-[0.15em] uppercase border border-navy text-navy px-4 py-2 hover:bg-navy hover:text-white transition-colors"
+                  href={`mailto:careers@clarityec.com.sg?subject=${encodeURIComponent(job.title)}`}
+                  className="text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-full px-5 py-2.5 hover:brightness-110 transition-all"
                 >
                   Apply →
                 </a>

@@ -3,13 +3,13 @@
     {
       "id": "durabuild",
       "slug": "durabuild",
-      "kind": "subsidiary",
       "name": "Durabuild",
       "fullName": "Durabuild Pte Ltd",
       "image": "/images/branch-durabuild.png",
       "logo": "/images/logo-durabuild-icon.png",
-      "role": "Heavy Structural Engineering & Civil Execution",
-      "summary": "Durabuild executes at civil scale. Structural steel, certified oversight, and professional services built for high-elevation, high-tolerance sites.",
+      "role": "Structural Engineering & Manpower Solutions",
+      "summary": "Durabuild delivers certified manpower and structural execution at civil scale — scaffolding, steel erection, and professional oversight on active sites.",
+      "manpowerFormEnabled": true,
       "subDivisions": [
         {
           "id": "construction-workers",
@@ -38,9 +38,48 @@
       ]
     },
     {
+      "id": "lenix",
+      "slug": "lenix",
+      "name": "Lenix",
+      "fullName": "Lenix Pte Ltd",
+      "image": "/images/branch-lenix.png",
+      "logo": "/images/logo-lenix-icon.png",
+      "role": "Digital Products & Field Data Systems",
+      "summary": "Lenix builds the software layer between site and strategy — incubating new tools and syncing field data in real time, on web and mobile.",
+      "appStoreUrl": "",
+      "playStoreUrl": "",
+      "apkUrl": "",
+      "youtubeId": "",
+      "subDivisions": [
+        {
+          "id": "venture-lab",
+          "name": "Venture Lab",
+          "description": "Incubates and tests new operational tooling before it scales across the portfolio.",
+          "icon": "incubation"
+        },
+        {
+          "id": "builtsync",
+          "name": "Builtsync",
+          "description": "Synchronizes live site data across every project so every subsidiary reads from one operational truth.",
+          "icon": "sync"
+        },
+        {
+          "id": "pilot-data",
+          "name": "Pilot Data",
+          "description": "Runs telemetry pilots that turn raw field signal into forward operational forecasting.",
+          "icon": "telemetry"
+        }
+      ],
+      "telemetry": [
+        { "label": "Active Pilots", "value": "9" },
+        { "label": "Sites Synced", "value": "24" },
+        { "label": "Data Latency", "value": "<400ms" },
+        { "label": "App Rating", "value": "4.8/5" }
+      ]
+    },
+    {
       "id": "cfm",
       "slug": "cfm",
-      "kind": "subsidiary",
       "name": "CFM",
       "fullName": "Clarity Facilities Management Pte Ltd",
       "image": "/images/branch-cfm.png",
@@ -69,83 +108,14 @@
       ]
     },
     {
-      "id": "lenix",
-      "slug": "lenix",
-      "kind": "subsidiary",
-      "name": "Lenix",
-      "fullName": "Lenix Pte Ltd",
-      "image": "/images/branch-lenix.png",
-      "logo": "/images/logo-lenix-icon.png",
-      "role": "Venture Software & Field Data Systems",
-      "summary": "Lenix builds the software layer between site and strategy — incubating new tools and syncing field data in real time.",
-      "subDivisions": [
-        {
-          "id": "venture-lab",
-          "name": "Venture Lab",
-          "description": "Incubates and tests new operational tooling before it scales across the portfolio.",
-          "icon": "incubation"
-        },
-        {
-          "id": "builtsync",
-          "name": "Builtsync",
-          "description": "Synchronizes live site data across every project so every subsidiary reads from one operational truth.",
-          "icon": "sync"
-        },
-        {
-          "id": "pilot-data",
-          "name": "Pilot Data",
-          "description": "Runs telemetry pilots that turn raw field signal into forward operational forecasting.",
-          "icon": "telemetry"
-        }
-      ],
-      "telemetry": [
-        { "label": "Active Pilots", "value": "9" },
-        { "label": "Sites Synced", "value": "24" },
-        { "label": "Data Latency", "value": "<400ms" },
-        { "label": "Tools Incubated", "value": "6" }
-      ]
-    },
-    {
-      "id": "techsphere",
-      "slug": "techsphere",
-      "kind": "subsidiary",
-      "name": "Techsphere",
-      "fullName": "Techsphere",
-      "image": "/images/branch-techsphere.png",
-      "logo": "/images/logo-clarity-icon.png",
-      "role": "Digital Transformation & IT Solutions",
-      "summary": "Techsphere converts operational data into decision-grade intelligence. It builds the digital backbone the rest of the portfolio runs on.",
-      "subDivisions": [
-        {
-          "id": "digital-transformation",
-          "name": "Digital Transformation",
-          "description": "Re-engineers legacy operational workflows into connected, data-driven systems across every subsidiary.",
-          "icon": "dataFlow"
-        },
-        {
-          "id": "it-solutions",
-          "name": "IT Solutions",
-          "description": "Deploys and maintains the hardware, network, and infrastructure layer that keeps every subsidiary online.",
-          "icon": "hardwareNode"
-        }
-      ],
-      "telemetry": [
-        { "label": "Systems Integrated", "value": "40+" },
-        { "label": "Uptime SLA", "value": "99.9%" },
-        { "label": "Data Points / Day", "value": "2.4M" },
-        { "label": "Deployment Cycle", "value": "72H" }
-      ]
-    },
-    {
       "id": "clarity-manufacturing",
       "slug": "clarity-manufacturing",
-      "kind": "subsidiary",
       "name": "Clarity Manufacturing",
       "fullName": "Clarity Manufacturing Pte Ltd",
       "image": "/images/branch-manufacturing.png",
       "logo": "/images/logo-clarity-icon.png",
-      "role": "Precision Automated Manufacturing",
-      "summary": "Clarity Manufacturing runs the automated floor — precision fabrication executed by trained operators and certified technicians.",
+      "role": "Manufacturing Manpower & Precision Operations",
+      "summary": "Clarity Manufacturing supplies trained operators and technicians to keep automated production lines running to tolerance.",
       "subDivisions": [
         {
           "id": "operators",
@@ -168,21 +138,33 @@
       ]
     },
     {
-      "id": "enf",
-      "slug": "enf",
-      "kind": "strategic-partner",
-      "name": "E&F",
-      "fullName": "E&F Recruitment Pte Ltd",
-      "image": "/images/branch-ef-recruitment.png",
-      "logo": "/images/logo-ef-icon.png",
-      "role": "Global Talent Acquisition & Manpower Deployment",
-      "summary": "A diversified group of management sourcing resources from different countries and placing the best talent into client operations. Quality candidates, precise service, and competitive pricing — deployed at scale.",
-      "subDivisions": [],
+      "id": "techsphere",
+      "slug": "techsphere",
+      "name": "Techsphere",
+      "fullName": "Techsphere Pte Ltd",
+      "image": "/images/branch-techsphere.png",
+      "logo": "/images/logo-clarity-icon.png",
+      "role": "IT & Digital Transformation",
+      "summary": "Techsphere converts operational data into decision-grade intelligence — the digital backbone the rest of the portfolio runs on.",
+      "subDivisions": [
+        {
+          "id": "digital-transformation",
+          "name": "Digital Transformation",
+          "description": "Re-engineers legacy operational workflows into connected, data-driven systems across every subsidiary.",
+          "icon": "dataFlow"
+        },
+        {
+          "id": "it-solutions",
+          "name": "IT Solutions",
+          "description": "Deploys and maintains the hardware, network, and infrastructure layer that keeps every subsidiary online.",
+          "icon": "hardwareNode"
+        }
+      ],
       "telemetry": [
-        { "label": "Talent Pool", "value": "3,000+" },
-        { "label": "Source Countries", "value": "9" },
-        { "label": "Placement Rate", "value": "96%" },
-        { "label": "Avg. Deployment", "value": "14 Days" }
+        { "label": "Systems Integrated", "value": "40+" },
+        { "label": "Uptime SLA", "value": "99.9%" },
+        { "label": "Data Points / Day", "value": "2.4M" },
+        { "label": "Deployment Cycle", "value": "72H" }
       ]
     }
   ]

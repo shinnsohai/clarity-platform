@@ -1,0 +1,44 @@
+{
+  "people": [
+    {
+      "id": "f1",
+      "slug": "goh-chong-hong",
+      "name": "Goh Chong Hong",
+      "role": "Founder",
+      "seed": 0,
+      "qualifications": [],
+      "licenses": [],
+      "experience": []
+    },
+    {
+      "id": "f2",
+      "slug": "chris-lim",
+      "name": "Chris Lim",
+      "role": "Founder",
+      "seed": 1,
+      "qualifications": [],
+      "licenses": [],
+      "experience": []
+    },
+    {
+      "id": "f3",
+      "slug": "wong-fei-cin",
+      "name": "Wong Fei Cin",
+      "role": "Co-Founder",
+      "seed": 2,
+      "qualifications": [],
+      "licenses": [],
+      "experience": []
+    },
+    {
+      "id": "f4",
+      "slug": "eamran-hossain",
+      "name": "Eamran Hossain",
+      "role": "Advisor",
+      "seed": 3,
+      "qualifications": [],
+      "licenses": [],
+      "experience": []
+    }
+  ]
+}

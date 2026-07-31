@@ -1,16 +1,27 @@
 {
   "parent": {
-    "name": "CEC",
-    "fullName": "CEC Holdings Pte Ltd",
-    "tagline": "A Premier Corporate Holding Entity",
-    "image": "/images/master-command-center.png"
+    "name": "Clarity E&C",
+    "fullName": "Clarity E&C Pte Ltd",
+    "tagline": "A Premier Corporate Holding Entity"
   },
+  "heroImages": [
+    { "src": "/images/hero-site.png", "caption": "Active, Certified Construction Sites" },
+    { "src": "/images/hero-manpower.png", "caption": "Professional Manpower Solutions" },
+    { "src": "/images/hero-office.png", "caption": "A Modern, Global Corporate Structure" }
+  ],
   "groupMetrics": [
     { "label": "Subsidiaries", "value": 5, "suffix": "" },
-    { "label": "Strategic Partners", "value": 1, "suffix": "" },
     { "label": "Personnel Deployed", "value": 3000, "suffix": "+" },
     { "label": "Active Project Sites", "value": 18, "suffix": "" },
     { "label": "Facilities Under Management", "value": 27, "suffix": "" },
+    { "label": "Years Combined Experience", "value": 15, "suffix": "+" },
     { "label": "Manufacturing Uptime", "value": 98.4, "suffix": "%" }
+  ],
+  "offices": [
+    { "id": "sg", "name": "Group Headquarters", "city": "Singapore", "x": 78, "y": 62 },
+    { "id": "my", "name": "Regional Business Entity", "city": "Kuala Lumpur, Malaysia", "x": 75.5, "y": 60 },
+    { "id": "ph", "name": "Overseas Business Entity", "city": "Manila, Philippines", "x": 83, "y": 54 },
+    { "id": "bd", "name": "Overseas Sourcing Office", "city": "Dhaka, Bangladesh", "x": 71.5, "y": 48 },
+    { "id": "in", "name": "Overseas Sourcing Office", "city": "Mumbai, India", "x": 67, "y": 51 }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "intro": "Every subsidiary under Clarity E&C operates against the same accreditation baseline. Certifications and licenses are held and audited at the holding level.",
+  "accreditations": [
+    {
+      "id": "iso",
+      "code": "ISO 9001",
+      "name": "Quality Management",
+      "description": "Certified quality management systems applied across all subsidiary operations."
+    },
+    {
+      "id": "aspri",
+      "code": "ASPRI",
+      "name": "Registered Contractor",
+      "description": "Registered with the Association of Process Industry for process and structural works."
+    },
+    {
+      "id": "bizsafe",
+      "code": "bizSAFE",
+      "name": "Workplace Safety",
+      "description": "bizSAFE-certified workplace safety and health management framework."
+    }
+  ],
+  "recruitmentLicense": "Clarity E&C subsidiaries operate under licensed manpower recruitment frameworks covering both overseas sourcing and in-house placement, in line with Ministry of Manpower requirements.",
+  "galleries": {
+    "overseas": [
+      { "src": "/images/recruitment-overseas.png", "caption": "Overseas Recruitment Coordination" }
+    ],
+    "inhouse": [
+      { "src": "/images/recruitment-inhouse.png", "caption": "In-House Recruitment & Onboarding" }
+    ]
+  }
+}
