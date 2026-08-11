@@ -31,14 +31,24 @@ export default function WorldMap() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 mb-5">
-          <div className="relative w-full aspect-[16/9] rounded-2xl shadow-soft overflow-hidden bg-white">
-            <iframe
-              key={active?.id}
-              title={`Clarity E&C — ${active?.city}`}
-              className="w-full h-full border-0"
-              loading="lazy"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(active?.city || 'Singapore')}&output=embed`}
-            />
+          <div className="flex flex-col gap-3">
+            <div className="relative w-full aspect-[16/9] rounded-2xl shadow-soft overflow-hidden bg-white">
+              <iframe
+                key={active?.id}
+                title={`Clarity E&C — ${active?.city}`}
+                className="w-full h-full border-0"
+                loading="lazy"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(active?.address || active?.city || 'Singapore')}&output=embed`}
+              />
+            </div>
+            <div className="flex items-center gap-2 text-ink text-sm px-1">
+              <span className="text-gold shrink-0">📍</span>
+              {active?.address ? (
+                <span className="font-medium">{active.address}</span>
+              ) : (
+                <span className="text-concrete italic">Exact address pending — showing approximate city location.</span>
+              )}
+            </div>
           </div>
 
           <div className="flex flex-col gap-2">

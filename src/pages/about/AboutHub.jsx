@@ -34,7 +34,12 @@ export default function AboutHub() {
   return (
     <div className="bg-paper">
       <section className="relative bg-pearl py-28">
-        <div className="max-w-[1440px] mx-auto px-8 xl:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-[1440px] mx-auto px-8 xl:px-16"
+        >
           <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
             <span className="w-2 h-2 bg-gold rounded-full inline-block" />
             About {parent.name}
@@ -42,7 +47,7 @@ export default function AboutHub() {
           <h1 className="font-display text-5xl md:text-7xl text-ink leading-[0.9] max-w-4xl">
             TRANSPARENCY<span className="text-azure">.</span> BY DESIGN.
           </h1>
-        </div>
+        </motion.div>
       </section>
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">

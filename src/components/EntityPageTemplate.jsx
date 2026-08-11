@@ -40,6 +40,7 @@ function CompetencyCard({ sub, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
+      whileHover={{ y: -6 }}
       className="group relative h-64 rounded-2xl overflow-hidden bg-white shadow-soft hover:shadow-soft-lg transition-shadow duration-300"
     >
       <div className="absolute inset-0 p-6 flex flex-col justify-between transition-transform duration-300 group-hover:-translate-y-full">
@@ -85,12 +86,18 @@ export default function EntityPageTemplate({ entity }) {
         <div className="relative z-10 h-full max-w-[1440px] mx-auto px-8 xl:px-16 flex flex-col justify-end pb-20">
           <Link
             to="/our-business"
-            className="text-azure text-xs tracking-[0.25em] uppercase mb-8 inline-flex items-center gap-2 w-fit font-semibold"
+            className="text-azure text-xs tracking-[0.25em] uppercase mb-8 inline-flex items-center gap-2 w-fit font-semibold hover:text-gold-dim transition-colors"
           >
             ← Our Business
           </Link>
           <div className="flex items-center gap-4 mb-4">
-            <img src={entity.logo} alt="" className="h-10 w-10 object-contain" />
+            <motion.img
+              src={entity.logo}
+              alt=""
+              whileHover={{ scale: 1.1, rotate: -4 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+              className="h-10 w-10 object-contain"
+            />
             <span className="text-concrete text-xs tracking-[0.3em] uppercase font-semibold">
               Clarity E&C Subsidiary — {entity.role}
             </span>
@@ -151,9 +158,11 @@ export default function EntityPageTemplate({ entity }) {
           </div>
           <div className="flex gap-2">
             {tags.map((t) => (
-              <button
+              <motion.button
                 key={t}
                 onClick={() => setFilter(t)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
                 className={`text-[11px] tracking-[0.15em] uppercase px-4 py-2 rounded-full border transition-colors ${
                   filter === t
                     ? 'bg-azure text-white border-azure'
@@ -161,15 +170,20 @@ export default function EntityPageTemplate({ entity }) {
                 }`}
               >
                 {t}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5 md:auto-rows-[180px]">
           {filtered.map((g, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+              whileHover={{ y: -4 }}
               className={`group relative overflow-hidden rounded-2xl shadow-soft md:col-span-2 ${
                 g.tall ? 'md:row-span-2' : 'md:row-span-1'
               }`}
@@ -183,18 +197,24 @@ export default function EntityPageTemplate({ entity }) {
               <span className="absolute bottom-3 left-3 text-white text-[10px] tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {g.label}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Uplink Navigation */}
+      <motion.div
+        whileHover={{ scale: 1.06 }}
+        whileTap={{ scale: 0.96 }}
+        className="fixed bottom-6 right-6 z-40"
+      >
       <Link
         to="/our-business"
-        className="fixed bottom-6 right-6 z-40 bg-azure text-white text-[11px] font-bold tracking-[0.15em] uppercase px-5 py-4 rounded-full shadow-soft-lg hover:brightness-110 transition-all"
+        className="bg-azure text-white text-[11px] font-bold tracking-[0.15em] uppercase px-5 py-4 rounded-full shadow-soft-lg hover:brightness-110 transition-all inline-block"
       >
         ← Our Business
       </Link>
+      </motion.div>
     </div>
   )
 }

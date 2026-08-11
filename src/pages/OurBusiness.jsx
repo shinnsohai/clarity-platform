@@ -44,7 +44,12 @@ export default function OurBusiness() {
   return (
     <div className="bg-paper">
       <section className="relative bg-pearl py-28">
-        <div className="max-w-[1440px] mx-auto px-8 xl:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-[1440px] mx-auto px-8 xl:px-16"
+        >
           <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
             <span className="w-2 h-2 bg-gold rounded-full inline-block" />
             Our Business
@@ -56,7 +61,7 @@ export default function OurBusiness() {
             Five subsidiaries executing across construction, technology, facilities, and
             manufacturing. Select a subsidiary to open its full operational record.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">
@@ -86,12 +91,23 @@ export default function OurBusiness() {
                 to="/strategic-partner"
                 className="group relative flex flex-col md:flex-row md:items-center justify-between gap-6 border-2 border-dashed border-azure/30 rounded-2xl p-8 bg-azure-light hover:border-azure/60 transition-colors duration-300"
               >
-                <div>
-                  <span className="text-azure text-[10px] tracking-[0.25em] uppercase font-bold">
-                    {p.relationship} · External Company
-                  </span>
-                  <div className="font-display text-2xl md:text-3xl text-ink mt-2">{p.name}</div>
-                  <p className="text-concrete text-sm mt-2 max-w-xl">{p.tagline}</p>
+                <div className="flex items-center gap-5">
+                  {p.logo && (
+                    <motion.img
+                      src={p.logo}
+                      alt=""
+                      whileHover={{ scale: 1.1, rotate: -4 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+                      className="h-14 w-14 object-contain shrink-0"
+                    />
+                  )}
+                  <div>
+                    <span className="text-azure text-[10px] tracking-[0.25em] uppercase font-bold">
+                      {p.relationship} · External Company
+                    </span>
+                    <div className="font-display text-2xl md:text-3xl text-ink mt-2">{p.name}</div>
+                    <p className="text-concrete text-sm mt-2 max-w-xl">{p.tagline}</p>
+                  </div>
                 </div>
                 <span className="shrink-0 inline-flex items-center gap-2 text-azure text-xs font-bold tracking-[0.15em] uppercase group-hover:text-gold-dim transition-colors">
                   Read More

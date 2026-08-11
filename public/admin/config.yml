@@ -66,7 +66,8 @@ collections:
             fields:
               - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
               - { label: "Office Name", name: "name", widget: "string" }
-              - { label: "City", name: "city", widget: "string", hint: "Used directly as the Google Maps search query, e.g. \"Manila, Philippines\"" }
+              - { label: "City", name: "city", widget: "string", hint: "Used as a fallback map search query if no exact address is set" }
+              - { label: "Exact Address", name: "address", widget: "string", required: false, hint: "Full street address — used as the Google Maps query when set, and shown on-page. Leave blank to fall back to City." }
               - label: "Photo Showcase"
                 name: "photos"
                 widget: "list"
@@ -94,6 +95,8 @@ collections:
               - { label: "Full Legal Name", name: "fullName", widget: "string" }
               - { label: "Relationship", name: "relationship", widget: "string", hint: "e.g. \"Strategic Recruitment Partner\" — shown as a label, not implying ownership" }
               - { label: "Website URL", name: "website", widget: "string" }
+              - { label: "Logo (icon mark)", name: "logo", widget: "image", required: false, hint: "Use their real logo — do not substitute a generated one" }
+              - { label: "Logo (full lockup w/ wordmark)", name: "logoFull", widget: "image", required: false }
               - { label: "Tagline", name: "tagline", widget: "string" }
               - { label: "Summary", name: "summary", widget: "text" }
               - { label: "Vision", name: "vision", widget: "text", required: false }
@@ -106,6 +109,14 @@ collections:
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
+              - label: "Platform Features"
+                name: "platform"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "For Job Seekers", name: "jobSeekers", widget: "list", required: false }
+                  - { label: "For Employers", name: "employers", widget: "list", required: false }
+              - { label: "Industries Covered", name: "industries", widget: "list", required: false }
               - { label: "Source Countries", name: "sourceCountries", widget: "list", required: false }
               - { label: "Stated Strengths", name: "strengths", widget: "list", required: false }
               - { label: "Fair Employment Principles", name: "fairEmployment", widget: "list", required: false }

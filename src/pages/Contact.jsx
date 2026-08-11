@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import contact from '../data/contact.json'
 import { entities, offices } from '../data/hierarchy'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', entity: 'General Inquiry', message: '' })
   const [sent, setSent] = useState(false)
+  const headquarters = offices.find((o) => o.id === 'sg') || offices[0]
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -17,7 +19,12 @@ export default function Contact() {
   return (
     <div className="bg-paper">
       <section className="relative bg-pearl py-28">
-        <div className="max-w-[1440px] mx-auto px-8 xl:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-[1440px] mx-auto px-8 xl:px-16"
+        >
           <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
             <span className="w-2 h-2 bg-gold rounded-full inline-block" />
             Contact
@@ -25,11 +32,18 @@ export default function Contact() {
           <h1 className="font-display text-5xl md:text-7xl text-ink leading-[0.9] max-w-4xl">
             LET'S TALK<span className="text-azure">.</span>
           </h1>
-        </div>
+        </motion.div>
       </section>
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16 grid grid-cols-1 lg:grid-cols-2 gap-14">
-        <form onSubmit={onSubmit} className="bg-white rounded-2xl shadow-soft-lg p-8">
+        <motion.form
+          onSubmit={onSubmit}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="bg-white rounded-2xl shadow-soft-lg p-8"
+        >
           <h2 className="font-display text-2xl text-ink mb-8">SEND A MESSAGE.</h2>
 
           <label className="block text-[11px] tracking-[0.2em] uppercase text-ink font-bold mb-2">
@@ -39,7 +53,7 @@ export default function Contact() {
             required
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-6 text-ink focus:outline-none focus:border-azure"
+            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-6 text-ink focus:outline-none focus:border-azure transition-colors"
           />
 
           <label className="block text-[11px] tracking-[0.2em] uppercase text-ink font-bold mb-2">
@@ -50,7 +64,7 @@ export default function Contact() {
             type="email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-6 text-ink focus:outline-none focus:border-azure"
+            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-6 text-ink focus:outline-none focus:border-azure transition-colors"
           />
 
           <label className="block text-[11px] tracking-[0.2em] uppercase text-ink font-bold mb-2">
@@ -59,7 +73,7 @@ export default function Contact() {
           <select
             value={form.entity}
             onChange={(e) => setForm({ ...form, entity: e.target.value })}
-            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-6 text-ink focus:outline-none focus:border-azure bg-white"
+            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-6 text-ink focus:outline-none focus:border-azure transition-colors bg-white"
           >
             <option>General Inquiry</option>
             {entities.map((ent) => (
@@ -77,42 +91,58 @@ export default function Contact() {
             rows={5}
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-8 text-ink focus:outline-none focus:border-azure"
+            className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-8 text-ink focus:outline-none focus:border-azure transition-colors"
           />
 
-          <button
+          <motion.button
             type="submit"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             className="w-full bg-azure text-white font-display text-lg py-4 rounded-lg hover:brightness-110 transition-all"
           >
             {sent ? 'MESSAGE PREPARED →' : 'SEND MESSAGE'}
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        >
           <h2 className="font-display text-2xl text-ink mb-8">GLOBAL OFFICES.</h2>
           <div className="rounded-2xl overflow-hidden shadow-soft h-80 mb-8">
             <iframe
-              title="Clarity E&C — Singapore"
+              title={`Clarity E&C — ${headquarters?.city || 'Singapore'}`}
               className="w-full h-full border-0"
               loading="lazy"
-              src="https://www.google.com/maps?q=Singapore&output=embed"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(headquarters?.address || headquarters?.city || 'Singapore')}&output=embed`}
             />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {offices.map((o) => (
-              <div key={o.id} className="border-l-2 border-azure pl-4">
+            {offices.map((o, i) => (
+              <motion.div
+                key={o.id}
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                whileHover={{ x: 4 }}
+                className="border-l-2 border-azure pl-4"
+              >
                 <div className="font-display text-sm text-ink">{o.name}</div>
                 <div className="text-concrete text-xs mt-1">{o.city}</div>
-              </div>
+                {o.address && <div className="text-concrete/70 text-[11px] mt-1 leading-snug">{o.address}</div>}
+              </motion.div>
             ))}
           </div>
           <div className="mt-8 pt-8 border-t border-ink/10 flex flex-col gap-2">
-            <a href={`mailto:${contact.email}`} className="text-ink font-semibold hover:text-azure transition-colors">
+            <a href={`mailto:${contact.email}`} className="text-ink font-semibold hover:text-azure transition-colors w-fit">
               {contact.email}
             </a>
             <span className="text-concrete text-sm">{contact.phone}</span>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   )

@@ -7,6 +7,8 @@
       "fullName": "E&F Recruitment Pte. Ltd.",
       "relationship": "Strategic Recruitment Partner",
       "website": "https://enf.sg/",
+      "logo": "/images/logo-ef-icon-real.png",
+      "logoFull": "/images/logo-ef-full.png",
       "tagline": "Find Job. Hire Experts.",
       "summary": "An independently operated recruitment agency that Clarity E&C partners with for talent sourcing — connecting quality candidates with client companies across construction, marine, manufacturing, and service sectors.",
       "vision": "To envision the best solution and practice of professionalism in human resource manners.",
@@ -16,6 +18,22 @@
         { "title": "Work Pass & Visa Processing", "description": "End-to-end administrative representation to Singapore's Ministry of Manpower." },
         { "title": "HR Consultation & Mediation", "description": "Multilingual support in Mandarin, Bengali, and English." },
         { "title": "Talent Hunting", "description": "Manpower supply and talent sourcing from Malaysia, China, India, Bangladesh, and beyond." }
+      ],
+      "platform": {
+        "jobSeekers": ["Browse jobs by category", "Submit a resume", "Personal candidate dashboard"],
+        "employers": ["Browse the candidate database", "Post a job opening", "Company profile & employer dashboard"]
+      },
+      "industries": [
+        "Construction / Facilities",
+        "Transportation / Logistics",
+        "Healthcare",
+        "Accounting / Finance",
+        "Sales & Marketing",
+        "Education & Training",
+        "Restaurant / Food Service",
+        "Telecommunications",
+        "Automotive",
+        "Market & Customer Research"
       ],
       "sourceCountries": ["Malaysia", "China", "India", "Bangladesh"],
       "strengths": ["Quality Candidates", "Responsive Customer Service", "Competitive Pricing"],

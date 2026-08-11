@@ -13,7 +13,12 @@ export default function Careers() {
   return (
     <div className="bg-paper">
       <section className="relative bg-pearl py-28">
-        <div className="max-w-[1440px] mx-auto px-8 xl:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-[1440px] mx-auto px-8 xl:px-16"
+        >
           <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
             <span className="w-2 h-2 bg-gold rounded-full inline-block" />
             Career Opportunities
@@ -22,21 +27,23 @@ export default function Careers() {
             JOIN THE PORTFOLIO<span className="text-azure">.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-concrete text-lg leading-relaxed">{careers.intro}</p>
-        </div>
+        </motion.div>
       </section>
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="flex gap-2 flex-wrap mb-12">
           {entityFilters.map((f) => (
-            <button
+            <motion.button
               key={f}
               onClick={() => setFilter(f)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
               className={`text-[11px] tracking-[0.15em] uppercase px-4 py-2 rounded-full border transition-colors ${
                 filter === f ? 'bg-azure text-white border-azure' : 'border-ink/15 text-ink hover:border-azure'
               }`}
             >
               {f === 'All' ? 'All' : entityById[f]?.name}
-            </button>
+            </motion.button>
           ))}
         </div>
 
@@ -48,6 +55,7 @@ export default function Careers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: i * 0.03 }}
+              whileHover={{ y: -3 }}
               className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-5 px-6 bg-white rounded-xl shadow-soft hover:shadow-soft-lg transition-shadow"
             >
               <div className="flex items-center gap-4 min-w-0">

@@ -1,9 +1,9 @@
 {
   "offices": [
-    { "id": "sg", "name": "Group Headquarters", "city": "Singapore", "photos": [] },
-    { "id": "my", "name": "Regional Business Entity", "city": "Kuala Lumpur, Malaysia", "photos": [] },
-    { "id": "ph", "name": "Overseas Business Entity", "city": "Manila, Philippines", "photos": [] },
-    { "id": "bd", "name": "Overseas Sourcing Office", "city": "Dhaka, Bangladesh", "photos": [] },
-    { "id": "in", "name": "Overseas Sourcing Office", "city": "Mumbai, India", "photos": [] }
+    { "id": "sg", "name": "Group Headquarters", "city": "Singapore", "address": "1 Buroh Crescent, #08-01, Singapore 627545", "photos": [] },
+    { "id": "my", "name": "Regional Business Entity", "city": "Kuala Lumpur, Malaysia", "address": "", "photos": [] },
+    { "id": "ph", "name": "Overseas Business Entity", "city": "Manila, Philippines", "address": "", "photos": [] },
+    { "id": "bd", "name": "Overseas Sourcing Office", "city": "Dhaka, Bangladesh", "address": "", "photos": [] },
+    { "id": "in", "name": "Overseas Sourcing Office", "city": "Mumbai, India", "address": "", "photos": [] }
   ]
 }
