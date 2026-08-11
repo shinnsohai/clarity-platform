@@ -51,14 +51,30 @@ collections:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Value", name: "value", widget: "number" }
               - { label: "Suffix", name: "suffix", widget: "string", required: false }
-          - label: "Global Office Network"
+
+  - name: "offices"
+    label: "Global Offices"
+    files:
+      - file: "src/data/offices.json"
+        label: "Group Office Network"
+        name: "offices"
+        fields:
+          - label: "Offices"
             name: "offices"
             widget: "list"
             summary: "{{name}} — {{city}}"
             fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
               - { label: "Office Name", name: "name", widget: "string" }
               - { label: "City", name: "city", widget: "string", hint: "Used directly as the Google Maps search query, e.g. \"Manila, Philippines\"" }
+              - label: "Photo Showcase"
+                name: "photos"
+                widget: "list"
+                required: false
+                summary: "{{caption}}"
+                fields:
+                  - { label: "Photo", name: "src", widget: "image" }
+                  - { label: "Caption", name: "caption", widget: "string", required: false }
 
   - name: "entities"
     label: "Subsidiaries"

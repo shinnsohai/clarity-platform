@@ -16,12 +16,5 @@
     { "label": "Facilities Under Management", "value": 27, "suffix": "" },
     { "label": "Years Combined Experience", "value": 15, "suffix": "+" },
     { "label": "Manufacturing Uptime", "value": 98.4, "suffix": "%" }
-  ],
-  "offices": [
-    { "id": "sg", "name": "Group Headquarters", "city": "Singapore" },
-    { "id": "my", "name": "Regional Business Entity", "city": "Kuala Lumpur, Malaysia" },
-    { "id": "ph", "name": "Overseas Business Entity", "city": "Manila, Philippines" },
-    { "id": "bd", "name": "Overseas Sourcing Office", "city": "Dhaka, Bangladesh" },
-    { "id": "in", "name": "Overseas Sourcing Office", "city": "Mumbai, India" }
   ]
 }

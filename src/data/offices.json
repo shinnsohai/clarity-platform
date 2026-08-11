@@ -1,0 +1,9 @@
+{
+  "offices": [
+    { "id": "sg", "name": "Group Headquarters", "city": "Singapore", "photos": [] },
+    { "id": "my", "name": "Regional Business Entity", "city": "Kuala Lumpur, Malaysia", "photos": [] },
+    { "id": "ph", "name": "Overseas Business Entity", "city": "Manila, Philippines", "photos": [] },
+    { "id": "bd", "name": "Overseas Sourcing Office", "city": "Dhaka, Bangladesh", "photos": [] },
+    { "id": "in", "name": "Overseas Sourcing Office", "city": "Mumbai, India", "photos": [] }
+  ]
+}

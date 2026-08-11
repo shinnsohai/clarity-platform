@@ -2,6 +2,7 @@
 // (see /admin). This file just re-exports it under the names components use.
 import settings from './settings.json'
 import entitiesData from './entities.json'
+import officesData from './offices.json'
 
 export const parent = {
   id: 'clarity-ec',
@@ -22,4 +23,4 @@ export const groupMetrics = settings.groupMetrics
 export const heroImages = settings.heroImages
 
 // Global office network — used on homepage world map + /contact
-export const offices = settings.offices
+export const offices = officesData.offices
