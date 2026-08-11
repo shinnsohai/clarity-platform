@@ -20,7 +20,7 @@ export default function FounderAdvisorHub() {
             FOUNDERS &amp; ADVISORS<span className="text-azure">.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-concrete text-lg leading-relaxed">
-            The people who built Clarity E&C, and the advisors who guide it.
+            The people who built Clarity Group, and the advisors who guide it.
           </p>
         </motion.div>
       </section>

@@ -12,7 +12,7 @@ export const parent = {
   tagline: settings.parent.tagline,
 }
 
-// All 5 subsidiaries.
+// All 6 subsidiaries.
 export const entities = entitiesData.entities
 
 export const getEntityBySlug = (slug) => entities.find((e) => e.slug === slug)

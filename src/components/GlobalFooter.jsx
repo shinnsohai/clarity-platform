@@ -51,7 +51,7 @@ export default function GlobalFooter() {
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-ink/10 text-concrete text-xs tracking-wide">
           <span>© {new Date().getFullYear()} {parent.fullName} — Singapore</span>
-          <span className="uppercase tracking-[0.2em]">5 Subsidiaries · One Standard</span>
+          <span className="uppercase tracking-[0.2em]">6 Subsidiaries · One Standard</span>
         </div>
       </div>
     </footer>

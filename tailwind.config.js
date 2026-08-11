@@ -15,7 +15,7 @@ export default {
         paper: '#FFFFFF',
         pearl: '#F1F3F6',
         concrete: '#64748B',
-        // Primary brand blue — sampled from the Clarity E&C logo's navy crescent.
+        // Primary brand blue — sampled from the Clarity Group logo's navy crescent.
         azure: '#1B224E',
         'azure-dim': '#10142F',
         'azure-light': '#EEF0F7',

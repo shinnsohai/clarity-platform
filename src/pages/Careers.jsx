@@ -76,7 +76,7 @@ export default function Careers() {
                   {job.type}
                 </span>
                 <a
-                  href={`mailto:careers@clarityec.com.sg?subject=${encodeURIComponent(job.title)}`}
+                  href={`mailto:careers@claritygroup.com.sg?subject=${encodeURIComponent(job.title)}`}
                   className="text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-full px-5 py-2.5 hover:brightness-110 transition-all"
                 >
                   Apply →

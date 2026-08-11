@@ -5,6 +5,8 @@ import { entities } from '../data/hierarchy'
 import SubIcon from './icons/SubIcon'
 import ManpowerRequestForm from './ManpowerRequestForm'
 import AppLinksPanel from './AppLinksPanel'
+import ManpowerDeploymentMap from './ManpowerDeploymentMap'
+import ClientsByCountryMap from './ClientsByCountryMap'
 
 function galleryFor(entity) {
   const others = entities.filter((e) => e.id !== entity.id)
@@ -101,7 +103,7 @@ export default function EntityPageTemplate({ entity }) {
           </motion.div>
           <div className="flex items-center gap-4 mb-4">
             <span className="text-concrete text-xs tracking-[0.3em] uppercase font-semibold">
-              Clarity E&C Subsidiary — {entity.role}
+              Clarity Group Subsidiary — {entity.role}
             </span>
           </div>
           <motion.h1
@@ -145,6 +147,8 @@ export default function EntityPageTemplate({ entity }) {
       {/* Entity-specific feature blocks */}
       {entity.manpowerFormEnabled && <ManpowerRequestForm entity={entity} />}
       {entity.slug === 'lenix' && <AppLinksPanel entity={entity} />}
+      {entity.slug === 'clarity-ec' && <ManpowerDeploymentMap />}
+      {entity.slug === 'clarity-ec' && <ClientsByCountryMap />}
 
       {/* Case Studies & Gallery */}
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">

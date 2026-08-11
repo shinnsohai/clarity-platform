@@ -1,7 +1,7 @@
 {
   "parent": {
-    "name": "Clarity E&C",
-    "fullName": "Clarity E&C Pte Ltd",
+    "name": "Clarity Group",
+    "fullName": "Clarity Group Pte Ltd",
     "tagline": "A Premier Corporate Holding Entity"
   },
   "heroImages": [
@@ -10,7 +10,7 @@
     { "src": "/images/hero-office.png", "caption": "A Modern, Global Corporate Structure" }
   ],
   "groupMetrics": [
-    { "label": "Subsidiaries", "value": 5, "suffix": "" },
+    { "label": "Subsidiaries", "value": 6, "suffix": "" },
     { "label": "Personnel Deployed", "value": 3000, "suffix": "+" },
     { "label": "Active Project Sites", "value": 18, "suffix": "" },
     { "label": "Facilities Under Management", "value": 27, "suffix": "" },

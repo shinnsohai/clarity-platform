@@ -11,10 +11,10 @@ export default function ServicesGrid() {
           Services Provided
         </div>
         <h2 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] mb-14">
-          FIVE SUBSIDIARIES<span className="text-azure">.</span> ONE STANDARD.
+          SIX SUBSIDIARIES<span className="text-azure">.</span> ONE STANDARD.
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
           {entities.map((e, i) => (
             <motion.div
               key={e.id}

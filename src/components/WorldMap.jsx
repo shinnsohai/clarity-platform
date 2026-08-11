@@ -35,7 +35,7 @@ export default function WorldMap() {
             <div className="relative w-full aspect-[16/9] rounded-2xl shadow-soft overflow-hidden bg-white">
               <iframe
                 key={active?.id}
-                title={`Clarity E&C — ${active?.city}`}
+                title={`Clarity Group — ${active?.city}`}
                 className="w-full h-full border-0"
                 loading="lazy"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(active?.address || active?.city || 'Singapore')}&output=embed`}

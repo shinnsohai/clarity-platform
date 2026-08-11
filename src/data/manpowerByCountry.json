@@ -1,0 +1,9 @@
+{
+  "countries": [
+    { "id": "sg", "country": "Singapore", "deployed": null, "active": null },
+    { "id": "my", "country": "Malaysia", "deployed": null, "active": null },
+    { "id": "ph", "country": "Philippines", "deployed": null, "active": null },
+    { "id": "bd", "country": "Bangladesh", "deployed": null, "active": null },
+    { "id": "in", "country": "India", "deployed": null, "active": null }
+  ]
+}

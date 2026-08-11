@@ -1,5 +1,5 @@
 {
-  "intro": "Every subsidiary under Clarity E&C operates against the same accreditation baseline. Certifications and licenses are held and audited at the holding level.",
+  "intro": "Every subsidiary under Clarity Group operates against the same accreditation baseline. Certifications and licenses are held and audited at the holding level.",
   "accreditations": [
     {
       "id": "iso",
@@ -20,7 +20,7 @@
       "description": "bizSAFE-certified workplace safety and health management framework."
     }
   ],
-  "recruitmentLicense": "Clarity E&C subsidiaries operate under licensed manpower recruitment frameworks covering both overseas sourcing and in-house placement, in line with Ministry of Manpower requirements.",
+  "recruitmentLicense": "Clarity Group subsidiaries operate under licensed manpower recruitment frameworks covering both overseas sourcing and in-house placement, in line with Ministry of Manpower requirements.",
   "galleries": {
     "overseas": [
       { "src": "/images/recruitment-overseas.png", "caption": "Overseas Recruitment Coordination" }

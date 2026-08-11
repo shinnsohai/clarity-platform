@@ -1,9 +1,9 @@
 {
-  "intro": "Clarity E&C is a corporate holding entity built on one operating principle: certified execution, at scale, across every discipline we touch.",
-  "history": "Clarity E&C was established to bring structural engineering, facilities management, technology, manufacturing manpower, and digital transformation under one accountable corporate structure. Rather than operating as loosely affiliated companies, each subsidiary reports into a single standard of governance, safety, and delivery — set and audited at the holding level.",
+  "intro": "Clarity Group is a corporate holding entity built on one operating principle: certified execution, at scale, across every discipline we touch.",
+  "history": "Clarity Group was established to bring structural engineering, facilities management, technology, manufacturing manpower, direct/indirect manpower deployment, and digital transformation under one accountable corporate structure. Rather than operating as loosely affiliated companies, each subsidiary reports into a single standard of governance, safety, and delivery — set and audited at the holding level.",
   "siteImages": [
     { "src": "/images/hero-site.png", "caption": "Active Certified Construction Site" },
     { "src": "/images/hero-manpower.png", "caption": "Manpower Solutions in Deployment" },
-    { "src": "/images/hero-office.png", "caption": "Clarity E&C Corporate Office" }
+    { "src": "/images/hero-office.png", "caption": "Clarity Group Corporate Office" }
   ]
 }

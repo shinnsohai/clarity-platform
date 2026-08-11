@@ -65,8 +65,8 @@ export default function OurBusiness() {
             THE PORTFOLIO<span className="text-azure">.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-concrete text-lg leading-relaxed">
-            Five subsidiaries executing across construction, technology, facilities, and
-            manufacturing. Select a subsidiary to open its full operational record.
+            Six subsidiaries executing across construction, technology, facilities,
+            manufacturing, and direct/indirect manpower. Select a subsidiary to open its full operational record.
           </p>
         </motion.div>
       </section>

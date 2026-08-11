@@ -90,6 +90,22 @@ const icons = {
       <path d="M6 14h36M6 14v8M42 14v20M12 14v6M18 14v10M24 14v14M30 14v18M36 14v20" {...stroke} />
     </>
   ),
+  workforce: (
+    <>
+      <circle cx="16" cy="14" r="6" {...stroke} />
+      <path d="M6 40c0-8 4-14 10-14s10 6 10 14" {...stroke} />
+      <circle cx="34" cy="16" r="5" {...stroke} />
+      <path d="M26 40c1-7 4-12 8-12s8 5 9 12" {...stroke} />
+    </>
+  ),
+  network: (
+    <>
+      <circle cx="24" cy="10" r="4" {...stroke} />
+      <circle cx="10" cy="34" r="4" {...stroke} />
+      <circle cx="38" cy="34" r="4" {...stroke} />
+      <path d="M24 14v10M24 24l-11 8M24 24l11 8" {...stroke} />
+    </>
+  ),
 }
 
 export default function SubIcon({ name, className = 'w-10 h-10' }) {

@@ -21,7 +21,7 @@ const sections = [
   {
     to: '/about/founder-advisor',
     title: 'Founders & Advisors',
-    desc: 'The people who built and guide Clarity E&C.',
+    desc: 'The people who built and guide Clarity Group.',
   },
   {
     to: '/about/mission-vision',

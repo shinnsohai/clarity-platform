@@ -10,7 +10,7 @@ export default function Contact() {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Clarity E&C Inquiry — ${form.entity}`)
+    const subject = encodeURIComponent(`Clarity Group Inquiry — ${form.entity}`)
     const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
     window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
     setSent(true)
@@ -113,7 +113,7 @@ export default function Contact() {
           <h2 className="font-display text-2xl text-ink mb-8">GLOBAL OFFICES.</h2>
           <div className="rounded-2xl overflow-hidden shadow-soft h-80 mb-8">
             <iframe
-              title={`Clarity E&C — ${headquarters?.city || 'Singapore'}`}
+              title={`Clarity Group — ${headquarters?.city || 'Singapore'}`}
               className="w-full h-full border-0"
               loading="lazy"
               src={`https://www.google.com/maps?q=${encodeURIComponent(headquarters?.address || headquarters?.city || 'Singapore')}&output=embed`}

@@ -1,4 +1,4 @@
-# Decap CMS config for the Clarity E&C corporate platform.
+# Decap CMS config for the Clarity Group corporate platform.
 #
 # Local editing works right now with zero setup: run `npm run cms` in one terminal
 # and `npm run dev` in another, then open http://localhost:5183/admin — edits save
@@ -29,7 +29,7 @@ collections:
         label: "Group Settings"
         name: "settings"
         fields:
-          - label: "Parent Company (Clarity E&C)"
+          - label: "Parent Company (Clarity Group)"
             name: "parent"
             widget: "object"
             fields:
@@ -129,6 +129,40 @@ collections:
                   - { label: "Phone", name: "phone", widget: "string" }
                   - { label: "Email", name: "email", widget: "string" }
 
+  - name: "manpowerByCountry"
+    label: "Manpower Deployment Map"
+    files:
+      - file: "src/data/manpowerByCountry.json"
+        label: "Deployed / Active Manpower by Country"
+        name: "manpowerByCountry"
+        fields:
+          - label: "Countries"
+            name: "countries"
+            widget: "list"
+            summary: "{{country}} — deployed {{fields.deployed}} / active {{fields.active}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Country", name: "country", widget: "string", hint: "Must match a real country name for the map pin to place correctly, e.g. \"Malaysia\"" }
+              - { label: "Total Deployed", name: "deployed", widget: "number", value_type: "int", required: false, hint: "Leave blank to show \"Pending\" on the map" }
+              - { label: "Currently Active", name: "active", widget: "number", value_type: "int", required: false, hint: "Leave blank to show \"Pending\" on the map" }
+
+  - name: "clientsByCountry"
+    label: "Global Clientele Map"
+    files:
+      - file: "src/data/clientsByCountry.json"
+        label: "Clients Served by Country"
+        name: "clientsByCountry"
+        fields:
+          - label: "Countries"
+            name: "countries"
+            widget: "list"
+            summary: "{{country}} — {{fields.clientCount}} clients"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Country", name: "country", widget: "string", hint: "Must match a real country name for the map pin to place correctly, e.g. \"Malaysia\"" }
+              - { label: "Client Count", name: "clientCount", widget: "number", value_type: "int", required: false, hint: "Leave blank to show \"Pending\" on the map" }
+              - { label: "Notes", name: "notes", widget: "string", required: false, hint: "Optional — e.g. key sectors served in this country" }
+
   - name: "entities"
     label: "Subsidiaries"
     files:
@@ -149,7 +183,7 @@ collections:
               - { label: "Logo Mark", name: "logo", widget: "image" }
               - { label: "Role / Tagline", name: "role", widget: "string" }
               - { label: "Summary", name: "summary", widget: "text" }
-              - { label: "Enable Manpower Request Form (Durabuild)", name: "manpowerFormEnabled", widget: "boolean", required: false, default: false }
+              - { label: "Enable Manpower Request Form", name: "manpowerFormEnabled", widget: "boolean", required: false, default: false, hint: "Used by Durabuild and Clarity E&C" }
               - { label: "App Store URL (Lenix only)", name: "appStoreUrl", widget: "string", required: false }
               - { label: "Play Store URL (Lenix only)", name: "playStoreUrl", widget: "string", required: false }
               - { label: "APK Direct Download URL (Lenix only)", name: "apkUrl", widget: "string", required: false }
@@ -165,7 +199,7 @@ collections:
                   - label: "Icon"
                     name: "icon"
                     widget: "select"
-                    options: ["dataFlow","hardwareNode","hardHat","compass","crosshair","incubation","sync","telemetry","aviation","sterile","operatorHMI","caliper"]
+                    options: ["dataFlow","hardwareNode","hardHat","compass","crosshair","incubation","sync","telemetry","aviation","sterile","operatorHMI","caliper","workforce","network"]
               - label: "Key Performance Telemetry"
                 name: "telemetry"
                 widget: "list"

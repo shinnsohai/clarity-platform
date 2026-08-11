@@ -67,7 +67,7 @@ export default function HeroSlider() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-6 max-w-xl text-concrete text-lg leading-relaxed"
         >
-          Five subsidiaries. One certified standard. Construction, technology, facilities,
+          Six subsidiaries. One certified standard. Construction, technology, facilities,
           manufacturing, and global manpower — delivered with total transparency.
         </motion.p>
 

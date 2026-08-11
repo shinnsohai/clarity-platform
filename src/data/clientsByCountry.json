@@ -1,0 +1,9 @@
+{
+  "countries": [
+    { "id": "sg", "country": "Singapore", "clientCount": null, "notes": "" },
+    { "id": "my", "country": "Malaysia", "clientCount": null, "notes": "" },
+    { "id": "ph", "country": "Philippines", "clientCount": null, "notes": "" },
+    { "id": "bd", "country": "Bangladesh", "clientCount": null, "notes": "" },
+    { "id": "in", "country": "India", "clientCount": null, "notes": "" }
+  ]
+}

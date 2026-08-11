@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { partners } from '../data/hierarchy'
 
 // This page describes E&F Recruitment — an independently owned and operated company,
-// not a Clarity E&C subsidiary. All facts here are sourced from their own site,
+// not a Clarity Group subsidiary. All facts here are sourced from their own site,
 // https://enf.sg/. The logo used is their real, provided brand asset.
 export default function StrategicPartner() {
   const partner = partners[0]
@@ -100,9 +100,9 @@ export default function StrategicPartner() {
         >
           <p className="text-ink text-base md:text-lg leading-relaxed max-w-2xl">
             <strong className="font-display">{partner.fullName}</strong> is an independently owned
-            and operated recruitment agency. Clarity E&C works with them as a{' '}
-            {partner.relationship.toLowerCase()} for talent sourcing — they are not a Clarity E&C
-            subsidiary. For their official branding, current vacancies, and to apply or hire
+            and operated recruitment agency. Clarity Group works with them as a{' '}
+            {partner.relationship.toLowerCase()} for talent sourcing — they are not a Clarity
+            Group subsidiary. For their official branding, current vacancies, and to apply or hire
             directly, use the link to their site.
           </p>
           <a
