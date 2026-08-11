@@ -1,0 +1,21 @@
+{
+  "logos": [
+    { "id": "c1", "name": "HP Construction & Engineering Pte Ltd", "src": "/images/clients/logo-01.png" },
+    { "id": "c2", "name": "MCC Land (Singapore) Pte Ltd", "src": "/images/clients/logo-02.jpg" },
+    { "id": "c3", "name": "Utracon", "src": "/images/clients/logo-03.jpg" },
+    { "id": "c4", "name": "Certis", "src": "/images/clients/logo-04.png" },
+    { "id": "c5", "name": "Bombardier", "src": "/images/clients/logo-05.png" },
+    { "id": "c6", "name": "EFW — An Airbus and ST Aerospace Company", "src": "/images/clients/logo-06.png" },
+    { "id": "c7", "name": "Oriental Aviation International Pte Ltd", "src": "/images/clients/logo-07.jpg" },
+    { "id": "c8", "name": "Seatrium", "src": "/images/clients/logo-08.png" },
+    { "id": "c9", "name": "Nippon Express", "src": "/images/clients/logo-09.png" },
+    { "id": "c10", "name": "Sankyu Singapore", "src": "/images/clients/logo-10.jpg" },
+    { "id": "c11", "name": "BreadTalk Group Pte Ltd", "src": "/images/clients/logo-11.png" },
+    { "id": "c12", "name": "Addcel", "src": "/images/clients/logo-12.jpg" },
+    { "id": "c13", "name": "Aerostar", "src": "/images/clients/logo-13.gif" },
+    { "id": "c14", "name": "Audex Pte Ltd", "src": "/images/clients/logo-14.png" },
+    { "id": "c15", "name": "FL Group", "src": "/images/clients/logo-15.jpg" },
+    { "id": "c16", "name": "GL Engineering", "src": "/images/clients/logo-16.jpg" },
+    { "id": "c17", "name": "Hai Leck", "src": "/images/clients/logo-17.png" }
+  ]
+}

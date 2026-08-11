@@ -18,10 +18,10 @@
     { "label": "Manufacturing Uptime", "value": 98.4, "suffix": "%" }
   ],
   "offices": [
-    { "id": "sg", "name": "Group Headquarters", "city": "Singapore", "x": 78, "y": 62 },
-    { "id": "my", "name": "Regional Business Entity", "city": "Kuala Lumpur, Malaysia", "x": 75.5, "y": 60 },
-    { "id": "ph", "name": "Overseas Business Entity", "city": "Manila, Philippines", "x": 83, "y": 54 },
-    { "id": "bd", "name": "Overseas Sourcing Office", "city": "Dhaka, Bangladesh", "x": 71.5, "y": 48 },
-    { "id": "in", "name": "Overseas Sourcing Office", "city": "Mumbai, India", "x": 67, "y": 51 }
+    { "id": "sg", "name": "Group Headquarters", "city": "Singapore" },
+    { "id": "my", "name": "Regional Business Entity", "city": "Kuala Lumpur, Malaysia" },
+    { "id": "ph", "name": "Overseas Business Entity", "city": "Manila, Philippines" },
+    { "id": "bd", "name": "Overseas Sourcing Office", "city": "Dhaka, Bangladesh" },
+    { "id": "in", "name": "Overseas Sourcing Office", "city": "Mumbai, India" }
   ]
 }

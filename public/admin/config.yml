@@ -58,9 +58,7 @@ collections:
             fields:
               - { label: "Internal ID", name: "id", widget: "string" }
               - { label: "Office Name", name: "name", widget: "string" }
-              - { label: "City", name: "city", widget: "string" }
-              - { label: "Map X (%)", name: "x", widget: "number" }
-              - { label: "Map Y (%)", name: "y", widget: "number" }
+              - { label: "City", name: "city", widget: "string", hint: "Used directly as the Google Maps search query, e.g. \"Manila, Philippines\"" }
 
   - name: "entities"
     label: "Subsidiaries"
@@ -229,6 +227,22 @@ collections:
                 name: "type"
                 widget: "select"
                 options: ["Full-Time", "Part-Time", "Shift-Based", "Contract"]
+
+  - name: "clients"
+    label: "Client Logos"
+    files:
+      - file: "src/data/clients.json"
+        label: "Companies We Serve — Scrolling Strip"
+        name: "clients"
+        fields:
+          - label: "Logos"
+            name: "logos"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Company Name", name: "name", widget: "string", hint: "Used as image alt text / hover title" }
+              - { label: "Logo", name: "src", widget: "image" }
 
   - name: "contact"
     label: "Contact Page"
