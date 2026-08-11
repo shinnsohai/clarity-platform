@@ -28,7 +28,9 @@ function normalize(str) {
 }
 
 export default function SvgWorldMap({ rows, renderTooltip }) {
-  const containerRef = useRef(null)
+  const wrapperRef = useRef(null)
+  const injectRef = useRef(null)
+  const activePathRef = useRef(null)
   const [svgMarkup, setSvgMarkup] = useState(null)
   const [hovered, setHovered] = useState(null) // { row, x, y }
 
@@ -41,52 +43,66 @@ export default function SvgWorldMap({ rows, renderTooltip }) {
       .catch(() => setSvgMarkup(null))
   }, [])
 
+  // Single delegated mousemove/mouseleave pair on the whole map wrapper — recomputed
+  // fresh on every event via e.target, rather than per-path enter/leave listeners.
+  // Per-path listeners can miss their paired leave event on fast mouse movement across
+  // adjacent country borders, leaving a stale highlight/tooltip stuck on the wrong
+  // country — this approach self-corrects on every single mousemove tick instead.
   useEffect(() => {
-    if (!svgMarkup || !containerRef.current) return
-    const svgEl = containerRef.current.querySelector('svg')
+    if (!svgMarkup || !injectRef.current) return
+    const svgEl = injectRef.current.querySelector('svg')
     if (!svgEl) return
     svgEl.setAttribute('width', '100%')
     svgEl.setAttribute('height', '100%')
     svgEl.style.display = 'block'
-
-    const paths = svgEl.querySelectorAll('path')
-    const listeners = []
-
-    paths.forEach((path) => {
-      const countryName = path.getAttribute('name') || path.getAttribute('class') || ''
-      const row = rowByCountry.get(normalize(countryName))
-      path.style.transition = 'fill 0.15s ease'
-      path.style.cursor = row ? 'pointer' : 'default'
-
-      const onEnter = () => {
-        path.style.fill = row ? '#1B224E' : '#d8dce6'
-      }
-      const onLeave = () => {
-        path.style.fill = ''
-      }
-      const onMove = (e) => {
-        if (!row) return
-        const rect = containerRef.current.getBoundingClientRect()
-        setHovered({ row, x: e.clientX - rect.left, y: e.clientY - rect.top })
-      }
-      const onLeaveTooltip = () => {
-        if (row) setHovered(null)
-      }
-
-      path.addEventListener('mouseenter', onEnter)
-      path.addEventListener('mouseleave', onLeave)
-      path.addEventListener('mousemove', onMove)
-      path.addEventListener('mouseleave', onLeaveTooltip)
-      listeners.push({ path, onEnter, onLeave, onMove, onLeaveTooltip })
+    svgEl.querySelectorAll('path').forEach((p) => {
+      p.style.transition = 'fill 0.1s ease'
     })
 
+    const clearActive = () => {
+      if (activePathRef.current) {
+        activePathRef.current.style.fill = ''
+        activePathRef.current = null
+      }
+    }
+
+    const onMove = (e) => {
+      const path = e.target.closest && e.target.closest('path')
+      if (!path || !svgEl.contains(path)) {
+        clearActive()
+        setHovered(null)
+        return
+      }
+      if (path !== activePathRef.current) {
+        clearActive()
+        activePathRef.current = path
+      }
+      const countryName = path.getAttribute('name') || path.getAttribute('class') || ''
+      const row = rowByCountry.get(normalize(countryName))
+      path.style.fill = row ? '#1B224E' : '#d8dce6'
+      path.style.cursor = row ? 'pointer' : 'default'
+
+      if (row) {
+        const rect = wrapperRef.current.getBoundingClientRect()
+        setHovered({ row, x: e.clientX - rect.left, y: e.clientY - rect.top })
+      } else {
+        setHovered(null)
+      }
+    }
+
+    const onLeaveWrapper = () => {
+      clearActive()
+      setHovered(null)
+    }
+
+    const wrapperEl = wrapperRef.current
+    wrapperEl.addEventListener('mousemove', onMove)
+    wrapperEl.addEventListener('mouseleave', onLeaveWrapper)
+
     return () => {
-      listeners.forEach(({ path, onEnter, onLeave, onMove, onLeaveTooltip }) => {
-        path.removeEventListener('mouseenter', onEnter)
-        path.removeEventListener('mouseleave', onLeave)
-        path.removeEventListener('mousemove', onMove)
-        path.removeEventListener('mouseleave', onLeaveTooltip)
-      })
+      wrapperEl.removeEventListener('mousemove', onMove)
+      wrapperEl.removeEventListener('mouseleave', onLeaveWrapper)
+      clearActive()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [svgMarkup, rows])
@@ -95,9 +111,15 @@ export default function SvgWorldMap({ rows, renderTooltip }) {
   // (matched against a small known lat/long table) — shown as a manual pin instead.
   const pinnedFallbacks = rows.filter((r) => FALLBACK_COORDS[normalize(r.country)])
 
+  // Keep the tooltip fully inside the map bounds instead of overflowing at the edges.
+  const TOOLTIP_W = 208
+  const TOOLTIP_H = 110
+  const clampedLeft = hovered ? Math.min(hovered.x + 14, (wrapperRef.current?.clientWidth || 9999) - TOOLTIP_W - 8) : 0
+  const clampedTop = hovered ? Math.min(hovered.y + 14, (wrapperRef.current?.clientHeight || 9999) - TOOLTIP_H - 8) : 0
+
   return (
-    <div className="relative w-full aspect-[2000/857] rounded-2xl overflow-hidden bg-white shadow-soft">
-      <div ref={containerRef} className="absolute inset-0" dangerouslySetInnerHTML={svgMarkup ? { __html: svgMarkup } : undefined} />
+    <div ref={wrapperRef} className="relative w-full aspect-[2000/857] rounded-2xl overflow-hidden bg-white shadow-soft">
+      <div ref={injectRef} className="absolute inset-0" dangerouslySetInnerHTML={svgMarkup ? { __html: svgMarkup } : undefined} />
 
       {!svgMarkup && (
         <div className="absolute inset-0 flex items-center justify-center text-concrete text-sm">
@@ -111,14 +133,14 @@ export default function SvgWorldMap({ rows, renderTooltip }) {
         return (
           <div
             key={row.id}
-            className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10"
             style={{ left: `${xPct}%`, top: `${yPct}%` }}
             onMouseEnter={(e) => {
-              const rect = containerRef.current.getBoundingClientRect()
+              const rect = wrapperRef.current.getBoundingClientRect()
               setHovered({ row, x: e.clientX - rect.left, y: e.clientY - rect.top })
             }}
             onMouseMove={(e) => {
-              const rect = containerRef.current.getBoundingClientRect()
+              const rect = wrapperRef.current.getBoundingClientRect()
               setHovered({ row, x: e.clientX - rect.left, y: e.clientY - rect.top })
             }}
             onMouseLeave={() => setHovered(null)}
@@ -142,7 +164,7 @@ export default function SvgWorldMap({ rows, renderTooltip }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.12 }}
             className="absolute z-20 w-52 bg-white rounded-xl shadow-soft-lg border border-ink/10 p-4 pointer-events-none"
-            style={{ left: hovered.x + 14, top: hovered.y + 14 }}
+            style={{ left: clampedLeft, top: clampedTop }}
           >
             <div className="font-display text-sm text-ink mb-2">{hovered.row.country}</div>
             {renderTooltip(hovered.row)}
