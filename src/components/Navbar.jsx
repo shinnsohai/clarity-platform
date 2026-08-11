@@ -119,6 +119,7 @@ export default function Navbar() {
         <nav className="hidden lg:flex items-center gap-10">
           <Dropdown label="About" to="/about" items={ABOUT_LINKS} />
           <Dropdown label="Our Business" to="/our-business" items={businessLinks} />
+          <NavItem label="Strategic Partner" to="/strategic-partner" />
           <NavItem label="Careers" to="/careers" />
         </nav>
 

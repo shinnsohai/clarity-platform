@@ -4,6 +4,7 @@ import { parent, entities } from '../data/hierarchy'
 const PAGES = [
   { to: '/about', label: 'About' },
   { to: '/our-business', label: 'Our Business' },
+  { to: '/strategic-partner', label: 'Strategic Partner' },
   { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact' },
 ]

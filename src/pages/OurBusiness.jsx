@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { entities } from '../data/hierarchy'
+import { entities, partners } from '../data/hierarchy'
 
 function EntityCard({ entity, index }) {
   return (
@@ -66,6 +66,42 @@ export default function OurBusiness() {
           ))}
         </div>
       </section>
+
+      {/* Strategic Partner — external company, kept visually distinct from the 5 owned subsidiaries */}
+      {partners.length > 0 && (
+        <section className="pb-24 max-w-[1440px] mx-auto px-8 xl:px-16">
+          <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
+            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
+            Beyond The Group
+          </div>
+          {partners.map((p, i) => (
+            <motion.div
+              key={p.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+            >
+              <Link
+                to="/strategic-partner"
+                className="group relative flex flex-col md:flex-row md:items-center justify-between gap-6 border-2 border-dashed border-azure/30 rounded-2xl p-8 bg-azure-light hover:border-azure/60 transition-colors duration-300"
+              >
+                <div>
+                  <span className="text-azure text-[10px] tracking-[0.25em] uppercase font-bold">
+                    {p.relationship} · External Company
+                  </span>
+                  <div className="font-display text-2xl md:text-3xl text-ink mt-2">{p.name}</div>
+                  <p className="text-concrete text-sm mt-2 max-w-xl">{p.tagline}</p>
+                </div>
+                <span className="shrink-0 inline-flex items-center gap-2 text-azure text-xs font-bold tracking-[0.15em] uppercase group-hover:text-gold-dim transition-colors">
+                  Read More
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </Link>
+            </motion.div>
+          ))}
+        </section>
+      )}
     </div>
   )
 }

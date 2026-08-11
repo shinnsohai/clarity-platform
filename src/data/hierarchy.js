@@ -3,6 +3,7 @@
 import settings from './settings.json'
 import entitiesData from './entities.json'
 import officesData from './offices.json'
+import partnersData from './partners.json'
 
 export const parent = {
   id: 'clarity-ec',
@@ -24,3 +25,7 @@ export const heroImages = settings.heroImages
 
 // Global office network — used on homepage world map + /contact
 export const offices = officesData.offices
+
+// External strategic partners (not owned subsidiaries) — used on /strategic-partner
+export const partners = partnersData.partners
+export const getPartnerBySlug = (slug) => partners.find((p) => p.slug === slug)
