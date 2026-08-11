@@ -21,9 +21,16 @@ function EntityCard({ entity, index }) {
           className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-all duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-        <div className="absolute top-5 left-5 flex items-center gap-3">
-          <img src={entity.logo} alt="" className="h-9 w-9 object-contain bg-white rounded-full p-1.5" />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: index * 0.07 + 0.1 }}
+          whileHover={{ scale: 1.1, rotate: -4 }}
+          className="absolute top-5 left-5 w-16 h-16 rounded-2xl bg-white shadow-soft flex items-center justify-center p-3"
+        >
+          <img src={entity.logo} alt="" className="w-full h-full object-contain" />
+        </motion.div>
         <div className="relative z-10 h-full flex flex-col justify-end p-6">
           <span className="text-white/70 text-[10px] tracking-[0.25em] uppercase mb-2">
             {entity.role}

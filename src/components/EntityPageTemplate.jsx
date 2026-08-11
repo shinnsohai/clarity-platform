@@ -90,14 +90,16 @@ export default function EntityPageTemplate({ entity }) {
           >
             ← Our Business
           </Link>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            whileHover={{ scale: 1.08, rotate: -3 }}
+            className="mb-6 w-28 h-28 md:w-36 md:h-36 rounded-3xl bg-white shadow-soft-lg border border-ink/10 flex items-center justify-center p-6"
+          >
+            <img src={entity.logo} alt={entity.name} className="w-full h-full object-contain" />
+          </motion.div>
           <div className="flex items-center gap-4 mb-4">
-            <motion.img
-              src={entity.logo}
-              alt=""
-              whileHover={{ scale: 1.1, rotate: -4 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-              className="h-10 w-10 object-contain"
-            />
             <span className="text-concrete text-xs tracking-[0.3em] uppercase font-semibold">
               Clarity E&C Subsidiary — {entity.role}
             </span>
