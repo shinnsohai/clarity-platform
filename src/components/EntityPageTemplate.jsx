@@ -110,7 +110,7 @@ export default function EntityPageTemplate({ entity }) {
       {/* Sub-Division Grid */}
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="flex items-center gap-4 mb-4 text-concrete text-xs tracking-[0.3em] uppercase">
-          <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+          <span className="w-2 h-2 bg-gold rounded-full inline-block" />
           Core Competencies
         </div>
         <h2 className="font-display text-3xl md:text-5xl text-ink leading-[0.95] mb-14">
@@ -142,7 +142,7 @@ export default function EntityPageTemplate({ entity }) {
         <div className="flex items-center justify-between flex-wrap gap-6 mb-14">
           <div>
             <div className="flex items-center gap-4 mb-4 text-concrete text-xs tracking-[0.3em] uppercase">
-              <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+              <span className="w-2 h-2 bg-gold rounded-full inline-block" />
               Field Record
             </div>
             <h2 className="font-display text-3xl md:text-5xl text-ink leading-[0.95]">

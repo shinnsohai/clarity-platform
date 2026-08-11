@@ -15,9 +15,14 @@ export default {
         paper: '#FFFFFF',
         pearl: '#F1F3F6',
         concrete: '#64748B',
-        azure: '#0A6CFF',
-        'azure-dim': '#0850C4',
-        'azure-light': '#E8F1FF',
+        // Primary brand blue — sampled from the Clarity E&C logo's navy crescent.
+        azure: '#1B224E',
+        'azure-dim': '#10142F',
+        'azure-light': '#EEF0F7',
+        // Accent — sampled from the logo's orange/gold building + base sweep.
+        gold: '#F29C21',
+        'gold-dim': '#D6820D',
+        'gold-light': '#FDF1DF',
       },
       fontFamily: {
         display: ['"Archivo Black"', '"Arial Black"', 'sans-serif'],

@@ -6,7 +6,7 @@ function InfoSection({ title, items }) {
   return (
     <div>
       <div className="flex items-center gap-4 mb-5 text-concrete text-xs tracking-[0.3em] uppercase">
-        <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+        <span className="w-2 h-2 bg-gold rounded-full inline-block" />
         {title}
       </div>
       {items.length > 0 ? (

@@ -24,7 +24,7 @@ export default function AppLinksPanel({ entity }) {
       <div className="max-w-[1440px] mx-auto px-8 xl:px-16 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <div>
           <div className="flex items-center gap-4 mb-4 text-azure text-xs tracking-[0.3em] uppercase font-semibold">
-            <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
             Get The App
           </div>
           <h2 className="font-display text-3xl md:text-5xl text-ink leading-[0.95] mb-8">

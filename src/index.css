@@ -12,7 +12,8 @@
   --ink: #111827;
   --paper: #ffffff;
   --pearl: #f1f3f6;
-  --azure: #0a6cff;
+  --azure: #1b224e;
+  --gold: #f29c21;
 }
 
 html {
@@ -35,8 +36,8 @@ body {
 }
 
 ::selection {
-  background: var(--azure);
-  color: #fff;
+  background: var(--gold);
+  color: #111827;
 }
 
 .font-display {

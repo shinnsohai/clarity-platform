@@ -17,8 +17,8 @@ export default function Cursor() {
       }
     }
 
-    const onDown = () => ringRef.current?.classList.add('scale-75', 'bg-[var(--azure,#0a6cff)]/20')
-    const onUp = () => ringRef.current?.classList.remove('scale-75', 'bg-[var(--azure,#0a6cff)]/20')
+    const onDown = () => ringRef.current?.classList.add('scale-75', 'bg-[var(--gold,#f29c21)]/25')
+    const onUp = () => ringRef.current?.classList.remove('scale-75', 'bg-[var(--gold,#f29c21)]/25')
 
     let raf
     const tick = () => {
@@ -47,7 +47,7 @@ export default function Cursor() {
     <div className="hidden lg:block">
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-azure pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-gold pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
       />
       <div
         ref={ringRef}

@@ -7,7 +7,7 @@ export default function ServicesGrid() {
     <section className="relative bg-paper py-24">
       <div className="max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="flex items-center gap-4 mb-4 text-concrete text-xs tracking-[0.3em] uppercase">
-          <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+          <span className="w-2 h-2 bg-gold rounded-full inline-block" />
           Services Provided
         </div>
         <h2 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] mb-14">

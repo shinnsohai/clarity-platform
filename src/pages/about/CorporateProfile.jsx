@@ -19,7 +19,7 @@ export default function CorporateProfile() {
 
       <section className="py-20 max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="flex items-center gap-4 mb-10 text-concrete text-xs tracking-[0.3em] uppercase">
-          <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+          <span className="w-2 h-2 bg-gold rounded-full inline-block" />
           Accreditations &amp; Licensing
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
@@ -54,7 +54,7 @@ export default function CorporateProfile() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
             <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
-              <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+              <span className="w-2 h-2 bg-gold rounded-full inline-block" />
               Overseas Recruitment
             </div>
             {profile.galleries.overseas.map((img) => (
@@ -73,7 +73,7 @@ export default function CorporateProfile() {
           </div>
           <div>
             <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
-              <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+              <span className="w-2 h-2 bg-gold rounded-full inline-block" />
               In-House Recruitment
             </div>
             {profile.galleries.inhouse.map((img) => (

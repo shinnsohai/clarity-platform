@@ -7,7 +7,7 @@ export default function MetricsCounters() {
     <section className="relative bg-white border-y border-ink/10">
       <div className="max-w-[1440px] mx-auto px-8 xl:px-16 py-16">
         <div className="flex items-center gap-4 mb-10 text-concrete text-xs tracking-[0.3em] uppercase">
-          <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+          <span className="w-2 h-2 bg-gold rounded-full inline-block" />
           Group Performance
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-ink/10 rounded-2xl">

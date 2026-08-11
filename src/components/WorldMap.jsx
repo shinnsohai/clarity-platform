@@ -10,15 +10,27 @@ export default function WorldMap() {
   return (
     <section className="relative bg-pearl py-24 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-8 xl:px-16">
-        <div className="flex items-center gap-4 mb-4 text-concrete text-xs tracking-[0.3em] uppercase">
-          <span className="w-2 h-2 bg-azure rounded-full inline-block" />
-          Global Reach
-        </div>
-        <h2 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] mb-14">
-          GROUP OFFICES<span className="text-azure">.</span> WORLDWIDE.
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="flex items-center gap-4 mb-4 text-concrete text-xs tracking-[0.3em] uppercase">
+            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
+            Global Reach
+          </div>
+          <h2 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] mb-14">
+            GROUP OFFICES<span className="text-azure">.</span> WORLDWIDE.
+          </h2>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 mb-5">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 mb-5">
           <div className="relative w-full aspect-[16/9] rounded-2xl shadow-soft overflow-hidden bg-white">
             <iframe
               key={active?.id}
@@ -50,7 +62,7 @@ export default function WorldMap() {
               </motion.button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Photo Showcase — reflects whichever office is selected above */}
         <AnimatePresence mode="wait">

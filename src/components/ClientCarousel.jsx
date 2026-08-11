@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import clients from '../data/clients.json'
 
 // Real client/served-company logos (src/data/clients.json — CMS-managed under the
@@ -8,14 +9,26 @@ export default function ClientCarousel() {
 
   return (
     <section className="relative bg-paper py-16 border-t border-ink/10">
-      <div className="max-w-[1440px] mx-auto px-8 xl:px-16 mb-8">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-[1440px] mx-auto px-8 xl:px-16 mb-8"
+      >
         <div className="flex items-center gap-4 text-concrete text-xs tracking-[0.3em] uppercase">
-          <span className="w-2 h-2 bg-azure rounded-full inline-block" />
+          <span className="w-2 h-2 bg-gold rounded-full inline-block" />
           Companies We Serve
         </div>
-      </div>
+      </motion.div>
 
-      <div className="relative max-w-[1440px] mx-auto px-8 xl:px-16">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        className="relative max-w-[1440px] mx-auto px-8 xl:px-16"
+      >
         <div className="group relative h-32 overflow-hidden rounded-2xl bg-white shadow-soft">
           {/* edge fade masks */}
           <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-white to-transparent" />
@@ -34,7 +47,7 @@ export default function ClientCarousel() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
