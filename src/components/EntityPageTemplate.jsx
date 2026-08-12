@@ -6,6 +6,7 @@ import SubIcon from './icons/SubIcon'
 import ManpowerRequestForm from './ManpowerRequestForm'
 import AppLinksPanel from './AppLinksPanel'
 import InteractiveWorldMap from './worldmap/InteractiveWorldMap'
+import NetworkDiagram from './NetworkDiagram'
 
 function galleryFor(entity) {
   const others = entities.filter((e) => e.id !== entity.id)
@@ -142,6 +143,9 @@ export default function EntityPageTemplate({ entity }) {
 
       {/* Key Performance Telemetry */}
       <Marquee items={entity.telemetry} />
+
+      {/* Connected companies — circuit-style network diagram */}
+      <NetworkDiagram entity={entity} />
 
       {/* Entity-specific feature blocks */}
       {entity.manpowerFormEnabled && <ManpowerRequestForm entity={entity} />}

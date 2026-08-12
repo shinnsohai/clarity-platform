@@ -53,7 +53,34 @@
         "facebook": "",
         "instagram": "",
         "youtube": ""
-      }
+      },
+      "connectedCompanies": [
+        {
+          "id": "durabuild-partner-1",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "durabuild-partner-2",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "durabuild-partner-3",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "durabuild-partner-4",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "durabuild-partner-5",
+          "name": "",
+          "logo": ""
+        }
+      ]
     },
     {
       "id": "lenix",
@@ -111,7 +138,34 @@
         "facebook": "",
         "instagram": "",
         "youtube": ""
-      }
+      },
+      "connectedCompanies": [
+        {
+          "id": "lenix-partner-1",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "lenix-partner-2",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "lenix-partner-3",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "lenix-partner-4",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "lenix-partner-5",
+          "name": "",
+          "logo": ""
+        }
+      ]
     },
     {
       "id": "cfm",
@@ -159,7 +213,34 @@
         "facebook": "",
         "instagram": "",
         "youtube": ""
-      }
+      },
+      "connectedCompanies": [
+        {
+          "id": "cfm-partner-1",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "cfm-partner-2",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "cfm-partner-3",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "cfm-partner-4",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "cfm-partner-5",
+          "name": "",
+          "logo": ""
+        }
+      ]
     },
     {
       "id": "clarity-manufacturing",
@@ -207,7 +288,34 @@
         "facebook": "",
         "instagram": "",
         "youtube": ""
-      }
+      },
+      "connectedCompanies": [
+        {
+          "id": "clarity-manufacturing-partner-1",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-manufacturing-partner-2",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-manufacturing-partner-3",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-manufacturing-partner-4",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-manufacturing-partner-5",
+          "name": "",
+          "logo": ""
+        }
+      ]
     },
     {
       "id": "techsphere",
@@ -255,7 +363,34 @@
         "facebook": "",
         "instagram": "",
         "youtube": ""
-      }
+      },
+      "connectedCompanies": [
+        {
+          "id": "techsphere-partner-1",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "techsphere-partner-2",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "techsphere-partner-3",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "techsphere-partner-4",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "techsphere-partner-5",
+          "name": "",
+          "logo": ""
+        }
+      ]
     },
     {
       "id": "clarity-ec",
@@ -304,7 +439,34 @@
         "facebook": "",
         "instagram": "",
         "youtube": ""
-      }
+      },
+      "connectedCompanies": [
+        {
+          "id": "clarity-ec-partner-1",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-ec-partner-2",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-ec-partner-3",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-ec-partner-4",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-ec-partner-5",
+          "name": "",
+          "logo": ""
+        }
+      ]
     }
   ]
 }
