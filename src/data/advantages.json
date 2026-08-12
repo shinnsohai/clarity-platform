@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "certified",
+      "stat": "3",
+      "statLabel": "Certifications Held",
+      "title": "Certified Across the Board",
+      "description": "ISO 9001, 14001 & 45001, ASPRI registration, and bizSAFE STAR — held and audited at the holding level, applied across every subsidiary.",
+      "image": "/images/hero-site.png"
+    },
+    {
+      "id": "manpower",
+      "stat": "3,000+",
+      "statLabel": "Personnel Deployed",
+      "title": "Manpower at Regional Scale",
+      "description": "Direct and indirect workforce deployment across Southeast Asia and the Middle East, coordinated through a single licensed recruitment framework.",
+      "image": "/images/hero-manpower.png"
+    },
+    {
+      "id": "subsidiaries",
+      "stat": "6",
+      "statLabel": "Subsidiaries",
+      "title": "Six Subsidiaries, One Standard",
+      "description": "Construction, technology, facilities, manufacturing, recruitment, and manpower — every entity reports to the same governance and quality bar.",
+      "image": "/images/hero-office.png"
+    },
+    {
+      "id": "global",
+      "stat": "5+",
+      "statLabel": "Countries Served",
+      "title": "Global Reach",
+      "description": "An interactive, CMS-driven map of active deployments and client relationships spanning multiple countries and growing.",
+      "image": "/images/world-map.png"
+    }
+  ]
+}

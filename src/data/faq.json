@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": "what-is-clarity-group",
+      "question": "What is Clarity Group?",
+      "answer": "Clarity Group is a premier corporate holding entity overseeing six subsidiaries spanning construction, technology, facilities management, manufacturing, recruitment, and global manpower — all operating under one certified standard."
+    },
+    {
+      "id": "which-industries",
+      "question": "Which industries does Clarity Group serve?",
+      "answer": "Our subsidiaries deliver construction and engineering, IT and technology solutions, facilities management, precision manufacturing, and direct/indirect manpower supply to clients across process, marine, aviation, and built-environment sectors."
+    },
+    {
+      "id": "certifications",
+      "question": "What certifications and licenses do you hold?",
+      "answer": "Clarity Group holds ISO 9001 (Quality), ISO 14001 (Environmental), and ISO 45001 (Occupational Health & Safety) certifications, ASPRI registration, and bizSAFE STAR status — audited at the holding level and applied across all subsidiary operations."
+    },
+    {
+      "id": "manpower-deployment",
+      "question": "How does Clarity Group handle manpower deployment?",
+      "answer": "Through Clarity E&C, our dedicated manpower subsidiary, we coordinate direct and indirect workforce deployment across multiple countries under a licensed recruitment framework — tracked on our interactive workforce map."
+    },
+    {
+      "id": "how-to-partner",
+      "question": "How can my company work with Clarity Group?",
+      "answer": "Reach out via our contact page with your subsidiary of interest and project scope. Our team will route your inquiry to the relevant entity and respond with next steps."
+    },
+    {
+      "id": "careers",
+      "question": "Is Clarity Group hiring?",
+      "answer": "Yes — each subsidiary lists open roles on our Careers page. Openings span site operations, engineering, technology, facilities, and manpower coordination."
+    }
+  ]
+}

@@ -23,6 +23,9 @@ export const groupMetrics = settings.groupMetrics
 // Homepage hero slider images
 export const heroImages = settings.heroImages
 
+// Closing CTA banner (homepage)
+export const ctaBanner = settings.ctaBanner
+
 // Global office network — used on homepage world map + /contact
 export const offices = officesData.offices
 

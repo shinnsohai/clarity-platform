@@ -16,5 +16,11 @@
     { "label": "Facilities Under Management", "value": 27, "suffix": "" },
     { "label": "Years Combined Experience", "value": 15, "suffix": "+" },
     { "label": "Manufacturing Uptime", "value": 98.4, "suffix": "%" }
-  ]
+  ],
+  "ctaBanner": {
+    "heading": "Ready to deploy with Clarity Group?",
+    "subtext": "Whether it's certified construction, technology, facilities, manufacturing, or manpower at scale — let's talk about your next project.",
+    "buttonLabel": "Get In Touch",
+    "buttonLink": "/contact"
+  }
 }

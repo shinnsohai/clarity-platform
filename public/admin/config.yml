@@ -51,6 +51,69 @@ collections:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Value", name: "value", widget: "number" }
               - { label: "Suffix", name: "suffix", widget: "string", required: false }
+          - label: "Homepage Closing CTA Banner"
+            name: "ctaBanner"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subtext", name: "subtext", widget: "text" }
+              - { label: "Button Label", name: "buttonLabel", widget: "string" }
+              - { label: "Button Link", name: "buttonLink", widget: "string", hint: "e.g. \"/contact\"" }
+
+  - name: "advantages"
+    label: "Homepage — Why Clarity Group"
+    files:
+      - file: "src/data/advantages.json"
+        label: "Advantage Cards"
+        name: "advantages"
+        fields:
+          - label: "Cards"
+            name: "items"
+            widget: "list"
+            summary: "{{stat}} — {{title}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
+              - { label: "Stat (big number)", name: "stat", widget: "string", hint: "e.g. \"6\", \"3,000+\", \"5+\"" }
+              - { label: "Stat Label", name: "statLabel", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Background Image", name: "image", widget: "image" }
+
+  - name: "faq"
+    label: "Homepage — FAQ"
+    files:
+      - file: "src/data/faq.json"
+        label: "Frequently Asked Questions"
+        name: "faq"
+        fields:
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            summary: "{{question}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+  - name: "testimonials"
+    label: "Homepage — Testimonials"
+    files:
+      - file: "src/data/testimonials.json"
+        label: "Client & Partner Testimonials"
+        name: "testimonials"
+        fields:
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            required: false
+            summary: "{{name}} — {{company}}"
+            hint: "The testimonial section only appears on the homepage once at least one real, attributable quote is added here — never invent a quote or attribute one to a real person/company without their consent."
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string", required: false }
+              - { label: "Company", name: "company", widget: "string", required: false }
 
   - name: "offices"
     label: "Global Offices"
