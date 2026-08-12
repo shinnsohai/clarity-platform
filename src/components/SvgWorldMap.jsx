@@ -133,7 +133,7 @@ export default function SvgWorldMap({ rows, renderTooltip }) {
         return (
           <div
             key={row.id}
-            className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10"
+            className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 w-8 h-8 flex items-center justify-center"
             style={{ left: `${xPct}%`, top: `${yPct}%` }}
             onMouseEnter={(e) => {
               const rect = wrapperRef.current.getBoundingClientRect()
@@ -148,10 +148,16 @@ export default function SvgWorldMap({ rows, renderTooltip }) {
             <motion.div
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative w-2.5 h-2.5 rounded-full bg-gold border-2 border-white shadow-soft"
+              className="relative w-2.5 h-2.5 rounded-full bg-gold border-2 border-white shadow-soft pointer-events-none"
             >
               <span className="absolute inset-0 rounded-full bg-gold animate-ping opacity-50" />
             </motion.div>
+            {/* Always-visible label — this country has no path in the map, only this
+                manually-placed pin, so a permanent label avoids any ambiguity about
+                where it is regardless of whether it's being hovered. */}
+            <span className="absolute top-full mt-1 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] font-bold tracking-wide text-azure bg-white/90 px-1.5 py-0.5 rounded shadow-sm pointer-events-none">
+              {row.country}
+            </span>
           </div>
         )
       })}
