@@ -38,9 +38,22 @@ export default function CorporateProfile() {
               whileHover={{ y: -4 }}
               className="bg-white border border-ink/10 rounded-2xl shadow-soft hover:shadow-soft-lg transition-shadow duration-300 p-8"
             >
-              <div className="w-14 h-14 rounded-full bg-azure-light text-azure flex items-center justify-center font-display text-sm mb-5">
-                {a.code.split(' ')[0].slice(0, 4)}
-              </div>
+              {a.logo ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 + 0.1 }}
+                  whileHover={{ scale: 1.08, rotate: -3 }}
+                  className="w-20 h-20 rounded-2xl bg-pearl border border-ink/10 flex items-center justify-center p-3 mb-5"
+                >
+                  <img src={a.logo} alt={a.code} className="w-full h-full object-contain" />
+                </motion.div>
+              ) : (
+                <div className="w-14 h-14 rounded-full bg-azure-light text-azure flex items-center justify-center font-display text-sm mb-5">
+                  {a.code.split(' ')[0].slice(0, 4)}
+                </div>
+              )}
               <div className="font-display text-lg text-ink mb-1">{a.code}</div>
               <div className="text-azure text-xs font-semibold tracking-[0.15em] uppercase mb-3">
                 {a.name}

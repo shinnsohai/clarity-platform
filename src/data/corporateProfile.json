@@ -3,21 +3,24 @@
   "accreditations": [
     {
       "id": "iso",
-      "code": "ISO 9001",
-      "name": "Quality Management",
-      "description": "Certified quality management systems applied across all subsidiary operations."
+      "code": "ISO 9001 / 14001 / 45001",
+      "name": "Quality, Environmental & Safety Management",
+      "description": "Certified quality, environmental, and occupational health & safety management systems applied across all subsidiary operations.",
+      "logo": "/images/accreditations/iso.png"
     },
     {
       "id": "aspri",
       "code": "ASPRI",
       "name": "Registered Contractor",
-      "description": "Registered with the Association of Process Industry for process and structural works."
+      "description": "Registered with the Association of Process Industry for process and structural works.",
+      "logo": "/images/accreditations/aspri.png"
     },
     {
       "id": "bizsafe",
-      "code": "bizSAFE",
+      "code": "bizSAFE STAR",
       "name": "Workplace Safety",
-      "description": "bizSAFE-certified workplace safety and health management framework."
+      "description": "bizSAFE STAR-certified workplace safety and health management framework.",
+      "logo": "/images/accreditations/bizsafe.png"
     }
   ],
   "recruitmentLicense": "Clarity Group subsidiaries operate under licensed manpower recruitment frameworks covering both overseas sourcing and in-house placement, in line with Ministry of Manpower requirements.",

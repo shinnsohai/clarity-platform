@@ -233,6 +233,7 @@ collections:
               - { label: "Code", name: "code", widget: "string" }
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+              - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Use the real accreditation body's logo — leave blank to fall back to a text badge" }
           - { label: "Recruitment License Statement", name: "recruitmentLicense", widget: "text" }
           - label: "Galleries"
             name: "galleries"
