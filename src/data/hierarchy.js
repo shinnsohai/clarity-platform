@@ -26,6 +26,10 @@ export const heroImages = settings.heroImages
 // Closing CTA banner (homepage)
 export const ctaBanner = settings.ctaBanner
 
+// Clarity Group's own social channels — footer "Follow Clarity Group" block.
+// Blank until real URLs are added via CMS (never fabricate a company's social links).
+export const groupSocial = settings.social
+
 // Global office network — used on homepage world map + /contact
 export const offices = officesData.offices
 

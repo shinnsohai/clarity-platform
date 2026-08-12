@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { parent, entities } from '../data/hierarchy'
+import FooterSocial from './FooterSocial'
 
 const PAGES = [
   { to: '/about', label: 'About' },
@@ -48,8 +49,12 @@ export default function GlobalFooter() {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-ink/10 text-concrete text-xs tracking-wide">
+      <FooterSocial />
+
+      <div className="max-w-[1680px] mx-auto px-8 xl:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 py-8 border-t border-ink/10 text-concrete text-xs tracking-wide">
           <span>© {new Date().getFullYear()} {parent.fullName} — Singapore</span>
           <span className="uppercase tracking-[0.2em]">6 Subsidiaries · One Standard</span>
         </div>

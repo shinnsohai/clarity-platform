@@ -22,5 +22,11 @@
     "subtext": "Whether it's certified construction, technology, facilities, manufacturing, or manpower at scale — let's talk about your next project.",
     "buttonLabel": "Get In Touch",
     "buttonLink": "/contact"
+  },
+  "social": {
+    "linkedin": "",
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
   }
 }

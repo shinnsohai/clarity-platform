@@ -31,11 +31,29 @@
         }
       ],
       "telemetry": [
-        { "label": "Active Sites", "value": "18" },
-        { "label": "Certified RE/RTO", "value": "32" },
-        { "label": "Steel Tonnage YTD", "value": "11,400T" },
-        { "label": "Safety Record", "value": "Zero LTI" }
-      ]
+        {
+          "label": "Active Sites",
+          "value": "18"
+        },
+        {
+          "label": "Certified RE/RTO",
+          "value": "32"
+        },
+        {
+          "label": "Steel Tonnage YTD",
+          "value": "11,400T"
+        },
+        {
+          "label": "Safety Record",
+          "value": "Zero LTI"
+        }
+      ],
+      "social": {
+        "linkedin": "",
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      }
     },
     {
       "id": "lenix",
@@ -71,11 +89,29 @@
         }
       ],
       "telemetry": [
-        { "label": "Active Pilots", "value": "9" },
-        { "label": "Sites Synced", "value": "24" },
-        { "label": "Data Latency", "value": "<400ms" },
-        { "label": "App Rating", "value": "4.8/5" }
-      ]
+        {
+          "label": "Active Pilots",
+          "value": "9"
+        },
+        {
+          "label": "Sites Synced",
+          "value": "24"
+        },
+        {
+          "label": "Data Latency",
+          "value": "<400ms"
+        },
+        {
+          "label": "App Rating",
+          "value": "4.8/5"
+        }
+      ],
+      "social": {
+        "linkedin": "",
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      }
     },
     {
       "id": "cfm",
@@ -101,11 +137,29 @@
         }
       ],
       "telemetry": [
-        { "label": "Facilities Managed", "value": "27" },
-        { "label": "Response SLA", "value": "<15min" },
-        { "label": "Coverage", "value": "24/7" },
-        { "label": "Compliance Score", "value": "100%" }
-      ]
+        {
+          "label": "Facilities Managed",
+          "value": "27"
+        },
+        {
+          "label": "Response SLA",
+          "value": "<15min"
+        },
+        {
+          "label": "Coverage",
+          "value": "24/7"
+        },
+        {
+          "label": "Compliance Score",
+          "value": "100%"
+        }
+      ],
+      "social": {
+        "linkedin": "",
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      }
     },
     {
       "id": "clarity-manufacturing",
@@ -131,11 +185,29 @@
         }
       ],
       "telemetry": [
-        { "label": "Tolerance", "value": "±0.01mm" },
-        { "label": "Line Uptime", "value": "98.4%" },
-        { "label": "Units / Month", "value": "18,000" },
-        { "label": "QA Pass Rate", "value": "99.7%" }
-      ]
+        {
+          "label": "Tolerance",
+          "value": "±0.01mm"
+        },
+        {
+          "label": "Line Uptime",
+          "value": "98.4%"
+        },
+        {
+          "label": "Units / Month",
+          "value": "18,000"
+        },
+        {
+          "label": "QA Pass Rate",
+          "value": "99.7%"
+        }
+      ],
+      "social": {
+        "linkedin": "",
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      }
     },
     {
       "id": "techsphere",
@@ -161,11 +233,29 @@
         }
       ],
       "telemetry": [
-        { "label": "Systems Integrated", "value": "40+" },
-        { "label": "Uptime SLA", "value": "99.9%" },
-        { "label": "Data Points / Day", "value": "2.4M" },
-        { "label": "Deployment Cycle", "value": "72H" }
-      ]
+        {
+          "label": "Systems Integrated",
+          "value": "40+"
+        },
+        {
+          "label": "Uptime SLA",
+          "value": "99.9%"
+        },
+        {
+          "label": "Data Points / Day",
+          "value": "2.4M"
+        },
+        {
+          "label": "Deployment Cycle",
+          "value": "72H"
+        }
+      ],
+      "social": {
+        "linkedin": "",
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      }
     },
     {
       "id": "clarity-ec",
@@ -192,11 +282,29 @@
         }
       ],
       "telemetry": [
-        { "label": "Deployment Model", "value": "Direct + Indirect" },
-        { "label": "Coverage", "value": "Multi-Industry" },
-        { "label": "Compliance", "value": "MOM-Aligned" },
-        { "label": "Live Headcount", "value": "See Map Below" }
-      ]
+        {
+          "label": "Deployment Model",
+          "value": "Direct + Indirect"
+        },
+        {
+          "label": "Coverage",
+          "value": "Multi-Industry"
+        },
+        {
+          "label": "Compliance",
+          "value": "MOM-Aligned"
+        },
+        {
+          "label": "Live Headcount",
+          "value": "See Map Below"
+        }
+      ],
+      "social": {
+        "linkedin": "",
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      }
     }
   ]
 }

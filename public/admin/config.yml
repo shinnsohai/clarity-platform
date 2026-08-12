@@ -59,6 +59,15 @@ collections:
               - { label: "Subtext", name: "subtext", widget: "text" }
               - { label: "Button Label", name: "buttonLabel", widget: "string" }
               - { label: "Button Link", name: "buttonLink", widget: "string", hint: "e.g. \"/contact\"" }
+          - label: "Clarity Group Social Channels"
+            name: "social"
+            widget: "object"
+            hint: "Leave a platform blank if not live yet — the footer icon shows as \"Coming Soon\" until filled in."
+            fields:
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
 
   - name: "advantages"
     label: "Homepage — Why Clarity Group"
@@ -224,7 +233,7 @@ collections:
     label: "Subsidiaries"
     files:
       - file: "src/data/entities.json"
-        label: "All 5 Subsidiaries"
+        label: "All 6 Subsidiaries"
         name: "entities"
         fields:
           - label: "Subsidiaries"
@@ -264,6 +273,16 @@ collections:
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Value", name: "value", widget: "string" }
+              - label: "Social Channels"
+                name: "social"
+                widget: "object"
+                required: false
+                hint: "Leave a platform blank if this subsidiary doesn't have one yet — the footer icon shows as \"Coming Soon\" until filled in."
+                fields:
+                  - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+                  - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+                  - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+                  - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
 
   - name: "about"
     label: "About Section"
