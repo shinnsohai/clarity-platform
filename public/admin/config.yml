@@ -129,39 +129,33 @@ collections:
                   - { label: "Phone", name: "phone", widget: "string" }
                   - { label: "Email", name: "email", widget: "string" }
 
-  - name: "manpowerByCountry"
-    label: "Manpower Deployment Map"
+  - name: "worldMapCountries"
+    label: "World Map — Workforce & Clientele"
     files:
-      - file: "src/data/manpowerByCountry.json"
-        label: "Deployed / Active Manpower by Country"
-        name: "manpowerByCountry"
+      - file: "src/data/worldMapCountries.json"
+        label: "Countries on the Interactive Map"
+        name: "worldMapCountries"
         fields:
           - label: "Countries"
             name: "countries"
             widget: "list"
-            summary: "{{country}} — deployed {{fields.deployed}} / active {{fields.active}}"
+            summary: "{{flag}} {{name}} — {{fields.directWorkersRaw}} direct / {{fields.indirectWorkersRaw}} indirect"
             fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
-              - { label: "Country", name: "country", widget: "string", hint: "Must match a real country name for the map pin to place correctly, e.g. \"Malaysia\"" }
-              - { label: "Total Deployed", name: "deployed", widget: "number", value_type: "int", required: false, hint: "Leave blank to show \"Pending\" on the map" }
-              - { label: "Currently Active", name: "active", widget: "number", value_type: "int", required: false, hint: "Leave blank to show \"Pending\" on the map" }
-
-  - name: "clientsByCountry"
-    label: "Global Clientele Map"
-    files:
-      - file: "src/data/clientsByCountry.json"
-        label: "Clients Served by Country"
-        name: "clientsByCountry"
-        fields:
-          - label: "Countries"
-            name: "countries"
-            widget: "list"
-            summary: "{{country}} — {{fields.clientCount}} clients"
-            fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
-              - { label: "Country", name: "country", widget: "string", hint: "Must match a real country name for the map pin to place correctly, e.g. \"Malaysia\"" }
-              - { label: "Client Count", name: "clientCount", widget: "number", value_type: "int", required: false, hint: "Leave blank to show \"Pending\" on the map" }
-              - { label: "Notes", name: "notes", widget: "string", required: false, hint: "Optional — e.g. key sectors served in this country" }
+              - { label: "ISO Alpha-3 Code", name: "id", widget: "string", hint: "e.g. \"SGP\", \"MYS\", \"ARE\" — used to match the real country shape on the map" }
+              - { label: "Display Name", name: "name", widget: "string", hint: "e.g. \"UAE\" — short name shown on pins/labels" }
+              - { label: "Full Name", name: "fullName", widget: "string", required: false, hint: "e.g. \"United Arab Emirates\" — shown in the detail panel if set" }
+              - { label: "Flag Emoji", name: "flag", widget: "string" }
+              - { label: "Longitude", name: "longitude", widget: "number", value_type: "float", hint: "Real geographic longitude, e.g. 103.8198 for Singapore" }
+              - { label: "Latitude", name: "latitude", widget: "number", value_type: "float", hint: "Real geographic latitude, e.g. 1.3521 for Singapore" }
+              - { label: "Direct Workers", name: "directWorkersRaw", widget: "number", value_type: "int" }
+              - { label: "Indirect Workers", name: "indirectWorkersRaw", widget: "number", value_type: "int" }
+              - { label: "Clients Served Here", name: "clients", widget: "list", required: false }
+              - { label: "Status", name: "status", widget: "string", hint: "e.g. \"Primary Regional Hub\", \"Active Deployment\"" }
+              - { label: "Region", name: "region", widget: "string" }
+              - { label: "Established Year", name: "establishedYear", widget: "string", required: false }
+              - { label: "Key Projects", name: "keyProjects", widget: "list", required: false }
+              - { label: "Contact Person", name: "contactPerson", widget: "string", required: false }
+              - { label: "Contact Email", name: "email", widget: "string", required: false }
 
   - name: "entities"
     label: "Subsidiaries"

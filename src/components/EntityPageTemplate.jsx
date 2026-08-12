@@ -5,8 +5,7 @@ import { entities } from '../data/hierarchy'
 import SubIcon from './icons/SubIcon'
 import ManpowerRequestForm from './ManpowerRequestForm'
 import AppLinksPanel from './AppLinksPanel'
-import ManpowerDeploymentMap from './ManpowerDeploymentMap'
-import ClientsByCountryMap from './ClientsByCountryMap'
+import InteractiveWorldMap from './worldmap/InteractiveWorldMap'
 
 function galleryFor(entity) {
   const others = entities.filter((e) => e.id !== entity.id)
@@ -147,8 +146,7 @@ export default function EntityPageTemplate({ entity }) {
       {/* Entity-specific feature blocks */}
       {entity.manpowerFormEnabled && <ManpowerRequestForm entity={entity} />}
       {entity.slug === 'lenix' && <AppLinksPanel entity={entity} />}
-      {entity.slug === 'clarity-ec' && <ManpowerDeploymentMap />}
-      {entity.slug === 'clarity-ec' && <ClientsByCountryMap />}
+      {entity.slug === 'clarity-ec' && <InteractiveWorldMap />}
 
       {/* Case Studies & Gallery */}
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">
