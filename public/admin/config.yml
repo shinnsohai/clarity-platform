@@ -283,13 +283,13 @@ collections:
                   - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
                   - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
                   - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
-              - label: "Connected Companies (Network Diagram)"
+              - label: "Connected Companies (Logo Flow Network)"
                 name: "connectedCompanies"
                 widget: "list"
                 required: false
-                max: 5
+                max: 8
                 summary: "{{name}}"
-                hint: "Up to 5 clients/partners/vendors shown as satellite logos flowing into this subsidiary's logo. Leave Name/Logo blank to keep a slot as a dim, unconnected placeholder node."
+                hint: "Up to 8 clients/partners/vendors, each shown as a logo badge that continuously flows inward into this subsidiary's logo. Leave Name/Logo blank to keep a slot as a dim, unconnected \"Logo Pending\" node."
                 fields:
                   - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces — used internally, not shown" }
                   - { label: "Company Name", name: "name", widget: "string", required: false }

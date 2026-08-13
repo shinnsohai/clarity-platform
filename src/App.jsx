@@ -23,7 +23,7 @@ export default function App() {
       <SmoothScroll>
         <Cursor />
         <Navbar />
-        <main className="pt-24">
+        <main className="pt-20 lg:pt-24">
           <Routes>
             <Route path="/" element={<Home />} />
 

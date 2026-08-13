@@ -79,6 +79,21 @@
           "id": "durabuild-partner-5",
           "name": "",
           "logo": ""
+        },
+        {
+          "id": "durabuild-partner-6",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "durabuild-partner-7",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "durabuild-partner-8",
+          "name": "",
+          "logo": ""
         }
       ]
     },
@@ -164,6 +179,21 @@
           "id": "lenix-partner-5",
           "name": "",
           "logo": ""
+        },
+        {
+          "id": "lenix-partner-6",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "lenix-partner-7",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "lenix-partner-8",
+          "name": "",
+          "logo": ""
         }
       ]
     },
@@ -237,6 +267,21 @@
         },
         {
           "id": "cfm-partner-5",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "cfm-partner-6",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "cfm-partner-7",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "cfm-partner-8",
           "name": "",
           "logo": ""
         }
@@ -314,6 +359,21 @@
           "id": "clarity-manufacturing-partner-5",
           "name": "",
           "logo": ""
+        },
+        {
+          "id": "clarity-manufacturing-partner-6",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-manufacturing-partner-7",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "clarity-manufacturing-partner-8",
+          "name": "",
+          "logo": ""
         }
       ]
     },
@@ -389,6 +449,21 @@
           "id": "techsphere-partner-5",
           "name": "",
           "logo": ""
+        },
+        {
+          "id": "techsphere-partner-6",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "techsphere-partner-7",
+          "name": "",
+          "logo": ""
+        },
+        {
+          "id": "techsphere-partner-8",
+          "name": "",
+          "logo": ""
         }
       ]
     },
@@ -398,7 +473,7 @@
       "name": "Clarity E&C",
       "fullName": "Clarity E&C Pte Ltd",
       "image": "/images/hero-manpower.png",
-      "logo": "/images/logo-clarity-icon.png",
+      "logo": "/images/logo-clarity-ec-icon.jpeg",
       "role": "Direct & Indirect Manpower Solutions",
       "summary": "Clarity E&C is the Group's own manpower arm — deploying directly-employed and indirectly-sourced workforce across industries, matched to project scale and compliance requirements.",
       "manpowerFormEnabled": true,
@@ -442,29 +517,44 @@
       },
       "connectedCompanies": [
         {
-          "id": "clarity-ec-partner-1",
-          "name": "",
-          "logo": ""
+          "id": "slot-1",
+          "name": "Aster",
+          "logo": "/images/partners/aster.png"
         },
         {
-          "id": "clarity-ec-partner-2",
-          "name": "",
-          "logo": ""
+          "id": "slot-2",
+          "name": "Kuraray",
+          "logo": "/images/partners/kuraray.png"
         },
         {
-          "id": "clarity-ec-partner-3",
-          "name": "",
-          "logo": ""
+          "id": "slot-3",
+          "name": "L&K Engineering",
+          "logo": "/images/partners/lk.jpg"
         },
         {
-          "id": "clarity-ec-partner-4",
-          "name": "",
-          "logo": ""
+          "id": "slot-4",
+          "name": "MMHE",
+          "logo": "/images/partners/mmhe.png"
         },
         {
-          "id": "clarity-ec-partner-5",
-          "name": "",
-          "logo": ""
+          "id": "slot-5",
+          "name": "SRC",
+          "logo": "/images/partners/src-energy.png"
+        },
+        {
+          "id": "slot-6",
+          "name": "UTOC",
+          "logo": "/images/partners/utoc.jpg"
+        },
+        {
+          "id": "slot-7",
+          "name": "Aster",
+          "logo": "/images/partners/aster.png"
+        },
+        {
+          "id": "slot-8",
+          "name": "Kuraray",
+          "logo": "/images/partners/kuraray.png"
         }
       ]
     }
