@@ -22,7 +22,7 @@
 
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/clarity-platform # TODO: replace once the repo exists
+  repo: shinnsohai/clarity-platform
   branch: master
   base_url: https://clarity-platform-omega.vercel.app
   auth_endpoint: api/auth
