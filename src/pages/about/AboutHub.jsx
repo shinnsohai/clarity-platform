@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { parent } from '../../data/hierarchy'
+import PageHero from '../../components/PageHero'
 
 const sections = [
   {
@@ -33,22 +34,11 @@ const sections = [
 export default function AboutHub() {
   return (
     <div className="bg-paper">
-      <section className="relative bg-pearl py-28">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1440px] mx-auto px-8 xl:px-16"
-        >
-          <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
-            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
-            About {parent.name}
-          </div>
-          <h1 className="font-display text-5xl md:text-7xl text-ink leading-[0.9] max-w-4xl">
-            TRANSPARENCY<span className="text-azure">.</span> BY DESIGN.
-          </h1>
-        </motion.div>
-      </section>
+      <PageHero
+        size="lg"
+        kicker={`About ${parent.name}`}
+        title={<>TRANSPARENCY<span className="text-azure">.</span> BY DESIGN.</>}
+      />
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

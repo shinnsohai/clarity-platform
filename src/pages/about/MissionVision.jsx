@@ -1,25 +1,17 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import mv from '../../data/missionVision.json'
+import PageHero from '../../components/PageHero'
 
 export default function MissionVision() {
   return (
     <div className="bg-paper">
-      <section className="relative bg-pearl py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1440px] mx-auto px-8 xl:px-16"
-        >
-          <Link to="/about" className="text-azure text-xs tracking-[0.25em] uppercase mb-6 inline-block hover:text-gold-dim transition-colors">
-            ← About
-          </Link>
-          <h1 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] max-w-3xl">
-            MISSION &amp; VISION<span className="text-azure">.</span>
-          </h1>
-        </motion.div>
-      </section>
+      <PageHero
+        backTo="/about"
+        backLabel="About"
+        kicker="Mission & Vision"
+        title={<>MISSION &amp; VISION<span className="text-azure">.</span></>}
+      />
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16 grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
         <motion.div

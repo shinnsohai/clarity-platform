@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import hiw from '../data/howItWorks.json'
 import { entities, groupMetrics } from '../data/hierarchy'
 import FlywheelDiagram from '../components/FlywheelDiagram'
+import PageHero from '../components/PageHero'
 
 // Which flywheel stage each subsidiary sits in, and the real evidence (already published
 // on that subsidiary's own page) that backs it up — nothing here is projected.
@@ -18,23 +19,7 @@ const ROLE_MAP = {
 export default function HowItWorks() {
   return (
     <div className="bg-paper">
-      <section className="relative bg-pearl py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1440px] mx-auto px-8 xl:px-16"
-        >
-          <div className="flex items-center gap-4 mb-6 text-azure text-xs tracking-[0.3em] uppercase font-semibold">
-            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
-            {hiw.kicker}
-          </div>
-          <h1 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] max-w-4xl">
-            {hiw.headline}
-          </h1>
-          <p className="mt-6 max-w-2xl text-concrete text-lg leading-relaxed">{hiw.intro}</p>
-        </motion.div>
-      </section>
+      <PageHero kicker={hiw.kicker} title={hiw.headline} description={hiw.intro} />
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="flex items-center gap-4 mb-10 text-concrete text-xs tracking-[0.3em] uppercase">

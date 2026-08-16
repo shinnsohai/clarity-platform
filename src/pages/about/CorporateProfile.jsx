@@ -1,26 +1,17 @@
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import profile from '../../data/corporateProfile.json'
+import PageHero from '../../components/PageHero'
 
 export default function CorporateProfile() {
   return (
     <div className="bg-paper">
-      <section className="relative bg-pearl py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1440px] mx-auto px-8 xl:px-16"
-        >
-          <Link to="/about" className="text-azure text-xs tracking-[0.25em] uppercase mb-6 inline-block hover:text-gold-dim transition-colors">
-            ← About
-          </Link>
-          <h1 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] max-w-3xl">
-            CORPORATE PROFILE<span className="text-azure">.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-concrete text-lg leading-relaxed">{profile.intro}</p>
-        </motion.div>
-      </section>
+      <PageHero
+        backTo="/about"
+        backLabel="About"
+        kicker="Corporate Profile"
+        title={<>CORPORATE PROFILE<span className="text-azure">.</span></>}
+        description={profile.intro}
+      />
 
       <section className="py-20 max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="flex items-center gap-4 mb-10 text-concrete text-xs tracking-[0.3em] uppercase">

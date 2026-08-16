@@ -4,29 +4,14 @@ import ir from '../data/investorRelations.json'
 import { groupMetrics } from '../data/hierarchy'
 import contact from '../data/contact.json'
 import FlywheelDiagram from '../components/FlywheelDiagram'
+import PageHero from '../components/PageHero'
 
 const hasFundraiseDetails = Boolean(ir.fundraise?.stage || ir.fundraise?.targetRaise || ir.fundraise?.useOfFunds?.length)
 
 export default function InvestorRelations() {
   return (
     <div className="bg-paper">
-      <section className="relative bg-pearl py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1440px] mx-auto px-8 xl:px-16"
-        >
-          <div className="flex items-center gap-4 mb-6 text-azure text-xs tracking-[0.3em] uppercase font-semibold">
-            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
-            {ir.kicker}
-          </div>
-          <h1 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] max-w-4xl">
-            {ir.headline}
-          </h1>
-          <p className="mt-6 max-w-2xl text-concrete text-lg leading-relaxed">{ir.thesis}</p>
-        </motion.div>
-      </section>
+      <PageHero kicker={ir.kicker} title={ir.headline} description={ir.thesis} />
 
       <section className="py-20 max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">

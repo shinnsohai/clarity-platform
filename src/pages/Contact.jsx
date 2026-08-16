@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import contact from '../data/contact.json'
 import { entities, offices } from '../data/hierarchy'
+import PageHero from '../components/PageHero'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', entity: 'General Inquiry', message: '' })
@@ -18,22 +19,7 @@ export default function Contact() {
 
   return (
     <div className="bg-paper">
-      <section className="relative bg-pearl py-28">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-[1440px] mx-auto px-8 xl:px-16"
-        >
-          <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
-            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
-            Contact
-          </div>
-          <h1 className="font-display text-5xl md:text-7xl text-ink leading-[0.9] max-w-4xl">
-            LET'S TALK<span className="text-azure">.</span>
-          </h1>
-        </motion.div>
-      </section>
+      <PageHero size="lg" kicker="Contact" title={<>LET'S TALK<span className="text-azure">.</span></>} />
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16 grid grid-cols-1 lg:grid-cols-2 gap-14">
         <motion.form
