@@ -4,11 +4,7 @@
     "fullName": "Clarity Group Pte Ltd",
     "tagline": "A Premier Corporate Holding Entity"
   },
-  "heroImages": [
-    { "src": "/images/hero-site.png", "caption": "Active, Certified Construction Sites" },
-    { "src": "/images/hero-manpower.png", "caption": "Professional Manpower Solutions" },
-    { "src": "/images/hero-office.png", "caption": "A Modern, Global Corporate Structure" }
-  ],
+  "heroVideo": "/videos/hero-singapore.mp4",
   "groupMetrics": [
     { "label": "Subsidiaries", "value": 6, "suffix": "" },
     { "label": "Personnel Deployed", "value": 3000, "suffix": "+" },

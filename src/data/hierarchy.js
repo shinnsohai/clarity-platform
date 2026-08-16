@@ -20,8 +20,8 @@ export const getEntityBySlug = (slug) => entities.find((e) => e.slug === slug)
 // Group Performance Metrics — homepage counters
 export const groupMetrics = settings.groupMetrics
 
-// Homepage hero slider images
-export const heroImages = settings.heroImages
+// Homepage hero background video
+export const heroVideo = settings.heroVideo
 
 // Closing CTA banner (homepage)
 export const ctaBanner = settings.ctaBanner

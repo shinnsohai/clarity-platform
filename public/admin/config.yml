@@ -47,13 +47,11 @@ collections:
               - { label: "Short Name", name: "name", widget: "string" }
               - { label: "Full Legal Name", name: "fullName", widget: "string" }
               - { label: "Tagline", name: "tagline", widget: "string" }
-          - label: "Homepage Hero Slider"
-            name: "heroImages"
-            widget: "list"
-            summary: "{{caption}}"
-            fields:
-              - { label: "Image", name: "src", widget: "image" }
-              - { label: "Caption", name: "caption", widget: "string" }
+          - label: "Homepage Hero Video"
+            name: "heroVideo"
+            widget: "file"
+            required: false
+            hint: "MP4, muted/no-audio, ideally under ~5MB — background loop for the homepage hero. Leave blank to keep the current video."
           - label: "Group Performance Metrics"
             name: "groupMetrics"
             widget: "list"

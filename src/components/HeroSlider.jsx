@@ -1,17 +1,15 @@
-import { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
-import { parent, heroImages } from '../data/hierarchy'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { parent, heroVideo } from '../data/hierarchy'
 
+// Background is a real Singapore skyline video loop (Marina Bay Sands, at night) —
+// public/videos/hero-singapore.mp4, converted+compressed from the source GIF.
+// The `poster` frame reuses an existing real site photo so first paint (and any
+// browser that blocks video autoplay) still shows something meaningful, not a blank.
 export default function HeroSlider() {
-  const [index, setIndex] = useState(0)
   const sectionRef = useRef(null)
 
-  useEffect(() => {
-    const id = setInterval(() => setIndex((i) => (i + 1) % heroImages.length), 5500)
-    return () => clearInterval(id)
-  }, [])
-
-  // Scroll-driven parallax — the image drifts and the copy fades/lifts away as the
+  // Scroll-driven parallax — the video drifts and the copy fades/lifts away as the
   // visitor scrolls the hero out of view, so the front page feels alive immediately.
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] })
   const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
@@ -21,23 +19,19 @@ export default function HeroSlider() {
   return (
     <section ref={sectionRef} className="relative h-screen min-h-[760px] w-full overflow-hidden bg-paper">
       <motion.div style={{ y: imageY }} className="absolute inset-0">
-        <AnimatePresence mode="sync">
-          {heroImages.map(
-            (slide, i) =>
-              i === index && (
-                <motion.div
-                  key={slide.src}
-                  initial={{ opacity: 0, scale: 1.06 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ opacity: { duration: 1 }, scale: { duration: 6, ease: 'linear' } }}
-                  className="absolute inset-0"
-                >
-                  <img src={slide.src} alt={slide.caption} className="w-full h-full object-cover" />
-                </motion.div>
-              )
-          )}
-        </AnimatePresence>
+        <motion.video
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: 'linear' } }}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero-site.png"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </motion.video>
       </motion.div>
 
       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-white/0" />
@@ -71,21 +65,18 @@ export default function HeroSlider() {
           manufacturing, and global manpower — delivered with total transparency.
         </motion.p>
 
-        <div className="mt-10 flex items-center gap-3">
-          {heroImages.map((slide, i) => (
-            <button
-              key={slide.src}
-              onClick={() => setIndex(i)}
-              aria-label={slide.caption}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === index ? 'w-10 bg-azure' : 'w-4 bg-ink/15 hover:bg-ink/30'
-              }`}
-            />
-          ))}
-          <span className="ml-4 text-concrete text-xs tracking-[0.15em] uppercase">
-            {heroImages[index].caption}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-10 flex items-center gap-3"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
           </span>
-        </div>
+          <span className="text-concrete text-xs tracking-[0.15em] uppercase">Marina Bay, Singapore</span>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
