@@ -1,99 +1,137 @@
 {
   "countries": [
     {
-      "id": "SGP",
+      "indirectWorkersRaw": 500,
+      "clients": [
+        "L&K Engineering",
+        "MCC",
+        "Sinotcc",
+        "Sinopec",
+        "Suntec",
+        "Yijia"
+      ],
       "name": "Singapore",
-      "fullName": "",
+      "latitude": 1.3521,
       "flag": "🇸🇬",
       "longitude": 103.8198,
-      "latitude": 1.3521,
-      "directWorkersRaw": 2000,
-      "indirectWorkersRaw": 500,
-      "clients": ["L&K Engineering", "MCC", "Sinotcc", "Sinopec", "Suntec", "Yijia"],
       "status": "Primary Regional Hub",
       "region": "Southeast Asia",
+      "contactPerson": "Regional Operations Director",
       "establishedYear": "2012",
       "keyProjects": [
         "Process Plant Construction & Piping",
         "Module Fabrication & Structural Erection",
         "High Tech Cleanroom Maintenance"
       ],
-      "contactPerson": "Regional Operations Director",
-      "email": "singapore.ops@clarityec.com.sg"
+      "fullName": "",
+      "id": "SGP",
+      "email": "singapore.ops@clarityec.com.sg",
+      "directWorkersRaw": 2000
     },
     {
-      "id": "MYS",
+      "indirectWorkersRaw": 500,
+      "clients": [
+        "Sinotcc",
+        "Sinopec"
+      ],
       "name": "Malaysia",
-      "fullName": "",
+      "latitude": 4.2105,
       "flag": "🇲🇾",
       "longitude": 101.9758,
-      "latitude": 4.2105,
-      "directWorkersRaw": 1000,
-      "indirectWorkersRaw": 500,
-      "clients": ["Sinotcc", "Sinopec"],
       "status": "Active Deployment",
       "region": "Southeast Asia",
+      "contactPerson": "Country Operations Manager",
       "establishedYear": "2015",
       "keyProjects": [
         "Refinery Expansion & Mechanical Works",
         "Civil & Substructure Turnkey Services"
       ],
-      "contactPerson": "Country Operations Manager",
-      "email": "malaysia.ops@clarityec.com.sg"
+      "fullName": "",
+      "id": "MYS",
+      "email": "malaysia.ops@clarityec.com.sg",
+      "directWorkersRaw": 1000
     },
     {
-      "id": "ARE",
+      "indirectWorkersRaw": 1000,
+      "clients": [
+        "Sinopec"
+      ],
       "name": "UAE",
-      "fullName": "United Arab Emirates",
+      "latitude": 24.4539,
       "flag": "🇦🇪",
       "longitude": 54.3773,
-      "latitude": 24.4539,
-      "directWorkersRaw": 3000,
-      "indirectWorkersRaw": 1000,
-      "clients": ["Sinopec"],
       "status": "Major Operations Hub",
       "region": "Middle East",
+      "contactPerson": "Middle East Operations VP",
       "establishedYear": "2014",
       "keyProjects": [
         "Mega Energy Infrastructure EPC Support",
         "Onshore Oil & Gas Site Support Personnel"
       ],
-      "contactPerson": "Middle East Operations VP",
-      "email": "uae.ops@clarityec.com.sg"
+      "fullName": "United Arab Emirates",
+      "id": "ARE",
+      "email": "uae.ops@clarityec.com.sg",
+      "directWorkersRaw": 3000
     },
     {
-      "id": "SAU",
+      "indirectWorkersRaw": 800,
+      "clients": [
+        "Sinopec",
+        "Aramco Partners"
+      ],
       "name": "Saudi Arabia",
-      "fullName": "",
+      "latitude": 23.8859,
       "flag": "🇸🇦",
       "longitude": 45.0792,
-      "latitude": 23.8859,
-      "directWorkersRaw": 1500,
-      "indirectWorkersRaw": 800,
-      "clients": ["Sinopec", "Aramco Partners"],
       "status": "Expanding Network",
       "region": "Middle East",
-      "establishedYear": "2018",
-      "keyProjects": ["Industrial Petrochemical Piping & Erection"],
       "contactPerson": "Regional Manager - KSA",
-      "email": "ksa.ops@clarityec.com.sg"
+      "establishedYear": "2018",
+      "keyProjects": [
+        "Industrial Petrochemical Piping & Erection"
+      ],
+      "fullName": "",
+      "id": "SAU",
+      "email": "ksa.ops@clarityec.com.sg",
+      "directWorkersRaw": 1500
     },
     {
-      "id": "VNM",
+      "indirectWorkersRaw": 300,
+      "clients": [
+        "MCC",
+        "L&K Engineering"
+      ],
       "name": "Vietnam",
-      "fullName": "",
+      "latitude": 14.0583,
       "flag": "🇻🇳",
       "longitude": 108.2772,
-      "latitude": 14.0583,
-      "directWorkersRaw": 800,
-      "indirectWorkersRaw": 300,
-      "clients": ["MCC", "L&K Engineering"],
       "status": "Project Hub",
       "region": "Southeast Asia",
-      "establishedYear": "2020",
-      "keyProjects": ["Industrial Complex Assembly & Technical Workforce"],
       "contactPerson": "Vietnam Project Lead",
-      "email": "vietnam.ops@clarityec.com.sg"
+      "establishedYear": "2020",
+      "keyProjects": [
+        "Industrial Complex Assembly & Technical Workforce"
+      ],
+      "fullName": "",
+      "id": "VNM",
+      "email": "vietnam.ops@clarityec.com.sg",
+      "directWorkersRaw": 800
+    },
+    {
+      "indirectWorkersRaw": 500,
+      "clients": [
+        "TSMC"
+      ],
+      "name": "Taiwan",
+      "latitude": 23.600028,
+      "flag": "TW",
+      "longitude": 120.767567,
+      "status": "Active Deploymen",
+      "region": "TAIWAN",
+      "establishedYear": "2026",
+      "fullName": "Taiwan",
+      "id": "TWN",
+      "directWorkersRaw": 500
     }
   ]
 }
