@@ -4,6 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clarity Group — Content Admin</title>
+    <!-- Forces every relative URL on this page (including Decap's own fetch of
+         config.yml) to resolve against /admin/ regardless of whether the visited
+         URL had a trailing slash. Without this, "/admin" (no slash) makes the
+         browser resolve "config.yml" against the SITE ROOT instead of "/admin/",
+         which doesn't exist — Vercel's SPA rewrite then serves index.html (HTML)
+         in its place, and Decap fails with "config must have required property ..."
+         for every single field, because it received a whole HTML page instead of YAML. -->
+    <base href="/admin/" />
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
