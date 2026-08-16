@@ -9,6 +9,8 @@ import EntityPage from './pages/EntityPage'
 import Careers from './pages/Careers'
 import Contact from './pages/Contact'
 import StrategicPartner from './pages/StrategicPartner'
+import HowItWorks from './pages/HowItWorks'
+import InvestorRelations from './pages/InvestorRelations'
 import AboutHub from './pages/about/AboutHub'
 import CorporateInformation from './pages/about/CorporateInformation'
 import CorporateProfile from './pages/about/CorporateProfile'
@@ -38,6 +40,8 @@ export default function App() {
             <Route path="/our-business" element={<OurBusiness />} />
             <Route path="/our-business/:slug" element={<EntityPage />} />
             <Route path="/strategic-partner" element={<StrategicPartner />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/investor-relations" element={<InvestorRelations />} />
 
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />

@@ -5,7 +5,9 @@ import FooterSocial from './FooterSocial'
 const PAGES = [
   { to: '/about', label: 'About' },
   { to: '/our-business', label: 'Our Business' },
+  { to: '/how-it-works', label: 'How It Works' },
   { to: '/strategic-partner', label: 'Strategic Partner' },
+  { to: '/investor-relations', label: 'Investors' },
   { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact' },
 ]

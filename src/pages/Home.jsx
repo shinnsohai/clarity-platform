@@ -7,6 +7,7 @@ import GroupAdvantages from '../components/GroupAdvantages'
 import TestimonialCarousel from '../components/TestimonialCarousel'
 import FAQAccordion from '../components/FAQAccordion'
 import CTABanner from '../components/CTABanner'
+import FlywheelTeaser from '../components/FlywheelTeaser'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <MetricsCounters />
       <GroupAdvantages />
       <ServicesGrid />
+      <FlywheelTeaser />
       <WorldMap />
       <ClientCarousel />
       <TestimonialCarousel />

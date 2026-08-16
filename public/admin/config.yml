@@ -3,18 +3,29 @@
 # Local editing works right now with zero setup: run `npm run cms` in one terminal
 # and `npm run dev` in another, then open http://localhost:5183/admin — edits save
 # straight to the JSON files under src/data/ via git commits on this machine.
-# `local_backend: true` is what makes that work.
+# `local_backend: true` is what makes that work, and it takes over automatically
+# whenever the CMS is opened on localhost — the `backend:` block below only applies
+# once this is opened on the real deployed URL.
 #
-# To let a real team edit this from anywhere (not just this machine):
-#   1. Push this repo to GitHub (or GitLab/Bitbucket).
-#   2. Deploy the site (Netlify is the zero-config path for `git-gateway` below —
-#      enable Netlify Identity + Git Gateway in the Netlify site settings).
-#   3. Update the `repo` line below to your actual GitHub "owner/repo".
+# Production (Vercel) uses the "github" backend with a small self-hosted OAuth
+# provider (api/auth.js + api/callback.js in this repo — Vercel deploys them as
+# serverless functions automatically) instead of Netlify's Git Gateway, since this
+# site isn't hosted on Netlify. One-time setup:
+#   1. Push this repo to GitHub, then set `repo:` below to that "owner/repo".
+#   2. Create a GitHub OAuth App: github.com/settings/developers → New OAuth App.
+#        Homepage URL            = https://<your-deployed-domain>
+#        Authorization callback  = https://<your-deployed-domain>/api/callback
+#   3. In the Vercel project → Settings → Environment Variables, add:
+#        OAUTH_CLIENT_ID     = <the OAuth App's Client ID>
+#        OAUTH_CLIENT_SECRET = <the OAuth App's Client Secret>
+#   4. Redeploy, then open /admin on the live site and log in with GitHub.
 
 backend:
-  name: git-gateway
+  name: github
+  repo: YOUR-GITHUB-USERNAME/clarity-platform # TODO: replace once the repo exists
   branch: master
-  # repo: your-github-username/your-repo-name
+  base_url: https://clarity-platform-omega.vercel.app
+  auth_endpoint: api/auth
 
 local_backend: true
 
@@ -389,6 +400,7 @@ collections:
         fields:
           - { label: "Mission", name: "mission", widget: "text" }
           - { label: "Vision", name: "vision", widget: "text" }
+          - { label: "Technology Thesis", name: "thesis", widget: "text", hint: "The data-flywheel paragraph shown between Mission/Vision and Values, linking to /how-it-works." }
           - label: "Values"
             name: "values"
             widget: "list"
@@ -396,6 +408,48 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+
+  - name: "howItWorks"
+    label: "How It Works Page"
+    files:
+      - file: "src/data/howItWorks.json"
+        label: "How It Works — Flywheel Narrative"
+        name: "howItWorks"
+        fields:
+          - { label: "Kicker", name: "kicker", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Flywheel Stages"
+            name: "flywheelStages"
+            widget: "list"
+            summary: "{{label}}"
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Stage Label", name: "label", widget: "string" }
+              - { label: "Role (short)", name: "role", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Closing Statement", name: "closing", widget: "text" }
+
+  - name: "investorRelations"
+    label: "Investor Relations Page"
+    files:
+      - file: "src/data/investorRelations.json"
+        label: "Investor Relations"
+        name: "investorRelations"
+        fields:
+          - { label: "Kicker", name: "kicker", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Thesis", name: "thesis", widget: "text" }
+          - { label: "Why Now", name: "whyNow", widget: "text" }
+          - label: "Fundraise"
+            name: "fundraise"
+            widget: "object"
+            hint: "Leave all fields blank to show a \"details available on request\" state instead of publishing figures."
+            fields:
+              - { label: "Stage", name: "stage", widget: "string", required: false, hint: "e.g. \"Series A\"" }
+              - { label: "Target Raise", name: "targetRaise", widget: "string", required: false }
+              - { label: "Use of Funds", name: "useOfFunds", widget: "list", required: false, field: { label: "Item", name: "item", widget: "string" } }
+          - { label: "Data Room Note", name: "dataRoomNote", widget: "string" }
 
   - name: "careers"
     label: "Careers"

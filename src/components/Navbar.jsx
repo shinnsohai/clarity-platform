@@ -10,6 +10,7 @@ const ABOUT_LINKS = [
   { to: '/about/leadership-team', label: 'Leadership Team' },
   { to: '/about/founder-advisor', label: 'Founders & Advisors' },
   { to: '/about/mission-vision', label: 'Mission & Vision' },
+  { to: '/how-it-works', label: 'How It Works' },
 ]
 
 function NavItem({ label, to, children }) {
@@ -196,6 +197,7 @@ export default function Navbar() {
           <Dropdown label="About" to="/about" items={ABOUT_LINKS} />
           <Dropdown label="Our Business" to="/our-business" items={businessLinks} />
           <NavItem label="Strategic Partner" to="/strategic-partner" />
+          <NavItem label="Investors" to="/investor-relations" />
           <NavItem label="Careers" to="/careers" />
         </nav>
 
@@ -239,6 +241,13 @@ export default function Navbar() {
                 className="block py-4 text-sm font-display text-ink tracking-tight border-b border-ink/10"
               >
                 Strategic Partner
+              </Link>
+              <Link
+                to="/investor-relations"
+                onClick={closeMobile}
+                className="block py-4 text-sm font-display text-ink tracking-tight border-b border-ink/10"
+              >
+                Investors
               </Link>
               <Link
                 to="/careers"
