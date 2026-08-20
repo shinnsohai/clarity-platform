@@ -487,6 +487,27 @@ collections:
               - { label: "Company Name", name: "name", widget: "string", hint: "Used as image alt text / hover title" }
               - { label: "Logo", name: "src", widget: "image" }
 
+  - name: "industries"
+    label: "Industries We Serve (Homepage)"
+    files:
+      - file: "src/data/industries.json"
+        label: "Industries Served"
+        name: "industries"
+        fields:
+          - { label: "Kicker", name: "kicker", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Sectors"
+            name: "sectors"
+            widget: "list"
+            summary: "{{name}}"
+            hint: "Only list a sector if real named clients back it up — the evidence chips are what make this credible."
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "Sector Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Evidence (real client names)", name: "evidence", widget: "list", field: { label: "Client Name", name: "item", widget: "string" } }
+
   - name: "contact"
     label: "Contact Page"
     files:

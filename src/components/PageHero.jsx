@@ -42,31 +42,15 @@ export default function PageHero({
           <div className="absolute inset-0 bg-white/75" />
         </>
       ) : (
-        <>
-          <motion.div
-            aria-hidden
-            animate={{ backgroundPosition: ['0px 0px', '48px 48px'] }}
-            transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
-            className="absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                'linear-gradient(#1B224E 1px, transparent 1px), linear-gradient(90deg, #1B224E 1px, transparent 1px)',
-              backgroundSize: '48px 48px',
-            }}
-          />
-          <motion.div
-            aria-hidden
-            animate={{ scale: [1, 1.15, 1], opacity: [0.16, 0.26, 0.16] }}
-            transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-            className="pointer-events-none absolute -top-32 -right-16 w-[420px] h-[420px] rounded-full bg-gold blur-3xl"
-          />
-          <motion.div
-            aria-hidden
-            animate={{ scale: [1, 1.12, 1], opacity: [0.12, 0.2, 0.12] }}
-            transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-            className="pointer-events-none absolute -bottom-40 -left-24 w-[380px] h-[380px] rounded-full bg-azure blur-3xl"
-          />
-        </>
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              'linear-gradient(#1B224E 1px, transparent 1px), linear-gradient(90deg, #1B224E 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
       )}
 
       <motion.div

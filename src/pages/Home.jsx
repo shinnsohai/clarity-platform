@@ -7,17 +7,19 @@ import GroupAdvantages from '../components/GroupAdvantages'
 import TestimonialCarousel from '../components/TestimonialCarousel'
 import FAQAccordion from '../components/FAQAccordion'
 import CTABanner from '../components/CTABanner'
-import FlywheelTeaser from '../components/FlywheelTeaser'
+import CertificationsStrip from '../components/CertificationsStrip'
+import IndustriesServed from '../components/IndustriesServed'
 
 export default function Home() {
   return (
     <>
       <HeroSlider />
+      <CertificationsStrip />
       <MetricsCounters />
-      <GroupAdvantages />
       <ServicesGrid />
-      <FlywheelTeaser />
+      <IndustriesServed />
       <WorldMap />
+      <GroupAdvantages />
       <ClientCarousel />
       <TestimonialCarousel />
       <FAQAccordion />

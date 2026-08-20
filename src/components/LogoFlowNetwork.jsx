@@ -438,12 +438,9 @@ export default function LogoFlowNetwork({ entity }) {
             style={{ top: '42%', transform: 'translate(-50%, -50%)' }}
           >
             <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
-              <motion.span
+              <span
                 aria-hidden
-                animate={{ scale: [1, 1.12, 1], opacity: [0.35, 0.7, 0.35] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute inset-[-10px] rounded-[28px]"
-                style={{ background: `radial-gradient(circle, rgba(242,156,33,0.5) 0%, rgba(27,34,78,0.25) 55%, transparent 75%)` }}
+                className="absolute inset-[-8px] rounded-[28px] border border-gold/25"
               />
               <div ref={rippleRef} className="lfn-ripple" />
               <div

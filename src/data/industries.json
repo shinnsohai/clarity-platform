@@ -1,0 +1,43 @@
+{
+  "kicker": "Where We Work",
+  "headline": "INDUSTRIES WE SERVE.",
+  "intro": "Grounded in the sectors our client roster actually operates in — not aspirational categories.",
+  "sectors": [
+    {
+      "id": "oil-gas",
+      "name": "Oil & Gas / Petrochemical",
+      "description": "Refining, process, and heavy engineering work for operators including Singapore Refining Company, MMHE, and Hai Leck.",
+      "evidence": ["SRC", "MMHE", "Hai Leck", "UTOC"]
+    },
+    {
+      "id": "marine-offshore",
+      "name": "Marine & Offshore",
+      "description": "Structural, mechanical, and manpower support for marine and offshore engineering yards.",
+      "evidence": ["Seatrium", "MMHE"]
+    },
+    {
+      "id": "aviation-aerospace",
+      "name": "Aviation & Aerospace",
+      "description": "Facility and manpower support for aerospace manufacturing and MRO operations.",
+      "evidence": ["Bombardier", "EFW — Airbus & ST Aerospace", "Oriental Aviation", "Aerostar"]
+    },
+    {
+      "id": "chemicals-materials",
+      "name": "Chemicals & Materials",
+      "description": "Specialty chemical and materials manufacturing support.",
+      "evidence": ["Kuraray"]
+    },
+    {
+      "id": "construction-property",
+      "name": "Construction & Property",
+      "description": "Structural engineering, civil works, and manpower deployment across active building and infrastructure sites.",
+      "evidence": ["HP Construction & Engineering", "MCC Land", "Utracon", "FL Group", "GL Engineering"]
+    },
+    {
+      "id": "logistics",
+      "name": "Logistics & Supply Chain",
+      "description": "Facilities and manpower support for freight, logistics, and distribution operations.",
+      "evidence": ["Nippon Express", "Sankyu Singapore", "Addcel"]
+    }
+  ]
+}

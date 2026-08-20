@@ -70,13 +70,9 @@ export default function FooterSocial() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex flex-col items-center text-center"
         >
-          <motion.div
-            animate={{ scale: [1, 1.06, 1] }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            className="mb-5 w-14 h-14 rounded-2xl bg-white shadow-soft-lg border border-ink/10 flex items-center justify-center p-2.5"
-          >
+          <div className="mb-5 w-14 h-14 rounded-2xl bg-white shadow-soft-lg border border-ink/10 flex items-center justify-center p-2.5">
             <img src="/images/logo-clarity-icon.png" alt="Clarity Group" className="w-full h-full object-contain" />
-          </motion.div>
+          </div>
           <div className="text-concrete text-[10px] tracking-[0.3em] uppercase mb-1">Stay Connected</div>
           <h3 className="font-display text-xl md:text-2xl text-ink mb-7">FOLLOW CLARITY GROUP.</h3>
           <div className="flex items-center gap-4">

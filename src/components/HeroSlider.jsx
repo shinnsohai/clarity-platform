@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { parent, heroVideo } from '../data/hierarchy'
 
@@ -61,20 +62,38 @@ export default function HeroSlider() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-6 max-w-xl text-concrete text-lg leading-relaxed"
         >
-          Six subsidiaries. One certified standard. Construction, technology, facilities,
-          manufacturing, and global manpower — delivered with total transparency.
+          Six subsidiaries delivering structural engineering, facilities operations,
+          precision manufacturing, and certified manpower — across oil &amp; gas, marine,
+          aviation, and industrial construction sites in Singapore and the region.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="mt-9 flex flex-wrap items-center gap-4"
+        >
+          <Link
+            to="/our-business"
+            className="inline-flex items-center bg-azure text-white text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-4 rounded-md hover:brightness-110 transition-all"
+          >
+            Explore Our Capabilities
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center border border-ink/20 text-ink text-[11px] font-bold tracking-[0.15em] uppercase px-7 py-4 rounded-md hover:border-azure hover:text-azure transition-colors"
+          >
+            Discuss a Project
+          </Link>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-10 flex items-center gap-3"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-8 flex items-center gap-3"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
-          </span>
+          <span className="h-1.5 w-1.5 rounded-full bg-gold inline-block" />
           <span className="text-concrete text-xs tracking-[0.15em] uppercase">Marina Bay, Singapore</span>
         </motion.div>
 
