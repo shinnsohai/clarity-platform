@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SmoothScroll from './components/SmoothScroll'
-import Cursor from './components/Cursor'
 import Navbar from './components/Navbar'
 import GlobalFooter from './components/GlobalFooter'
 import Home from './pages/Home'
@@ -23,7 +22,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <SmoothScroll>
-        <Cursor />
         <Navbar />
         <main className="pt-20 lg:pt-24">
           <Routes>
