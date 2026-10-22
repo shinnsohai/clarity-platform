@@ -121,15 +121,26 @@ export default function Careers() {
                     <span className="text-[10px] tracking-[0.15em] uppercase text-concrete font-semibold">{job.salary}</span>
                   )}
                   <span className="text-[10px] tracking-[0.2em] uppercase text-azure font-bold">{job.type}</span>
-                  {/* WhatsApp when the subsidiary has a number (works without a mail app), else email */}
-                  <a
-                    href={apply.waHref || apply.mailHref}
-                    {...(apply.waHref ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    className="relative z-10 inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-md px-5 py-2.5 hover:brightness-110 transition-all"
-                  >
-                    {apply.waHref && <SocialIcon name="whatsapp" className="w-4 h-4" />}
-                    {apply.waHref ? 'WhatsApp' : 'Apply →'}
-                  </a>
+                  {/* WhatsApp when the subsidiary has a number; otherwise open the job page, whose
+                      apply card works without a mail app (a bare mailto: here would not) */}
+                  {apply.waHref ? (
+                    <a
+                      href={apply.waHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative z-10 inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-md px-5 py-2.5 hover:brightness-110 transition-all"
+                    >
+                      <SocialIcon name="whatsapp" className="w-4 h-4" />
+                      WhatsApp
+                    </a>
+                  ) : (
+                    <Link
+                      to={`/careers/${job.id}`}
+                      className="relative z-10 inline-flex items-center text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-md px-5 py-2.5 hover:brightness-110 transition-all"
+                    >
+                      Apply →
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             )

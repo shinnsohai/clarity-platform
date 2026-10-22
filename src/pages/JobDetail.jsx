@@ -4,6 +4,7 @@ import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
 import SocialIcon from '../components/icons/SocialIcon'
+import EmailApply from '../components/EmailApply'
 import { getApply, formatPosted } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
@@ -191,27 +192,14 @@ export default function JobDetail() {
                   Call {apply.phone}
                 </a>
               )}
-              {apply.mailHref && (
-                <a
-                  href={apply.mailHref}
-                  className={`flex items-center justify-center text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-4 rounded-md transition-colors ${
-                    apply.waHref || apply.telHref
-                      ? 'border border-ink/20 text-ink hover:border-azure hover:text-azure'
-                      : 'bg-azure text-white hover:brightness-110'
-                  }`}
-                >
-                  Apply by Email
-                </a>
-              )}
+              <EmailApply apply={apply} primary={!apply.waHref && !apply.telHref} />
             </div>
             <div className="mt-5 text-concrete text-xs leading-relaxed">
               Send your resume to{' '}
               {apply.emails.map((e, i) => (
                 <span key={e}>
                   {i > 0 && ' and '}
-                  <a href={`mailto:${e}`} className="text-ink font-semibold hover:text-azure transition-colors">
-                    {e}
-                  </a>
+                  <span className="text-ink font-semibold select-all">{e}</span>
                 </span>
               ))}
               {apply.phone && <>, or call {apply.phone}</>}. Quote the position title.

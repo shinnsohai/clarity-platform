@@ -29,12 +29,19 @@ export function getApply(job) {
   // recruiter knows what the applicant is replying to. wa.me wants digits only, no "+".
   const waDigits = (route.whatsapp || '').replace(/\D/g, '')
   const waText = `Hi, I would like to apply for ${job.title}${job.client ? ` (${job.client})` : ''}. I saw it on www.clarity.com.sg/careers.`
+  const body = `Hi,\n\nI would like to apply for ${job.title}${job.client ? ` (${job.client})` : ''}. My resume is attached.\n\nThank you.`
+  const q = (o) => Object.entries(o).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')
   return {
     emails,
     phone,
     whatsapp: route.whatsapp || '',
     telHref: phone ? `tel:${phone.replace(/[^+\d]/g, '')}` : '',
-    mailHref: emails.length ? `mailto:${emails.join(',')}?subject=${encodeURIComponent(subject)}` : '',
     waHref: waDigits ? `https://wa.me/${waDigits}?text=${encodeURIComponent(waText)}` : '',
+    // A bare mailto: does nothing when the visitor has no mail app registered (common on desktop),
+    // so the apply UI also offers webmail compose links and a copy button — see EmailApply.
+    mailHref: emails.length ? `mailto:${emails.join(',')}?${q({ subject, body })}` : '',
+    gmailHref: emails.length ? `https://mail.google.com/mail/?${q({ view: 'cm', fs: '1', to: emails.join(','), su: subject, body })}` : '',
+    outlookHref: emails.length ? `https://outlook.office.com/mail/deeplink/compose?${q({ to: emails.join(';'), subject, body })}` : '',
+    emailList: emails.join(', '),
   }
 }
