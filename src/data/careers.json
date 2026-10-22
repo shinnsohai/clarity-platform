@@ -1,15 +1,485 @@
 {
   "intro": "Clarity Group deploys operational talent at scale across six subsidiaries. Every role below sits inside a live operating business.",
+  "applyRouting": [
+    {
+      "entity": "default",
+      "phone": "",
+      "emails": [
+        "careers@clarity.com.sg"
+      ]
+    },
+    {
+      "entity": "cfm",
+      "phone": "+65 6326 9682",
+      "emails": [
+        "cfm@clarity.com.sg",
+        "careers@clarity.com.sg"
+      ]
+    }
+  ],
   "jobs": [
-    { "id": "j1", "title": "Resident Engineer (RE)", "entity": "durabuild", "location": "Singapore — Site", "type": "Full-Time" },
-    { "id": "j2", "title": "Structural Steel Foreman", "entity": "durabuild", "location": "Singapore — Site", "type": "Full-Time" },
-    { "id": "j3", "title": "General Manpower — Construction", "entity": "durabuild", "location": "Singapore — Site", "type": "Full-Time" },
-    { "id": "j4", "title": "Full-Stack Engineer, Builtsync", "entity": "lenix", "location": "Singapore — Hybrid", "type": "Full-Time" },
-    { "id": "j5", "title": "Mobile App Developer (iOS/Android)", "entity": "lenix", "location": "Singapore — Hybrid", "type": "Full-Time" },
-    { "id": "j6", "title": "Terminal Operations Executive", "entity": "cfm", "location": "Singapore — Airport", "type": "Full-Time" },
-    { "id": "j7", "title": "Facility Compliance Officer", "entity": "cfm", "location": "Singapore — HQ", "type": "Full-Time" },
-    { "id": "j8", "title": "Manufacturing Operator", "entity": "clarity-manufacturing", "location": "Singapore — Plant", "type": "Shift-Based" },
-    { "id": "j9", "title": "Calibration Technician", "entity": "clarity-manufacturing", "location": "Singapore — Plant", "type": "Full-Time" },
-    { "id": "j10", "title": "IT Infrastructure Specialist", "entity": "techsphere", "location": "Singapore — HQ", "type": "Full-Time" }
+    {
+      "id": "resident-engineer-re",
+      "title": "Resident Engineer (RE)",
+      "entity": "durabuild",
+      "location": "Singapore — Site",
+      "type": "Full-Time"
+    },
+    {
+      "id": "structural-steel-foreman",
+      "title": "Structural Steel Foreman",
+      "entity": "durabuild",
+      "location": "Singapore — Site",
+      "type": "Full-Time"
+    },
+    {
+      "id": "general-manpower-construction",
+      "title": "General Manpower — Construction",
+      "entity": "durabuild",
+      "location": "Singapore — Site",
+      "type": "Full-Time"
+    },
+    {
+      "id": "full-stack-engineer-builtsync",
+      "title": "Full-Stack Engineer, Builtsync",
+      "entity": "lenix",
+      "location": "Singapore — Hybrid",
+      "type": "Full-Time"
+    },
+    {
+      "id": "mobile-app-developer",
+      "title": "Mobile App Developer (iOS/Android)",
+      "entity": "lenix",
+      "location": "Singapore — Hybrid",
+      "type": "Full-Time"
+    },
+    {
+      "id": "warehouse-assistant-sats-changi-cargo",
+      "title": "Warehouse Assistant",
+      "entity": "cfm",
+      "client": "SATS Changi Cargo",
+      "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
+      "type": "Shift-Based",
+      "vacancies": "21",
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
+      "shifts": [
+        {
+          "label": "Day",
+          "hours": "0900–2100 hrs",
+          "detail": "10.5 working hrs + 1.5 hrs break"
+        },
+        {
+          "label": "Night",
+          "hours": "2100–0900 hrs",
+          "detail": "10.5 working hrs + 1.5 hrs break"
+        }
+      ],
+      "scope": [
+        "Receive, sort, transfer and arrange import/export air cargo.",
+        "Load and unload cargo from pallets, containers, trolleys and designated storage areas.",
+        "Perform cargo build-up and breakdown activities according to operational requirements.",
+        "Check cargo markings, labels, quantities and physical condition.",
+        "Move cargo using pallet jacks, trolleys and other approved material-handling equipment.",
+        "Segregate cargo according to flight, destination, shipment type or operational instruction.",
+        "Maintain proper housekeeping and safe working conditions within the warehouse.",
+        "Comply with airport security, safety and cargo-handling procedures.",
+        "Perform other warehouse and cargo-handling duties assigned by supervisors."
+      ]
+    },
+    {
+      "id": "manifesting-staff-sats-changi-cargo",
+      "title": "Manifesting Staff",
+      "entity": "cfm",
+      "client": "SATS Changi Cargo",
+      "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
+      "type": "Shift-Based",
+      "vacancies": "3",
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
+      "shifts": [
+        {
+          "label": "Day",
+          "hours": "0800–1600 hrs",
+          "detail": "7 working hrs + 1 hr break"
+        },
+        {
+          "label": "Afternoon",
+          "hours": "1600–2400 hrs",
+          "detail": "7 working hrs + 1 hr break"
+        },
+        {
+          "label": "Night",
+          "hours": "0000–0800 hrs",
+          "detail": "7 working hrs + 1 hr break"
+        }
+      ],
+      "scope": [
+        "Prepare, verify and process air cargo manifests and related shipment documents.",
+        "Check shipment details such as airway bill numbers, destination, weight, quantity and flight information.",
+        "Perform system data entry and update cargo movement records accurately.",
+        "Coordinate with warehouse operations regarding cargo readiness and shipment status.",
+        "Ensure documents are completed and submitted within required flight cut-off times.",
+        "Identify discrepancies and escalate documentation or shipment issues to supervisors.",
+        "Maintain proper filing and document-control records.",
+        "Liaise with airline, cargo and operational personnel when required."
+      ]
+    },
+    {
+      "id": "forklift-operator-warehouse-assistant-sats-changi-cargo",
+      "title": "Forklift Operator cum Warehouse Assistant",
+      "entity": "cfm",
+      "client": "SATS Changi Cargo",
+      "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
+      "type": "Shift-Based",
+      "vacancies": "14",
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
+      "shifts": [
+        {
+          "label": "Day",
+          "hours": "0900–2100 hrs",
+          "detail": "10.5 working hrs + 1.5 hrs break"
+        },
+        {
+          "label": "Night",
+          "hours": "2100–0900 hrs",
+          "detail": "10.5 working hrs + 1.5 hrs break"
+        }
+      ],
+      "scope": [
+        "Operate forklift safely for loading, unloading, stacking and movement of air cargo.",
+        "Transport pallets, containers and cargo between designated warehouse locations.",
+        "Conduct basic pre-use inspection of forklift equipment before operation.",
+        "Ensure cargo is properly positioned and secured before movement.",
+        "Support warehouse build-up, breakdown, sorting and cargo-transfer activities.",
+        "Observe designated travel routes, speed limits and warehouse safety rules.",
+        "Report damaged cargo, unsafe conditions or equipment defects immediately.",
+        "Assist with general warehouse duties when forklift operation is not required."
+      ],
+      "requirements": [
+        "Valid/relevant forklift competency or certification is preferred/required according to site requirements."
+      ]
+    },
+    {
+      "id": "adv-driver-sats-changi-cargo",
+      "title": "ADV Driver",
+      "entity": "cfm",
+      "client": "SATS Changi Cargo",
+      "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
+      "type": "Shift-Based",
+      "vacancies": "10",
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
+      "shifts": [
+        {
+          "label": "Night",
+          "hours": "2300–1100 hrs",
+          "detail": "10.5 working hrs + 1.5 hrs break"
+        }
+      ],
+      "scope": [
+        "Operate assigned Airport Driving Vehicle/airside vehicle for transportation of cargo, equipment or operational materials.",
+        "Conduct vehicle pre-use checks before commencing work.",
+        "Transport items safely between designated airport/cargo operational areas.",
+        "Follow airport traffic rules, designated routes and operational instructions.",
+        "Ensure loads are properly positioned and secured prior to movement.",
+        "Maintain communication with operations/controllers regarding assigned movements.",
+        "Report vehicle defects, incidents or abnormal conditions immediately.",
+        "Maintain cleanliness and basic condition of assigned vehicle.",
+        "Perform other operational duties when required."
+      ]
+    },
+    {
+      "id": "food-packer-sicc",
+      "title": "Food Packer",
+      "entity": "cfm",
+      "client": "SICC",
+      "location": "Singapore — SICC 1 / SICC 2",
+      "type": "Shift-Based",
+      "vacancies": "20",
+      "shifts": [
+        {
+          "label": "Day",
+          "hours": "0900–2100 hrs",
+          "detail": "10.5 working hrs + 1.5 hrs break"
+        },
+        {
+          "label": "Night",
+          "hours": "2100–0900 hrs",
+          "detail": "10.5 working hrs + 1.5 hrs break"
+        }
+      ],
+      "scope": [
+        "Prepare and pack food items according to airline catering requirements.",
+        "Arrange meal components, utensils, beverages and related catering items.",
+        "Check product quantity, presentation and packaging before dispatch.",
+        "Follow food hygiene, sanitation and contamination-control requirements.",
+        "Maintain cleanliness of workstations, trays, equipment and production areas.",
+        "Follow FIFO, temperature-control and food-handling procedures where applicable.",
+        "Report damaged, contaminated or incorrect products immediately.",
+        "Support tray-setting, food preparation and other production activities when required.",
+        "Perform repetitive standing and packing duties in a fast-paced operational environment."
+      ]
+    },
+    {
+      "id": "manifesting-staff-sicc",
+      "title": "Manifesting Staff",
+      "entity": "cfm",
+      "client": "SICC",
+      "location": "Singapore — SICC 1 / SICC 2",
+      "type": "Shift-Based",
+      "vacancies": "3",
+      "shifts": [
+        {
+          "label": "Day",
+          "hours": "0800–1600 hrs",
+          "detail": "7 working hrs + 1 hr break"
+        },
+        {
+          "label": "Afternoon",
+          "hours": "1600–2400 hrs",
+          "detail": "7 working hrs + 1 hr break"
+        },
+        {
+          "label": "Night",
+          "hours": "0000–0800 hrs",
+          "detail": "7 working hrs + 1 hr break"
+        }
+      ],
+      "scope": [
+        "Prepare and maintain operational manifests and documentation.",
+        "Perform accurate data entry and verification of required information.",
+        "Coordinate with operational teams regarding preparation and dispatch status.",
+        "Check documentation for completeness and discrepancies.",
+        "Maintain filing and records according to company procedures.",
+        "Escalate discrepancies promptly to the supervisor.",
+        "Perform administrative and operational support duties as assigned."
+      ]
+    },
+    {
+      "id": "ntl-operator-changi-airport-terminal-4",
+      "title": "NTL Operator",
+      "entity": "cfm",
+      "client": "Changi Airport Terminal 4",
+      "location": "Singapore — Changi Airport Terminal 4",
+      "type": "Shift-Based",
+      "vacancies": "2",
+      "salary": "$1,950–$2,100/month",
+      "shifts": [
+        {
+          "label": "Day Shift (1 vacancy)",
+          "hours": "0630–1530 · 0800–1700 · 1000–1900 · 1300–2200 · 1400–2300 hrs",
+          "detail": "8 working hrs + 1 hr break",
+          "salary": "$1,950/month"
+        },
+        {
+          "label": "Night Shift (1 vacancy)",
+          "hours": "2130–0630 · 2230–0730 hrs",
+          "detail": "8 working hrs + 1 hr break",
+          "salary": "$1,950–$2,100/month"
+        }
+      ],
+      "scope": [
+        "Meet and receive designated passengers requiring special handling.",
+        "Escort NTL (Not To Land) and other special-category passengers between immigration, holding areas and boarding gates.",
+        "Coordinate closely with airline representatives and airport/immigration personnel.",
+        "Verify passenger identity, flight information and handling instructions.",
+        "Ensure passengers are escorted to the correct designated location.",
+        "Assist with relevant documentation and administrative processes.",
+        "Monitor passenger movements and comply with airport security procedures.",
+        "Provide professional and courteous passenger assistance.",
+        "Support wheelchair or other passenger-handling activities when required."
+      ],
+      "note": "Candidates are required to attend a second interview with the client."
+    },
+    {
+      "id": "wheelchair-odd-size-baggage-assistant-changi-airport-terminal-4",
+      "title": "Wheelchair cum Odd Size Baggage Assistant",
+      "entity": "cfm",
+      "client": "Changi Airport Terminal 4",
+      "location": "Singapore — Changi Airport Terminal 4",
+      "type": "Shift-Based",
+      "vacancies": "2",
+      "salary": "$1,850/month",
+      "shifts": [
+        {
+          "label": "Night Shift",
+          "hours": "2300–0800 hrs",
+          "detail": "8 working hrs + 1 hr break"
+        }
+      ],
+      "scope": [
+        "Assist passengers requiring wheelchair or mobility assistance throughout the airport.",
+        "Meet passengers at assigned arrival/departure points and escort them safely.",
+        "Assist passengers between check-in, immigration, boarding gates and arrival areas.",
+        "Handle and transport odd-size baggage according to operational procedures.",
+        "Assist with items such as strollers, wheelchairs, sports equipment and oversized luggage.",
+        "Provide courteous assistance to elderly passengers, families and passengers with special needs.",
+        "Coordinate with airline and airport personnel when required.",
+        "Follow airport security, baggage-handling and safety requirements."
+      ],
+      "note": "Candidates are required to attend a second interview with the client."
+    },
+    {
+      "id": "electrical-stacker-operator-ntuc-hub",
+      "title": "Electrical Stacker Operator",
+      "entity": "cfm",
+      "client": "NTUC Hub / GLS Building",
+      "location": "Singapore — NTUC Hub / GLS Building",
+      "type": "Shift-Based",
+      "vacancies": "4",
+      "shifts": [
+        {
+          "label": "Day",
+          "hours": "0800–2000 hrs",
+          "detail": "11 working hrs + 1 hr break"
+        },
+        {
+          "label": "Night",
+          "hours": "2030–0900 hrs",
+          "detail": "10.5 working hrs + 1 hr break"
+        }
+      ],
+      "scope": [
+        "Operate electric stacker/powered material-handling equipment safely.",
+        "Load, unload, stack and retrieve palletized goods.",
+        "Transfer goods between receiving, storage, picking and dispatch areas.",
+        "Conduct equipment pre-use checks before operation.",
+        "Ensure pallets and loads are stable before lifting or movement.",
+        "Follow warehouse traffic routes and safe stacking limits.",
+        "Support general warehouse operations when required.",
+        "Report equipment defects, damaged goods and unsafe conditions immediately.",
+        "Maintain housekeeping within assigned warehouse areas."
+      ]
+    },
+    {
+      "id": "class-3-delivery-driver-ntuc-hub",
+      "title": "Class 3 Delivery Driver",
+      "entity": "cfm",
+      "client": "NTUC Hub / GLS Building",
+      "location": "Singapore — NTUC Hub / GLS Building",
+      "type": "Shift-Based",
+      "vacancies": "10",
+      "shifts": [
+        {
+          "label": "Working hours",
+          "hours": "To be confirmed"
+        }
+      ],
+      "scope": [
+        "Operate Class 3 delivery vehicle for transportation and delivery of goods.",
+        "Conduct pre-trip vehicle inspection and report defects.",
+        "Load and unload goods according to delivery schedules.",
+        "Verify delivery orders, quantities and receiving documentation.",
+        "Ensure goods are properly secured during transportation.",
+        "Complete delivery documentation and obtain acknowledgement where required.",
+        "Follow assigned delivery routes and schedules.",
+        "Comply with Singapore road traffic and company safety requirements.",
+        "Maintain cleanliness and basic condition of assigned vehicle.",
+        "Assist with warehouse/loading activities when required."
+      ],
+      "requirements": [
+        "Valid Singapore Class 3 driving licence."
+      ]
+    },
+    {
+      "id": "warehouse-assistant-dnata-changi-cargo",
+      "title": "Warehouse Assistant",
+      "entity": "cfm",
+      "client": "dnata Changi Cargo",
+      "location": "Singapore — dnata Changi Cargo",
+      "type": "Shift-Based",
+      "vacancies": "10",
+      "shifts": [
+        {
+          "label": "Day",
+          "hours": "0800–1900 hrs",
+          "detail": "10 working hrs + 1 hr break"
+        },
+        {
+          "label": "Night",
+          "hours": "2000–0700 hrs",
+          "detail": "10 working hrs + 1 hr break"
+        }
+      ],
+      "scope": [
+        "Perform receiving, sorting, storage and movement of air cargo.",
+        "Load and unload cargo from pallets, containers and vehicles.",
+        "Perform cargo build-up and breakdown activities.",
+        "Check cargo labels, quantity and physical condition.",
+        "Segregate and arrange shipments according to operational instructions.",
+        "Operate approved manual material-handling equipment where required.",
+        "Maintain accurate cargo movement and handling records.",
+        "Maintain good housekeeping within warehouse areas.",
+        "Follow aviation security, workplace safety and cargo-handling procedures.",
+        "Perform other operational duties assigned by supervisors."
+      ]
+    },
+    {
+      "id": "ntl-cum-wheelchair-operator-changi-airport",
+      "title": "NTL cum Wheelchair Operator",
+      "entity": "cfm",
+      "client": "Changi Airport",
+      "location": "Singapore — Changi Airport",
+      "type": "Shift-Based",
+      "scope": [
+        "Meet and greet passengers in a warm, professional and courteous manner.",
+        "Assist designated airlines in transporting and escorting special-category passengers including NTL (Not To Land), UM (Unaccompanied Minor), deportees, offloaded passengers and other special-handling passengers.",
+        "Escort passengers between aircraft gates, immigration offices, designated holding areas and other airport locations.",
+        "Assist airlines with preparation, completion and submission of relevant flight or passenger-handling documents.",
+        "Provide wheelchair assistance and transport passengers requiring mobility support.",
+        "Assist hearing-impaired, visually impaired, elderly or other passengers requiring special assistance.",
+        "Verify passenger name, flight information and Special Service Request details before movement.",
+        "Ensure passengers are brought to the correct destination safely and punctually.",
+        "Communicate and coordinate with airline representatives, Immigration officers and other airport personnel.",
+        "Attend to passenger enquiries and provide excellent customer service.",
+        "Monitor assigned passengers during the handling process and comply with security requirements.",
+        "Assist with wheelchair pushing and other related passenger-service duties.",
+        "Perform any other operational or ad-hoc duties assigned by management."
+      ],
+      "profile": [
+        "Service-oriented and comfortable interacting with passengers from different backgrounds.",
+        "Able to communicate clearly and professionally.",
+        "Able to work rotating shifts, weekends and public holidays.",
+        "Physically fit and able to push wheelchairs and walk for extended periods within the airport.",
+        "Able to remain calm when handling sensitive or challenging passenger situations.",
+        "Must comply with airport security and pass requirements.",
+        "Previous airport, airline, hospitality or customer-service experience is advantageous."
+      ]
+    },
+    {
+      "id": "manufacturing-operator",
+      "title": "Manufacturing Operator",
+      "entity": "clarity-manufacturing",
+      "location": "Singapore — Plant",
+      "type": "Shift-Based"
+    },
+    {
+      "id": "calibration-technician",
+      "title": "Calibration Technician",
+      "entity": "clarity-manufacturing",
+      "location": "Singapore — Plant",
+      "type": "Full-Time"
+    },
+    {
+      "id": "it-infrastructure-specialist",
+      "title": "IT Infrastructure Specialist",
+      "entity": "techsphere",
+      "location": "Singapore — HQ",
+      "type": "Full-Time"
+    }
   ]
 }

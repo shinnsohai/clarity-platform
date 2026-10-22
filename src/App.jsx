@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import OurBusiness from './pages/OurBusiness'
 import EntityPage from './pages/EntityPage'
 import Careers from './pages/Careers'
+import JobDetail from './pages/JobDetail'
 import Contact from './pages/Contact'
 import StrategicPartner from './pages/StrategicPartner'
 import HowItWorks from './pages/HowItWorks'
@@ -42,6 +43,7 @@ export default function App() {
             <Route path="/investor-relations" element={<InvestorRelations />} />
 
             <Route path="/careers" element={<Careers />} />
+            <Route path="/careers/:slug" element={<JobDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
+import { getApply } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
 
@@ -38,42 +40,54 @@ export default function Careers() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {jobs.map((job, i) => (
-            <motion.div
-              key={job.id}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: i * 0.03 }}
-              whileHover={{ y: -3 }}
-              className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-5 px-6 bg-white rounded-xl shadow-soft hover:shadow-soft-lg transition-shadow"
-            >
-              <div className="flex items-center gap-4 min-w-0">
-                <img
-                  src={entityById[job.entity]?.logo}
-                  alt=""
-                  className="h-9 w-9 object-contain shrink-0"
-                />
-                <div className="min-w-0">
-                  <div className="font-display text-lg text-ink leading-tight">{job.title}</div>
-                  <div className="text-concrete text-xs mt-1">
-                    {entityById[job.entity]?.name} · {job.location}
+          {jobs.map((job, i) => {
+            const apply = getApply(job)
+            return (
+              <motion.div
+                key={job.id}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: Math.min(i, 8) * 0.03 }}
+                className="group relative flex flex-col md:flex-row md:items-center justify-between gap-4 py-5 px-6 bg-white rounded-xl border border-ink/10 hover:border-azure/40 hover:shadow-soft transition-all"
+              >
+                <div className="flex items-center gap-4 min-w-0">
+                  <img src={entityById[job.entity]?.logo} alt="" className="h-9 w-9 object-contain shrink-0" />
+                  <div className="min-w-0">
+                    {/* Stretched link: the whole card opens the job; Apply sits above it (z-10) */}
+                    <Link
+                      to={`/careers/${job.id}`}
+                      className="font-display text-lg text-ink leading-tight group-hover:text-azure transition-colors after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-azure focus-visible:after:rounded-xl"
+                    >
+                      {job.title}
+                    </Link>
+                    <div className="text-concrete text-xs mt-1">
+                      {entityById[job.entity]?.name}
+                      {job.client ? ` · ${job.client}` : ''}
+                    </div>
+                    <div className="text-concrete/80 text-xs mt-0.5">{job.location}</div>
                   </div>
                 </div>
-              </div>
-              <div className="flex items-center gap-6 shrink-0">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-azure font-bold">
-                  {job.type}
-                </span>
-                <a
-                  href={`mailto:careers@claritygroup.com.sg?subject=${encodeURIComponent(job.title)}`}
-                  className="text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-full px-5 py-2.5 hover:brightness-110 transition-all"
-                >
-                  Apply →
-                </a>
-              </div>
-            </motion.div>
-          ))}
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3 shrink-0">
+                  {job.vacancies && (
+                    <span className="text-[10px] tracking-[0.15em] uppercase text-ink font-semibold">
+                      {job.vacancies} {Number(job.vacancies) === 1 ? 'vacancy' : 'vacancies'}
+                    </span>
+                  )}
+                  {job.salary && (
+                    <span className="text-[10px] tracking-[0.15em] uppercase text-concrete font-semibold">{job.salary}</span>
+                  )}
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-azure font-bold">{job.type}</span>
+                  <a
+                    href={apply.mailHref}
+                    className="relative z-10 text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-md px-5 py-2.5 hover:brightness-110 transition-all"
+                  >
+                    Apply →
+                  </a>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </section>
     </div>

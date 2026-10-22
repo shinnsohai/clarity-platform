@@ -32,8 +32,12 @@ export default function SmoothScroll({ children }) {
     }
   }, [])
 
+  // New page → start at the top. `force` bypasses Lenis' stopped/locked guard (which makes a
+  // plain scrollTo a silent no-op), and the direct window reset covers any state Lenis missed —
+  // without it, opening a job from the bottom of the Careers list landed mid-page.
   useEffect(() => {
-    lenisRef.current?.scrollTo(0, { immediate: true })
+    lenisRef.current?.scrollTo(0, { immediate: true, force: true })
+    window.scrollTo(0, 0)
     ScrollTrigger.refresh()
   }, [location.pathname])
 

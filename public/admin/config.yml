@@ -465,19 +465,47 @@ collections:
         name: "careers"
         fields:
           - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Where Applications Go"
+            name: "applyRouting"
+            widget: "list"
+            summary: "{{entity}} → {{phone}}"
+            hint: "One row per subsidiary. A job uses the row whose Entity ID matches its own; anything else falls back to the row with Entity ID \"default\"."
+            fields:
+              - { label: "Entity ID", name: "entity", widget: "string", hint: "e.g. cfm, lenix — or \"default\" for every other subsidiary" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Emails", name: "emails", widget: "list", field: { label: "Email", name: "item", widget: "string" }, hint: "All of these receive the application (the Apply button addresses them together)." }
           - label: "Job Listings"
             name: "jobs"
             widget: "list"
-            summary: "{{title}}"
+            summary: "{{title}} — {{client}}"
             fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
+              - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase-with-dashes, unique. Becomes /careers/[slug] — avoid changing once published." }
               - { label: "Job Title", name: "title", widget: "string" }
-              - { label: "Entity ID", name: "entity", widget: "string" }
+              - { label: "Entity ID", name: "entity", widget: "string", hint: "durabuild, lenix, cfm, clarity-manufacturing, techsphere or clarity-ec" }
+              - { label: "Client / Site", name: "client", widget: "string", required: false, hint: "e.g. SATS Changi Cargo" }
               - { label: "Location", name: "location", widget: "string" }
               - label: "Type"
                 name: "type"
                 widget: "select"
                 options: ["Full-Time", "Part-Time", "Shift-Based", "Contract"]
+              - { label: "Vacancies", name: "vacancies", widget: "string", required: false }
+              - { label: "Salary", name: "salary", widget: "string", required: false, hint: "e.g. $1,850/month" }
+              - { label: "Note", name: "note", widget: "text", required: false, hint: "Highlighted callout, e.g. interview requirements" }
+              - label: "Shifts"
+                name: "shifts"
+                widget: "list"
+                required: false
+                summary: "{{label}}: {{hours}}"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", hint: "Day, Night, Afternoon…" }
+                  - { label: "Hours", name: "hours", widget: "string", hint: "e.g. 0900–2100 hrs" }
+                  - { label: "Detail", name: "detail", widget: "string", required: false, hint: "e.g. 10.5 working hrs + 1.5 hrs break" }
+                  - { label: "Salary (if it differs by shift)", name: "salary", widget: "string", required: false }
+              - { label: "Job Scope", name: "scope", widget: "list", required: false, field: { label: "Responsibility", name: "item", widget: "string" } }
+              - { label: "Requirements", name: "requirements", widget: "list", required: false, field: { label: "Requirement", name: "item", widget: "string" } }
+              - { label: "Suitable Candidate Profile", name: "profile", widget: "list", required: false, field: { label: "Point", name: "item", widget: "string" } }
+              - { label: "Working Locations", name: "workLocations", widget: "list", required: false, field: { label: "Location", name: "item", widget: "string" } }
+              - { label: "Reporting Location", name: "reporting", widget: "string", required: false }
 
   - name: "clients"
     label: "Client Logos"
