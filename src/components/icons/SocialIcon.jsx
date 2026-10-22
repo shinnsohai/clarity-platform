@@ -32,6 +32,12 @@ const icons = {
       <circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none" />
     </>
   ),
+  whatsapp: (
+    <>
+      <path d="M12 3.2a8.8 8.8 0 0 0-7.5 13.4L3.3 20.8l4.3-1.1A8.8 8.8 0 1 0 12 3.2z" {...stroke} />
+      <path d="M9.2 8.6c-.3.4-.5 1-.3 1.7.5 1.6 1.9 3.2 3.6 4 .7.3 1.4.2 1.9-.3l.4-.5-1.6-1-.6.4c-.9-.4-1.7-1.2-2.1-2.1l.4-.6-.8-1.7z" fill="currentColor" stroke="none" />
+    </>
+  ),
   youtube: (
     <>
       <rect x="3" y="6" width="18" height="12" rx="4" {...stroke} />

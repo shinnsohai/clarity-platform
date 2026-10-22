@@ -473,6 +473,7 @@ collections:
             fields:
               - { label: "Entity ID", name: "entity", widget: "string", hint: "e.g. cfm, lenix — or \"default\" for every other subsidiary" }
               - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "WhatsApp Number", name: "whatsapp", widget: "string", required: false, hint: "Adds an \"Apply on WhatsApp\" button that opens a chat with a pre-filled message. Must be a number registered on WhatsApp. Leave blank to hide the button." }
               - { label: "Emails", name: "emails", widget: "list", field: { label: "Email", name: "item", widget: "string" }, hint: "All of these receive the application (the Apply button addresses them together)." }
           - label: "Job Listings"
             name: "jobs"
@@ -491,6 +492,8 @@ collections:
               - { label: "Date Posted", name: "posted", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", hint: "Careers page lists the newest first by this date." }
               - { label: "Vacancies (slots currently open)", name: "vacancies", widget: "string", required: false, hint: "A plain number, e.g. 21. Update it as slots fill — the page sorts by it and totals it. Leave blank if not stated." }
               - { label: "Salary", name: "salary", widget: "string", required: false, hint: "e.g. $1,850/month" }
+              - { label: "Job Image", name: "image", widget: "image", required: false, hint: "Wide photo shown at the top of this job's page (about 2:1, e.g. 900×430). Upload or pick from the media library." }
+              - { label: "Image Caption", name: "imageNote", widget: "string", required: false, hint: "e.g. AI-generated illustrative imagery — keep this if the picture is not a real photo of your staff." }
               - { label: "Note", name: "note", widget: "text", required: false, hint: "Highlighted callout, e.g. interview requirements" }
               - label: "Shifts"
                 name: "shifts"

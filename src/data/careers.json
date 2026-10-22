@@ -4,6 +4,7 @@
     {
       "entity": "default",
       "phone": "",
+      "whatsapp": "",
       "emails": [
         "careers@clarity.com.sg"
       ]
@@ -11,6 +12,7 @@
     {
       "entity": "cfm",
       "phone": "+65 6326 9682",
+      "whatsapp": "+65 6326 9682",
       "emails": [
         "cfm@clarity.com.sg",
         "careers@clarity.com.sg"
@@ -145,6 +147,8 @@
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/warehouse-assistant-sats-changi-cargo.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "21",
       "shifts": [
         {
@@ -183,6 +187,8 @@
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/manifesting-staff-sats-changi-cargo.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "3",
       "shifts": [
         {
@@ -225,6 +231,8 @@
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/forklift-operator-warehouse-assistant-sats-changi-cargo.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "14",
       "shifts": [
         {
@@ -265,6 +273,8 @@
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/adv-driver-sats-changi-cargo.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "10",
       "shifts": [
         {
@@ -298,6 +308,8 @@
       "location": "Singapore — SICC 1 / SICC 2",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/food-packer-sicc.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "20",
       "shifts": [
         {
@@ -331,6 +343,8 @@
       "location": "Singapore — SICC 1 / SICC 2",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/manifesting-staff-sicc.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "3",
       "shifts": [
         {
@@ -367,6 +381,8 @@
       "location": "Singapore — Changi Airport Terminal 4",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/ntl-operator-changi-airport-terminal-4.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "2",
       "salary": "$1,950–$2,100/month",
       "note": "Candidates are required to attend a second interview with the client.",
@@ -404,6 +420,8 @@
       "location": "Singapore — Changi Airport Terminal 4",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/wheelchair-odd-size-baggage-assistant-changi-airport-terminal-4.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "2",
       "salary": "$1,850/month",
       "note": "Candidates are required to attend a second interview with the client.",
@@ -433,6 +451,8 @@
       "location": "Singapore — NTUC Hub / GLS Building",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/electrical-stacker-operator-ntuc-hub.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "4",
       "shifts": [
         {
@@ -466,6 +486,8 @@
       "location": "Singapore — NTUC Hub / GLS Building",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/class-3-delivery-driver-ntuc-hub.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "10",
       "shifts": [
         {
@@ -497,6 +519,8 @@
       "location": "Singapore — dnata Changi Cargo",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/warehouse-assistant-dnata-changi-cargo.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "vacancies": "10",
       "shifts": [
         {
@@ -531,6 +555,8 @@
       "location": "Singapore — Changi Airport",
       "type": "Shift-Based",
       "posted": "2026-10-22",
+      "image": "/images/careers/ntl-cum-wheelchair-operator-changi-airport.jpg",
+      "imageNote": "AI-generated illustrative imagery",
       "scope": [
         "Meet and greet passengers in a warm, professional and courteous manner.",
         "Assist designated airlines in transporting and escorting special-category passengers including NTL (Not To Land), UM (Unaccompanied Minor), deportees, offloaded passengers and other special-handling passengers.",

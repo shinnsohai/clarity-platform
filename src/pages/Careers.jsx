@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
+import SocialIcon from '../components/icons/SocialIcon'
 import { getApply, formatPosted, slotsOf, sortJobs } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
@@ -120,11 +121,14 @@ export default function Careers() {
                     <span className="text-[10px] tracking-[0.15em] uppercase text-concrete font-semibold">{job.salary}</span>
                   )}
                   <span className="text-[10px] tracking-[0.2em] uppercase text-azure font-bold">{job.type}</span>
+                  {/* WhatsApp when the subsidiary has a number (works without a mail app), else email */}
                   <a
-                    href={apply.mailHref}
-                    className="relative z-10 text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-md px-5 py-2.5 hover:brightness-110 transition-all"
+                    href={apply.waHref || apply.mailHref}
+                    {...(apply.waHref ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    className="relative z-10 inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase bg-azure text-white rounded-md px-5 py-2.5 hover:brightness-110 transition-all"
                   >
-                    Apply →
+                    {apply.waHref && <SocialIcon name="whatsapp" className="w-4 h-4" />}
+                    {apply.waHref ? 'WhatsApp' : 'Apply →'}
                   </a>
                 </div>
               </motion.div>

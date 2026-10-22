@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
+import SocialIcon from '../components/icons/SocialIcon'
 import { getApply, formatPosted } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
@@ -79,7 +80,18 @@ export default function JobDetail() {
         description={job.location}
       />
 
-      <section className="py-20 max-w-[1440px] mx-auto px-8 xl:px-16 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+      {job.image && (
+        <figure className="pt-12 max-w-[1440px] mx-auto px-8 xl:px-16">
+          <img
+            src={job.image}
+            alt={`${job.title}${job.client ? ` — ${job.client}` : ''}`}
+            className="w-full h-auto rounded-xl border border-ink/10"
+          />
+          {job.imageNote && <figcaption className="mt-2 text-concrete text-[11px]">{job.imageNote}</figcaption>}
+        </figure>
+      )}
+
+      <section className="py-16 max-w-[1440px] mx-auto px-8 xl:px-16 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
         <div className="lg:col-span-2">
           {job.note && (
             <div className="mb-12 max-w-2xl border-l-2 border-gold bg-gold-light/60 px-5 py-4 text-ink text-sm leading-relaxed">
@@ -158,22 +170,40 @@ export default function JobDetail() {
             </div>
 
             <div className="font-display text-sm text-ink mb-4">APPLY.</div>
-            {apply.mailHref && (
-              <a
-                href={apply.mailHref}
-                className="flex items-center justify-center bg-azure text-white text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-4 rounded-md hover:brightness-110 transition-all"
-              >
-                Apply by Email
-              </a>
-            )}
-            {apply.telHref && (
-              <a
-                href={apply.telHref}
-                className="mt-3 flex items-center justify-center border border-ink/20 text-ink text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-4 rounded-md hover:border-azure hover:text-azure transition-colors"
-              >
-                Call {apply.phone}
-              </a>
-            )}
+            <div className="flex flex-col gap-3">
+              {/* WhatsApp first: it works on any phone, unlike mailto: which needs a configured mail app */}
+              {apply.waHref && (
+                <a
+                  href={apply.waHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2.5 bg-azure text-white text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-4 rounded-md hover:brightness-110 transition-all"
+                >
+                  <SocialIcon name="whatsapp" className="w-4 h-4" />
+                  Apply on WhatsApp
+                </a>
+              )}
+              {apply.telHref && (
+                <a
+                  href={apply.telHref}
+                  className="flex items-center justify-center border border-ink/20 text-ink text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-4 rounded-md hover:border-azure hover:text-azure transition-colors"
+                >
+                  Call {apply.phone}
+                </a>
+              )}
+              {apply.mailHref && (
+                <a
+                  href={apply.mailHref}
+                  className={`flex items-center justify-center text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-4 rounded-md transition-colors ${
+                    apply.waHref || apply.telHref
+                      ? 'border border-ink/20 text-ink hover:border-azure hover:text-azure'
+                      : 'bg-azure text-white hover:brightness-110'
+                  }`}
+                >
+                  Apply by Email
+                </a>
+              )}
+            </div>
             <div className="mt-5 text-concrete text-xs leading-relaxed">
               Send your resume to{' '}
               {apply.emails.map((e, i) => (

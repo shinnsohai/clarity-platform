@@ -25,10 +25,16 @@ export function getApply(job) {
   const emails = (route.emails || []).filter(Boolean)
   const phone = route.phone || ''
   const subject = `Application: ${job.title}${job.client ? ` – ${job.client}` : ''}`
+  // WhatsApp opens a chat with the number and a pre-filled message naming the role, so the
+  // recruiter knows what the applicant is replying to. wa.me wants digits only, no "+".
+  const waDigits = (route.whatsapp || '').replace(/\D/g, '')
+  const waText = `Hi, I would like to apply for ${job.title}${job.client ? ` (${job.client})` : ''}. I saw it on www.clarity.com.sg/careers.`
   return {
     emails,
     phone,
+    whatsapp: route.whatsapp || '',
     telHref: phone ? `tel:${phone.replace(/[^+\d]/g, '')}` : '',
     mailHref: emails.length ? `mailto:${emails.join(',')}?subject=${encodeURIComponent(subject)}` : '',
+    waHref: waDigits ? `https://wa.me/${waDigits}?text=${encodeURIComponent(waText)}` : '',
   }
 }
