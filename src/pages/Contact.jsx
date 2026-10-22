@@ -128,6 +128,33 @@ export default function Contact() {
             </a>
             <span className="text-concrete text-sm">{contact.phone}</span>
           </div>
+          {entities.some((e) => e.contact?.phone || e.contact?.email) && (
+            <div className="mt-8 pt-8 border-t border-ink/10">
+              <div className="font-display text-sm text-ink mb-4">DIRECT LINES.</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {entities
+                  .filter((e) => e.contact?.phone || e.contact?.email)
+                  .map((e) => (
+                    <div key={e.id} className="border-l-2 border-gold pl-4">
+                      <div className="font-display text-sm text-ink">{e.fullName}</div>
+                      {e.contact.phone && (
+                        <a
+                          href={`tel:${e.contact.phone.replace(/[^+\d]/g, '')}`}
+                          className="block text-concrete text-sm mt-1 hover:text-azure transition-colors w-fit"
+                        >
+                          {e.contact.phone}
+                        </a>
+                      )}
+                      {e.contact.email && (
+                        <a href={`mailto:${e.contact.email}`} className="block text-concrete text-sm hover:text-azure transition-colors w-fit">
+                          {e.contact.email}
+                        </a>
+                      )}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
         </motion.div>
       </section>
     </div>

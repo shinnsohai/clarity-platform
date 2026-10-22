@@ -95,7 +95,11 @@
           "name": "",
           "logo": ""
         }
-      ]
+      ],
+      "contact": {
+        "phone": "",
+        "email": ""
+      }
     },
     {
       "id": "lenix",
@@ -195,7 +199,11 @@
           "name": "",
           "logo": ""
         }
-      ]
+      ],
+      "contact": {
+        "phone": "+65 8994 8015",
+        "email": "lenix@clarity.com.sg"
+      }
     },
     {
       "id": "cfm",
@@ -285,7 +293,11 @@
           "name": "",
           "logo": ""
         }
-      ]
+      ],
+      "contact": {
+        "phone": "+65 6326 9682",
+        "email": "cfm@clarity.com.sg"
+      }
     },
     {
       "id": "clarity-manufacturing",
@@ -375,7 +387,11 @@
           "name": "",
           "logo": ""
         }
-      ]
+      ],
+      "contact": {
+        "phone": "",
+        "email": ""
+      }
     },
     {
       "id": "techsphere",
@@ -465,7 +481,11 @@
           "name": "",
           "logo": ""
         }
-      ]
+      ],
+      "contact": {
+        "phone": "",
+        "email": ""
+      }
     },
     {
       "id": "clarity-ec",
@@ -556,7 +576,11 @@
           "name": "Kuraray",
           "logo": "/images/partners/kuraray.png"
         }
-      ]
+      ],
+      "contact": {
+        "phone": "+65 6276 9190",
+        "email": ""
+      }
     }
   ]
 }

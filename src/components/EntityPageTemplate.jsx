@@ -115,6 +115,23 @@ export default function EntityPageTemplate({ entity }) {
             {entity.name}
           </motion.h1>
           <p className="mt-8 max-w-xl text-concrete text-lg leading-relaxed">{entity.summary}</p>
+          {(entity.contact?.phone || entity.contact?.email) && (
+            <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm">
+              {entity.contact.phone && (
+                <a
+                  href={`tel:${entity.contact.phone.replace(/[^+\d]/g, '')}`}
+                  className="text-ink font-semibold hover:text-azure transition-colors"
+                >
+                  {entity.contact.phone}
+                </a>
+              )}
+              {entity.contact.email && (
+                <a href={`mailto:${entity.contact.email}`} className="text-ink font-semibold hover:text-azure transition-colors">
+                  {entity.contact.email}
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </section>
 

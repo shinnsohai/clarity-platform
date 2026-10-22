@@ -282,6 +282,14 @@ collections:
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Value", name: "value", widget: "string" }
+              - label: "Direct Contact"
+                name: "contact"
+                widget: "object"
+                required: false
+                hint: "Shown on this subsidiary's page and in the Contact page directory. Leave a field blank to hide it."
+                fields:
+                  - { label: "Phone", name: "phone", widget: "string", required: false }
+                  - { label: "Email", name: "email", widget: "string", required: false }
               - label: "Social Channels"
                 name: "social"
                 widget: "object"
