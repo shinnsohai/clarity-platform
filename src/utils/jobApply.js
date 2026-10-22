@@ -1,5 +1,22 @@
 import careers from '../data/careers.json'
 
+// "22 Oct 2026" from an ISO date. Parsed as a local date so it never shifts a day across time zones.
+export function formatPosted(iso) {
+  if (!iso) return ''
+  const [y, m, d] = iso.split('-').map(Number)
+  return new Date(y, m - 1, d).toLocaleDateString('en-SG', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
+export const slotsOf = (job) => Number(job.vacancies) || 0
+
+// newest: latest post date first, then most open slots.  slots: most open slots first, then latest post.
+// Equal on both → keep the order they appear in the CMS (Array.sort is stable).
+export function sortJobs(jobs, mode) {
+  const byPosted = (a, b) => (b.posted || '').localeCompare(a.posted || '')
+  const bySlots = (a, b) => slotsOf(b) - slotsOf(a)
+  return [...jobs].sort(mode === 'slots' ? (a, b) => bySlots(a, b) || byPosted(a, b) : (a, b) => byPosted(a, b) || bySlots(a, b))
+}
+
 // Where applications for a job go. Routing is per subsidiary (src/data/careers.json →
 // applyRouting, editable in the CMS); anything without its own entry uses "default".
 export function getApply(job) {

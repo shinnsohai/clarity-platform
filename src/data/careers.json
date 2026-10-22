@@ -23,35 +23,119 @@
       "title": "Resident Engineer (RE)",
       "entity": "durabuild",
       "location": "Singapore — Site",
-      "type": "Full-Time"
+      "type": "Full-Time",
+      "posted": "2026-07-31",
+      "scope": [
+        "Supervise day-to-day construction activities on site to confirm works follow the approved drawings, specifications and the appointed Professional Engineer's instructions.",
+        "Inspect and record structural and civil works at key stages, including formwork, reinforcement, steel erection and concreting.",
+        "Review contractor submissions, method statements and material approvals before the related works proceed.",
+        "Monitor workmanship, materials and testing against applicable codes and standards, and raise non-conformances.",
+        "Keep site diaries, inspection records and progress reports up to date and submit them on time.",
+        "Coordinate with the main contractor, subcontractors, consultants and authorities on technical and site-supervision matters.",
+        "Enforce workplace safety and health requirements on site and report unsafe conditions immediately.",
+        "Support inspections, handover and close-out documentation."
+      ],
+      "requirements": [
+        "Degree or diploma in Civil or Structural Engineering, or a related discipline.",
+        "Relevant site supervision experience on building or civil projects in Singapore is preferred.",
+        "Familiarity with Singapore building control and workplace safety requirements.",
+        "Able to read and interpret structural drawings and specifications.",
+        "Safety certifications required for site entry, as specified by the project."
+      ]
     },
     {
       "id": "structural-steel-foreman",
       "title": "Structural Steel Foreman",
       "entity": "durabuild",
       "location": "Singapore — Site",
-      "type": "Full-Time"
+      "type": "Full-Time",
+      "posted": "2026-07-31",
+      "scope": [
+        "Lead and supervise a structural steel erection and fabrication crew on site, assigning daily tasks and confirming they are completed to plan.",
+        "Read and interpret structural steel drawings, and set out, lift and position members to specification.",
+        "Coordinate crane, lifting and rigging activities with the lifting supervisor and appointed persons.",
+        "Check bolting, welding and alignment, and verify completed work before inspection.",
+        "Keep materials, tools and lifting gear in good order and properly stored.",
+        "Enforce work-at-height, hot-work and lifting safety procedures, and conduct toolbox briefings.",
+        "Report progress, shortages and issues to the site engineer or supervisor.",
+        "Guide workers on correct methods and the proper use of PPE."
+      ],
+      "requirements": [
+        "Proven experience in structural steel erection on site, including leading a crew.",
+        "Able to read structural and fabrication drawings.",
+        "Relevant certifications such as work-at-height, rigging or signalman are preferred.",
+        "Strong safety awareness and familiarity with lifting and hot-work permit requirements.",
+        "Able to communicate clearly with workers, engineers and supervisors."
+      ]
     },
     {
       "id": "general-manpower-construction",
       "title": "General Manpower — Construction",
       "entity": "durabuild",
       "location": "Singapore — Site",
-      "type": "Full-Time"
+      "type": "Full-Time",
+      "posted": "2026-07-31",
+      "scope": [
+        "Carry out general site works as directed by supervisors, including material handling, loading, unloading and housekeeping.",
+        "Assist skilled trades such as scaffolding, formwork, steel and civil crews under supervision.",
+        "Move, stack and store materials safely, keeping work areas clean and clear.",
+        "Use hand tools and equipment correctly after proper instruction.",
+        "Wear the required PPE and follow site safety rules, signage and permit-to-work conditions.",
+        "Attend toolbox meetings and safety briefings.",
+        "Report hazards, injuries and near misses immediately."
+      ],
+      "requirements": [
+        "Physically fit and able to work outdoors for extended hours.",
+        "Prior construction experience is an advantage but not required.",
+        "Valid construction safety orientation (for example CSOC), or willing to obtain it before starting.",
+        "Able to follow instructions and work as part of a team."
+      ]
     },
     {
       "id": "full-stack-engineer-builtsync",
       "title": "Full-Stack Engineer, Builtsync",
       "entity": "lenix",
       "location": "Singapore — Hybrid",
-      "type": "Full-Time"
+      "type": "Full-Time",
+      "posted": "2026-07-31",
+      "scope": [
+        "Design, build and maintain web features and back-end services for Builtsync, which synchronizes live site data across projects.",
+        "Develop APIs and data pipelines that move field data between mobile apps, the platform and dashboards in near real time.",
+        "Build clear, responsive interfaces for site teams, project managers and management users.",
+        "Model and maintain databases, keeping data accurate, secure and auditable.",
+        "Write tested, maintainable code and take part in code review.",
+        "Monitor performance and reliability in production, and resolve issues promptly.",
+        "Work with operations and product stakeholders to turn field requirements into working features."
+      ],
+      "requirements": [
+        "Degree or diploma in Computer Science, Software Engineering or a related field, or equivalent practical experience.",
+        "Hands-on experience with both front-end and back-end development, including REST APIs and relational databases.",
+        "Familiarity with cloud deployment and version-control workflows.",
+        "Interest in construction, facilities or industrial operations is a plus."
+      ]
     },
     {
       "id": "mobile-app-developer",
       "title": "Mobile App Developer (iOS/Android)",
       "entity": "lenix",
       "location": "Singapore — Hybrid",
-      "type": "Full-Time"
+      "type": "Full-Time",
+      "posted": "2026-07-31",
+      "scope": [
+        "Build and maintain mobile applications for iOS and Android used to capture and view field data on site.",
+        "Implement offline-tolerant data capture and reliable synchronization with the Lenix back end.",
+        "Integrate device features such as camera, location and notifications where required.",
+        "Turn designs and field workflows into fast, intuitive screens for on-site users.",
+        "Prepare and maintain app releases for distribution through the App Store and Google Play.",
+        "Test, debug and optimize performance across devices and OS versions.",
+        "Collaborate with back-end and design colleagues on APIs and release planning."
+      ],
+      "requirements": [
+        "Experience developing native or cross-platform mobile apps for iOS and/or Android.",
+        "Familiarity with REST APIs, local data storage and the app-store release process.",
+        "Degree or diploma in Computer Science, Software Engineering or a related field, or equivalent experience.",
+        "Published apps or a portfolio of mobile work is preferred."
+      ]
     },
     {
       "id": "warehouse-assistant-sats-changi-cargo",
@@ -60,12 +144,8 @@
       "client": "SATS Changi Cargo",
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "21",
-      "workLocations": [
-        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
-        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
-      ],
-      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
       "shifts": [
         {
           "label": "Day",
@@ -88,7 +168,12 @@
         "Maintain proper housekeeping and safe working conditions within the warehouse.",
         "Comply with airport security, safety and cargo-handling procedures.",
         "Perform other warehouse and cargo-handling duties assigned by supervisors."
-      ]
+      ],
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825"
     },
     {
       "id": "manifesting-staff-sats-changi-cargo",
@@ -97,12 +182,8 @@
       "client": "SATS Changi Cargo",
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "3",
-      "workLocations": [
-        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
-        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
-      ],
-      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
       "shifts": [
         {
           "label": "Day",
@@ -129,7 +210,12 @@
         "Identify discrepancies and escalate documentation or shipment issues to supervisors.",
         "Maintain proper filing and document-control records.",
         "Liaise with airline, cargo and operational personnel when required."
-      ]
+      ],
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825"
     },
     {
       "id": "forklift-operator-warehouse-assistant-sats-changi-cargo",
@@ -138,12 +224,8 @@
       "client": "SATS Changi Cargo",
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "14",
-      "workLocations": [
-        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
-        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
-      ],
-      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
       "shifts": [
         {
           "label": "Day",
@@ -168,7 +250,12 @@
       ],
       "requirements": [
         "Valid/relevant forklift competency or certification is preferred/required according to site requirements."
-      ]
+      ],
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825"
     },
     {
       "id": "adv-driver-sats-changi-cargo",
@@ -177,12 +264,8 @@
       "client": "SATS Changi Cargo",
       "location": "Singapore — SATS Airfreight Terminals 5 & 6, Changi",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "10",
-      "workLocations": [
-        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
-        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
-      ],
-      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825",
       "shifts": [
         {
           "label": "Night",
@@ -200,7 +283,12 @@
         "Report vehicle defects, incidents or abnormal conditions immediately.",
         "Maintain cleanliness and basic condition of assigned vehicle.",
         "Perform other operational duties when required."
-      ]
+      ],
+      "workLocations": [
+        "SATS Airfreight Terminal 5 — 30 Airline Road, Singapore 819830",
+        "SATS Airfreight Terminal 6 — 20 Airline Road, Singapore 819833"
+      ],
+      "reporting": "Changi Airfreight Centre Pass Office — 1 Airline Road, Singapore 819825"
     },
     {
       "id": "food-packer-sicc",
@@ -209,6 +297,7 @@
       "client": "SICC",
       "location": "Singapore — SICC 1 / SICC 2",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "20",
       "shifts": [
         {
@@ -241,6 +330,7 @@
       "client": "SICC",
       "location": "Singapore — SICC 1 / SICC 2",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "3",
       "shifts": [
         {
@@ -276,8 +366,10 @@
       "client": "Changi Airport Terminal 4",
       "location": "Singapore — Changi Airport Terminal 4",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "2",
       "salary": "$1,950–$2,100/month",
+      "note": "Candidates are required to attend a second interview with the client.",
       "shifts": [
         {
           "label": "Day Shift (1 vacancy)",
@@ -302,8 +394,7 @@
         "Monitor passenger movements and comply with airport security procedures.",
         "Provide professional and courteous passenger assistance.",
         "Support wheelchair or other passenger-handling activities when required."
-      ],
-      "note": "Candidates are required to attend a second interview with the client."
+      ]
     },
     {
       "id": "wheelchair-odd-size-baggage-assistant-changi-airport-terminal-4",
@@ -312,8 +403,10 @@
       "client": "Changi Airport Terminal 4",
       "location": "Singapore — Changi Airport Terminal 4",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "2",
       "salary": "$1,850/month",
+      "note": "Candidates are required to attend a second interview with the client.",
       "shifts": [
         {
           "label": "Night Shift",
@@ -330,8 +423,7 @@
         "Provide courteous assistance to elderly passengers, families and passengers with special needs.",
         "Coordinate with airline and airport personnel when required.",
         "Follow airport security, baggage-handling and safety requirements."
-      ],
-      "note": "Candidates are required to attend a second interview with the client."
+      ]
     },
     {
       "id": "electrical-stacker-operator-ntuc-hub",
@@ -340,6 +432,7 @@
       "client": "NTUC Hub / GLS Building",
       "location": "Singapore — NTUC Hub / GLS Building",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "4",
       "shifts": [
         {
@@ -372,6 +465,7 @@
       "client": "NTUC Hub / GLS Building",
       "location": "Singapore — NTUC Hub / GLS Building",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "10",
       "shifts": [
         {
@@ -402,6 +496,7 @@
       "client": "dnata Changi Cargo",
       "location": "Singapore — dnata Changi Cargo",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "vacancies": "10",
       "shifts": [
         {
@@ -435,6 +530,7 @@
       "client": "Changi Airport",
       "location": "Singapore — Changi Airport",
       "type": "Shift-Based",
+      "posted": "2026-10-22",
       "scope": [
         "Meet and greet passengers in a warm, professional and courteous manner.",
         "Assist designated airlines in transporting and escorting special-category passengers including NTL (Not To Land), UM (Unaccompanied Minor), deportees, offloaded passengers and other special-handling passengers.",
@@ -465,21 +561,73 @@
       "title": "Manufacturing Operator",
       "entity": "clarity-manufacturing",
       "location": "Singapore — Plant",
-      "type": "Shift-Based"
+      "type": "Shift-Based",
+      "posted": "2026-07-31",
+      "scope": [
+        "Operate and monitor automated production equipment through the machine human-machine interface (HMI), following standard work instructions.",
+        "Load materials, start production runs and keep the line running to the production schedule.",
+        "Perform in-process checks on output and flag parts or settings that are out of tolerance.",
+        "Record production counts, data and downtime accurately.",
+        "Carry out routine cleaning, basic upkeep and changeovers as instructed.",
+        "Follow safety, quality and housekeeping procedures, including lockout/tagout and PPE requirements.",
+        "Report faults, abnormalities and near misses to the supervisor or technician promptly.",
+        "Work rotating shifts as scheduled."
+      ],
+      "requirements": [
+        "Secondary education or higher; a technical certificate in mechanical, mechatronics or a similar field is an advantage.",
+        "Prior production or machine-operation experience is preferred.",
+        "Able to stand for long periods and follow work instructions precisely.",
+        "Willing to work shifts as scheduled."
+      ]
     },
     {
       "id": "calibration-technician",
       "title": "Calibration Technician",
       "entity": "clarity-manufacturing",
       "location": "Singapore — Plant",
-      "type": "Full-Time"
+      "type": "Full-Time",
+      "posted": "2026-07-31",
+      "scope": [
+        "Calibrate, verify and adjust measuring and test instruments against reference standards on a defined schedule.",
+        "Use precision measuring tools such as calipers, micrometers and gauges accurately.",
+        "Maintain calibration records, certificates, labels and due-date tracking.",
+        "Identify out-of-tolerance equipment, quarantine it and report it to Quality for assessment.",
+        "Support inspection of fabricated parts against drawings and specified tolerances.",
+        "Care for reference standards and keep the calibration area clean and controlled.",
+        "Follow the quality management system and relevant ISO procedures, and support audits.",
+        "Recommend improvements to calibration methods and intervals."
+      ],
+      "requirements": [
+        "Diploma or NITEC in Mechanical, Precision Engineering, Metrology or a related discipline.",
+        "Calibration or QC inspection experience in a manufacturing environment is preferred.",
+        "Able to read engineering drawings and interpret tolerances.",
+        "Careful, accurate record-keeping."
+      ]
     },
     {
       "id": "it-infrastructure-specialist",
       "title": "IT Infrastructure Specialist",
       "entity": "techsphere",
       "location": "Singapore — HQ",
-      "type": "Full-Time"
+      "type": "Full-Time",
+      "posted": "2026-07-31",
+      "scope": [
+        "Deploy, configure and maintain servers, network equipment, end-user devices and related infrastructure across group sites.",
+        "Monitor systems and networks, respond to incidents and restore service within agreed targets.",
+        "Manage user accounts, access rights, backups and patching in line with security policies.",
+        "Administer cloud and on-premise services, wireless and site connectivity.",
+        "Maintain asset inventories, configuration records and documentation.",
+        "Provide second-line technical support to staff and escalate vendor issues.",
+        "Support rollouts and upgrades with minimal disruption to operations.",
+        "Contribute to security, disaster-recovery and business-continuity planning."
+      ],
+      "requirements": [
+        "Diploma or degree in IT, Computer Engineering or a related field.",
+        "Hands-on experience with networking (LAN/WAN/Wi-Fi), Windows or Linux server administration and endpoint management.",
+        "Working knowledge of cloud services and backup and recovery practices.",
+        "Relevant certifications (for example CCNA, Microsoft or CompTIA) are an advantage.",
+        "Able to travel between sites when required."
+      ]
     }
   ]
 }

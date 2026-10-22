@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
-import { getApply } from '../utils/jobApply'
+import { getApply, formatPosted } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
 
@@ -154,6 +154,7 @@ export default function JobDetail() {
               {job.salary && <Fact label="Salary">{job.salary}</Fact>}
               <Fact label="Type">{job.type}</Fact>
               <Fact label="Location">{job.location.replace(/^Singapore — /, '')}</Fact>
+              {job.posted && <Fact label="Posted">{formatPosted(job.posted)}</Fact>}
             </div>
 
             <div className="font-display text-sm text-ink mb-4">APPLY.</div>

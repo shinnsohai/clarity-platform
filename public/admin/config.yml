@@ -488,7 +488,8 @@ collections:
                 name: "type"
                 widget: "select"
                 options: ["Full-Time", "Part-Time", "Shift-Based", "Contract"]
-              - { label: "Vacancies", name: "vacancies", widget: "string", required: false }
+              - { label: "Date Posted", name: "posted", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", hint: "Careers page lists the newest first by this date." }
+              - { label: "Vacancies (slots currently open)", name: "vacancies", widget: "string", required: false, hint: "A plain number, e.g. 21. Update it as slots fill — the page sorts by it and totals it. Leave blank if not stated." }
               - { label: "Salary", name: "salary", widget: "string", required: false, hint: "e.g. $1,850/month" }
               - { label: "Note", name: "note", widget: "text", required: false, hint: "Highlighted callout, e.g. interview requirements" }
               - label: "Shifts"

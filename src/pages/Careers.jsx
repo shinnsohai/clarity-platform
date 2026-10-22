@@ -4,14 +4,24 @@ import { motion } from 'framer-motion'
 import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
-import { getApply } from '../utils/jobApply'
+import { getApply, formatPosted, slotsOf, sortJobs } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
+
+const SORTS = [
+  { id: 'newest', label: 'Newest' },
+  { id: 'slots', label: 'Most slots open' },
+]
 
 export default function Careers() {
   const entityFilters = useMemo(() => ['All', ...new Set(careers.jobs.map((j) => j.entity))], [])
   const [filter, setFilter] = useState('All')
-  const jobs = filter === 'All' ? careers.jobs : careers.jobs.filter((j) => j.entity === filter)
+  const [sort, setSort] = useState('newest')
+  const jobs = useMemo(
+    () => sortJobs(filter === 'All' ? careers.jobs : careers.jobs.filter((j) => j.entity === filter), sort),
+    [filter, sort]
+  )
+  const totalSlots = jobs.reduce((n, j) => n + slotsOf(j), 0)
 
   return (
     <div className="bg-paper">
@@ -23,7 +33,7 @@ export default function Careers() {
       />
 
       <section className="py-24 max-w-[1440px] mx-auto px-8 xl:px-16">
-        <div className="flex gap-2 flex-wrap mb-12">
+        <div className="flex gap-2 flex-wrap mb-6">
           {entityFilters.map((f) => (
             <motion.button
               key={f}
@@ -37,6 +47,35 @@ export default function Careers() {
               {f === 'All' ? 'All' : entityById[f]?.name}
             </motion.button>
           ))}
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 mb-8 pb-5 border-b border-ink/10">
+          <p className="text-concrete text-sm" aria-live="polite">
+            <span className="text-ink font-semibold">{jobs.length}</span> {jobs.length === 1 ? 'opening' : 'openings'}
+            {totalSlots > 0 && (
+              <>
+                {' · '}
+                <span className="text-ink font-semibold">{totalSlots}</span> {totalSlots === 1 ? 'slot' : 'slots'} open
+              </>
+            )}
+          </p>
+          <div className="flex items-center gap-3" role="group" aria-label="Sort openings">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-concrete">Sort by</span>
+            <div className="flex rounded-md border border-ink/15 overflow-hidden">
+              {SORTS.map((s) => (
+                <button
+                  key={s.id}
+                  onClick={() => setSort(s.id)}
+                  aria-pressed={sort === s.id}
+                  className={`text-[11px] tracking-[0.1em] uppercase px-4 py-2 transition-colors ${
+                    sort === s.id ? 'bg-azure text-white' : 'bg-white text-ink hover:text-azure'
+                  }`}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -65,7 +104,10 @@ export default function Careers() {
                       {entityById[job.entity]?.name}
                       {job.client ? ` · ${job.client}` : ''}
                     </div>
-                    <div className="text-concrete/80 text-xs mt-0.5">{job.location}</div>
+                    <div className="text-concrete/80 text-xs mt-0.5">
+                      {job.location}
+                      {job.posted && <> · Posted {formatPosted(job.posted)}</>}
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3 shrink-0">
