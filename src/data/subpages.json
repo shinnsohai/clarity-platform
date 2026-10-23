@@ -1,0 +1,20 @@
+{
+  "subpages": [
+    {
+      "id": "builtsync",
+      "entity": "lenix",
+      "slug": "builtsync",
+      "template": "builtsync",
+      "published": true,
+      "title": "BuiltSync",
+      "tagline": "Workforce OS for project sites",
+      "summary": "A worker app and an admin console for attendance, payroll, leave and certificates. Try the interactive demo.",
+      "logo": "/images/builtsync/logo.png",
+      "heroImage": "",
+      "intro": "",
+      "sections": [],
+      "ctaLabel": "",
+      "ctaLink": ""
+    }
+  ]
+}

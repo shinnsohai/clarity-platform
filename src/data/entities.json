@@ -218,7 +218,7 @@
         },
         {
           "id": "builtsync",
-          "name": "Builtsync",
+          "name": "BuiltSync",
           "description": "Synchronizes live site data across every project so every subsidiary reads from one operational truth.",
           "icon": "sync"
         },

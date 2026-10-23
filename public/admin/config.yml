@@ -313,6 +313,181 @@ collections:
                   - { label: "Company Name", name: "name", widget: "string", required: false }
                   - { label: "Company Logo", name: "logo", widget: "image", required: false }
 
+  - name: "subpages"
+    label: "Subsidiary Subpages"
+    files:
+      - file: "src/data/subpages.json"
+        label: "Subpages (all subsidiaries)"
+        name: "subpages"
+        fields:
+          - label: "Subpages"
+            name: "subpages"
+            label_singular: "Subpage"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.entity}}"
+            hint: "Each subpage lives under its subsidiary at /our-business/[subsidiary]/[page slug] and is listed on that subsidiary's page under 'Platforms & Services'. Click Add Subpage to create one for any subsidiary, then fill in a Page Type and content."
+            fields:
+              - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces, e.g. builtsync. Used internally." }
+              - label: "Subsidiary"
+                name: "entity"
+                widget: "relation"
+                collection: "entities"
+                file: "entities"
+                search_fields: ["entities.*.name"]
+                display_fields: ["entities.*.fullName"]
+                value_field: "entities.*.slug"
+                hint: "Which subsidiary this page belongs to."
+              - { label: "URL Slug", name: "slug", widget: "string", hint: "Used in the address, e.g. builtsync gives /our-business/lenix/builtsync. Lowercase, no spaces. Avoid changing after launch." }
+              - label: "Page Type"
+                name: "template"
+                widget: "select"
+                options:
+                  - { label: "Standard page (hero, text sections, image, button)", value: "standard" }
+                  - { label: "BuiltSync interactive showcase (content in 'BuiltSync Showcase')", value: "builtsync" }
+                default: "standard"
+              - { label: "Published", name: "published", widget: "boolean", default: true, required: false, hint: "Untick to hide this page and its card without deleting it." }
+              - { label: "Title", name: "title", widget: "string", hint: "Page heading and card title, e.g. BuiltSync" }
+              - { label: "Tagline", name: "tagline", widget: "string", required: false, hint: "Short line under the title, e.g. Workforce OS for project sites" }
+              - { label: "Card Summary", name: "summary", widget: "text", required: false, hint: "One or two sentences shown on the subsidiary page card." }
+              - { label: "Logo", name: "logo", widget: "image", required: false, media_folder: "/public/images/subpages", public_folder: "/images/subpages", hint: "Transparent PNG/SVG works best." }
+              - { label: "Hero Image (standard page)", name: "heroImage", widget: "image", required: false, media_folder: "/public/images/subpages", public_folder: "/images/subpages", hint: "Optional full-width background for the page header." }
+              - { label: "Intro (standard page)", name: "intro", widget: "text", required: false }
+              - label: "Content Sections (standard page)"
+                label_singular: "Section"
+                name: "sections"
+                widget: "list"
+                required: false
+                summary: "{{heading}}"
+                hint: "Text blocks shown one after another; sections with an image show it beside the text."
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string", required: false }
+                  - { label: "Text", name: "body", widget: "text", required: false }
+                  - { label: "Bullet Points", name: "bullets", widget: "list", required: false, field: { label: "Bullet", name: "bullet", widget: "string" } }
+                  - { label: "Image", name: "image", widget: "image", required: false, media_folder: "/public/images/subpages", public_folder: "/images/subpages" }
+              - { label: "Button Label (standard page)", name: "ctaLabel", widget: "string", required: false, hint: "Leave blank for no button." }
+              - { label: "Button Link", name: "ctaLink", widget: "string", required: false, hint: "e.g. /contact" }
+
+      - file: "src/data/builtsync.json"
+        label: "BuiltSync Showcase (Lenix)"
+        name: "builtsync"
+        fields:
+          - { label: "Product Name", name: "name", widget: "string" }
+          - { label: "Kicker", name: "kicker", widget: "string", hint: "Small line above the headline, e.g. Lenix · Workforce OS" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "text" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image", media_folder: "/public/images/builtsync", public_folder: "/images/builtsync" }
+          - label: "Feature Cards"
+            label_singular: "Feature"
+            name: "pillars"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Icon", name: "icon", widget: "select", options: ["pin", "pay", "leave", "cert", "safety", "console"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Flow Steps (From check-in to payslip)"
+            label_singular: "Step"
+            name: "flow"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Worker App Screen ID", name: "app", widget: "string", required: false, hint: "The screen the 'See it in the app' button opens, e.g. app-checkin. Leave blank to hide the button." }
+              - { label: "Admin Screen ID", name: "admin", widget: "string", required: false, hint: "e.g. adm-att-daily. Leave blank to hide the button." }
+          - { label: "Demo Footnote", name: "demoNote", widget: "text" }
+          - label: "Worker App Demo"
+            name: "app"
+            widget: "object"
+            fields:
+              - { label: "Tab Title", name: "title", widget: "string" }
+              - { label: "Intro Line", name: "blurb", widget: "text" }
+              - label: "Modules (left-hand list)"
+                label_singular: "Module"
+                name: "modules"
+                widget: "list"
+                summary: "{{label}}"
+                fields:
+                  - { label: "ID", name: "id", widget: "string", hint: "Must match the 'Module' of the screens that belong to it." }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+              - label: "Screens"
+                label_singular: "Screen"
+                name: "screens"
+                widget: "list"
+                summary: "{{module}} — {{title}}"
+                hint: "Shown in this order. Add a screenshot (phone: 780 px wide recommended) with a title and caption. Tap targets are optional."
+                fields:
+                  - { label: "Screen ID", name: "id", widget: "string", hint: "Unique, no spaces, e.g. app-checkin" }
+                  - { label: "Module", name: "module", widget: "string", hint: "Must match a Module ID above." }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Caption", name: "caption", widget: "text" }
+                  - { label: "Screenshot", name: "image", widget: "image", media_folder: "/public/images/builtsync/app", public_folder: "/images/builtsync/app" }
+                  - { label: "Image Width (px)", name: "width", widget: "number", value_type: "int", required: false }
+                  - { label: "Image Height (px)", name: "height", widget: "number", value_type: "int", required: false }
+                  - label: "Tap Targets (optional)"
+                    label_singular: "Tap Target"
+                    name: "hotspots"
+                    widget: "list"
+                    required: false
+                    summary: "{{label}} → {{goto}}"
+                    hint: "Clickable areas that jump to another screen. Position and size are percentages of the screenshot (0–100)."
+                    fields:
+                      - { label: "Label", name: "label", widget: "string", required: false }
+                      - { label: "Go To Screen ID", name: "goto", widget: "string" }
+                      - { label: "Left (%)", name: "x", widget: "number", value_type: "float" }
+                      - { label: "Top (%)", name: "y", widget: "number", value_type: "float" }
+                      - { label: "Width (%)", name: "w", widget: "number", value_type: "float" }
+                      - { label: "Height (%)", name: "h", widget: "number", value_type: "float" }
+          - label: "Admin Console Demo"
+            name: "admin"
+            widget: "object"
+            fields:
+              - { label: "Tab Title", name: "title", widget: "string" }
+              - { label: "Intro Line", name: "blurb", widget: "text" }
+              - label: "Modules (top row)"
+                label_singular: "Module"
+                name: "modules"
+                widget: "list"
+                summary: "{{label}}"
+                fields:
+                  - { label: "ID", name: "id", widget: "string", hint: "Must match the 'Module' of the screens that belong to it." }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+              - label: "Screens"
+                label_singular: "Screen"
+                name: "screens"
+                widget: "list"
+                summary: "{{module}} — {{title}}"
+                hint: "Shown in this order. Add a screenshot (desktop: about 1900 px wide recommended) with a title and caption."
+                fields:
+                  - { label: "Screen ID", name: "id", widget: "string", hint: "Unique, no spaces, e.g. adm-payroll" }
+                  - { label: "Module", name: "module", widget: "string", hint: "Must match a Module ID above." }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Caption", name: "caption", widget: "text" }
+                  - { label: "Screenshot", name: "image", widget: "image", media_folder: "/public/images/builtsync/admin", public_folder: "/images/builtsync/admin" }
+                  - { label: "Image Width (px)", name: "width", widget: "number", value_type: "int", required: false }
+                  - { label: "Image Height (px)", name: "height", widget: "number", value_type: "int", required: false }
+                  - label: "Click Targets (optional)"
+                    label_singular: "Click Target"
+                    name: "hotspots"
+                    widget: "list"
+                    required: false
+                    summary: "{{label}} → {{goto}}"
+                    hint: "Clickable areas that jump to another screen. Position and size are percentages of the screenshot (0–100)."
+                    fields:
+                      - { label: "Label", name: "label", widget: "string", required: false }
+                      - { label: "Go To Screen ID", name: "goto", widget: "string" }
+                      - { label: "Left (%)", name: "x", widget: "number", value_type: "float" }
+                      - { label: "Top (%)", name: "y", widget: "number", value_type: "float" }
+                      - { label: "Width (%)", name: "w", widget: "number", value_type: "float" }
+                      - { label: "Height (%)", name: "h", widget: "number", value_type: "float" }
+          - { label: "Closing Heading", name: "ctaHeading", widget: "string" }
+          - { label: "Closing Text", name: "ctaText", widget: "text" }
+          - { label: "Closing Button Label", name: "ctaLabel", widget: "string" }
+          - { label: "Closing Button Link", name: "ctaLink", widget: "string", hint: "e.g. /contact" }
+
   - name: "about"
     label: "About Section"
     files:

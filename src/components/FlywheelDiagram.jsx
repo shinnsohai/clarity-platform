@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 // The group's data flywheel, reused across /about/mission-vision, /how-it-works, and
 // /investor-relations: Field Operations (the four operating subsidiaries) generate real
-// operational data → Lenix captures and connects it (Builtsync, IT Solutions) → Lenix refines
+// operational data → Lenix captures and connects it (BuiltSync, IT Solutions) → Lenix refines
 // it into decision-grade intelligence (Pilot Data, Digital Transformation) → applied back into
 // the next deployment. Every figure is Lenix's own published telemetry (src/data/entities.json:
 // 24 sites synced, <400ms latency, 40+ systems integrated, 9 active pilots, 2.4M data points a
@@ -19,7 +19,7 @@ export default function FlywheelDiagram({ compact = false }) {
       <svg
         viewBox="0 0 920 360"
         role="img"
-        aria-label="Flywheel diagram: Field Operations subsidiaries generate data, captured and connected by Lenix's Builtsync and IT Solutions, refined into decision-grade intelligence by Lenix's Pilot Data and Digital Transformation, then applied back into Field Operations — a compounding loop."
+        aria-label="Flywheel diagram: Field Operations subsidiaries generate data, captured and connected by Lenix's BuiltSync and IT Solutions, refined into decision-grade intelligence by Lenix's Pilot Data and Digital Transformation, then applied back into Field Operations — a compounding loop."
         className={compact ? 'w-full h-auto min-w-[640px]' : 'w-full h-auto min-w-[720px]'}
       >
         <defs>
@@ -40,7 +40,7 @@ export default function FlywheelDiagram({ compact = false }) {
         <rect x="345" y="40" width="230" height="150" rx="14" fill="#FFFFFF" stroke="#1B224E" strokeOpacity="0.18" strokeWidth="1.6" />
         <text x="460" y="66" textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontSize="10.5" letterSpacing="1.5" fill="#F29C21">STAGE 2</text>
         <text x="460" y="90" textAnchor="middle" fontSize="15" fontWeight="700" fill="#111827">Capture &amp; Connect</text>
-        <text x="460" y="112" textAnchor="middle" fontSize="11.5" fill="#64748B">Lenix — Builtsync</text>
+        <text x="460" y="112" textAnchor="middle" fontSize="11.5" fill="#64748B">Lenix — BuiltSync</text>
         <text x="460" y="128" textAnchor="middle" fontSize="11.5" fill="#64748B">Lenix — IT Solutions</text>
         <text x="460" y="152" textAnchor="middle" fontSize="10.5" fill="#94A3B8">24 sites synced · &lt;400ms latency</text>
         <text x="460" y="168" textAnchor="middle" fontSize="10.5" fill="#94A3B8">40+ systems integrated</text>

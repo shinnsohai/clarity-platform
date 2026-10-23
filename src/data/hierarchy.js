@@ -4,6 +4,7 @@ import settings from './settings.json'
 import entitiesData from './entities.json'
 import officesData from './offices.json'
 import partnersData from './partners.json'
+import subpagesData from './subpages.json'
 
 export const parent = {
   id: 'clarity-ec',
@@ -21,6 +22,14 @@ export const allEntities = entitiesData.entities
 export const entities = allEntities.filter((e) => e.published !== false)
 
 export const getEntityBySlug = (slug) => entities.find((e) => e.slug === slug)
+
+// Subpages that hang off a subsidiary (e.g. Lenix → BuiltSync). Edited in the CMS under
+// "Subsidiary Subpages"; one that is unpublished, or whose subsidiary is, never shows.
+export const subpages = subpagesData.subpages.filter(
+  (p) => p.published !== false && entities.some((e) => e.slug === p.entity)
+)
+export const getSubpages = (entitySlug) => subpages.filter((p) => p.entity === entitySlug)
+export const getSubpage = (entitySlug, slug) => subpages.find((p) => p.entity === entitySlug && p.slug === slug)
 
 // "Five" — for copy that states how many subsidiaries are listed, so it can never drift from the lists.
 const COUNT_WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten']

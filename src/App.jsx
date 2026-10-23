@@ -5,6 +5,7 @@ import GlobalFooter from './components/GlobalFooter'
 import Home from './pages/Home'
 import OurBusiness from './pages/OurBusiness'
 import EntityPage from './pages/EntityPage'
+import SubPage from './pages/SubPage'
 import Careers from './pages/Careers'
 import JobDetail from './pages/JobDetail'
 import Contact from './pages/Contact'
@@ -38,6 +39,7 @@ export default function App() {
 
             <Route path="/our-business" element={<OurBusiness />} />
             <Route path="/our-business/:slug" element={<EntityPage />} />
+            <Route path="/our-business/:slug/:sub" element={<SubPage />} />
             <Route path="/strategic-partner" element={<StrategicPartner />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/investor-relations" element={<InvestorRelations />} />

@@ -1,0 +1,2107 @@
+{
+  "name": "BuiltSync",
+  "kicker": "Lenix · Workforce OS",
+  "headline": "Every worker, every shift, every site, in one place.",
+  "tagline": "BuiltSync is the workforce operating system for project sites: a worker app and an admin console that connect people, attendance, certificates, leave and payroll.",
+  "intro": "Built by Lenix for Singapore project sites, BuiltSync replaces paper timesheets and scattered spreadsheets. Workers check in from their phone with location and face verification, supervisors and admins see attendance as it happens, and the hours flow straight into payroll that workers can confirm or dispute. It is bilingual (Simplified Chinese and English) and is designed around work permits, NRIC/FIN, CPF and MOM-issued certificates.",
+  "logo": "/images/builtsync/logo.png",
+  "pillars": [
+    {
+      "icon": "pin",
+      "title": "Geofenced, face-verified attendance",
+      "text": "Check-in and check-out use the phone's GPS against the site geofence plus face recognition. Late, early-leave, outside-geofence and missing punches are flagged for review automatically."
+    },
+    {
+      "icon": "pay",
+      "title": "Payslips workers can trust",
+      "text": "Payslips are generated from attendance and pay rules. Workers see gross pay, overtime, CPF and deductions, then confirm or dispute. Admins review, adjust and release payout."
+    },
+    {
+      "icon": "leave",
+      "title": "Leave, from request to approval",
+      "text": "Workers apply from the app against their balance. Supervisors approve on the go, and admins see everyone on a monthly leave calendar."
+    },
+    {
+      "icon": "cert",
+      "title": "Certificates that never lapse unseen",
+      "text": "Work permits and trade certificates are tracked with number, issuer and expiry. Workers and admins are reminded before anything expires."
+    },
+    {
+      "icon": "safety",
+      "title": "Safety on every shift",
+      "text": "Safety reminders on the home screen, an admin-set notice at check-in, site-entry quizzes and broadcasts keep safety in front of every worker."
+    },
+    {
+      "icon": "console",
+      "title": "One console for the whole workforce",
+      "text": "Analytics, staff roster, projects and zones, roles and data scope, announcements and an audit log, in a bilingual admin console with Excel export."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Check in",
+      "text": "The worker checks in on site. Location, time and face are verified.",
+      "app": "app-checkin",
+      "admin": "adm-att-daily"
+    },
+    {
+      "title": "Monitor",
+      "text": "Admins see who is in, who is late and who is outside the geofence.",
+      "app": "app-geofence",
+      "admin": "adm-att-detail"
+    },
+    {
+      "title": "Get paid",
+      "text": "Hours roll into payslips that workers confirm, or dispute, in the app.",
+      "app": "app-payslip",
+      "admin": "adm-payroll"
+    }
+  ],
+  "demoNote": "Screens show sample data and are rendered from the BuiltSync design set, translated to English for this preview.",
+  "app": {
+    "title": "Worker app",
+    "blurb": "What every worker carries in their pocket. Tap the highlighted areas to move through the app.",
+    "modules": [
+      {
+        "id": "Start",
+        "label": "Start",
+        "description": "Sign in and land on a home screen built around documents, safety and updates."
+      },
+      {
+        "id": "Attendance",
+        "label": "Attendance",
+        "description": "Geofenced, face-verified check-in and check-out, with exceptions flagged automatically."
+      },
+      {
+        "id": "Pay",
+        "label": "Pay",
+        "description": "Payslips workers can read, confirm or dispute."
+      },
+      {
+        "id": "Leave",
+        "label": "Leave",
+        "description": "Apply, track and approve leave from the phone."
+      },
+      {
+        "id": "Certificates",
+        "label": "Certificates",
+        "description": "Permits and certificates with expiry reminders."
+      },
+      {
+        "id": "Safety",
+        "label": "Safety",
+        "description": "Site-entry quizzes and surveys."
+      },
+      {
+        "id": "Messages",
+        "label": "Messages",
+        "description": "Notices and broadcasts in one place."
+      },
+      {
+        "id": "Me",
+        "label": "Work hub",
+        "description": "Projects, profile and language."
+      }
+    ],
+    "screens": [
+      {
+        "id": "app-login",
+        "module": "Start",
+        "title": "Sign in",
+        "caption": "Workers sign in with their employee account or a mobile verification code. The language switch sits right on the login screen.",
+        "image": "/images/builtsync/app/app-login.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 10.77,
+            "y": 58.18,
+            "w": 78.46,
+            "h": 6.16,
+            "goto": "app-home",
+            "label": "Sign in"
+          }
+        ]
+      },
+      {
+        "id": "app-home",
+        "module": "Start",
+        "title": "Home",
+        "caption": "Key documents with expiry status, site safety reminders and the latest updates at a glance. Tap the tabs below to move around.",
+        "image": "/images/builtsync/app/app-home.webp",
+        "width": 780,
+        "height": 2244,
+        "hotspots": [
+          {
+            "x": 83.59,
+            "y": 4.37,
+            "w": 11.28,
+            "h": 3.92,
+            "goto": "app-messages",
+            "label": "Messages"
+          },
+          {
+            "x": 80.0,
+            "y": 9.63,
+            "w": 16.41,
+            "h": 3.03,
+            "goto": "app-certs",
+            "label": "All documents"
+          },
+          {
+            "x": 5.13,
+            "y": 13.37,
+            "w": 43.33,
+            "h": 11.05,
+            "goto": "app-notice-cert",
+            "label": "Work Permit"
+          },
+          {
+            "x": 80.0,
+            "y": 64.88,
+            "w": 16.41,
+            "h": 3.03,
+            "goto": "app-messages",
+            "label": "All messages"
+          },
+          {
+            "x": 21.54,
+            "y": 91.09,
+            "w": 18.97,
+            "h": 7.84,
+            "goto": "app-work-center",
+            "label": "Work Hub"
+          },
+          {
+            "x": 40.51,
+            "y": 91.09,
+            "w": 18.97,
+            "h": 7.84,
+            "goto": "app-checkin",
+            "label": "Attendance"
+          },
+          {
+            "x": 59.49,
+            "y": 91.09,
+            "w": 18.97,
+            "h": 7.84,
+            "goto": "app-broadcast",
+            "label": "Broadcast"
+          },
+          {
+            "x": 78.46,
+            "y": 91.09,
+            "w": 18.97,
+            "h": 7.84,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ]
+      },
+      {
+        "id": "app-checkin",
+        "module": "Attendance",
+        "title": "Ready to check in",
+        "caption": "A live clock, the assigned project and shift, and a GPS check against the site geofence. Tap Check in to continue.",
+        "image": "/images/builtsync/app/app-checkin.webp",
+        "width": 780,
+        "height": 1856,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 81.9,
+            "w": 89.74,
+            "h": 5.6,
+            "goto": "app-checkin-confirm",
+            "label": "Check in"
+          },
+          {
+            "x": 2.56,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-home",
+            "label": "Home"
+          },
+          {
+            "x": 21.54,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-work-center",
+            "label": "Work Hub"
+          },
+          {
+            "x": 59.49,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-broadcast",
+            "label": "Broadcast"
+          },
+          {
+            "x": 78.46,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ]
+      },
+      {
+        "id": "app-checkin-confirm",
+        "module": "Attendance",
+        "title": "Confirm check-in",
+        "caption": "Before checking in, the worker sees the admin-configured safety notice, their location and the time, and confirms they are wearing a helmet and are in their work zone.",
+        "image": "/images/builtsync/app/app-checkin-confirm.webp",
+        "width": 780,
+        "height": 1918,
+        "hotspots": [
+          {
+            "x": 37.18,
+            "y": 66.01,
+            "w": 53.85,
+            "h": 5.42,
+            "goto": "app-face",
+            "label": "Confirm check-in"
+          },
+          {
+            "x": 8.97,
+            "y": 66.01,
+            "w": 25.64,
+            "h": 5.01,
+            "goto": "app-checkin",
+            "label": "Cancel"
+          }
+        ]
+      },
+      {
+        "id": "app-face",
+        "module": "Attendance",
+        "title": "Face verification",
+        "caption": "Identity is verified by face recognition and the check-in is recorded with its location and time. Face data is used only for this check.",
+        "image": "/images/builtsync/app/app-face.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 91.47,
+            "w": 89.74,
+            "h": 5.69,
+            "goto": "app-checkout",
+            "label": "Back to Attendance"
+          },
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-checkin",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-checkout",
+        "module": "Attendance",
+        "title": "Working",
+        "caption": "Once checked in, the card tracks the time worked this shift. Check out at the end of the day.",
+        "image": "/images/builtsync/app/app-checkout.webp",
+        "width": 780,
+        "height": 1856,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 81.9,
+            "w": 89.74,
+            "h": 5.6,
+            "goto": "app-checkout-confirm",
+            "label": "Check out"
+          },
+          {
+            "x": 2.56,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-home",
+            "label": "Home"
+          },
+          {
+            "x": 21.54,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-work-center",
+            "label": "Work Hub"
+          },
+          {
+            "x": 40.51,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-checkin",
+            "label": "Attendance"
+          },
+          {
+            "x": 59.49,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-broadcast",
+            "label": "Broadcast"
+          },
+          {
+            "x": 78.46,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ]
+      },
+      {
+        "id": "app-checkout-confirm",
+        "module": "Attendance",
+        "title": "Confirm check-out",
+        "caption": "Check-out shows the admin's end-of-shift notice, the location and the time. Hours are settled by the shift rules.",
+        "image": "/images/builtsync/app/app-checkout-confirm.webp",
+        "width": 780,
+        "height": 1918,
+        "hotspots": [
+          {
+            "x": 37.18,
+            "y": 66.01,
+            "w": 53.85,
+            "h": 5.42,
+            "goto": "app-checked-out",
+            "label": "Confirm check-out"
+          },
+          {
+            "x": 8.97,
+            "y": 66.01,
+            "w": 25.64,
+            "h": 5.01,
+            "goto": "app-checkout",
+            "label": "Cancel"
+          }
+        ]
+      },
+      {
+        "id": "app-checked-out",
+        "module": "Attendance",
+        "title": "Checked out",
+        "caption": "The day's hours and end time are recorded, and a punch can be updated if something needs correcting.",
+        "image": "/images/builtsync/app/app-checked-out.webp",
+        "width": 780,
+        "height": 1856,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 81.9,
+            "w": 89.74,
+            "h": 5.6,
+            "goto": "app-checkin",
+            "label": "Update punch"
+          },
+          {
+            "x": 2.56,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-home",
+            "label": "Home"
+          },
+          {
+            "x": 21.54,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-work-center",
+            "label": "Work Hub"
+          },
+          {
+            "x": 40.51,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-checkin",
+            "label": "Attendance"
+          },
+          {
+            "x": 59.49,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-broadcast",
+            "label": "Broadcast"
+          },
+          {
+            "x": 78.46,
+            "y": 89.22,
+            "w": 18.97,
+            "h": 9.48,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ]
+      },
+      {
+        "id": "app-geofence",
+        "module": "Attendance",
+        "title": "Outside the geofence",
+        "caption": "If a worker is outside the site boundary, BuiltSync flags a location exception and shows the distance. The punch can still be made, and is marked for review.",
+        "image": "/images/builtsync/app/app-geofence.webp",
+        "width": 780,
+        "height": 1848,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 82.25,
+            "w": 89.74,
+            "h": 5.63,
+            "goto": "app-checkin-confirm",
+            "label": "Check in anyway"
+          },
+          {
+            "x": 2.56,
+            "y": 89.18,
+            "w": 18.97,
+            "h": 9.52,
+            "goto": "app-home",
+            "label": "Home"
+          },
+          {
+            "x": 21.54,
+            "y": 89.18,
+            "w": 18.97,
+            "h": 9.52,
+            "goto": "app-work-center",
+            "label": "Work Hub"
+          },
+          {
+            "x": 40.51,
+            "y": 89.18,
+            "w": 18.97,
+            "h": 9.52,
+            "goto": "app-checkin",
+            "label": "Attendance"
+          },
+          {
+            "x": 59.49,
+            "y": 89.18,
+            "w": 18.97,
+            "h": 9.52,
+            "goto": "app-broadcast",
+            "label": "Broadcast"
+          },
+          {
+            "x": 78.46,
+            "y": 89.18,
+            "w": 18.97,
+            "h": 9.52,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ]
+      },
+      {
+        "id": "app-attendance-month",
+        "module": "Attendance",
+        "title": "Attendance records",
+        "caption": "A monthly calendar with total hours, days present and exceptions. Green is normal, yellow is an exception.",
+        "image": "/images/builtsync/app/app-attendance-month.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-work-center",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-pay-records",
+        "module": "Pay",
+        "title": "Pay records",
+        "caption": "Every month's payslip in one list, split into To confirm and Confirmed.",
+        "image": "/images/builtsync/app/app-pay-records.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 19.43,
+            "w": 89.74,
+            "h": 16.35,
+            "goto": "app-payslip",
+            "label": "August 2026 pay"
+          },
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-work-center",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-payslip",
+        "module": "Pay",
+        "title": "Payslip details",
+        "caption": "Gross pay, overtime, incentive, CPF and other deductions, and net pay. Workers either confirm it is correct or raise a dispute.",
+        "image": "/images/builtsync/app/app-payslip.webp",
+        "width": 780,
+        "height": 1746,
+        "hotspots": [
+          {
+            "x": 3.59,
+            "y": 5.04,
+            "w": 13.33,
+            "h": 5.5,
+            "goto": "app-pay-records",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-leave-home",
+        "module": "Leave",
+        "title": "Leave",
+        "caption": "Leave balances by type, current status and recent requests, plus a shortcut for supervisors to approve their team's leave.",
+        "image": "/images/builtsync/app/app-leave-home.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 42.06,
+            "w": 89.74,
+            "h": 6.16,
+            "goto": "app-leave-apply",
+            "label": "Apply for leave"
+          },
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-work-center",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-leave-apply",
+        "module": "Leave",
+        "title": "Apply for leave",
+        "caption": "Pick the leave type and dates. The duration is calculated automatically against the available balance.",
+        "image": "/images/builtsync/app/app-leave-apply.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-leave-home",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-certs",
+        "module": "Certificates",
+        "title": "Documents",
+        "caption": "Work permit, passport, safety and trade certificates with number, expiry date and status: valid, expiring soon or expired.",
+        "image": "/images/builtsync/app/app-certs.webp",
+        "width": 780,
+        "height": 1780,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 25.39,
+            "w": 89.74,
+            "h": 13.48,
+            "goto": "app-notice-cert",
+            "label": "Work Permit"
+          }
+        ]
+      },
+      {
+        "id": "app-notice-cert",
+        "module": "Certificates",
+        "title": "Expiry reminder",
+        "caption": "Workers are reminded before a certificate lapses, with the issuer, expiry date and what to do next.",
+        "image": "/images/builtsync/app/app-notice-cert.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-certs",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-survey",
+        "module": "Safety",
+        "title": "Site-entry safety quiz",
+        "caption": "Quizzes and surveys support single choice, multiple choice, true/false and short-answer questions.",
+        "image": "/images/builtsync/app/app-survey.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-work-center",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-messages",
+        "module": "Messages",
+        "title": "Message centre",
+        "caption": "Attendance, pay, certificate and leave notices in one inbox, filterable by type.",
+        "image": "/images/builtsync/app/app-messages.webp",
+        "width": 780,
+        "height": 1688,
+        "hotspots": [
+          {
+            "x": 3.59,
+            "y": 5.21,
+            "w": 13.33,
+            "h": 5.69,
+            "goto": "app-home",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-broadcast",
+        "module": "Messages",
+        "title": "Broadcast",
+        "caption": "Announcements from HR, safety and project teams reach every worker's phone.",
+        "image": "/images/builtsync/app/app-broadcast.webp",
+        "width": 780,
+        "height": 1956,
+        "hotspots": [
+          {
+            "x": 2.56,
+            "y": 89.78,
+            "w": 18.97,
+            "h": 9.0,
+            "goto": "app-home",
+            "label": "Home"
+          },
+          {
+            "x": 21.54,
+            "y": 89.78,
+            "w": 18.97,
+            "h": 9.0,
+            "goto": "app-work-center",
+            "label": "Work Hub"
+          },
+          {
+            "x": 40.51,
+            "y": 89.78,
+            "w": 18.97,
+            "h": 9.0,
+            "goto": "app-checkin",
+            "label": "Attendance"
+          },
+          {
+            "x": 78.46,
+            "y": 89.78,
+            "w": 18.97,
+            "h": 9.0,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ]
+      },
+      {
+        "id": "app-work-center",
+        "module": "Me",
+        "title": "Work hub",
+        "caption": "Switch project or zone, then jump to the attendance log, surveys, pay, leave and profile.",
+        "image": "/images/builtsync/app/app-work-center.webp",
+        "width": 780,
+        "height": 1744,
+        "hotspots": [
+          {
+            "x": 5.13,
+            "y": 34.4,
+            "w": 43.08,
+            "h": 16.06,
+            "goto": "app-attendance-month",
+            "label": "Attendance log"
+          },
+          {
+            "x": 51.79,
+            "y": 34.4,
+            "w": 43.08,
+            "h": 16.06,
+            "goto": "app-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 5.13,
+            "y": 52.06,
+            "w": 43.08,
+            "h": 16.06,
+            "goto": "app-pay-records",
+            "label": "Pay"
+          },
+          {
+            "x": 51.79,
+            "y": 52.06,
+            "w": 43.08,
+            "h": 16.06,
+            "goto": "app-leave-home",
+            "label": "Leave"
+          },
+          {
+            "x": 5.13,
+            "y": 69.72,
+            "w": 43.08,
+            "h": 16.06,
+            "goto": "app-profile",
+            "label": "Profile"
+          },
+          {
+            "x": 2.56,
+            "y": 88.53,
+            "w": 18.97,
+            "h": 10.09,
+            "goto": "app-home",
+            "label": "Home"
+          },
+          {
+            "x": 40.51,
+            "y": 88.53,
+            "w": 18.97,
+            "h": 10.09,
+            "goto": "app-checkin",
+            "label": "Attendance"
+          },
+          {
+            "x": 59.49,
+            "y": 88.53,
+            "w": 18.97,
+            "h": 10.09,
+            "goto": "app-broadcast",
+            "label": "Broadcast"
+          },
+          {
+            "x": 78.46,
+            "y": 88.53,
+            "w": 18.97,
+            "h": 10.09,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ]
+      },
+      {
+        "id": "app-profile",
+        "module": "Me",
+        "title": "Profile",
+        "caption": "Personal, employer and bank details, with face enrolment for attendance check-ins.",
+        "image": "/images/builtsync/app/app-profile.webp",
+        "width": 780,
+        "height": 2520,
+        "hotspots": [
+          {
+            "x": 3.59,
+            "y": 3.49,
+            "w": 13.33,
+            "h": 3.81,
+            "goto": "app-work-center",
+            "label": "Back"
+          }
+        ]
+      },
+      {
+        "id": "app-language",
+        "module": "Me",
+        "title": "Language",
+        "caption": "The app runs in Simplified Chinese or English, and workers can switch at any time.",
+        "image": "/images/builtsync/app/app-language.webp",
+        "width": 780,
+        "height": 2020,
+        "hotspots": []
+      }
+    ]
+  },
+  "admin": {
+    "title": "Admin console",
+    "blurb": "What project, HR and payroll teams use every day. Click the sidebar and tabs to move around.",
+    "modules": [
+      {
+        "id": "Sign in",
+        "label": "Sign in",
+        "description": "One bilingual admin console."
+      },
+      {
+        "id": "Analytics",
+        "label": "Analytics",
+        "description": "Hours, headcount and survey data in one view."
+      },
+      {
+        "id": "People",
+        "label": "People",
+        "description": "Staff roster and profiles."
+      },
+      {
+        "id": "Projects",
+        "label": "Projects",
+        "description": "Projects, zones and contacts."
+      },
+      {
+        "id": "Certificates",
+        "label": "Certificates",
+        "description": "Expiry tracking for every certificate."
+      },
+      {
+        "id": "Attendance",
+        "label": "Attendance",
+        "description": "Daily and monthly attendance, generated automatically."
+      },
+      {
+        "id": "Payroll",
+        "label": "Payroll",
+        "description": "Payslips and pay templates."
+      },
+      {
+        "id": "Leave",
+        "label": "Leave",
+        "description": "Approvals on a calendar."
+      },
+      {
+        "id": "Notifications",
+        "label": "Notifications",
+        "description": "Announcements by company or project."
+      },
+      {
+        "id": "Surveys",
+        "label": "Surveys",
+        "description": "Safety checks and surveys."
+      },
+      {
+        "id": "Permissions",
+        "label": "Permissions",
+        "description": "Roles and data scope."
+      }
+    ],
+    "screens": [
+      {
+        "id": "adm-login",
+        "module": "Sign in",
+        "title": "Admin sign-in",
+        "caption": "Administrators sign in to a bilingual console (中文 / English): one platform for projects, people, attendance, certificates and payroll.",
+        "image": "/images/builtsync/admin/adm-login.webp",
+        "width": 1900,
+        "height": 1351,
+        "hotspots": [
+          {
+            "x": 59.17,
+            "y": 52.83,
+            "w": 24.72,
+            "h": 4.3,
+            "goto": "adm-dashboard",
+            "label": "Sign in"
+          }
+        ]
+      },
+      {
+        "id": "adm-dashboard",
+        "module": "Analytics",
+        "title": "Analytics",
+        "caption": "Site hours, headcount, direct versus subcontracted manpower, hours by trade and survey completion. Filter by company, project and date, then export to Excel.",
+        "image": "/images/builtsync/admin/adm-dashboard.webp",
+        "width": 1900,
+        "height": 2110,
+        "hotspots": [
+          {
+            "x": 0.82,
+            "y": 9.82,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.82,
+            "y": 12.88,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.82,
+            "y": 19.02,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.82,
+            "y": 22.09,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.82,
+            "y": 25.15,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.82,
+            "y": 28.22,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.82,
+            "y": 31.29,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.82,
+            "y": 34.36,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.82,
+            "y": 46.63,
+            "w": 15.26,
+            "h": 2.58,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          }
+        ]
+      },
+      {
+        "id": "adm-roster",
+        "module": "People",
+        "title": "Staff roster",
+        "caption": "Worker, supervisor and safety-officer profiles with company, trade, pay template, project assignment and status.",
+        "image": "/images/builtsync/admin/adm-roster.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          }
+        ]
+      },
+      {
+        "id": "adm-projects",
+        "module": "Projects",
+        "title": "Projects & zones",
+        "caption": "Maintain projects, zones, countries, contacts and project dates, with status from not started through to completed.",
+        "image": "/images/builtsync/admin/adm-projects.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          }
+        ]
+      },
+      {
+        "id": "adm-certs",
+        "module": "Certificates",
+        "title": "Staff certificates",
+        "caption": "Track valid, expiring and expired certificates for every person, upload several per worker, and see who still needs one.",
+        "image": "/images/builtsync/admin/adm-certs.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          }
+        ]
+      },
+      {
+        "id": "adm-att-daily",
+        "module": "Attendance",
+        "title": "Daily attendance summary",
+        "caption": "A day's scheduled, normal, exception and on-leave headcount. Late, early-leave and outside-geofence punches are flagged automatically.",
+        "image": "/images/builtsync/admin/adm-att-daily.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          },
+          {
+            "x": 25.0,
+            "y": 6.72,
+            "w": 6.05,
+            "h": 4.48,
+            "goto": "adm-att-detail",
+            "label": "Daily detail"
+          },
+          {
+            "x": 32.06,
+            "y": 6.72,
+            "w": 6.72,
+            "h": 4.48,
+            "goto": "adm-att-monthly",
+            "label": "Monthly summary"
+          }
+        ]
+      },
+      {
+        "id": "adm-att-detail",
+        "module": "Attendance",
+        "title": "Daily detail",
+        "caption": "Check-in and check-out per person, with the result and notes. Attendance is generated by the system from schedules and punches.",
+        "image": "/images/builtsync/admin/adm-att-detail.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          },
+          {
+            "x": 16.67,
+            "y": 6.72,
+            "w": 7.39,
+            "h": 4.57,
+            "goto": "adm-att-daily",
+            "label": "Daily summary"
+          },
+          {
+            "x": 32.06,
+            "y": 6.72,
+            "w": 6.72,
+            "h": 4.48,
+            "goto": "adm-att-monthly",
+            "label": "Monthly summary"
+          }
+        ]
+      },
+      {
+        "id": "adm-att-monthly",
+        "module": "Attendance",
+        "title": "Monthly summary",
+        "caption": "Per-person totals for the month: normal, late, early leave, missing punch and leave.",
+        "image": "/images/builtsync/admin/adm-att-monthly.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          },
+          {
+            "x": 16.67,
+            "y": 6.72,
+            "w": 7.39,
+            "h": 4.57,
+            "goto": "adm-att-daily",
+            "label": "Daily summary"
+          },
+          {
+            "x": 25.0,
+            "y": 6.72,
+            "w": 6.05,
+            "h": 4.48,
+            "goto": "adm-att-detail",
+            "label": "Daily detail"
+          }
+        ]
+      },
+      {
+        "id": "adm-payroll",
+        "module": "Payroll",
+        "title": "Payslips",
+        "caption": "Payslips are generated from attendance and pay rules. Admins review, adjust disputes, confirm and mark payout.",
+        "image": "/images/builtsync/admin/adm-payroll.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          },
+          {
+            "x": 22.18,
+            "y": 6.72,
+            "w": 7.39,
+            "h": 4.48,
+            "goto": "adm-pay-template",
+            "label": "Pay templates"
+          }
+        ]
+      },
+      {
+        "id": "adm-pay-template",
+        "module": "Payroll",
+        "title": "Pay templates",
+        "caption": "Daily and monthly templates with basic hours, overtime rules across four day types, and linked staff.",
+        "image": "/images/builtsync/admin/adm-pay-template.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          },
+          {
+            "x": 16.67,
+            "y": 6.72,
+            "w": 4.7,
+            "h": 4.57,
+            "goto": "adm-payroll",
+            "label": "Payslips"
+          }
+        ]
+      },
+      {
+        "id": "adm-leave",
+        "module": "Leave",
+        "title": "Leave approvals",
+        "caption": "A monthly calendar of everyone's leave. Click a date to see who is off, then approve or reject.",
+        "image": "/images/builtsync/admin/adm-leave.webp",
+        "width": 1900,
+        "height": 1522,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 9.23,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 13.42,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 17.62,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 26.01,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 30.2,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 34.4,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.79,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 46.98,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 63.76,
+            "w": 15.05,
+            "h": 3.52,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          }
+        ]
+      },
+      {
+        "id": "adm-notice",
+        "module": "Notifications",
+        "title": "Platform announcements",
+        "caption": "Publish announcements to all staff, a company or a project, in Chinese and English, by in-app notice or SMS.",
+        "image": "/images/builtsync/admin/adm-notice.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          }
+        ]
+      },
+      {
+        "id": "adm-survey",
+        "module": "Surveys",
+        "title": "Surveys",
+        "caption": "Create safety checks and surveys, and see completion by audience and deadline.",
+        "image": "/images/builtsync/admin/adm-survey.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 70.9,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roles",
+            "label": "Permissions"
+          }
+        ]
+      },
+      {
+        "id": "adm-roles",
+        "module": "Permissions",
+        "title": "Roles & permissions",
+        "caption": "Role-based access to pages, actions and data scope, set per company or project.",
+        "image": "/images/builtsync/admin/adm-roles.webp",
+        "width": 1900,
+        "height": 1369,
+        "hotspots": [
+          {
+            "x": 0.81,
+            "y": 10.26,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-dashboard",
+            "label": "Analytics"
+          },
+          {
+            "x": 0.81,
+            "y": 14.93,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-roster",
+            "label": "People"
+          },
+          {
+            "x": 0.81,
+            "y": 19.59,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-projects",
+            "label": "Projects & zones"
+          },
+          {
+            "x": 0.81,
+            "y": 28.92,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-certs",
+            "label": "Certificates"
+          },
+          {
+            "x": 0.81,
+            "y": 33.58,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-att-daily",
+            "label": "Attendance"
+          },
+          {
+            "x": 0.81,
+            "y": 38.25,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-payroll",
+            "label": "Payroll"
+          },
+          {
+            "x": 0.81,
+            "y": 42.91,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-leave",
+            "label": "Leave"
+          },
+          {
+            "x": 0.81,
+            "y": 47.57,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-notice",
+            "label": "Notifications"
+          },
+          {
+            "x": 0.81,
+            "y": 52.24,
+            "w": 15.05,
+            "h": 3.92,
+            "goto": "adm-survey",
+            "label": "Surveys"
+          }
+        ]
+      }
+    ]
+  },
+  "ctaHeading": "Want BuiltSync on your sites?",
+  "ctaText": "Talk to the Lenix team about a walkthrough or a pilot.",
+  "ctaLabel": "Contact Lenix",
+  "ctaLink": "/contact"
+}

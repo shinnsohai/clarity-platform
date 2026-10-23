@@ -69,3 +69,18 @@ input[type="submit"], input[type="button"], input[type="checkbox"], input[type="
 
 /* Subsidiary pages: body/label copy that is normally slate grey reads as navy instead. */
 .entity-page .text-concrete { color: #1B224E; }
+
+/* BuiltSync demo: pulsing tap targets and the floating hero phone */
+@keyframes bs-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(91, 91, 255, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(91, 91, 255, 0); }
+}
+.bs-hotspot { animation: bs-pulse 2.2s ease-in-out infinite; }
+@keyframes bs-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.bs-float { animation: bs-float 5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bs-hotspot, .bs-float { animation: none; }
+}

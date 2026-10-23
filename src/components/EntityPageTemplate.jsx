@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { entities } from '../data/hierarchy'
+import { entities, getSubpages } from '../data/hierarchy'
 import SubIcon from './icons/SubIcon'
 import ManpowerRequestForm from './ManpowerRequestForm'
 import AppLinksPanel from './AppLinksPanel'
@@ -160,6 +160,50 @@ export default function EntityPageTemplate({ entity }) {
           </div>
         )}
       </section>
+
+      {/* Subpages hanging off this subsidiary (CMS: Subsidiary Subpages) */}
+      {getSubpages(entity.slug).length > 0 && (
+        <section className="pb-24 max-w-[1440px] mx-auto px-8 xl:px-16">
+          <div className="flex items-center gap-4 mb-4 text-concrete text-xs tracking-[0.3em] uppercase">
+            <span className="w-2 h-2 bg-gold rounded-full inline-block" />
+            Explore {entity.name}
+          </div>
+          <h2 className="font-display text-3xl md:text-5xl text-ink leading-[0.95] mb-10">
+            PLATFORMS &amp; SERVICES<span className="text-azure">.</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {getSubpages(entity.slug).map((p, i) => (
+              <motion.div
+                key={p.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                whileHover={{ y: -4 }}
+              >
+                <Link
+                  to={`/our-business/${entity.slug}/${p.slug}`}
+                  className="group flex items-center gap-6 bg-white border border-ink/10 rounded-2xl shadow-soft hover:shadow-soft-lg transition-shadow p-7"
+                >
+                  {p.logo && (
+                    <span className="shrink-0 w-20 h-20 rounded-2xl bg-pearl border border-ink/10 flex items-center justify-center p-3">
+                      <img src={p.logo} alt={`${p.title} logo`} className="w-full h-full object-contain" />
+                    </span>
+                  )}
+                  <span className="min-w-0">
+                    <span className="block font-display text-xl text-ink leading-tight">{p.title}</span>
+                    {p.tagline && <span className="block text-azure text-xs font-semibold tracking-[0.15em] uppercase mt-1">{p.tagline}</span>}
+                    {p.summary && <span className="block text-concrete text-sm leading-relaxed mt-3">{p.summary}</span>}
+                    <span className="inline-block mt-4 text-azure text-[11px] font-bold tracking-[0.15em] uppercase group-hover:text-gold-dim transition-colors">
+                      View {p.title} →
+                    </span>
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Key Performance Telemetry */}
       <Marquee items={entity.telemetry} />

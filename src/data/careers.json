@@ -95,13 +95,13 @@
     },
     {
       "id": "full-stack-engineer-builtsync",
-      "title": "Full-Stack Engineer, Builtsync",
+      "title": "Full-Stack Engineer, BuiltSync",
       "entity": "lenix",
       "location": "Singapore — Hybrid",
       "type": "Full-Time",
       "posted": "2026-07-31",
       "scope": [
-        "Design, build and maintain web features and back-end services for Builtsync, which synchronizes live site data across projects.",
+        "Design, build and maintain web features and back-end services for BuiltSync, which synchronizes live site data across projects.",
         "Develop APIs and data pipelines that move field data between mobile apps, the platform and dashboards in near real time.",
         "Build clear, responsive interfaces for site teams, project managers and management users.",
         "Model and maintain databases, keeping data accurate, secure and auditable.",
