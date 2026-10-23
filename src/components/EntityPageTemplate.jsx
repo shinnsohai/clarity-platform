@@ -74,7 +74,7 @@ export default function EntityPageTemplate({ entity }) {
   const filtered = filter === 'All' ? gallery : gallery.filter((g) => g.tag === filter)
 
   return (
-    <div className="bg-paper">
+    <div className="bg-paper entity-page">
       {/* Hero Banner */}
       <section ref={heroRef} className="relative h-screen min-h-[720px] overflow-hidden">
         <motion.img

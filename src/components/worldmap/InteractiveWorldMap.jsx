@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps'
 import { Search, Filter, RotateCcw, ZoomIn, ZoomOut, ChevronDown } from 'lucide-react'
@@ -33,14 +33,33 @@ const GLOBAL_STATS = {
   totalClients: ALL_CLIENTS.length,
 }
 
+// Where the group's hubs sit (Middle East to South-East Asia). Phones start zoomed in here
+// so the countries are actually legible; desktop starts on the wider view.
+const VIEW_DESKTOP = { zoom: 1.2, center: [70, 20] }
+const VIEW_MOBILE = { zoom: 2.3, center: [85, 14] }
+const isPhone = () => typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
+
 export default function InteractiveWorldMap() {
   const [selectedClient, setSelectedClient] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [hovered, setHovered] = useState(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
   const [selectedCountry, setSelectedCountry] = useState(null)
-  const [zoom, setZoom] = useState(1.2)
-  const [center, setCenter] = useState([70, 20])
+  const [phone, setPhone] = useState(isPhone)
+  const [zoom, setZoom] = useState(() => (isPhone() ? VIEW_MOBILE : VIEW_DESKTOP).zoom)
+  const [center, setCenter] = useState(() => (isPhone() ? VIEW_MOBILE : VIEW_DESKTOP).center)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    const onChange = () => {
+      setPhone(mq.matches)
+      const v = mq.matches ? VIEW_MOBILE : VIEW_DESKTOP
+      setZoom(v.zoom)
+      setCenter(v.center)
+    }
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
 
   const markerScale = Math.max(0.35, 1 / Math.pow(zoom, 0.85))
 
@@ -52,8 +71,9 @@ export default function InteractiveWorldMap() {
   const resetView = () => {
     setSelectedClient('')
     setSearchQuery('')
-    setZoom(1.2)
-    setCenter([70, 20])
+    const v = phone ? VIEW_MOBILE : VIEW_DESKTOP
+    setZoom(v.zoom)
+    setCenter(v.center)
   }
 
   return (
@@ -103,8 +123,8 @@ export default function InteractiveWorldMap() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5 w-full lg:w-auto">
-            <div className="relative flex-1 lg:w-56">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full lg:w-auto">
+            <div className="relative basis-full sm:basis-0 flex-1 lg:w-56">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-concrete pointer-events-none" />
               <input
                 type="text"
@@ -170,27 +190,27 @@ export default function InteractiveWorldMap() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full h-[520px] rounded-2xl overflow-hidden bg-azure-light border border-ink/10 shadow-soft"
+          className="world-map relative w-full aspect-[4/3] md:aspect-auto md:h-[520px] rounded-2xl overflow-hidden bg-azure-light border border-ink/10 shadow-soft"
         >
-          <div className="absolute bottom-5 right-5 z-20 flex flex-col gap-1.5 p-1.5 rounded-2xl border border-ink/10 bg-white/95 shadow-soft-lg backdrop-blur-md">
+          <div className="absolute bottom-3 right-3 md:bottom-5 md:right-5 z-20 flex flex-row md:flex-col gap-1 md:gap-1.5 p-1 md:p-1.5 rounded-2xl border border-ink/10 bg-white/95 shadow-soft-lg backdrop-blur-md">
             <button
               onClick={() => zoom < 6 && setZoom((z) => z * 1.4)}
-              className="p-2.5 rounded-xl text-ink hover:bg-gold-light hover:text-gold-dim transition-colors"
+              className="p-2 md:p-2.5 rounded-xl text-ink hover:bg-gold-light hover:text-gold-dim transition-colors"
               title="Zoom In"
             >
               <ZoomIn className="w-5 h-5" />
             </button>
             <button
               onClick={() => zoom > 1 && setZoom((z) => z / 1.4)}
-              className="p-2.5 rounded-xl text-ink hover:bg-gold-light hover:text-gold-dim transition-colors"
+              className="p-2 md:p-2.5 rounded-xl text-ink hover:bg-gold-light hover:text-gold-dim transition-colors"
               title="Zoom Out"
             >
               <ZoomOut className="w-5 h-5" />
             </button>
-            <div className="w-full h-px bg-ink/10 my-0.5" />
+            <div className="w-px md:w-full h-auto md:h-px bg-ink/10 mx-0.5 md:mx-0 md:my-0.5" />
             <button
               onClick={resetView}
-              className="p-2.5 rounded-xl text-gold hover:bg-gold-light transition-colors"
+              className="p-2 md:p-2.5 rounded-xl text-gold hover:bg-gold-light transition-colors"
               title="Reset View"
             >
               <RotateCcw className="w-5 h-5" />
@@ -198,7 +218,7 @@ export default function InteractiveWorldMap() {
           </div>
 
           {/* Featured hubs legend */}
-          <div className="absolute bottom-5 left-5 z-20 p-4 rounded-2xl border border-ink/10 bg-white/95 shadow-soft-lg backdrop-blur-md text-xs max-w-[220px]">
+          <div className="hidden md:block absolute bottom-5 left-5 z-20 p-4 rounded-2xl border border-ink/10 bg-white/95 shadow-soft-lg backdrop-blur-md text-xs max-w-[220px]">
             <h4 className="font-display text-ink mb-2.5">Map Legend</h4>
             <div className="space-y-2">
               <div className="flex items-center gap-2.5">
@@ -288,6 +308,19 @@ export default function InteractiveWorldMap() {
             </ZoomableGroup>
           </ComposableMap>
         </motion.div>
+
+        <div className="md:hidden mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs">
+          <span className="flex items-center gap-2 font-bold text-ink">
+            <span className="w-4 h-4 rounded-md bg-azure border-2 border-gold shrink-0" />
+            Active Operational Hub
+          </span>
+          <span className="flex items-center gap-2 font-semibold text-concrete">
+            <span className="w-4 h-4 rounded-md bg-ink/20 border border-ink/20 shrink-0" />
+            Global Landmasses
+          </span>
+          {selectedClient && <span className="font-bold text-gold-dim">Filtering: {selectedClient}</span>}
+          <span className="w-full text-concrete">Tap a country for details. Use + / − or pinch to zoom.</span>
+        </div>
       </div>
 
       <MapTooltip content={hovered} position={tooltipPos} />

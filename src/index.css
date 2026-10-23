@@ -62,3 +62,10 @@ input[type="submit"], input[type="button"], input[type="checkbox"], input[type="
     transform: translateX(-50%);
   }
 }
+
+/* Phones: d3-zoom locks touch-action to none, which traps the page's vertical scroll
+   inside the world map. Let vertical swipes scroll the page; horizontal drags still pan. */
+.world-map svg { touch-action: pan-y !important; }
+
+/* Subsidiary pages: body/label copy that is normally slate grey reads as navy instead. */
+.entity-page .text-concrete { color: #1B224E; }
