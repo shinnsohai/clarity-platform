@@ -8,7 +8,7 @@ import PageHero from '../components/PageHero'
 // Which flywheel stage each subsidiary sits in, and the real evidence (already published
 // on that subsidiary's own page) that backs it up — nothing here is projected.
 const ROLE_MAP = {
-  lenix: { tag: 'Data Capture & Forecasting', evidence: 'Builds the software layer between site and strategy. Builtsync syncs live site data across every project; Pilot Data turns raw field signal into forecasting. 24 sites synced, <400ms latency, 9 active pilots.' },
+  lenix: { tag: 'Capture, Connect & Intelligence', evidence: 'Builds the software and digital backbone between site and strategy. Builtsync syncs live site data and IT Solutions keeps every subsidiary connected; Pilot Data and Digital Transformation refine it into decision-grade intelligence. 24 sites synced, <400ms latency, 40+ systems integrated, 9 active pilots, 2.4M data points a day.' },
   durabuild: { tag: 'Field Ops · Data Source', evidence: 'Structural engineering & manpower on active certified sites — the physical operation the data layer describes.' },
   cfm: { tag: 'Field Ops · Data Source', evidence: 'Facility & infrastructure operations, 24/7 coverage — a continuous telemetry surface for the Lenix data layer.' },
   'clarity-manufacturing': { tag: 'Field Ops · Data Source', evidence: 'Precision manufacturing manpower — production-line uptime and QA data, a natural predictive-maintenance surface.' },

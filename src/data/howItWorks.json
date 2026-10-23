@@ -1,7 +1,7 @@
 {
   "kicker": "How It Works",
   "headline": "The industries we run are the data we run on.",
-  "intro": "Clarity Group isn't a collection of unrelated businesses under one holding company. Four subsidiaries run real physical operations — construction, facilities, manufacturing, manpower. One subsidiary, Lenix, builds the software that captures what those four do every day and turns it into forward operational forecasting, which goes back into the next deployment. That loop compounds with every site we run — it's the part of the business a pure-software company or a pure operator can't replicate on their own.",
+  "intro": "Clarity Group isn't a collection of unrelated businesses under one holding company. Four subsidiaries run real physical operations — construction, facilities, manufacturing, manpower. One subsidiary, Lenix, builds the software and runs the digital backbone that captures what those four do every day, refines it into decision-grade intelligence, and applies it back into the next deployment. That loop compounds with every site we run — it's the part of the business a pure-software company or a pure operator can't replicate on their own.",
   "flywheelStages": [
     {
       "id": "field-ops",
@@ -11,16 +11,16 @@
     },
     {
       "id": "capture",
-      "label": "Capture",
+      "label": "Capture & Connect",
       "role": "Captures it in real time",
-      "description": "Lenix's Builtsync synchronizes live site data across every project so every subsidiary reads from one operational truth — on web and mobile, straight from the field."
+      "description": "Lenix's Builtsync synchronizes live site data across every project so every subsidiary reads from one operational truth, while its IT Solutions team deploys and maintains the hardware, network, and infrastructure layer that keeps every subsidiary online."
     },
     {
-      "id": "forecast",
-      "label": "Forecast",
-      "role": "Turns signal into foresight",
-      "description": "Lenix's Pilot Data runs telemetry pilots that turn raw field signal into forward operational forecasting — which is then applied back into how the next site is staffed, run, and maintained."
+      "id": "intelligence",
+      "label": "Intelligence",
+      "role": "Refines it into decisions",
+      "description": "Lenix's Pilot Data runs telemetry pilots that turn raw field signal into forward operational forecasting, and its Digital Transformation work re-engineers legacy workflows into connected, data-driven systems across every subsidiary."
     }
   ],
-  "closing": "This is still early. The data infrastructure — real-time site sync and live telemetry pilots — is in place today. Applying data science and predictive modeling on top of it is the direction the group is building toward next, on a foundation most industrial operators don't have and most software companies can't build without owning the field operations underneath it."
+  "closing": "This is still early. The data infrastructure — real-time site sync, systems integration, telemetry pilots — is live today. Applying data science and predictive modeling on top of it is the direction the group is building toward next, on a foundation most industrial operators don't have and most software companies can't build without owning the field operations underneath it."
 }

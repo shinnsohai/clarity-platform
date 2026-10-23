@@ -203,8 +203,8 @@
       "fullName": "Lenix Pte Ltd",
       "image": "/images/branch-lenix.png",
       "logo": "/images/logo-lenix-icon.png",
-      "role": "Digital Products & Field Data Systems",
-      "summary": "Lenix builds the software layer between site and strategy — incubating new tools and syncing field data in real time, on web and mobile.",
+      "role": "Digital Products, Data & IT Solutions",
+      "summary": "Lenix builds the software and digital backbone between site and strategy — incubating new tools, syncing field data in real time on web and mobile, turning operational data into decision-grade intelligence, and keeping every subsidiary connected and online.",
       "appStoreUrl": "",
       "playStoreUrl": "",
       "apkUrl": "",
@@ -227,12 +227,24 @@
           "name": "Pilot Data",
           "description": "Runs telemetry pilots that turn raw field signal into forward operational forecasting.",
           "icon": "telemetry"
+        },
+        {
+          "id": "digital-transformation",
+          "name": "Digital Transformation",
+          "description": "Re-engineers legacy operational workflows into connected, data-driven systems across every subsidiary.",
+          "icon": "dataFlow"
+        },
+        {
+          "id": "it-solutions",
+          "name": "IT Solutions",
+          "description": "Deploys and maintains the hardware, network, and infrastructure layer that keeps every subsidiary online.",
+          "icon": "hardwareNode"
         }
       ],
       "telemetry": [
         {
-          "label": "Active Pilots",
-          "value": "9"
+          "label": "Systems Integrated",
+          "value": "40+"
         },
         {
           "label": "Sites Synced",
@@ -241,6 +253,22 @@
         {
           "label": "Data Latency",
           "value": "<400ms"
+        },
+        {
+          "label": "Data Points / Day",
+          "value": "2.4M"
+        },
+        {
+          "label": "Uptime SLA",
+          "value": "99.9%"
+        },
+        {
+          "label": "Active Pilots",
+          "value": "9"
+        },
+        {
+          "label": "Deployment Cycle",
+          "value": "72H"
         },
         {
           "label": "App Rating",
