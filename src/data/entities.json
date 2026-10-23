@@ -1,6 +1,101 @@
 {
   "entities": [
     {
+      "id": "clarity-ec",
+      "slug": "clarity-ec",
+      "name": "Clarity E&C",
+      "fullName": "Clarity E&C Pte Ltd",
+      "image": "/images/hero-manpower.png",
+      "logo": "/images/logo-clarity-ec-icon.jpeg",
+      "role": "Direct & Indirect Manpower Solutions",
+      "summary": "Clarity E&C is the Group's own manpower arm — deploying directly-employed and indirectly-sourced workforce across industries, matched to project scale and compliance requirements.",
+      "manpowerFormEnabled": true,
+      "subDivisions": [
+        {
+          "id": "direct-manpower",
+          "name": "Direct Manpower",
+          "description": "Directly-employed personnel deployed under Clarity Group's own payroll and supervision, matched to client project requirements.",
+          "icon": "workforce"
+        },
+        {
+          "id": "indirect-manpower",
+          "name": "Indirect Manpower",
+          "description": "Coordinated subcontracted and third-party sourced workforce, managed through Clarity Group's compliance and deployment framework.",
+          "icon": "network"
+        }
+      ],
+      "telemetry": [
+        {
+          "label": "Deployment Model",
+          "value": "Direct + Indirect"
+        },
+        {
+          "label": "Coverage",
+          "value": "Multi-Industry"
+        },
+        {
+          "label": "Compliance",
+          "value": "MOM-Aligned"
+        },
+        {
+          "label": "Live Headcount",
+          "value": "See Map Below"
+        }
+      ],
+      "social": {
+        "linkedin": "",
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      },
+      "connectedCompanies": [
+        {
+          "id": "slot-1",
+          "name": "Aster",
+          "logo": "/images/partners/aster.png"
+        },
+        {
+          "id": "slot-2",
+          "name": "Kuraray",
+          "logo": "/images/partners/kuraray.png"
+        },
+        {
+          "id": "slot-3",
+          "name": "L&K Engineering",
+          "logo": "/images/partners/lk.jpg"
+        },
+        {
+          "id": "slot-4",
+          "name": "MMHE",
+          "logo": "/images/partners/mmhe.png"
+        },
+        {
+          "id": "slot-5",
+          "name": "SRC",
+          "logo": "/images/partners/src-energy.png"
+        },
+        {
+          "id": "slot-6",
+          "name": "UTOC",
+          "logo": "/images/partners/utoc.jpg"
+        },
+        {
+          "id": "slot-7",
+          "name": "Aster",
+          "logo": "/images/partners/aster.png"
+        },
+        {
+          "id": "slot-8",
+          "name": "Kuraray",
+          "logo": "/images/partners/kuraray.png"
+        }
+      ],
+      "contact": {
+        "phone": "+65 6276 9190",
+        "email": "admin@clarity.com.sg"
+      }
+    },
+    {
       "id": "durabuild",
       "slug": "durabuild",
       "name": "Durabuild",
@@ -485,102 +580,8 @@
       "contact": {
         "phone": "",
         "email": ""
-      }
-    },
-    {
-      "id": "clarity-ec",
-      "slug": "clarity-ec",
-      "name": "Clarity E&C",
-      "fullName": "Clarity E&C Pte Ltd",
-      "image": "/images/hero-manpower.png",
-      "logo": "/images/logo-clarity-ec-icon.jpeg",
-      "role": "Direct & Indirect Manpower Solutions",
-      "summary": "Clarity E&C is the Group's own manpower arm — deploying directly-employed and indirectly-sourced workforce across industries, matched to project scale and compliance requirements.",
-      "manpowerFormEnabled": true,
-      "subDivisions": [
-        {
-          "id": "direct-manpower",
-          "name": "Direct Manpower",
-          "description": "Directly-employed personnel deployed under Clarity Group's own payroll and supervision, matched to client project requirements.",
-          "icon": "workforce"
-        },
-        {
-          "id": "indirect-manpower",
-          "name": "Indirect Manpower",
-          "description": "Coordinated subcontracted and third-party sourced workforce, managed through Clarity Group's compliance and deployment framework.",
-          "icon": "network"
-        }
-      ],
-      "telemetry": [
-        {
-          "label": "Deployment Model",
-          "value": "Direct + Indirect"
-        },
-        {
-          "label": "Coverage",
-          "value": "Multi-Industry"
-        },
-        {
-          "label": "Compliance",
-          "value": "MOM-Aligned"
-        },
-        {
-          "label": "Live Headcount",
-          "value": "See Map Below"
-        }
-      ],
-      "social": {
-        "linkedin": "",
-        "facebook": "",
-        "instagram": "",
-        "youtube": ""
       },
-      "connectedCompanies": [
-        {
-          "id": "slot-1",
-          "name": "Aster",
-          "logo": "/images/partners/aster.png"
-        },
-        {
-          "id": "slot-2",
-          "name": "Kuraray",
-          "logo": "/images/partners/kuraray.png"
-        },
-        {
-          "id": "slot-3",
-          "name": "L&K Engineering",
-          "logo": "/images/partners/lk.jpg"
-        },
-        {
-          "id": "slot-4",
-          "name": "MMHE",
-          "logo": "/images/partners/mmhe.png"
-        },
-        {
-          "id": "slot-5",
-          "name": "SRC",
-          "logo": "/images/partners/src-energy.png"
-        },
-        {
-          "id": "slot-6",
-          "name": "UTOC",
-          "logo": "/images/partners/utoc.jpg"
-        },
-        {
-          "id": "slot-7",
-          "name": "Aster",
-          "logo": "/images/partners/aster.png"
-        },
-        {
-          "id": "slot-8",
-          "name": "Kuraray",
-          "logo": "/images/partners/kuraray.png"
-        }
-      ],
-      "contact": {
-        "phone": "+65 6276 9190",
-        "email": "admin@clarity.com.sg"
-      }
+      "published": false
     }
   ]
 }

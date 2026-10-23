@@ -1,11 +1,10 @@
 import { Link, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
 import SocialIcon from '../components/icons/SocialIcon'
 import EmailApply from '../components/EmailApply'
-import { getApply, formatPosted } from '../utils/jobApply'
+import { getApply, formatPosted, openJobs } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
 
@@ -51,7 +50,7 @@ function Fact({ label, children }) {
 
 export default function JobDetail() {
   const { slug } = useParams()
-  const job = careers.jobs.find((j) => j.id === slug)
+  const job = openJobs.find((j) => j.id === slug)
 
   if (!job) {
     return (
@@ -69,14 +68,14 @@ export default function JobDetail() {
 
   const entity = entityById[job.entity]
   const apply = getApply(job)
-  const others = careers.jobs.filter((j) => j.entity === job.entity && j.id !== job.id).slice(0, 4)
+  const others = openJobs.filter((j) => j.entity === job.entity && j.id !== job.id).slice(0, 4)
 
   return (
     <div className="bg-paper">
       <PageHero
         backTo="/careers"
         backLabel="Careers"
-        kicker={`${entity?.name || ''}${job.client ? ` · ${job.client}` : ''}`}
+        kicker={`${entity?.fullName || ''}${job.client ? ` · ${job.client}` : ''}`}
         title={<>{job.title}<span className="text-azure">.</span></>}
         description={job.location}
       />
@@ -212,7 +211,7 @@ export default function JobDetail() {
         <section className="pb-24 max-w-[1440px] mx-auto px-8 xl:px-16">
           <div className="flex items-center gap-4 mb-6 text-concrete text-xs tracking-[0.3em] uppercase">
             <span className="w-2 h-2 bg-gold rounded-full inline-block" />
-            More at {entity?.name}
+            More at {entity?.fullName}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {others.map((o) => (

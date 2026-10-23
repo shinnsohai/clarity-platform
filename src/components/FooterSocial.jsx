@@ -106,7 +106,7 @@ export default function FooterSocial() {
                     }`}
                   >
                     <img src={e.logo} alt="" className="w-5 h-5 object-contain shrink-0" />
-                    <span className="font-display text-xs text-ink whitespace-nowrap">{e.name}</span>
+                    <span className="font-display text-xs text-ink whitespace-nowrap">{e.fullName}</span>
                   </motion.div>
 
                   <AnimatePresence>

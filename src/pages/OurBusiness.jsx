@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { entities, partners } from '../data/hierarchy'
+import { entities, partners, subsidiaryCountWord } from '../data/hierarchy'
 
 function EntityCard({ entity, index }) {
   return (
@@ -36,7 +36,7 @@ function EntityCard({ entity, index }) {
             {entity.role}
           </span>
           <span className="font-display text-2xl text-white flex items-center gap-3">
-            {entity.name}
+            {entity.fullName}
             <span className="text-azure opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
               →
             </span>
@@ -65,7 +65,7 @@ export default function OurBusiness() {
             THE PORTFOLIO<span className="text-azure">.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-concrete text-lg leading-relaxed">
-            Six subsidiaries executing across construction, technology, facilities,
+            {subsidiaryCountWord} subsidiaries executing across construction, technology, facilities,
             manufacturing, and direct/indirect manpower. Select a subsidiary to open its full operational record.
           </p>
         </motion.div>

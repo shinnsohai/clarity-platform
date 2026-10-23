@@ -75,7 +75,7 @@ export default function HowItWorks() {
                     >
                       <td className="px-6 py-4 font-display text-sm text-ink whitespace-nowrap">
                         <Link to={`/our-business/${e.slug}`} className="hover:text-azure transition-colors">
-                          {e.name}
+                          {e.fullName}
                         </Link>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">

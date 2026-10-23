@@ -5,7 +5,7 @@ import careers from '../data/careers.json'
 import { entities } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
 import SocialIcon from '../components/icons/SocialIcon'
-import { getApply, formatPosted, slotsOf, sortJobs } from '../utils/jobApply'
+import { getApply, formatPosted, slotsOf, sortJobs, openJobs } from '../utils/jobApply'
 
 const entityById = Object.fromEntries(entities.map((e) => [e.id, e]))
 
@@ -15,11 +15,11 @@ const SORTS = [
 ]
 
 export default function Careers() {
-  const entityFilters = useMemo(() => ['All', ...new Set(careers.jobs.map((j) => j.entity))], [])
+  const entityFilters = useMemo(() => ['All', ...new Set(openJobs.map((j) => j.entity))], [])
   const [filter, setFilter] = useState('All')
   const [sort, setSort] = useState('newest')
   const jobs = useMemo(
-    () => sortJobs(filter === 'All' ? careers.jobs : careers.jobs.filter((j) => j.entity === filter), sort),
+    () => sortJobs(filter === 'All' ? openJobs : openJobs.filter((j) => j.entity === filter), sort),
     [filter, sort]
   )
   const totalSlots = jobs.reduce((n, j) => n + slotsOf(j), 0)
@@ -45,7 +45,7 @@ export default function Careers() {
                 filter === f ? 'bg-azure text-white border-azure' : 'border-ink/15 text-ink hover:border-azure'
               }`}
             >
-              {f === 'All' ? 'All' : entityById[f]?.name}
+              {f === 'All' ? 'All' : entityById[f]?.fullName}
             </motion.button>
           ))}
         </div>
@@ -102,7 +102,7 @@ export default function Careers() {
                       {job.title}
                     </Link>
                     <div className="text-concrete text-xs mt-1">
-                      {entityById[job.entity]?.name}
+                      {entityById[job.entity]?.fullName}
                       {job.client ? ` · ${job.client}` : ''}
                     </div>
                     <div className="text-concrete/80 text-xs mt-0.5">

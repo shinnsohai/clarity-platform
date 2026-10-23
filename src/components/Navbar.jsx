@@ -56,7 +56,7 @@ function Dropdown({ label, to, items }) {
                   >
                     <Link
                       to={item.to}
-                      className="block px-5 py-2.5 text-sm text-ink hover:bg-gold-light hover:text-azure hover:pl-6 transition-all duration-200"
+                      className="block whitespace-nowrap px-5 py-2.5 text-sm text-ink hover:bg-gold-light hover:text-azure hover:pl-6 transition-all duration-200"
                     >
                       {item.label}
                     </Link>
@@ -156,7 +156,7 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
-  const businessLinks = entities.map((e) => ({ to: `/our-business/${e.slug}`, label: e.name }))
+  const businessLinks = entities.map((e) => ({ to: `/our-business/${e.slug}`, label: e.fullName }))
   const closeMobile = () => setMobileOpen(false)
 
   return (

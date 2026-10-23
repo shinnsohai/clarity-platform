@@ -12,10 +12,19 @@ export const parent = {
   tagline: settings.parent.tagline,
 }
 
-// All 6 subsidiaries.
-export const entities = entitiesData.entities
+// Everything in entities.json, in display order (Clarity E&C first).
+export const allEntities = entitiesData.entities
+
+// The subsidiaries shown on the site. An entity with `"published": false` (Techsphere for now)
+// stays in the data but drops out of every list, page and count — tick "Published" in the CMS
+// to bring it back.
+export const entities = allEntities.filter((e) => e.published !== false)
 
 export const getEntityBySlug = (slug) => entities.find((e) => e.slug === slug)
+
+// "Five" — for copy that states how many subsidiaries are listed, so it can never drift from the lists.
+const COUNT_WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten']
+export const subsidiaryCountWord = COUNT_WORDS[entities.length] ?? String(entities.length)
 
 // Group Performance Metrics — homepage counters
 export const groupMetrics = settings.groupMetrics

@@ -1,4 +1,10 @@
 import careers from '../data/careers.json'
+import { entities } from '../data/hierarchy'
+
+// Jobs that belong to a subsidiary currently shown on the site. A job for an unpublished
+// subsidiary (Techsphere, for now) stays in the CMS but is not listed or reachable.
+const listedIds = new Set(entities.map((e) => e.id))
+export const openJobs = careers.jobs.filter((j) => listedIds.has(j.entity))
 
 // "22 Oct 2026" from an ISO date. Parsed as a local date so it never shifts a day across time zones.
 export function formatPosted(iso) {

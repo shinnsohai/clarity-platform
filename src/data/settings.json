@@ -6,12 +6,36 @@
   },
   "heroVideo": "/videos/hero-singapore.mp4",
   "groupMetrics": [
-    { "label": "Subsidiaries", "value": 6, "suffix": "" },
-    { "label": "Personnel Deployed", "value": 3000, "suffix": "+" },
-    { "label": "Active Project Sites", "value": 18, "suffix": "" },
-    { "label": "Facilities Under Management", "value": 27, "suffix": "" },
-    { "label": "Years Combined Experience", "value": 15, "suffix": "+" },
-    { "label": "Manufacturing Uptime", "value": 98.4, "suffix": "%" }
+    {
+      "label": "Subsidiaries",
+      "value": 5,
+      "suffix": ""
+    },
+    {
+      "label": "Personnel Deployed",
+      "value": 3000,
+      "suffix": "+"
+    },
+    {
+      "label": "Active Project Sites",
+      "value": 18,
+      "suffix": ""
+    },
+    {
+      "label": "Facilities Under Management",
+      "value": 27,
+      "suffix": ""
+    },
+    {
+      "label": "Years Combined Experience",
+      "value": 15,
+      "suffix": "+"
+    },
+    {
+      "label": "Manufacturing Uptime",
+      "value": 98.4,
+      "suffix": "%"
+    }
   ],
   "ctaBanner": {
     "heading": "Ready to deploy with Clarity Group?",

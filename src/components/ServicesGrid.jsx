@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { entities } from '../data/hierarchy'
+import { entities, subsidiaryCountWord } from '../data/hierarchy'
 
 export default function ServicesGrid() {
   return (
@@ -11,10 +11,10 @@ export default function ServicesGrid() {
           Services Provided
         </div>
         <h2 className="font-display text-4xl md:text-6xl text-ink leading-[0.95] mb-14">
-          SIX SUBSIDIARIES<span className="text-azure">.</span> ONE STANDARD.
+          {subsidiaryCountWord.toUpperCase()} SUBSIDIARIES<span className="text-azure">.</span> ONE STANDARD.
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {entities.map((e, i) => (
             <motion.div
               key={e.id}
@@ -39,7 +39,7 @@ export default function ServicesGrid() {
                 <div className="flex-1 flex flex-col justify-between p-6">
                   <div>
                     <img src={e.logo} alt="" className="h-8 w-8 object-contain mb-3" />
-                    <div className="font-display text-lg text-ink leading-tight mb-1">{e.name}</div>
+                    <div className="font-display text-lg text-ink leading-tight mb-1">{e.fullName}</div>
                     <div className="text-concrete text-xs leading-snug">{e.role}</div>
                   </div>
                   <span className="mt-4 text-azure text-xs font-semibold tracking-[0.15em] uppercase flex items-center gap-2">

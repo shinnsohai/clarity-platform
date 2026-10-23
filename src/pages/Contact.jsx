@@ -63,8 +63,8 @@ export default function Contact() {
           >
             <option>General Inquiry</option>
             {entities.map((ent) => (
-              <option key={ent.id} value={ent.name}>
-                {ent.name}
+              <option key={ent.id} value={ent.fullName}>
+                {ent.fullName}
               </option>
             ))}
           </select>

@@ -45,7 +45,7 @@ export default function GlobalFooter() {
                   to={`/our-business/${e.slug}`}
                   className="text-ink/70 hover:text-azure text-sm transition-colors"
                 >
-                  {e.name}
+                  {e.fullName}
                 </Link>
               ))}
             </div>
@@ -58,7 +58,7 @@ export default function GlobalFooter() {
       <div className="max-w-[1680px] mx-auto px-8 xl:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 py-8 border-t border-ink/10 text-concrete text-xs tracking-wide">
           <span>© {new Date().getFullYear()} {parent.fullName} — Singapore</span>
-          <span className="uppercase tracking-[0.2em]">6 Subsidiaries · One Standard</span>
+          <span className="uppercase tracking-[0.2em]">{entities.length} Subsidiaries · One Standard</span>
         </div>
       </div>
     </footer>

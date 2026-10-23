@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { parent, heroVideo } from '../data/hierarchy'
+import { parent, heroVideo, subsidiaryCountWord } from '../data/hierarchy'
 
 // Background is a real Singapore skyline video loop (Marina Bay Sands, at night) —
 // public/videos/hero-singapore.mp4, converted+compressed from the source GIF.
@@ -62,7 +62,7 @@ export default function HeroSlider() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-6 max-w-xl text-concrete text-lg leading-relaxed"
         >
-          Six subsidiaries delivering structural engineering, facilities operations,
+          {subsidiaryCountWord} subsidiaries delivering structural engineering, facilities operations,
           precision manufacturing, and certified manpower — across oil &amp; gas, marine,
           aviation, and industrial construction sites in Singapore and the region.
         </motion.p>

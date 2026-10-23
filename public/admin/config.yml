@@ -252,8 +252,9 @@ collections:
             fields:
               - { label: "Internal ID", name: "id", widget: "string" }
               - { label: "URL Slug", name: "slug", widget: "string", hint: "Used at /our-business/[slug] — avoid changing after launch" }
+              - { label: "Published", name: "published", widget: "boolean", default: true, required: false, hint: "Untick to hide this subsidiary everywhere — menus, lists, its page and its job openings — without deleting anything. Tick it again to bring it back. The counts (\"five subsidiaries\") follow automatically." }
               - { label: "Display Name", name: "name", widget: "string" }
-              - { label: "Full Legal Name", name: "fullName", widget: "string" }
+              - { label: "Full Legal Name", name: "fullName", widget: "string", hint: "Shown in menus, lists and cards. Keep it the exact registered name." }
               - { label: "Hero Image", name: "image", widget: "image" }
               - { label: "Logo Mark", name: "logo", widget: "image" }
               - { label: "Role / Tagline", name: "role", widget: "string" }

@@ -114,6 +114,7 @@ export default function EntityPageTemplate({ entity }) {
           >
             {entity.name}
           </motion.h1>
+          <p className="mt-4 font-display text-lg md:text-xl text-ink/70">{entity.fullName}</p>
           <p className="mt-8 max-w-xl text-concrete text-lg leading-relaxed">{entity.summary}</p>
           {(entity.contact?.phone || entity.contact?.email) && (
             <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm">
