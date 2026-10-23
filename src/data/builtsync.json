@@ -65,42 +65,58 @@
       {
         "id": "Start",
         "label": "Start",
-        "description": "Sign in and land on a home screen built around documents, safety and updates."
+        "description": "Sign in and land on a home screen built around documents, safety and updates.",
+        "labelZh": "开始",
+        "descriptionZh": "登录并进入以证件、安全和消息为核心的工作台。"
       },
       {
         "id": "Attendance",
         "label": "Attendance",
-        "description": "Geofenced, face-verified check-in and check-out, with exceptions flagged automatically."
+        "description": "Geofenced, face-verified check-in and check-out, with exceptions flagged automatically.",
+        "labelZh": "考勤",
+        "descriptionZh": "电子围栏加人脸验证的签到签退，异常自动标记。"
       },
       {
         "id": "Pay",
         "label": "Pay",
-        "description": "Payslips workers can read, confirm or dispute."
+        "description": "Payslips workers can read, confirm or dispute.",
+        "labelZh": "工资",
+        "descriptionZh": "员工可查看、确认或提出异议的工资单。"
       },
       {
         "id": "Leave",
         "label": "Leave",
-        "description": "Apply, track and approve leave from the phone."
+        "description": "Apply, track and approve leave from the phone.",
+        "labelZh": "请假",
+        "descriptionZh": "在手机上申请、跟踪和审批请假。"
       },
       {
         "id": "Certificates",
         "label": "Certificates",
-        "description": "Permits and certificates with expiry reminders."
+        "description": "Permits and certificates with expiry reminders.",
+        "labelZh": "证件",
+        "descriptionZh": "证件与证书，到期自动提醒。"
       },
       {
         "id": "Safety",
         "label": "Safety",
-        "description": "Site-entry quizzes and surveys."
+        "description": "Site-entry quizzes and surveys.",
+        "labelZh": "安全",
+        "descriptionZh": "入场安全问卷与调查。"
       },
       {
         "id": "Messages",
         "label": "Messages",
-        "description": "Notices and broadcasts in one place."
+        "description": "Notices and broadcasts in one place.",
+        "labelZh": "消息",
+        "descriptionZh": "通知与广播集中管理。"
       },
       {
         "id": "Me",
         "label": "Work hub",
-        "description": "Projects, profile and language."
+        "description": "Projects, profile and language.",
+        "labelZh": "工作中心",
+        "descriptionZh": "项目、个人档案与语言。"
       }
     ],
     "screens": [
@@ -121,7 +137,10 @@
             "goto": "app-home",
             "label": "Sign in"
           }
-        ]
+        ],
+        "titleZh": "登录",
+        "captionZh": "员工可使用员工账号或手机验证码登录，语言切换就在登录页上。",
+        "imageZh": "/images/builtsync/app-zh/app-login.webp"
       },
       {
         "id": "app-home",
@@ -196,7 +215,10 @@
             "goto": "app-language",
             "label": "Settings"
           }
-        ]
+        ],
+        "titleZh": "工作台",
+        "captionZh": "一眼查看重要证件到期状态、现场安全提醒和最新消息。点击底部标签即可切换页面。",
+        "imageZh": "/images/builtsync/app-zh/app-home.webp"
       },
       {
         "id": "app-checkin",
@@ -247,7 +269,10 @@
             "goto": "app-language",
             "label": "Settings"
           }
-        ]
+        ],
+        "titleZh": "待签到",
+        "captionZh": "实时时钟、所属项目与班次，并按现场电子围栏校验 GPS 定位。点击“签到”继续。",
+        "imageZh": "/images/builtsync/app-zh/app-checkin.webp"
       },
       {
         "id": "app-checkin-confirm",
@@ -274,7 +299,10 @@
             "goto": "app-checkin",
             "label": "Cancel"
           }
-        ]
+        ],
+        "titleZh": "确认签到",
+        "captionZh": "签到前，员工会看到后台配置的安全提示、当前位置和时间，并确认已佩戴安全帽、处于指定工区。",
+        "imageZh": "/images/builtsync/app-zh/app-checkin-confirm.webp"
       },
       {
         "id": "app-face",
@@ -301,7 +329,10 @@
             "goto": "app-checkin",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "人脸验证",
+        "captionZh": "通过人脸识别核验身份，并记录本次签到的位置与时间。人脸信息仅用于本次核验。",
+        "imageZh": "/images/builtsync/app-zh/app-face.webp"
       },
       {
         "id": "app-checkout",
@@ -360,7 +391,10 @@
             "goto": "app-language",
             "label": "Settings"
           }
-        ]
+        ],
+        "titleZh": "工作中",
+        "captionZh": "签到后，卡片实时显示本班次已工作时长。下班时点击签退。",
+        "imageZh": "/images/builtsync/app-zh/app-checkout.webp"
       },
       {
         "id": "app-checkout-confirm",
@@ -387,7 +421,10 @@
             "goto": "app-checkout",
             "label": "Cancel"
           }
-        ]
+        ],
+        "titleZh": "确认签退",
+        "captionZh": "签退时显示后台配置的下班提示、位置和时间，工时按班次规则结算。",
+        "imageZh": "/images/builtsync/app-zh/app-checkout-confirm.webp"
       },
       {
         "id": "app-checked-out",
@@ -446,7 +483,10 @@
             "goto": "app-language",
             "label": "Settings"
           }
-        ]
+        ],
+        "titleZh": "已签退",
+        "captionZh": "记录当日工时与下班时间，如需更正可更新打卡。",
+        "imageZh": "/images/builtsync/app-zh/app-checked-out.webp"
       },
       {
         "id": "app-geofence",
@@ -505,7 +545,10 @@
             "goto": "app-language",
             "label": "Settings"
           }
-        ]
+        ],
+        "titleZh": "围栏外",
+        "captionZh": "员工若在现场围栏之外，BuiltSync 会标记定位异常并显示距离。仍可打卡，但会标记为待审核。",
+        "imageZh": "/images/builtsync/app-zh/app-geofence.webp"
       },
       {
         "id": "app-attendance-month",
@@ -524,7 +567,10 @@
             "goto": "app-work-center",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "考勤记录",
+        "captionZh": "月历显示累计工时、出勤天数与异常。绿色为正常，黄色为异常。",
+        "imageZh": "/images/builtsync/app-zh/app-attendance-month.webp"
       },
       {
         "id": "app-pay-records",
@@ -551,7 +597,10 @@
             "goto": "app-work-center",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "工资记录",
+        "captionZh": "每月工资单汇总在一个列表中，分为待确认与已确认。",
+        "imageZh": "/images/builtsync/app-zh/app-pay-records.webp"
       },
       {
         "id": "app-payslip",
@@ -567,6 +616,19 @@
             "y": 5.04,
             "w": 13.33,
             "h": 5.5,
+            "goto": "app-pay-records",
+            "label": "Back"
+          }
+        ],
+        "titleZh": "工资明细",
+        "captionZh": "应发金额、加班、激励、公积金及其他扣除，直至实发金额。员工可确认无误，或提出异议。",
+        "imageZh": "/images/builtsync/app-zh/app-payslip.webp",
+        "hotspotsZh": [
+          {
+            "x": 3.59,
+            "y": 5.03,
+            "w": 13.33,
+            "h": 5.49,
             "goto": "app-pay-records",
             "label": "Back"
           }
@@ -597,7 +659,10 @@
             "goto": "app-work-center",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "请假",
+        "captionZh": "按类型显示假期余额、当前状态和最近申请，主管还可快速进入团队请假审批。",
+        "imageZh": "/images/builtsync/app-zh/app-leave-home.webp"
       },
       {
         "id": "app-leave-apply",
@@ -616,7 +681,10 @@
             "goto": "app-leave-home",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "申请请假",
+        "captionZh": "选择请假类型与日期，系统按可用额度自动计算时长。",
+        "imageZh": "/images/builtsync/app-zh/app-leave-apply.webp"
       },
       {
         "id": "app-certs",
@@ -635,7 +703,10 @@
             "goto": "app-notice-cert",
             "label": "Work Permit"
           }
-        ]
+        ],
+        "titleZh": "全部证件",
+        "captionZh": "工作准证、护照、安全及工种证书，含编号、到期日和状态：有效、即将到期或已过期。",
+        "imageZh": "/images/builtsync/app-zh/app-certs.webp"
       },
       {
         "id": "app-notice-cert",
@@ -654,7 +725,10 @@
             "goto": "app-certs",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "证书提醒",
+        "captionZh": "证书到期前提醒员工，并显示签发机构、到期日及后续处理。",
+        "imageZh": "/images/builtsync/app-zh/app-notice-cert.webp"
       },
       {
         "id": "app-survey",
@@ -673,7 +747,10 @@
             "goto": "app-work-center",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "入场安全知识确认",
+        "captionZh": "问卷支持单选、多选、判断和简答题。",
+        "imageZh": "/images/builtsync/app-zh/app-survey.webp"
       },
       {
         "id": "app-messages",
@@ -692,7 +769,10 @@
             "goto": "app-home",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "消息中心",
+        "captionZh": "考勤、工资、证书和请假通知集中在一个收件箱，可按类型筛选。",
+        "imageZh": "/images/builtsync/app-zh/app-messages.webp"
       },
       {
         "id": "app-broadcast",
@@ -732,6 +812,43 @@
             "y": 89.78,
             "w": 18.97,
             "h": 9.0,
+            "goto": "app-language",
+            "label": "Settings"
+          }
+        ],
+        "titleZh": "广播",
+        "captionZh": "人事、安全与项目团队的公告直达每位员工的手机。",
+        "imageZh": "/images/builtsync/app-zh/app-broadcast.webp",
+        "hotspotsZh": [
+          {
+            "x": 2.56,
+            "y": 88.81,
+            "w": 18.97,
+            "h": 9.84,
+            "goto": "app-home",
+            "label": "Home"
+          },
+          {
+            "x": 21.54,
+            "y": 88.81,
+            "w": 18.97,
+            "h": 9.84,
+            "goto": "app-work-center",
+            "label": "Work Hub"
+          },
+          {
+            "x": 40.51,
+            "y": 88.81,
+            "w": 18.97,
+            "h": 9.84,
+            "goto": "app-checkin",
+            "label": "Attendance"
+          },
+          {
+            "x": 78.46,
+            "y": 88.81,
+            "w": 18.97,
+            "h": 9.84,
             "goto": "app-language",
             "label": "Settings"
           }
@@ -818,7 +935,10 @@
             "goto": "app-language",
             "label": "Settings"
           }
-        ]
+        ],
+        "titleZh": "工作中心",
+        "captionZh": "切换项目或工区，快速进入考勤记录、问卷、工资、请假和个人档案。",
+        "imageZh": "/images/builtsync/app-zh/app-work-center.webp"
       },
       {
         "id": "app-profile",
@@ -837,7 +957,10 @@
             "goto": "app-work-center",
             "label": "Back"
           }
-        ]
+        ],
+        "titleZh": "个人档案",
+        "captionZh": "个人、雇主和银行信息，并可录入人脸用于考勤签到。",
+        "imageZh": "/images/builtsync/app-zh/app-profile.webp"
       },
       {
         "id": "app-language",
@@ -847,9 +970,14 @@
         "image": "/images/builtsync/app/app-language.webp",
         "width": 780,
         "height": 2020,
-        "hotspots": []
+        "hotspots": [],
+        "titleZh": "语言设置",
+        "captionZh": "应用支持简体中文和英文，员工可随时切换。",
+        "imageZh": "/images/builtsync/app-zh/app-language.webp"
       }
-    ]
+    ],
+    "titleZh": "工人 App",
+    "blurbZh": "每位员工口袋里的工具。点击高亮区域即可浏览应用。"
   },
   "admin": {
     "title": "Admin console",
@@ -858,57 +986,79 @@
       {
         "id": "Sign in",
         "label": "Sign in",
-        "description": "One bilingual admin console."
+        "description": "One bilingual admin console.",
+        "labelZh": "登录",
+        "descriptionZh": "统一的双语管理后台。"
       },
       {
         "id": "Analytics",
         "label": "Analytics",
-        "description": "Hours, headcount and survey data in one view."
+        "description": "Hours, headcount and survey data in one view.",
+        "labelZh": "数据统计",
+        "descriptionZh": "工时、人数与问卷数据一目了然。"
       },
       {
         "id": "People",
         "label": "People",
-        "description": "Staff roster and profiles."
+        "description": "Staff roster and profiles.",
+        "labelZh": "人员",
+        "descriptionZh": "人员花名册与档案。"
       },
       {
         "id": "Projects",
         "label": "Projects",
-        "description": "Projects, zones and contacts."
+        "description": "Projects, zones and contacts.",
+        "labelZh": "项目",
+        "descriptionZh": "项目、工区与联系人。"
       },
       {
         "id": "Certificates",
         "label": "Certificates",
-        "description": "Expiry tracking for every certificate."
+        "description": "Expiry tracking for every certificate.",
+        "labelZh": "证书",
+        "descriptionZh": "每份证书的到期跟踪。"
       },
       {
         "id": "Attendance",
         "label": "Attendance",
-        "description": "Daily and monthly attendance, generated automatically."
+        "description": "Daily and monthly attendance, generated automatically.",
+        "labelZh": "考勤",
+        "descriptionZh": "每日与每月考勤，系统自动生成。"
       },
       {
         "id": "Payroll",
         "label": "Payroll",
-        "description": "Payslips and pay templates."
+        "description": "Payslips and pay templates.",
+        "labelZh": "薪资",
+        "descriptionZh": "工资单与薪资模板。"
       },
       {
         "id": "Leave",
         "label": "Leave",
-        "description": "Approvals on a calendar."
+        "description": "Approvals on a calendar.",
+        "labelZh": "请假",
+        "descriptionZh": "日历上的请假审批。"
       },
       {
         "id": "Notifications",
         "label": "Notifications",
-        "description": "Announcements by company or project."
+        "description": "Announcements by company or project.",
+        "labelZh": "通知",
+        "descriptionZh": "按公司或项目发布公告。"
       },
       {
         "id": "Surveys",
         "label": "Surveys",
-        "description": "Safety checks and surveys."
+        "description": "Safety checks and surveys.",
+        "labelZh": "问卷",
+        "descriptionZh": "安全确认与调查问卷。"
       },
       {
         "id": "Permissions",
         "label": "Permissions",
-        "description": "Roles and data scope."
+        "description": "Roles and data scope.",
+        "labelZh": "权限",
+        "descriptionZh": "角色与数据范围。"
       }
     ],
     "screens": [
@@ -929,7 +1079,10 @@
             "goto": "adm-dashboard",
             "label": "Sign in"
           }
-        ]
+        ],
+        "titleZh": "管理后台登录",
+        "captionZh": "管理员登录双语后台（中文 / English）：项目、人员、考勤、证书与薪资一体化管理。",
+        "imageZh": "/images/builtsync/admin-zh/adm-login.webp"
       },
       {
         "id": "adm-dashboard",
@@ -1012,7 +1165,10 @@
             "goto": "adm-roles",
             "label": "Permissions"
           }
-        ]
+        ],
+        "titleZh": "数据统计",
+        "captionZh": "现场工时、人数、直包与外包人力、工种工时及问卷完成情况，可按公司、项目和日期筛选并导出 Excel。",
+        "imageZh": "/images/builtsync/admin-zh/adm-dashboard.webp"
       },
       {
         "id": "adm-roster",
@@ -1095,7 +1251,10 @@
             "goto": "adm-roles",
             "label": "Permissions"
           }
-        ]
+        ],
+        "titleZh": "人员花名册",
+        "captionZh": "工人、主管和安全员档案，含所属公司、工种、薪资模板、项目分配与状态。",
+        "imageZh": "/images/builtsync/admin-zh/adm-roster.webp"
       },
       {
         "id": "adm-projects",
@@ -1178,7 +1337,10 @@
             "goto": "adm-roles",
             "label": "Permissions"
           }
-        ]
+        ],
+        "titleZh": "项目与工区",
+        "captionZh": "维护项目、工区、国家、联系人与项目周期，状态从未开启到已完成。",
+        "imageZh": "/images/builtsync/admin-zh/adm-projects.webp"
       },
       {
         "id": "adm-certs",
@@ -1261,7 +1423,10 @@
             "goto": "adm-roles",
             "label": "Permissions"
           }
-        ]
+        ],
+        "titleZh": "人员证书",
+        "captionZh": "跟踪每人有效、即将到期和已过期的证书，支持每人上传多份，并看到谁还缺证书。",
+        "imageZh": "/images/builtsync/admin-zh/adm-certs.webp"
       },
       {
         "id": "adm-att-daily",
@@ -1360,7 +1525,10 @@
             "goto": "adm-att-monthly",
             "label": "Monthly summary"
           }
-        ]
+        ],
+        "titleZh": "每日考勤统计",
+        "captionZh": "当日应出勤、正常、异常和请假人数；迟到、早退、围栏外打卡自动标记。",
+        "imageZh": "/images/builtsync/admin-zh/adm-att-daily.webp"
       },
       {
         "id": "adm-att-detail",
@@ -1467,7 +1635,10 @@
             "goto": "adm-att-monthly",
             "label": "Monthly summary"
           }
-        ]
+        ],
+        "titleZh": "按日考勤明细",
+        "captionZh": "每人签到签退、考勤结果与备注。考勤由系统按排班及打卡记录自动生成。",
+        "imageZh": "/images/builtsync/admin-zh/adm-att-detail.webp"
       },
       {
         "id": "adm-att-monthly",
@@ -1574,7 +1745,10 @@
             "goto": "adm-att-detail",
             "label": "Daily detail"
           }
-        ]
+        ],
+        "titleZh": "按月考勤统计",
+        "captionZh": "按人员汇总当月正常、迟到、早退、缺卡和请假数量。",
+        "imageZh": "/images/builtsync/admin-zh/adm-att-monthly.webp"
       },
       {
         "id": "adm-payroll",
@@ -1665,7 +1839,10 @@
             "goto": "adm-pay-template",
             "label": "Pay templates"
           }
-        ]
+        ],
+        "titleZh": "工资单",
+        "captionZh": "工资单按考勤和薪资规则生成，管理员核对、处理异议、确认并标记发放。",
+        "imageZh": "/images/builtsync/admin-zh/adm-payroll.webp"
       },
       {
         "id": "adm-pay-template",
@@ -1764,7 +1941,10 @@
             "goto": "adm-payroll",
             "label": "Payslips"
           }
-        ]
+        ],
+        "titleZh": "薪资模板",
+        "captionZh": "日薪、月薪模板，含基础工时、四类日期加班规则及关联人员。",
+        "imageZh": "/images/builtsync/admin-zh/adm-pay-template.webp"
       },
       {
         "id": "adm-leave",
@@ -1847,7 +2027,10 @@
             "goto": "adm-roles",
             "label": "Permissions"
           }
-        ]
+        ],
+        "titleZh": "请假审批",
+        "captionZh": "月历显示所有人的请假安排，点击日期查看人员并审批或驳回。",
+        "imageZh": "/images/builtsync/admin-zh/adm-leave.webp"
       },
       {
         "id": "adm-notice",
@@ -1930,7 +2113,10 @@
             "goto": "adm-roles",
             "label": "Permissions"
           }
-        ]
+        ],
+        "titleZh": "平台公告",
+        "captionZh": "向全员、公司或项目发布中英文公告，支持站内通知和短信。",
+        "imageZh": "/images/builtsync/admin-zh/adm-notice.webp"
       },
       {
         "id": "adm-survey",
@@ -2013,7 +2199,10 @@
             "goto": "adm-roles",
             "label": "Permissions"
           }
-        ]
+        ],
+        "titleZh": "问卷管理",
+        "captionZh": "创建安全确认和调查问卷，按对象与截止时间查看完成情况。",
+        "imageZh": "/images/builtsync/admin-zh/adm-survey.webp"
       },
       {
         "id": "adm-roles",
@@ -2096,12 +2285,18 @@
             "goto": "adm-survey",
             "label": "Surveys"
           }
-        ]
+        ],
+        "titleZh": "后台角色",
+        "captionZh": "按公司或项目配置页面、操作和数据范围权限。",
+        "imageZh": "/images/builtsync/admin-zh/adm-roles.webp"
       }
-    ]
+    ],
+    "titleZh": "管理后台",
+    "blurbZh": "项目、人事与薪资团队的日常工具。点击侧边栏和标签即可浏览。"
   },
   "ctaHeading": "Want BuiltSync on your sites?",
   "ctaText": "Talk to the Lenix team about a walkthrough or a pilot.",
   "ctaLabel": "Contact Lenix",
-  "ctaLink": "/contact"
+  "ctaLink": "/contact",
+  "demoNoteZh": "画面为示例数据，取自 BuiltSync 设计稿；中文为原版界面，英文为本预览的翻译版本。"
 }

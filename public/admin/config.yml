@@ -397,12 +397,15 @@ collections:
               - { label: "Worker App Screen ID", name: "app", widget: "string", required: false, hint: "The screen the 'See it in the app' button opens, e.g. app-checkin. Leave blank to hide the button." }
               - { label: "Admin Screen ID", name: "admin", widget: "string", required: false, hint: "e.g. adm-att-daily. Leave blank to hide the button." }
           - { label: "Demo Footnote", name: "demoNote", widget: "text" }
+          - { label: "Demo Footnote (中文)", name: "demoNoteZh", widget: "text", required: false }
           - label: "Worker App Demo"
             name: "app"
             widget: "object"
             fields:
               - { label: "Tab Title", name: "title", widget: "string" }
+              - { label: "Tab Title (中文)", name: "titleZh", widget: "string", required: false }
               - { label: "Intro Line", name: "blurb", widget: "text" }
+              - { label: "Intro Line (中文)", name: "blurbZh", widget: "text", required: false }
               - label: "Modules (left-hand list)"
                 label_singular: "Module"
                 name: "modules"
@@ -412,6 +415,8 @@ collections:
                   - { label: "ID", name: "id", widget: "string", hint: "Must match the 'Module' of the screens that belong to it." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Label (中文)", name: "labelZh", widget: "string", required: false }
+                  - { label: "Description (中文)", name: "descriptionZh", widget: "text", required: false }
               - label: "Screens"
                 label_singular: "Screen"
                 name: "screens"
@@ -423,7 +428,10 @@ collections:
                   - { label: "Module", name: "module", widget: "string", hint: "Must match a Module ID above." }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Caption", name: "caption", widget: "text" }
+                  - { label: "Title (中文)", name: "titleZh", widget: "string", required: false }
+                  - { label: "Caption (中文)", name: "captionZh", widget: "text", required: false }
                   - { label: "Screenshot", name: "image", widget: "image", media_folder: "/public/images/builtsync/app", public_folder: "/images/builtsync/app" }
+                  - { label: "Screenshot (中文)", name: "imageZh", widget: "image", required: false, media_folder: "/public/images/builtsync/app-zh", public_folder: "/images/builtsync/app-zh", hint: "Chinese version shown when the visitor switches to 中文. Leave blank to keep the English screenshot." }
                   - { label: "Image Width (px)", name: "width", widget: "number", value_type: "int", required: false }
                   - { label: "Image Height (px)", name: "height", widget: "number", value_type: "int", required: false }
                   - label: "Tap Targets (optional)"
@@ -440,12 +448,28 @@ collections:
                       - { label: "Top (%)", name: "y", widget: "number", value_type: "float" }
                       - { label: "Width (%)", name: "w", widget: "number", value_type: "float" }
                       - { label: "Height (%)", name: "h", widget: "number", value_type: "float" }
+                  - label: "Tap Targets (中文 layout, optional)"
+                    label_singular: "Tap Target"
+                    name: "hotspotsZh"
+                    widget: "list"
+                    required: false
+                    summary: "{{label}} → {{goto}}"
+                    hint: "Clickable areas that jump to another screen. Only needed if the Chinese screenshot is a different height from the English one; otherwise the targets above are reused."
+                    fields:
+                      - { label: "Label", name: "label", widget: "string", required: false }
+                      - { label: "Go To Screen ID", name: "goto", widget: "string" }
+                      - { label: "Left (%)", name: "x", widget: "number", value_type: "float" }
+                      - { label: "Top (%)", name: "y", widget: "number", value_type: "float" }
+                      - { label: "Width (%)", name: "w", widget: "number", value_type: "float" }
+                      - { label: "Height (%)", name: "h", widget: "number", value_type: "float" }
           - label: "Admin Console Demo"
             name: "admin"
             widget: "object"
             fields:
               - { label: "Tab Title", name: "title", widget: "string" }
+              - { label: "Tab Title (中文)", name: "titleZh", widget: "string", required: false }
               - { label: "Intro Line", name: "blurb", widget: "text" }
+              - { label: "Intro Line (中文)", name: "blurbZh", widget: "text", required: false }
               - label: "Modules (top row)"
                 label_singular: "Module"
                 name: "modules"
@@ -455,6 +479,8 @@ collections:
                   - { label: "ID", name: "id", widget: "string", hint: "Must match the 'Module' of the screens that belong to it." }
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Label (中文)", name: "labelZh", widget: "string", required: false }
+                  - { label: "Description (中文)", name: "descriptionZh", widget: "text", required: false }
               - label: "Screens"
                 label_singular: "Screen"
                 name: "screens"
@@ -466,7 +492,10 @@ collections:
                   - { label: "Module", name: "module", widget: "string", hint: "Must match a Module ID above." }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Caption", name: "caption", widget: "text" }
+                  - { label: "Title (中文)", name: "titleZh", widget: "string", required: false }
+                  - { label: "Caption (中文)", name: "captionZh", widget: "text", required: false }
                   - { label: "Screenshot", name: "image", widget: "image", media_folder: "/public/images/builtsync/admin", public_folder: "/images/builtsync/admin" }
+                  - { label: "Screenshot (中文)", name: "imageZh", widget: "image", required: false, media_folder: "/public/images/builtsync/admin-zh", public_folder: "/images/builtsync/admin-zh", hint: "Chinese version shown when the visitor switches to 中文. Leave blank to keep the English screenshot." }
                   - { label: "Image Width (px)", name: "width", widget: "number", value_type: "int", required: false }
                   - { label: "Image Height (px)", name: "height", widget: "number", value_type: "int", required: false }
                   - label: "Click Targets (optional)"
@@ -476,6 +505,20 @@ collections:
                     required: false
                     summary: "{{label}} → {{goto}}"
                     hint: "Clickable areas that jump to another screen. Position and size are percentages of the screenshot (0–100)."
+                    fields:
+                      - { label: "Label", name: "label", widget: "string", required: false }
+                      - { label: "Go To Screen ID", name: "goto", widget: "string" }
+                      - { label: "Left (%)", name: "x", widget: "number", value_type: "float" }
+                      - { label: "Top (%)", name: "y", widget: "number", value_type: "float" }
+                      - { label: "Width (%)", name: "w", widget: "number", value_type: "float" }
+                      - { label: "Height (%)", name: "h", widget: "number", value_type: "float" }
+                  - label: "Click Targets (中文 layout, optional)"
+                    label_singular: "Click Target"
+                    name: "hotspotsZh"
+                    widget: "list"
+                    required: false
+                    summary: "{{label}} → {{goto}}"
+                    hint: "Clickable areas that jump to another screen. Only needed if the Chinese screenshot is a different height from the English one; otherwise the targets above are reused."
                     fields:
                       - { label: "Label", name: "label", widget: "string", required: false }
                       - { label: "Go To Screen ID", name: "goto", widget: "string" }

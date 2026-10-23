@@ -9,6 +9,15 @@ import { motion } from 'framer-motion'
 
 const GRADIENT = 'linear-gradient(135deg, #2F9BFF 0%, #5B5BFF 55%, #8A1CFF 100%)'
 
+const UI = {
+  en: { play: '▶ Play tour', pause: '❚❚ Pause tour', tryIt: 'Try it:', tap: 'tap', click: 'click', areas: 'the highlighted areas.', hl1: 'Highlight tappable areas', hl2: 'Highlight clickable areas', scroll: 'Scroll ↓', enlarge: 'Enlarge screen', prev: 'Previous screen', next: 'Next screen' },
+  zh: { play: '▶ 播放演示', pause: '❚❚ 暂停演示', tryIt: '试一试：', tap: '点击', click: '点击', areas: '高亮区域。', hl1: '高亮可点击区域', hl2: '高亮可点击区域', scroll: '向下滑动 ↓', enlarge: '放大', prev: '上一屏', next: '下一屏' },
+}
+// pick the Chinese or English version of a field ("title" → titleZh), falling back to English
+const L = (obj, key, lang) => (lang === 'zh' && obj[key + 'Zh']) || obj[key]
+const srcOf = (screen, lang) => (lang === 'zh' && screen.imageZh) || screen.image
+const hotspotsOf = (screen, lang) => (lang === 'zh' && screen.hotspotsZh) || screen.hotspots || []
+
 function useScreens(group) {
   return useMemo(() => {
     const screens = group.screens
@@ -22,8 +31,8 @@ function useScreens(group) {
   }, [group])
 }
 
-function Hotspots({ screen, show, onGo }) {
-  return (screen.hotspots || []).map((h, i) => (
+function Hotspots({ list, show, onGo }) {
+  return list.map((h, i) => (
     <button
       key={i}
       type="button"
@@ -38,7 +47,7 @@ function Hotspots({ screen, show, onGo }) {
   ))
 }
 
-function PhoneFrame({ screen, showHints, onGo, onZoom }) {
+function PhoneFrame({ screen, lang, showHints, onGo, onZoom }) {
   const scroller = useRef(null)
   useEffect(() => {
     if (scroller.current) scroller.current.scrollTop = 0
@@ -56,13 +65,13 @@ function PhoneFrame({ screen, showHints, onGo, onZoom }) {
                   transition={{ duration: 0.22 }}
                 className="relative"
               >
-                <img src={screen.image} alt={screen.title} width={screen.width} height={screen.height} className="block w-full h-auto select-none" draggable="false" />
-                <Hotspots screen={screen} show={showHints} onGo={onGo} />
+                <img src={srcOf(screen, lang)} alt={L(screen, 'title', lang)} className="block w-full h-auto select-none" draggable="false" />
+                <Hotspots list={hotspotsOf(screen, lang)} show={showHints} onGo={onGo} />
               </motion.div>
                       </div>
           {tall && (
             <div className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 text-[10px] font-bold tracking-[0.15em] uppercase text-white bg-black/55 backdrop-blur px-3 py-1 rounded-full">
-              Scroll ↓
+              {UI[lang].scroll}
             </div>
           )}
         </div>
@@ -70,7 +79,7 @@ function PhoneFrame({ screen, showHints, onGo, onZoom }) {
       <button
         type="button"
         onClick={onZoom}
-        aria-label="Enlarge screen"
+        aria-label={UI[lang].enlarge}
         className="absolute -right-2 top-6 hidden md:flex w-9 h-9 rounded-full bg-white shadow-soft-lg border border-ink/10 items-center justify-center text-ink hover:text-azure"
       >
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
@@ -81,7 +90,7 @@ function PhoneFrame({ screen, showHints, onGo, onZoom }) {
   )
 }
 
-function BrowserFrame({ screen, showHints, onGo, onZoom }) {
+function BrowserFrame({ screen, lang, showHints, onGo, onZoom }) {
   const scroller = useRef(null)
   useEffect(() => {
     if (scroller.current) scroller.current.scrollTop = 0
@@ -95,7 +104,7 @@ function BrowserFrame({ screen, showHints, onGo, onZoom }) {
           <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
         </span>
         <span className="flex-1 text-center text-[11px] text-concrete tracking-wide truncate">BuiltSync Admin Console</span>
-        <button type="button" onClick={onZoom} aria-label="Enlarge screen" className="text-concrete hover:text-azure">
+        <button type="button" onClick={onZoom} aria-label={UI[lang].enlarge} className="text-concrete hover:text-azure">
           <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9.5 2H14v4.5M6.5 14H2V9.5M14 2L9 7M2 14l5-5" />
           </svg>
@@ -109,15 +118,15 @@ function BrowserFrame({ screen, showHints, onGo, onZoom }) {
             transition={{ duration: 0.2 }}
             className="relative min-w-[720px]"
           >
-            <img src={screen.image} alt={screen.title} width={screen.width} height={screen.height} className="block w-full h-auto select-none" draggable="false" />
-            <Hotspots screen={screen} show={showHints} onGo={onGo} />
+            <img src={srcOf(screen, lang)} alt={L(screen, 'title', lang)} className="block w-full h-auto select-none" draggable="false" />
+            <Hotspots list={hotspotsOf(screen, lang)} show={showHints} onGo={onGo} />
           </motion.div>
               </div>
     </div>
   )
 }
 
-function Lightbox({ screen, kind, onClose }) {
+function Lightbox({ screen, kind, lang, onClose }) {
   useEffect(() => {
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -135,7 +144,7 @@ function Lightbox({ screen, kind, onClose }) {
       onMouseDown={(e) => e.target === e.currentTarget && onClose()}
       role="dialog"
       aria-modal="true"
-      aria-label={screen.title}
+      aria-label={L(screen, 'title', lang)}
     >
       <button
         type="button"
@@ -148,8 +157,8 @@ function Lightbox({ screen, kind, onClose }) {
         </svg>
       </button>
       <img
-        src={screen.image}
-        alt={screen.title}
+        src={srcOf(screen, lang)}
+        alt={L(screen, 'title', lang)}
         className={`rounded-2xl shadow-soft-lg bg-white h-auto ${kind === 'app' ? 'w-[min(100%,460px)]' : 'w-full max-w-[1500px]'}`}
       />
     </div>,
@@ -163,6 +172,8 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
   const [hints, setHints] = useState(true)
   const [playing, setPlaying] = useState(false)
   const [zoom, setZoom] = useState(false)
+  const [lang, setLang] = useState('en')
+  const ui = UI[lang]
   const root = useRef(null)
 
   const app = useScreens(data.app)
@@ -206,12 +217,12 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
   // warm the neighbouring screens so a tap feels instant
   useEffect(() => {
     const ids = new Set([view.ordered[(idx + 1) % view.ordered.length]?.id, view.ordered[(idx - 1 + view.ordered.length) % view.ordered.length]?.id])
-    screen.hotspots?.forEach((h) => ids.add(h.goto))
+    hotspotsOf(screen, lang).forEach((h) => ids.add(h.goto))
     ids.forEach((id) => {
       const s = view.byId[id]
-      if (s) new Image().src = s.image
+      if (s) new Image().src = srcOf(s, lang)
     })
-  }, [screen, idx, view])
+  }, [screen, idx, view, lang])
 
   const onKeyDown = (e) => {
     if (e.key === 'ArrowRight') {
@@ -239,8 +250,8 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div role="tablist" className="inline-flex p-1 rounded-full bg-pearl border border-ink/10">
           {[
-            ['app', data.app.title],
-            ['admin', data.admin.title],
+            ['app', L(data.app, 'title', lang)],
+            ['admin', L(data.admin, 'title', lang)],
           ].map(([id, label]) => (
             <button
               key={id}
@@ -260,7 +271,25 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
             </button>
           ))}
         </div>
-        <p className="text-concrete text-sm max-w-xl">{group.blurb}</p>
+        <div className="flex items-center gap-4 flex-wrap justify-end">
+          <div role="group" aria-label="Language" className="inline-flex p-1 rounded-full bg-pearl border border-ink/10">
+            {[
+              ['en', 'EN'],
+              ['zh', '中文'],
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                aria-pressed={lang === id}
+                onClick={() => setLang(id)}
+                className={`px-4 py-2 rounded-full text-[11px] font-bold tracking-[0.1em] transition-all ${lang === id ? 'bg-azure text-white shadow-soft' : 'text-ink hover:text-azure'}`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <p lang={lang === 'zh' ? 'zh-CN' : 'en'} className="text-concrete text-sm max-w-md">{L(group, 'blurb', lang)}</p>
+        </div>
       </div>
 
       <div className={`grid gap-8 items-start ${tab === 'app' ? 'lg:grid-cols-[220px_minmax(0,1fr)_320px]' : 'lg:grid-cols-[minmax(0,1fr)_300px]'}`}>
@@ -287,8 +316,8 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
                   active ? 'bg-white border-[#5B5BFF]/60 shadow-soft text-ink' : 'border-ink/10 text-ink hover:border-[#5B5BFF]/40 bg-white/60'
                 }`}
               >
-                <span className="block text-[12px] font-bold tracking-[0.1em] uppercase whitespace-nowrap">{m.label}</span>
-                {active && m.description && <span className="hidden lg:block text-xs text-concrete mt-1.5 leading-snug normal-case tracking-normal font-normal">{m.description}</span>}
+                <span className="block text-[12px] font-bold tracking-[0.1em] uppercase whitespace-nowrap">{L(m, 'label', lang)}</span>
+                {active && L(m, 'description', lang) && <span className="hidden lg:block text-xs text-concrete mt-1.5 leading-snug normal-case tracking-normal font-normal">{L(m, 'description', lang)}</span>}
               </button>
             )
           })}
@@ -296,7 +325,7 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
 
         {/* device */}
         <div className="min-w-0">
-          <Frame screen={screen} showHints={hints} onGo={userGo} onZoom={() => setZoom(true)} />
+          <Frame screen={screen} lang={lang} showHints={hints} onGo={userGo} onZoom={() => setZoom(true)} />
         </div>
 
         {/* caption */}
@@ -309,13 +338,13 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
               className="bg-white border border-ink/10 rounded-2xl shadow-soft p-6"
             >
               <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#5B5BFF]">
-                {screen.module} · {String(moduleScreens.findIndex((s) => s.id === screen.id) + 1)}/{moduleScreens.length}
+                {L(view.modules.find((m) => m.id === screen.module) || {}, 'label', lang) || screen.module} · {String(moduleScreens.findIndex((s) => s.id === screen.id) + 1)}/{moduleScreens.length}
               </span>
-              <h3 className="font-display text-xl text-ink mt-2 mb-3 leading-tight">{screen.title}</h3>
-              <p className="text-concrete text-sm leading-relaxed">{screen.caption}</p>
-              {(screen.hotspots || []).length > 0 && (
+              <h3 className="font-display text-xl text-ink mt-2 mb-3 leading-tight"><span lang={lang === 'zh' ? 'zh-CN' : 'en'}>{L(screen, 'title', lang)}</span></h3>
+              <p lang={lang === 'zh' ? 'zh-CN' : 'en'} className="text-concrete text-sm leading-relaxed">{L(screen, 'caption', lang)}</p>
+              {hotspotsOf(screen, lang).length > 0 && (
                 <p className="mt-4 text-xs text-concrete">
-                  <span className="font-semibold">Try it:</span> {tab === 'app' ? 'tap' : 'click'} the highlighted areas.
+                  <span className="font-semibold">{ui.tryIt}</span> {tab === 'app' ? ui.tap : ui.click} {lang === 'zh' ? '' : 'the '}{ui.areas}
                 </p>
               )}
             </motion.div>
@@ -327,7 +356,7 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
                 setPlaying(false)
                 step(-1)
               }}
-              aria-label="Previous screen"
+              aria-label={ui.prev}
               className="w-10 h-10 rounded-full border border-ink/15 text-ink hover:border-[#5B5BFF] hover:text-[#5B5BFF] flex items-center justify-center"
             >
               ←
@@ -341,7 +370,7 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
                 setPlaying(false)
                 step(1)
               }}
-              aria-label="Next screen"
+              aria-label={ui.next}
               className="w-10 h-10 rounded-full border border-ink/15 text-ink hover:border-[#5B5BFF] hover:text-[#5B5BFF] flex items-center justify-center"
             >
               →
@@ -352,18 +381,18 @@ export default function DemoShowcase({ data, initialTab = 'app', initialScreen, 
               className="ml-1 inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] uppercase px-4 py-2.5 rounded-full text-white"
               style={{ background: GRADIENT }}
             >
-              {playing ? '❚❚ Pause tour' : '▶ Play tour'}
+              {playing ? ui.pause : ui.play}
             </button>
           </div>
           <label className="mt-4 flex items-center gap-2 text-xs text-concrete cursor-pointer select-none">
             <input type="checkbox" checked={hints} onChange={(e) => setHints(e.target.checked)} className="accent-[#5B5BFF]" />
-            Highlight {tab === 'app' ? 'tappable' : 'clickable'} areas
+            {tab === 'app' ? ui.hl1 : ui.hl2}
           </label>
         </div>
       </div>
 
-      <p className="mt-8 text-xs text-concrete">{data.demoNote}</p>
-      {zoom && <Lightbox screen={screen} kind={tab} onClose={() => setZoom(false)} />}
+      <p lang={lang === 'zh' ? 'zh-CN' : 'en'} className="mt-8 text-xs text-concrete">{L(data, 'demoNote', lang)}</p>
+      {zoom && <Lightbox screen={screen} kind={tab} lang={lang} onClose={() => setZoom(false)} />}
     </div>
   )
 }
