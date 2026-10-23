@@ -336,15 +336,27 @@ collections:
         fields:
           - { label: "Intro", name: "intro", widget: "text" }
           - label: "Accreditations"
+            label_singular: "Accreditation"
             name: "accreditations"
             widget: "list"
             summary: "{{code}}"
+            hint: "One card per accreditation on the Corporate Profile page (and the logo strip on the home page). Click Add Accreditation for a new one; drag to reorder. Each can carry its own logo and any number of downloadable certificate PDFs."
             fields:
-              - { label: "Internal ID", name: "id", widget: "string" }
-              - { label: "Code", name: "code", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Internal ID", name: "id", widget: "string", required: false, hint: "Optional. Lowercase, no spaces (e.g. iso, bizsafe) — used internally, not shown. Leave blank for new entries." }
+              - { label: "Certificate Name", name: "code", widget: "string", hint: "The headline on the card, e.g. ISO 9001 / 14001 / 45001 or bizSAFE STAR" }
+              - { label: "Category / Scheme", name: "name", widget: "string", hint: "Small line under the name, e.g. Quality, Environmental & Safety Management" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Logo", name: "logo", widget: "image", required: false, hint: "Use the real accreditation body's logo — leave blank to fall back to a text badge" }
+              - { label: "Logo", name: "logo", widget: "image", required: false, media_folder: "/public/images/accreditations", public_folder: "/images/accreditations", hint: "Upload the accreditation body's logo (PNG, JPG or SVG; square or wide both work). Leave blank to fall back to a text badge." }
+              - label: "Certificate Files (PDF)"
+                label_singular: "Certificate File"
+                name: "certificates"
+                widget: "list"
+                required: false
+                summary: "{{label}}"
+                hint: "Each entry becomes a tab in the pop-up on the Corporate Profile page, where visitors can view and download the PDF. Add one per certificate (e.g. ISO 9001, ISO 14001). To replace a renewed certificate, upload the new PDF over the old one. Leave the list empty to hide the View Certificate button."
+                fields:
+                  - { label: "Certificate Label", name: "label", widget: "string", hint: "Tab name shown in the pop-up, e.g. ISO 9001" }
+                  - { label: "PDF File", name: "file", widget: "file", media_folder: "/public/documents/certificates", public_folder: "/documents/certificates", hint: "Upload the certificate PDF" }
           - { label: "Recruitment License Statement", name: "recruitmentLicense", widget: "text" }
           - label: "Galleries"
             name: "galleries"

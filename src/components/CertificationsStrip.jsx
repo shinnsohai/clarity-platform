@@ -15,7 +15,7 @@ export default function CertificationsStrip() {
         <div className="flex flex-wrap items-center gap-x-12 gap-y-6 flex-1 justify-center md:justify-start">
           {profile.accreditations.map((a, i) => (
             <motion.div
-              key={a.id}
+              key={a.id || a.code}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: '-40px' }}

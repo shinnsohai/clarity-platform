@@ -6,7 +6,12 @@
       "code": "ISO 9001 / 14001 / 45001",
       "name": "Quality, Environmental & Safety Management",
       "description": "Certified quality, environmental, and occupational health & safety management systems applied across all subsidiary operations.",
-      "logo": "/images/accreditations/iso.png"
+      "logo": "/images/accreditations/iso.png",
+      "certificates": [
+        { "label": "ISO 9001", "file": "/documents/certificates/iso-9001.pdf" },
+        { "label": "ISO 14001", "file": "/documents/certificates/iso-14001.pdf" },
+        { "label": "ISO 45001", "file": "/documents/certificates/iso-45001.pdf" }
+      ]
     },
     {
       "id": "aspri",
@@ -20,7 +25,10 @@
       "code": "bizSAFE STAR",
       "name": "Workplace Safety",
       "description": "bizSAFE STAR-certified workplace safety and health management framework.",
-      "logo": "/images/accreditations/bizsafe.png"
+      "logo": "/images/accreditations/bizsafe.png",
+      "certificates": [
+        { "label": "bizSAFE STAR", "file": "/documents/certificates/bizsafe-star.pdf" }
+      ]
     }
   ],
   "recruitmentLicense": "Clarity Group subsidiaries operate under licensed manpower recruitment frameworks covering both overseas sourcing and in-house placement, in line with Ministry of Manpower requirements.",

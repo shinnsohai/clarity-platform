@@ -1,8 +1,12 @@
+import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import profile from '../../data/corporateProfile.json'
 import PageHero from '../../components/PageHero'
+import CertificateModal, { certsOf } from '../../components/CertificateModal'
 
 export default function CorporateProfile() {
+  const [open, setOpen] = useState(null)
+  const close = useCallback(() => setOpen(null), [])
   return (
     <div className="bg-paper">
       <PageHero
@@ -21,7 +25,7 @@ export default function CorporateProfile() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
           {profile.accreditations.map((a, i) => (
             <motion.div
-              key={a.id}
+              key={a.id || a.code}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
@@ -50,6 +54,18 @@ export default function CorporateProfile() {
                 {a.name}
               </div>
               <p className="text-concrete text-sm leading-relaxed">{a.description}</p>
+              {certsOf(a).length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setOpen(a)}
+                  className="mt-6 inline-flex items-center gap-2 border border-ink/15 text-ink text-[11px] font-bold tracking-[0.15em] uppercase px-5 py-2.5 rounded-full hover:border-azure hover:text-azure transition-colors"
+                >
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 1h5.5L12 4.5V13H3zM8 1v4h4" />
+                  </svg>
+                  {certsOf(a).length > 1 ? `View Certificates (${certsOf(a).length})` : 'View Certificate'}
+                </button>
+              )}
             </motion.div>
           ))}
         </div>
@@ -124,6 +140,8 @@ export default function CorporateProfile() {
           </div>
         </div>
       </section>
+
+      <CertificateModal accreditation={open} onClose={close} />
     </div>
   )
 }
