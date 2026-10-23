@@ -83,7 +83,9 @@ export default function EntityPageTemplate({ entity }) {
           alt={entity.name}
           className="absolute inset-0 w-full h-[130%] object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-white/0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-white/0" />
+        {/* soft white scrim behind the left-aligned text so navy copy stays legible over any photo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/55 to-transparent" />
 
         <div className="relative z-10 h-full max-w-[1440px] mx-auto px-8 xl:px-16 flex flex-col justify-end pb-20">
           <Link
@@ -102,7 +104,7 @@ export default function EntityPageTemplate({ entity }) {
             <img src={entity.logo} alt={entity.name} className="w-full h-full object-contain" />
           </motion.div>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-concrete text-xs tracking-[0.3em] uppercase font-semibold">
+            <span className="text-azure text-xs tracking-[0.3em] uppercase font-bold">
               Clarity Group Subsidiary — {entity.role}
             </span>
           </div>
@@ -114,8 +116,8 @@ export default function EntityPageTemplate({ entity }) {
           >
             {entity.name}
           </motion.h1>
-          <p className="mt-4 font-display text-lg md:text-xl text-ink/70">{entity.fullName}</p>
-          <p className="mt-8 max-w-xl text-concrete text-lg leading-relaxed">{entity.summary}</p>
+          <p className="mt-4 font-display text-lg md:text-xl text-azure">{entity.fullName}</p>
+          <p className="mt-8 max-w-xl text-azure text-lg font-medium leading-relaxed">{entity.summary}</p>
           {(entity.contact?.phone || entity.contact?.email) && (
             <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm">
               {entity.contact.phone && (
