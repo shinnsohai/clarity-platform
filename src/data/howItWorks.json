@@ -1,26 +1,26 @@
 {
   "kicker": "How It Works",
   "headline": "The industries we run are the data we run on.",
-  "intro": "Clarity Group isn't six unrelated businesses under one holding company. Four subsidiaries run real physical operations — construction, facilities, manufacturing, manpower. Two subsidiaries exist to turn what those four do every day into software and decision-grade intelligence, then apply it back into the next deployment. That loop compounds with every site we run — it's the part of the business a pure-software company or a pure operator can't replicate on their own.",
+  "intro": "Clarity Group isn't a collection of unrelated businesses under one holding company. Four subsidiaries run real physical operations — construction, facilities, manufacturing, manpower. One subsidiary, Lenix, builds the software that captures what those four do every day and turns it into forward operational forecasting, which goes back into the next deployment. That loop compounds with every site we run — it's the part of the business a pure-software company or a pure operator can't replicate on their own.",
   "flywheelStages": [
     {
       "id": "field-ops",
       "label": "Field Operations",
       "role": "Generates the data",
-      "description": "Durabuild, CFM, Clarity Manufacturing, and Clarity E&C deploy certified people and assets on real, active sites across multiple countries. Every deployment, every shift, every piece of equipment produces operational signal as a byproduct of the work itself."
+      "description": "Clarity E&C, Durabuild, CFM, and Clarity Manufacturing deploy certified people and assets on real, active sites across multiple countries. Every deployment, every shift, every piece of equipment produces operational signal as a byproduct of the work itself."
     },
     {
-      "id": "proprietary-data",
-      "label": "Proprietary Data",
+      "id": "capture",
+      "label": "Capture",
       "role": "Captures it in real time",
-      "description": "Lenix's BuiltSync synchronizes live site data across every project so every subsidiary reads from one operational truth. Pilot Data runs telemetry pilots that turn raw field signal into forward operational forecasting."
+      "description": "Lenix's Builtsync synchronizes live site data across every project so every subsidiary reads from one operational truth — on web and mobile, straight from the field."
     },
     {
-      "id": "intelligence",
-      "label": "Intelligence Layer",
-      "role": "Refines it into decisions",
-      "description": "Techsphere converts that operational data into decision-grade intelligence — re-engineering legacy workflows into connected, data-driven systems, and running the infrastructure layer the rest of the portfolio depends on."
+      "id": "forecast",
+      "label": "Forecast",
+      "role": "Turns signal into foresight",
+      "description": "Lenix's Pilot Data runs telemetry pilots that turn raw field signal into forward operational forecasting — which is then applied back into how the next site is staffed, run, and maintained."
     }
   ],
-  "closing": "This is still early. The data infrastructure — real-time sync, systems integration, telemetry pilots — is live today. Applying data science and predictive modeling on top of it is the direction the group is building toward next, on a foundation most industrial operators don't have and most software companies can't build without owning the field operations underneath it."
+  "closing": "This is still early. The data infrastructure — real-time site sync and live telemetry pilots — is in place today. Applying data science and predictive modeling on top of it is the direction the group is building toward next, on a foundation most industrial operators don't have and most software companies can't build without owning the field operations underneath it."
 }

@@ -8,10 +8,9 @@ import PageHero from '../components/PageHero'
 // Which flywheel stage each subsidiary sits in, and the real evidence (already published
 // on that subsidiary's own page) that backs it up — nothing here is projected.
 const ROLE_MAP = {
-  lenix: { tag: 'Data Capture', evidence: 'Builds the software layer between site and strategy. BuiltSync syncs live site data across every project; Pilot Data turns raw field signal into forecasting. 24 sites synced, <400ms latency.' },
-  techsphere: { tag: 'Intelligence', evidence: 'Converts operational data into decision-grade intelligence — the digital backbone the rest of the portfolio runs on. 40+ systems integrated, 2.4M data points/day.' },
+  lenix: { tag: 'Data Capture & Forecasting', evidence: 'Builds the software layer between site and strategy. Builtsync syncs live site data across every project; Pilot Data turns raw field signal into forecasting. 24 sites synced, <400ms latency, 9 active pilots.' },
   durabuild: { tag: 'Field Ops · Data Source', evidence: 'Structural engineering & manpower on active certified sites — the physical operation the data layer describes.' },
-  cfm: { tag: 'Field Ops · Data Source', evidence: 'Facility & infrastructure operations, 24/7 coverage — a continuous telemetry surface for the intelligence layer.' },
+  cfm: { tag: 'Field Ops · Data Source', evidence: 'Facility & infrastructure operations, 24/7 coverage — a continuous telemetry surface for the Lenix data layer.' },
   'clarity-manufacturing': { tag: 'Field Ops · Data Source', evidence: 'Precision manufacturing manpower — production-line uptime and QA data, a natural predictive-maintenance surface.' },
   'clarity-ec': { tag: 'Field Ops · Distribution', evidence: 'Direct & indirect manpower across multiple countries — the interactive workforce map is the clearest visual proof of operating scale.' },
 }
