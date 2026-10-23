@@ -571,3 +571,4 @@ collections:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Address", name: "address", widget: "string" }
+          - { label: "Form Access Key (Web3Forms)", name: "formAccessKey", widget: "string", required: false, hint: "Makes the Contact form and the Manpower Request forms send real emails. Get a free key at web3forms.com using the inbox that should receive enquiries, then paste it here. Leave blank and the forms fall back to opening the visitor's email app." }

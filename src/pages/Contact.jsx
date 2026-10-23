@@ -3,18 +3,36 @@ import { motion } from 'framer-motion'
 import contact from '../data/contact.json'
 import { entities, offices } from '../data/hierarchy'
 import PageHero from '../components/PageHero'
+import { accessKeyFor, submitEnquiry, mailtoFallback } from '../utils/formSubmit'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', entity: 'General Inquiry', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [error, setError] = useState('')
+  const [trap, setTrap] = useState(false)
   const headquarters = offices.find((o) => o.id === 'sg') || offices[0]
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Clarity Group Inquiry — ${form.entity}`)
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
-    setSent(true)
+    if (status === 'sending') return
+    const subject = `Clarity Group Inquiry — ${form.entity}`
+    const fields = { Name: form.name, Email: form.email, 'Subsidiary of Interest': form.entity, Message: form.message }
+    const accessKey = accessKeyFor(contact)
+    if (!accessKey) {
+      window.location.href = mailtoFallback(contact.email, subject, Object.entries(fields).map(([k, v]) => `${k}: ${v}`))
+      setStatus('sent')
+      return
+    }
+    setStatus('sending')
+    setError('')
+    try {
+      await submitEnquiry({ accessKey, subject, fromName: form.name, replyTo: form.email, fields, honeypot: trap })
+      setStatus('sent')
+      setForm({ name: '', email: '', entity: 'General Inquiry', message: '' })
+    } catch (err) {
+      setError(err.message)
+      setStatus('error')
+    }
   }
 
   return (
@@ -31,6 +49,16 @@ export default function Contact() {
           className="bg-white rounded-2xl shadow-soft-lg p-8"
         >
           <h2 className="font-display text-2xl text-ink mb-8">SEND A MESSAGE.</h2>
+          <input
+            type="checkbox"
+            name="botcheck"
+            tabIndex={-1}
+            autoComplete="off"
+            checked={trap}
+            onChange={(e) => setTrap(e.target.checked)}
+            className="hidden"
+            aria-hidden="true"
+          />
 
           <label className="block text-[11px] tracking-[0.2em] uppercase text-ink font-bold mb-2">
             Name
@@ -80,13 +108,27 @@ export default function Contact() {
             className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-8 text-ink focus:outline-none focus:border-azure transition-colors"
           />
 
+          {status === 'sent' && (
+            <p role="status" className="mb-4 text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-3">
+              Thank you — your message has been received and our team will reply to you directly.
+            </p>
+          )}
+          {status === 'error' && (
+            <p role="alert" className="mb-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+              Sorry, we could not send your message{error ? ` (${error})` : ''}. Please try again, or email us
+              directly at{' '}
+              <a href={`mailto:${contact.email}`} className="underline font-semibold">{contact.email}</a>.
+            </p>
+          )}
+
           <motion.button
             type="submit"
+            disabled={status === 'sending'}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full bg-azure text-white font-display text-lg py-4 rounded-lg hover:brightness-110 transition-all"
+            className="w-full bg-azure text-white font-display text-lg py-4 rounded-lg hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-wait"
           >
-            {sent ? 'MESSAGE PREPARED →' : 'SEND MESSAGE'}
+            {status === 'sending' ? 'SENDING…' : 'SEND MESSAGE'}
           </motion.button>
         </motion.form>
 

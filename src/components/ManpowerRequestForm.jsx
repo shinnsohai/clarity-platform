@@ -1,28 +1,56 @@
 import { useState } from 'react'
 import contact from '../data/contact.json'
+import { accessKeyFor, submitEnquiry, mailtoFallback } from '../utils/formSubmit'
+
+const EMPTY = { company: '', contactPerson: '', email: '', phone: '', workers: '', workType: '', message: '' }
 
 export default function ManpowerRequestForm({ entity }) {
-  const [form, setForm] = useState({
-    company: '',
-    contactPerson: '',
-    email: '',
-    phone: '',
-    workers: '',
-    workType: '',
-    message: '',
-  })
-  const [sent, setSent] = useState(false)
+  const [form, setForm] = useState(EMPTY)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [error, setError] = useState('')
+  const [trap, setTrap] = useState(false)
 
   const set = (key) => (e) => setForm({ ...form, [key]: e.target.value })
+  const inbox = contact.email
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Manpower Solution Request — ${form.company || 'New Enquiry'}`)
-    const body = encodeURIComponent(
-      `Company: ${form.company}\nContact Person: ${form.contactPerson}\nEmail: ${form.email}\nPhone: ${form.phone}\nWorkers Needed: ${form.workers}\nWork Type: ${form.workType}\n\n${form.message}`
-    )
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
-    setSent(true)
+    if (status === 'sending') return
+    const subject = `Manpower Solution Request — ${entity.name} — ${form.company || 'New Enquiry'}`
+    const fields = {
+      Subsidiary: entity.fullName || entity.name,
+      Company: form.company,
+      'Contact Person': form.contactPerson,
+      Email: form.email,
+      Phone: form.phone,
+      'Workers Needed': form.workers,
+      'Work Type': form.workType,
+      'Additional Details': form.message || '—',
+    }
+    const accessKey = accessKeyFor(contact)
+    if (!accessKey) {
+      // No form service configured yet: hand the visitor a ready-made email instead.
+      window.location.href = mailtoFallback(inbox, subject, Object.entries(fields).map(([k, v]) => `${k}: ${v}`))
+      setStatus('sent')
+      return
+    }
+    setStatus('sending')
+    setError('')
+    try {
+      await submitEnquiry({
+        accessKey,
+        subject,
+        fromName: form.contactPerson,
+        replyTo: form.email,
+        fields,
+        honeypot: trap,
+      })
+      setStatus('sent')
+      setForm(EMPTY)
+    } catch (err) {
+      setError(err.message)
+      setStatus('error')
+    }
   }
 
   return (
@@ -42,7 +70,38 @@ export default function ManpowerRequestForm({ entity }) {
           </p>
         </div>
 
+        {status === 'sent' ? (
+          <div role="status" className="bg-white rounded-2xl shadow-soft-lg p-10 text-center">
+            <div className="mx-auto mb-5 w-14 h-14 rounded-full bg-azure-light text-azure flex items-center justify-center">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12.5l4.5 4.5L19 7.5" />
+              </svg>
+            </div>
+            <h3 className="font-display text-2xl text-ink mb-3">REQUEST RECEIVED.</h3>
+            <p className="text-concrete leading-relaxed mb-8">
+              Thank you — our team will review your requirement and reply to you directly.
+            </p>
+            <button
+              type="button"
+              onClick={() => setStatus('idle')}
+              className="inline-flex items-center border border-ink/15 text-ink text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-3 rounded-full hover:border-azure hover:text-azure transition-colors"
+            >
+              Send another request
+            </button>
+          </div>
+        ) : (
         <form onSubmit={onSubmit} className="bg-white rounded-2xl shadow-soft-lg p-8">
+          {/* honeypot: hidden from people, bots tick it */}
+          <input
+            type="checkbox"
+            name="botcheck"
+            tabIndex={-1}
+            autoComplete="off"
+            checked={trap}
+            onChange={(e) => setTrap(e.target.checked)}
+            className="hidden"
+            aria-hidden="true"
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
             <div>
               <label className="block text-[11px] tracking-[0.2em] uppercase text-ink font-bold mb-2">
@@ -126,13 +185,23 @@ export default function ManpowerRequestForm({ entity }) {
             className="w-full border border-ink/15 rounded-lg px-4 py-3 mb-6 text-ink focus:outline-none focus:border-azure"
           />
 
+          {status === 'error' && (
+            <p role="alert" className="mb-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+              Sorry, we could not send your request{error ? ` (${error})` : ''}. Please try again, or email us
+              directly at{' '}
+              <a href={`mailto:${inbox}`} className="underline font-semibold">{inbox}</a>.
+            </p>
+          )}
+
           <button
             type="submit"
-            className="w-full bg-azure text-white font-display text-lg py-4 rounded-lg hover:brightness-110 transition-all"
+            disabled={status === 'sending'}
+            className="w-full bg-azure text-white font-display text-lg py-4 rounded-lg hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-wait"
           >
-            {sent ? 'REQUEST PREPARED →' : 'SUBMIT REQUEST'}
+            {status === 'sending' ? 'SENDING…' : 'SUBMIT REQUEST'}
           </button>
         </form>
+        )}
       </div>
     </section>
   )
