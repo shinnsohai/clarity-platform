@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 // Pop-up viewer for an accreditation's certificate files (src/data/corporateProfile.json →
 // accreditations[].certificates). One file shows straight away; several show as tabs.
-// Every file can be downloaded or opened in a new tab. The PDF preview is desktop-only —
+// Files open in a new tab (no download button). The PDF preview is desktop-only —
 // phone browsers can't embed PDFs, so there the buttons carry it.
 // Entries the CMS left without a PDF are ignored; a missing label falls back to a number.
 export const certsOf = (a) =>
@@ -105,20 +105,10 @@ export default function CertificateModal({ accreditation, onClose }) {
               />
             </div>
             <p className="md:hidden px-6 pb-2 text-concrete text-sm">
-              {cert.label} — open or download the certificate below.
+              {cert.label} — open the certificate below.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 px-6 py-5">
-              <a
-                href={cert.file}
-                download
-                className="inline-flex items-center gap-2 bg-azure text-white text-[11px] font-bold tracking-[0.15em] uppercase px-6 py-3 rounded-full shadow-soft hover:brightness-110 transition-all"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M7 1v8M3.5 6L7 9.5 10.5 6M2 12.5h10" />
-                </svg>
-                Download PDF
-              </a>
               <a
                 href={cert.file}
                 target="_blank"

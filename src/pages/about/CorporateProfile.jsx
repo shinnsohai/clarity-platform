@@ -1,12 +1,21 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import profile from '../../data/corporateProfile.json'
 import PageHero from '../../components/PageHero'
 import CertificateModal, { certsOf } from '../../components/CertificateModal'
+import CsrSection from '../../components/csr/CsrSection'
 
 export default function CorporateProfile() {
   const [open, setOpen] = useState(null)
   const close = useCallback(() => setOpen(null), [])
+  const { hash } = useLocation()
+  // coming back from a CSR gallery lands on the CSR section
+  useEffect(() => {
+    if (hash !== '#csr') return undefined
+    const t = setTimeout(() => document.getElementById('csr')?.scrollIntoView({ block: 'start' }), 350)
+    return () => clearTimeout(t)
+  }, [hash])
   return (
     <div className="bg-paper">
       <PageHero
@@ -40,9 +49,9 @@ export default function CorporateProfile() {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 + 0.1 }}
                   whileHover={{ scale: 1.08, rotate: -3 }}
-                  className="w-20 h-20 rounded-2xl bg-pearl border border-ink/10 flex items-center justify-center p-3 mb-5"
+                  className="h-20 min-w-[5rem] w-fit max-w-full rounded-2xl bg-pearl border border-ink/10 flex items-center justify-center p-3 mb-5"
                 >
-                  <img src={a.logo} alt={a.code} className="w-full h-full object-contain" />
+                  <img src={a.logo} alt={a.code} className="h-full w-auto max-w-[170px] object-contain" />
                 </motion.div>
               ) : (
                 <div className="w-14 h-14 rounded-full bg-azure-light text-azure flex items-center justify-center font-display text-sm mb-5">
@@ -140,6 +149,8 @@ export default function CorporateProfile() {
           </div>
         </div>
       </section>
+
+      <CsrSection csr={profile.csr} />
 
       <CertificateModal accreditation={open} onClose={close} />
     </div>

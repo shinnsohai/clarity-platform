@@ -571,10 +571,50 @@ collections:
                 widget: "list"
                 required: false
                 summary: "{{label}}"
-                hint: "Each entry becomes a tab in the pop-up on the Corporate Profile page, where visitors can view and download the PDF. Add one per certificate (e.g. ISO 9001, ISO 14001). To replace a renewed certificate, upload the new PDF over the old one. Leave the list empty to hide the View Certificate button."
+                hint: "Each entry becomes a tab in the pop-up on the Corporate Profile page, where visitors can view the PDF. Add one per certificate (e.g. ISO 9001, ISO 14001). To replace a renewed certificate, upload the new PDF over the old one. Leave the list empty to hide the View Certificate button."
                 fields:
                   - { label: "Certificate Label", name: "label", widget: "string", hint: "Tab name shown in the pop-up, e.g. ISO 9001" }
                   - { label: "PDF File", name: "file", widget: "file", media_folder: "/public/documents/certificates", public_folder: "/documents/certificates", hint: "Upload the certificate PDF" }
+          - label: "CSR (Giving Back)"
+            name: "csr"
+            widget: "object"
+            hint: "The Corporate Social Responsibility section on the Corporate Profile page: a rolling strip of affiliated bodies logos, each with its own event photo gallery."
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Introduction", name: "intro", widget: "text" }
+              - label: "Affiliated Bodies"
+                label_singular: "Affiliated Body"
+                name: "partners"
+                widget: "list"
+                summary: "{{name}}"
+                hint: "Each one gets a logo card in the rolling strip and its own gallery page. Drag to reorder."
+                fields:
+                  - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces, e.g. mendaki" }
+                  - { label: "URL Slug", name: "slug", widget: "string", hint: "Gallery address: /about/corporate-profile/csr/[slug]. Lowercase, no spaces." }
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Full Name / Tagline", name: "fullName", widget: "string", required: false }
+                  - { label: "Logo", name: "logo", widget: "image", media_folder: "/public/images/csr", public_folder: "/images/csr", hint: "Transparent PNG works best." }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Event Albums"
+                    label_singular: "Album"
+                    name: "albums"
+                    widget: "list"
+                    required: false
+                    summary: "{{title}}"
+                    hint: "One album per event. Leave empty for now: the gallery shows a coming-soon placeholder until photos are added."
+                    fields:
+                      - { label: "Internal ID", name: "id", widget: "string", hint: "Lowercase, no spaces, e.g. 2026-community-day" }
+                      - { label: "Event Title", name: "title", widget: "string" }
+                      - { label: "Date", name: "date", widget: "string", required: false, hint: "e.g. March 2026" }
+                      - label: "Photos"
+                        label_singular: "Photo"
+                        name: "photos"
+                        widget: "list"
+                        required: false
+                        summary: "{{caption}}"
+                        fields:
+                          - { label: "Photo", name: "src", widget: "image", media_folder: "/public/images/csr/events", public_folder: "/images/csr/events" }
+                          - { label: "Caption", name: "caption", widget: "string", required: false }
           - { label: "Recruitment License Statement", name: "recruitmentLicense", widget: "text" }
           - label: "Galleries"
             name: "galleries"

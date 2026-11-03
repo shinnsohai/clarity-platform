@@ -15,6 +15,7 @@ import InvestorRelations from './pages/InvestorRelations'
 import AboutHub from './pages/about/AboutHub'
 import CorporateInformation from './pages/about/CorporateInformation'
 import CorporateProfile from './pages/about/CorporateProfile'
+import CsrGallery from './pages/about/CsrGallery'
 import LeadershipTeam from './pages/about/LeadershipTeam'
 import FounderAdvisorHub from './pages/about/FounderAdvisorHub'
 import FounderDetail from './pages/about/FounderDetail'
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/about" element={<AboutHub />} />
             <Route path="/about/corporate-information" element={<CorporateInformation />} />
             <Route path="/about/corporate-profile" element={<CorporateProfile />} />
+            <Route path="/about/corporate-profile/csr/:slug" element={<CsrGallery />} />
             <Route path="/about/leadership-team" element={<LeadershipTeam />} />
             <Route path="/about/founder-advisor" element={<FounderAdvisorHub />} />
             <Route path="/about/founder-advisor/:slug" element={<FounderDetail />} />

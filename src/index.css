@@ -84,3 +84,27 @@ input[type="submit"], input[type="button"], input[type="checkbox"], input[type="
 @media (prefers-reduced-motion: reduce) {
   .bs-hotspot, .bs-float { animation: none; }
 }
+
+/* CSR section: gently bobbing logo cards, shimmering photo placeholders, tab progress bar */
+@keyframes csr-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.csr-bob { animation: csr-bob 4.8s ease-in-out infinite; }
+@keyframes csr-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.csr-shimmer {
+  background-image: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.75) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: csr-shimmer 2.6s linear infinite;
+}
+@keyframes csr-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.csr-progress { animation: csr-progress 6.5s linear forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .csr-bob, .csr-shimmer, .csr-progress { animation: none; }
+}

@@ -8,9 +8,18 @@
       "description": "Certified quality, environmental, and occupational health & safety management systems applied across all subsidiary operations.",
       "logo": "/images/accreditations/iso.png",
       "certificates": [
-        { "label": "ISO 9001", "file": "/documents/certificates/iso-9001.pdf" },
-        { "label": "ISO 14001", "file": "/documents/certificates/iso-14001.pdf" },
-        { "label": "ISO 45001", "file": "/documents/certificates/iso-45001.pdf" }
+        {
+          "label": "ISO 9001",
+          "file": "/documents/certificates/iso-9001.pdf"
+        },
+        {
+          "label": "ISO 14001",
+          "file": "/documents/certificates/iso-14001.pdf"
+        },
+        {
+          "label": "ISO 45001",
+          "file": "/documents/certificates/iso-45001.pdf"
+        }
       ]
     },
     {
@@ -27,17 +36,67 @@
       "description": "bizSAFE STAR-certified workplace safety and health management framework.",
       "logo": "/images/accreditations/bizsafe.png",
       "certificates": [
-        { "label": "bizSAFE STAR", "file": "/documents/certificates/bizsafe-star.pdf" }
+        {
+          "label": "bizSAFE STAR",
+          "file": "/documents/certificates/bizsafe-star.pdf"
+        }
       ]
+    },
+    {
+      "id": "ssia",
+      "code": "SSIA",
+      "name": "Member",
+      "description": "Clarity Group is a member of the Singapore Semiconductor Industry Association (SSIA).",
+      "logo": "/images/accreditations/ssia.png",
+      "certificates": []
     }
   ],
   "recruitmentLicense": "Clarity Group subsidiaries operate under licensed manpower recruitment frameworks covering both overseas sourcing and in-house placement, in line with Ministry of Manpower requirements.",
   "galleries": {
     "overseas": [
-      { "src": "/images/recruitment-overseas.png", "caption": "Overseas Recruitment Coordination" }
+      {
+        "src": "/images/recruitment-overseas.png",
+        "caption": "Overseas Recruitment Coordination"
+      }
     ],
     "inhouse": [
-      { "src": "/images/recruitment-inhouse.png", "caption": "In-House Recruitment & Onboarding" }
+      {
+        "src": "/images/recruitment-inhouse.png",
+        "caption": "In-House Recruitment & Onboarding"
+      }
+    ]
+  },
+  "csr": {
+    "heading": "Giving back to society, Singapore first",
+    "intro": "Clarity Group pledges to give back to the society we work in, and to put Singapore first. We are affiliated with Yayasan Mendaki, e2i and Yellow Ribbon Singapore, and we share the events we take part in alongside them. Select a body below to see its event photos.",
+    "partners": [
+      {
+        "id": "mendaki",
+        "slug": "mendaki",
+        "name": "Yayasan Mendaki",
+        "fullName": "Council for the Development of Singapore Malay/Muslim Community",
+        "logo": "/images/csr/mendaki.png",
+        "description": "Yayasan Mendaki is a Singapore self-help group focused on education, skills and community development for the Malay/Muslim community.",
+        "albums": []
+      },
+      {
+        "id": "e2i",
+        "slug": "e2i",
+        "name": "e2i",
+        "fullName": "Employment and Employability Institute",
+        "logo": "/images/csr/e2i.png",
+        "description": "e2i, the Employment and Employability Institute, helps Singapore workers and jobseekers with career guidance, training and job matching.",
+        "albums": []
+      },
+      {
+        "id": "yellow-ribbon",
+        "slug": "yellow-ribbon",
+        "name": "Yellow Ribbon Singapore",
+        "fullName": "Beyond Second Chances",
+        "logo": "/images/csr/yellow-ribbon.png",
+        "description": "Yellow Ribbon Singapore supports ex-offenders in finding jobs and rejoining society, giving them a second chance to rebuild their lives.",
+        "albums": []
+      }
     ]
   }
 }
